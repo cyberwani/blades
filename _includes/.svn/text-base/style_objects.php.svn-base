@@ -1,0 +1,172 @@
+<div class="style_container objects style_pane">
+	<ul>
+		<li class="style_node clearfix">
+			<label class="style_node_header">Image Block</label>
+			<div class="style_example grid_3">
+				<div class="imageBlock clearfix">
+					<div class="imageBlock_image"><img class="img_40x40" src="images/40x40.gif" /></div>
+					<div class="imageBlock_content graphicText">Any content at all could appear in this space</div>
+				</div> <!-- image_block -->
+			</div> <!-- style example -->
+			<div class="style_meta_container">
+				<dl class="style_meta">
+					<dt>Description</dt>
+					<dd>UI element used in any situation where content runs alongside a floated image</dd>
+					<?php echo $code_snip ?>
+				</dl> 
+			</div> <!-- style_meta -->	
+		</li>
+
+		<li class="style_node clearfix">
+			<label class="style_node_header">Button</label>
+			<div class="style_example">
+			<a href="#" class="button">Button example</a>
+			</div> <!-- style example -->
+			<div class="style_meta_container">
+				<dl class="style_meta">
+					<dt>Selector</dt>
+					<dd>.button</dd>
+					<?php echo $code_snip ?>
+				</dl> 
+			</div> <!-- style_meta -->	
+		</li>
+
+		<li class="style_node clearfix">
+			<label class="style_node_header">Button - Small</label>
+			<div class="style_example">
+			<a href="#" class="button small">Button example</a>
+			</div> <!-- style example -->
+			<div class="style_meta_container">
+				<dl class="style_meta">
+					<dt>Selector</dt>
+					<dd>.button.small</dd>
+					<?php echo $code_snip ?>
+				</dl> 
+			</div> <!-- style_meta -->	
+		</li>
+
+		<li class="style_node clearfix">
+			<label class="style_node_header">Tabs - Big</label>
+			<div class="style_example grid_8">
+				<ul class="tabs large clearfix">
+					<li class="tab"><a href="tab1">Tab 1</a></li>
+					<li class="tab"><a href="tab2">Tab 2</a></li>
+					<li class="tab"><a href="tab3">Tab 3</a></li>
+				</ul>
+				<div class="tab1 pane"></div>
+				<div class="tab2 pane"></div>
+				<div class="tab3 pane"></div>
+			</div> <!-- style example -->
+			<div class="style_meta_container">
+				<dl class="style_meta">
+					<?php echo $code_snip ?>
+				</dl> 
+			</div> <!-- style_meta -->	
+		</li>
+
+		<li class="style_node clearfix">
+			<label class="style_node_header">Tabs - Small</label>
+			<div class="style_example grid_5">
+				<ul class="tabs small clearfix">
+					<li class="tab"><a href="tab1">Tab 1</a></li>
+					<li class="tab"><a href="tab2">Tab 2</a></li>
+					<li class="tab"><a href="tab3">Tab 3</a></li>
+				</ul>
+				<div class="tab1 pane"></div>
+				<div class="tab2 pane"></div>
+				<div class="tab3 pane"></div>
+			</div> <!-- style example -->
+			<div class="style_meta_container">
+				<dl class="style_meta">
+					<?php echo $code_snip ?>
+				</dl> 
+			</div> <!-- style_meta -->	
+		</li>
+
+		<li class="style_node clearfix">
+			<label class="style_node_header">Dropdown</label>
+			<div class="style_example grid_8">
+				<div class="dropdown_container">								 
+					<div class="dropdown_trigger_hover">
+						<a class="dropdown_trigger_link">
+							<span class="sprite pageNav_arrow"></span>
+							Dropdown</a>
+						<ul class="dropdown">
+							<li class="dropdown_item"><a href="#">Washington Runoff</a></li>
+							<li class="dropdown_item"><a href="#">Wyoming Primary</a></li>
+							<li class="dropdown_item"><a href="#">Arkansas Runoff</a></li>
+							<li class="dropdown_item"><a href="#">Arizona Primary</a></li>
+							<li class="dropdown_item"><a href="#">Washington Runoff</a></li>
+							<li class="dropdown_item"><a href="#">Wyoming Primary</a></li>
+							<li class="dropdown_item"><a href="#">Arkansas Runoff</a></li>
+							<li class="dropdown_item"><a href="#">Arizona Primary</a></li>
+							<li class="dropdown_item"><a href="#">Washington Runoff</a></li>
+							<li class="dropdown_item"><a href="#">Wyoming Primary</a></li>			
+						</ul>						
+					</div> <!-- dropdown_trigger_hover -->
+				</div> <!-- dropdown_container -->
+			</div> <!-- style example -->
+			<div class="style_meta_container">
+				<dl class="style_meta">
+					<?php echo $code_snip ?>
+				</dl> 
+			</div> <!-- style_meta -->	
+		</li>
+
+		<li class="style_node clearfix">
+			<label class="style_node_header">Show More</label>
+			<div class="style_example">
+				<a href="#" class="showMore"><span class="sprite arrow"></span> More</a>
+			</div> <!-- style example -->
+			<div class="style_meta_container">
+				<dl class="style_meta">
+					<dt>Description</dt>
+					<dd>Used to expand descriptions for race summaries, candidate profiles, etc.</dd>
+					<?php echo $code_snip ?>
+				</dl> 
+			</div> <!-- style_meta -->	
+		</li>
+
+		<li class="style_node clearfix">
+			<label class="style_node_header">Link List - Bold Headlines</label>
+			<div class="style_example grid_4">
+				<ul class="linklist">
+					<li><a href="#" class="bold">
+						Sample bold headline goes here</a></li>
+					<li><a href="#" class="bold">
+						Sample bold headline goes here</a></li>						
+					<li><a href="#" class="bold">
+						Sample bold headline goes here</a></li>
+				</ul> <!-- linklist -->
+			</div> <!-- style example -->
+			<div class="style_meta_container">
+				<dl class="style_meta">
+					<dt>Description</dt>
+					<dd>Used for headlines lists, etc.</dd>
+					<?php echo $code_snip ?>
+				</dl> 
+			</div> <!-- style_meta -->	
+		</li>
+
+		<li class="style_node clearfix">
+			<label class="style_node_header">Link List - Regular Headlines</label>
+			<div class="style_example grid_4">
+				<ul class="linklist">
+					<li><a href="#">
+						Sample regular headline goes here</a></li>
+					<li><a href="#">
+						Sample regular headline goes here</a></li>						
+					<li><a href="#">
+						Sample regular headline goes here</a></li>
+				</ul> <!-- linklist -->
+			</div> <!-- style example -->
+			<div class="style_meta_container">
+				<dl class="style_meta">
+					<dt>Description</dt>
+					<dd>Used for headlines lists, issues links, etc.</dd>
+					<?php echo $code_snip ?>
+				</dl> 
+			</div> <!-- style_meta -->	
+		</li>
+	</ul>
+</div> <!-- style_container -->

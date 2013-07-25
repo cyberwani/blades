@@ -1,0 +1,11 @@
+{% for blog_item in blog_cron %}
+<article class="media-block blog blog-small" id="post-{{blog_item.post_name}}">
+	<h3 class="h3"><a href="{{blog_item.path}}">{{blog_item.post_title|editable(blog_item.ID, 'post_title')}}</a></h3>
+	<p class="blog-author"><span>By</span> {{blog_item.author_data.display_name}}</p>
+	<p class="txt">{{blog_item.post_content|excerpt(30)|raw}}<a href="{{blog_item.path}}" class="read-more"> More &raquo;</a></p>
+	
+</article>
+{% endfor %}
+{% if next_button_url %}
+	<a href="{{next_button_url}}" class="blog-load-more api-next" data-target="#archive-blog-cron" data-api-items=".blog-small"><span class="more-txt">More</span><span class="arrow"></span></a>
+{% endif %}

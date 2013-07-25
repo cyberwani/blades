@@ -1,0 +1,32 @@
+<section class="bio-container">
+	<div class="bio-content {{post.post_name}}">
+		<style type="text/css">
+		@media (min-width:959px) {
+			.bio-content {
+				background:url('{{post.image_src}}') no-repeat center center;
+			} 
+		}
+		</style>
+		<img class="bio-img" src="{{post.image_mobile_src}}" />
+
+		<div class="bio-wrap">
+
+			<h1 class="bio-name">
+				{{post.post_title}}
+			</h1> <!-- /bio-name -->
+
+			<p class="bio-txt">
+				{{post.post_content}}	
+			</p> <!-- /bio-txt -->	
+
+			<ul class="social-list">
+				{% for link in post.links %}
+					<li class="social-item ss-icon ss-{{link.icon}} {{link.class}}"> <a href="{{link.link_url}}" target="_blank"> {{link.link_title}}</a> </li>
+				{% endfor %}
+			</ul> <!-- /bio-social -->	
+		</div> <!-- /bio-wrap -->
+
+	</div> <!-- bio-content -->		
+
+</section> <!-- /bio-content -->	
+

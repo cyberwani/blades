@@ -1,0 +1,35 @@
+<section id="archive-blog">
+	{% if title!="Blog"%}
+		<div class="wrapper">
+			<hgroup><h1 class="archive-blog-h1">{{title}}</h1></hgroup>
+		</div>
+	{%else%}{%endif%}
+	
+	{% if blog_featured %}
+	<div class="featured-wrapper inset">
+		<div class="wrapper">
+		<section id="archive-blog-featured" class="blog-featured-mod">
+			{% for blog_item in blog_featured %}
+			
+				<article class="media-block blog blog-featured" id="post-{{blog_item.post_name}}">
+					<h2 class="h1 blog-featured-h"><a href="{{blog_item.path}}">{{blog_item.post_title|editable(blog_item.ID, 'post_title')}}</a></h2>
+					<p class="blog-author"><span>By</span> {{blog_item.author_data.display_name}}</p>
+					<a class="blog-feat-img" href="{{blog_item.path}}"><img src="{{blog_item.thumb_src}}"/></a>
+					<p class="txt">{{blog_item.post_content|excerpt}} &nbsp; <a href="{{blog_item.path}}" class="read-more"> More &raquo;</a></p>
+				</article>
+			{% endfor %}
+		</section><!--archive-blog-featured -->
+		</div><!-- wrapper -->
+	</div><!-- inset -->
+	{% endif %}
+	<div class="inset">
+		<div class="wrapper">
+			<section id="archive-blog-cron" class="blog-cron">
+				{% include "archive-blog-loop.html" %}
+			</section>
+			{% if next_button_url %}
+				<a href="{{next_button_url}}" class="blog-load-more api-next" data-target="#archive-blog-cron" data-api-items=".blog-small"><span class="more-txt">More</span><span class="arrow"></span></a>
+			{% endif %}
+		</div><!-- wrapper -->
+	</div>
+</section><!-- archive-blog -->

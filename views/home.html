@@ -1,0 +1,84 @@
+<div class="cover">
+	<div class="cover-slider">
+		<div id="slide-bglobe-2" class="slide">
+			<h3 class="slider-message-hidden"><a href="/portfolio/the-boston-globe/"><span class="br">We make smart editorial sites </span><span class="br">like the responsive <span class="highlight">BostonGlobe.com</span></a></h3>
+		</div>
+
+		<div id="slide-spark" class="slide">
+			<h3 class="slider-message-hidden"><a href="/portfolio/spark-camp"><span class="br">We design cool identities for </span><span class="br">clients we believe in like <span class="highlight">Spark Camp</span></a></h3>
+		</div>
+
+		<div id="slide-do" class="slide">
+			<h3 class="slider-message-hidden"><a href="/portfolio/the-daily-orange"/><span class="br">We craft great reading experiences </span><span class="br">for newspapers like <span class="highlight">The Daily Orange</span></a></h3>
+		</div>
+
+		<div id="slide-glypho" class="slide">
+			<h3 class="slider-message-hidden"><a href="/portfolio/glyphosaurus"><span class="br">We create homespun apps like </span><span class="br"><span class="highlight">Glyphosaurus</span>, our letter-finding resource</a></h3>
+		</div>
+	</div><!-- slider -->
+
+
+	<div class="cover-overview">
+		<div class="wrapper">
+			<h1 class="h1"><span id="cover-msg" class="cover-msg">Upstatement makes smart editorial sites like the responsive BostonGlobe.com</span></h1>
+		</div>	
+	</div>
+
+	<div class="slidenav">
+			<a class="next">&raquo;next</a>
+			<a class="prev">&laquo;prev</a>
+	</div>
+
+</div><!-- cover -->
+
+<!-- Themes -->
+<section class="hp-themes">
+	<div class="inset">
+		<div class="wrapper">
+			{% for promo in promos %}
+				<div class="hp-theme promo-{{loop.index}}" id="promo-{{promo.post_name}}">
+					<div class="hp-theme-intro ui-block-1">
+					<h3 class="h4"><a href="/portfolio/">{{promo.post_title|editable(promo.ID, 'post_title')}}</a></h3>
+						<section class="txt-lg">{{promo.post_content|editable(promo.ID, 'post_content')}}</section>
+					</div>
+					<div class="hp-theme-tiles ui-block-2">
+						<article class="hp-theme-tile-grid">
+							{% for square in promo.squares %}
+							<a class="media-block" href="{{square.path}}">
+								<img src="{{square.thumb_path|resize(200, 200)}}" alt="{{square.post_title}}"/>
+								<h4 class="tile-h4 a11y-only">{{square.post_title}}</h4>
+							</a>
+							{% endfor %}
+						</article> <!-- /hp-theme-tile-grid -->
+					</div>
+				</div><!-- hp-theme -->
+			{% endfor %}
+		</div> <!-- /wrapper -->
+	</div> <!-- /inset -->
+</section> <!-- /hp-themes -->
+
+
+<!-- Feeds -->
+<div class="hp-feeds wrapper">
+	<div class="hp-blog">
+		<h3 class="h4"><a href="/blog/">Blog</a></h3>
+		<section class="hp-blog-list">
+			{% for blog in blogs%}
+				<article class="media-block blog blog-small" id="post-{{blog.post_name}}">
+					<h3 class="h3"><a href="{{blog.path}}">{{blog.post_title}}</a></h3>
+					<p class="blog-author"><span>By</span> {{blog.author_data.display_name}}</p>
+					<p class="txt txt-dark">{{blog.post_content|excerpt(20)|raw}} &nbsp; <a class="read-more" href="{{blog.path}}"> More &raquo;</a></p>
+				</article>
+			{% endfor %}
+		</section>
+	</div> <!-- /hp-blog -->
+
+	<section class="hp-tweets">
+		<div class="tweet-mod">
+			{% for tweet in tweets %}
+				<a class="twitter-timeline" style="min-width: 650px"; width="900" height="100" data-dnt="true" href="https://twitter.com/upstatement" data-widget-id="357596072165658624" data-chrome="noheader noborders transparent nofooter" data-tweet-limit="1">Tweets by @upstatement</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		{% endfor %}
+		</div> <!-- /tweet-mod -->
+	</section> <!-- /hp-tweets -->
+</div><!-- /hp-feeds -->

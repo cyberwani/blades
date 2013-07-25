@@ -1,0 +1,172 @@
+<div class="style_container type style_pane">
+	<ul>
+		<li class="style_node clearfix">
+			<label class="style_node_header">h1 - Page Header</label>
+			<div class="style_meta_container">
+				<dl class="style_meta">
+					<dt>Selector</dt>
+					<dd>h1, .h1, .pageHeader</dd>
+					<?php echo $code_snip ?>
+				</dl> 
+			</div> <!-- style_meta -->
+			<div class="style_example">
+			<div class="pageHeader">Sample h1 <span class="vertRule">|</span> Page Header</div></div></li>
+
+		<li class="style_node clearfix">
+			<label class="style_node_header">h2 - Sub-Page Header</label>
+			<div class="style_meta_container">
+				<dl class="style_meta">
+					<dt>Selector</dt>
+					<dd>.h2, .subpageHeader</dd>
+					<?php echo $code_snip ?>
+				</dl> 
+			</div> <!-- style_meta -->
+			<div class="style_example">
+			<div class="subpageHeader">Sample h2 - Sub-Page Header</div></div></li>
+
+		<li class="style_node clearfix">
+			<label class="style_node_header">h3 - Section Header &amp; Section Header Thin</label>
+			<div class="style_meta_container">
+				<dl class="style_meta">
+					<dt>Selector</dt>
+					<dd>h3.sectionHeader &amp; .thin</dd>
+					<?php echo $code_snip ?>
+				</dl> 
+			</div> <!-- style_meta -->
+			<div class="style_example">
+			<h3 class="sectionHeader">Sample h3 - Section Header <span class="vertRule">|</span> <span class="thin">Section Header Thin</a></h3></div></li>
+
+		<li class="style_node clearfix">
+			<label class="style_node_header">h4 - Section Header</label>
+			<div class="style_meta_container">
+				<dl class="style_meta">
+					<dt>Selector</dt>
+					<dd>h4, .h4, h4.sectionHeader</dd>
+					<?php echo $code_snip ?>
+				</dl> 
+			</div> <!-- style_meta -->
+			<div class="style_example">
+			<h4 class="sectionHeader"><a href="#">Sample h4 - Section Header</a></h4></div></li>
+
+		<li class="style_node clearfix">
+			<label class="style_node_header">h4 - Section Header with Rule</label>
+			<div class="style_meta_container">
+				<dl class="style_meta">
+					<dt>Selector</dt>
+					<dd>h4.ruleBox, .h4.ruleBox, h4.sectionHeader.ruleBox</dd>
+					<?php echo $code_snip ?>
+				</dl> 
+			</div> <!-- style_meta -->
+			<div class="style_example grid_5">
+			<h4 class="sectionHeader ruleBox"><a href="#">Sample h4 - Section Header</a></h4></div></li>
+
+		<li class="style_node clearfix">
+			<label class="style_node_header">Table Header</label>
+			<div class="style_meta_container">
+				<dl class="style_meta">
+					<dt>Selector</dt>
+					<dd>.tableHeader</dd>
+					<?php echo $code_snip ?>
+				</dl> 
+			</div> <!-- style_meta -->
+			<div class="style_example">
+			<table>
+			<tr class="tableHeader">
+			<th class="grid_2">Sample</th>
+			<th class="grid_2">Table</th>
+			<th class="grid_2">Header</th>
+			</tr>
+			</table>
+			</div></li>
+
+		<li class="style_node clearfix">
+			<label class="style_node_header">Tease Text - Large</label>
+			<div class="style_meta_container">
+				<dl class="style_meta">
+					<dt>Selector</dt>
+					<dd>.tt.articleText</dd>
+					<?php echo $code_snip ?>
+				</dl> 
+			</div> <!-- style_meta -->
+			<div class="style_example grid_8">
+			<p class="tt articleText">Sample large tease text shown here. Sample large tease text shown here. Sample large tease text shown here. Sample large tease text shown here.</p>
+			<p class="tt articleText">Sample large tease text shown here. Sample large tease text shown here. Sample large tease text shown here. Sample large tease text shown here.</p></div></li>
+
+		<li class="style_node clearfix">
+			<label class="style_node_header">Tease Text</label>
+			<div class="style_meta_container">
+				<dl class="style_meta">
+					<dt>Selector</dt>
+					<dd>.tt</dd>
+					<?php echo $code_snip ?>
+				</dl> 
+			</div> <!-- style_meta -->
+			<div class="style_example grid_8">
+			<p class="tt">Sample tease text shown here. Sample tease text shown here. Sample tease text shown here. Sample tease text shown here. Sample tease text shown here. Sample tease text shown here.</p>
+			<p class="tt">Sample tease text shown here. Sample tease text shown here. Sample tease text shown here. Sample tease text shown here. Sample tease text shown here.</p></div></li>
+
+		<li class="style_node clearfix">
+			<label class="style_node_header">Graphic Text</label>
+			<div class="style_meta_container">
+				<dl class="style_meta">
+					<dt>Selector</dt>
+					<dd>.graphicText</dd>
+					<?php echo $code_snip ?>
+				</dl> 
+			</div> <!-- style_meta -->
+			<div class="style_example grid_8">
+			<p class="graphicText">Sample graphic text shown here. Sample graphic text shown here. Sample graphic text shown here. Sample graphic text shown here.</p></div></li>
+
+		<li class="style_node clearfix">
+			<label class="style_node_header">Graphic Text Subheader</label>
+			<div class="style_meta_container">
+				<dl class="style_meta">
+					<dt>Selector</dt>
+					<dd>.subheader</dd>
+					<?php echo $code_snip ?>
+				</dl> 
+			</div> <!-- style_meta -->
+			<div class="style_example">
+			<p class="graphicText"><span class="subheader">Age:</span> 41</p>
+			<p class="graphicText"><span class="subheader">Born:</span> July 31, 1956, Chicago</p>
+			<p class="graphicText"><span class="subheader">Education:</span> Harvard University</p></div></li>
+
+		<li class="style_node clearfix">
+			<label class="style_node_header">Graphic Text - Small</label>
+			<div class="style_meta_container">
+				<dl class="style_meta">
+					<dt>Selector</dt>
+					<dd>.graphicText.small</dd>
+					<?php echo $code_snip ?>
+				</dl> 
+			</div> <!-- style_meta -->
+			<div class="style_example grid_8">
+			<p class="graphicText small">Sample small graphic text shown here. Sample small graphic text shown here. Sample small graphic text shown here. Sample small graphic text shown here.</p></div></li>
+
+		<li class="style_node clearfix">
+			<label class="style_node_header">Form Label</label>
+			<div class="style_meta_container">
+				<dl class="style_meta">
+					<dt>Selector</dt>
+					<dd>.form_label</dd>
+					<?php echo $code_snip ?>
+				</dl> 
+			</div> <!-- style_meta -->
+			<div class="style_example">
+				<label class="form_label">Address:</label>
+			</div>
+		</li>
+
+		<li class="style_node clearfix">
+			<label class="style_node_header">Overline</label>
+			<div class="style_meta_container">
+				<dl class="style_meta">
+					<dt>Selector</dt>
+					<dd>.overline</dd>
+					<?php echo $code_snip ?>
+				</dl> 
+			</div> <!-- style_meta -->
+			<div class="style_example">
+			<p class="overline">Overline goes here</p></div></li>
+	</ul>
+</div> <!-- style_container -->

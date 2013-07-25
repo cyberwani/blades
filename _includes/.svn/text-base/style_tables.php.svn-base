@@ -1,0 +1,57 @@
+<div class="style_container tables style_pane">
+	<ul>
+		<li class="style_node clearfix">
+			<label class="style_node_header">Results Table - Town By Town</label>
+			<div class="style_meta_container">
+				<dl class="style_meta">
+					<dt>Description</dt>
+					<dd>Used on deep results pages that include full town-by-town results </dd>
+					<?php echo $code_snip ?>
+				</dl> 
+			</div> <!-- style_meta -->
+			<div class="style_example grid_8">		
+				<table class="results_table townByTown">
+					<h5 class="subSectionHeader ruleBox"><div class="updated">Last updated 11:54 a.m.</div> Town By Town Results</h5>
+					<p class="graphicText"><strong>Seat held by:</strong> Democrat John Kerry, who is running for re-election</p>
+					<tbody>
+						<tr class="tableHeader">
+							<th class="table_city grid_2">City or town</th>
+							<th class="table_reporting grid_1-5">Reporting</th>
+							<th class="table_beatty grid_1-5">Beatty (R)</th>
+							<th class="table_kerry grid_1-5">Kerry (D)</th>
+							<th class="table_underwood grid_1-5">Underwood (I)</th>
+						</tr>	
+						<tr>
+							<td class="table_city">Abington</th>
+							<td class="table_reporting">4 of 4</th>
+							<td class="table_beatty">3,003</th>
+							<td class="table_kerry">4,508</th>
+							<td class="table_underwood">240</th>
+						</tr>
+						<tr>
+							<td class="table_city">Abington</th>
+							<td class="table_reporting">0 of 14</th>
+							<td class="table_beatty">&ndash;</th>
+							<td class="table_kerry">&ndash;</th>
+							<td class="table_underwood">&ndash;</th>
+						</tr>
+						<tr>
+							<td class="table_city">Achushnet</th>
+							<td class="table_reporting">3 of 3</th>
+							<td class="table_beatty">1,524</th>
+							<td class="table_kerry">3,571</th>
+							<td class="table_underwood">133</th>
+						</tr>
+						<tr>
+							<td class="table_city">Adams</th>
+							<td class="table_reporting">21 of 21</th>
+							<td class="table_beatty">5,322</th>
+							<td class="table_kerry">18,556</th>
+							<td class="table_underwood">699</th>
+						</tr>
+					</tbody>
+				</table>
+			</div> <!-- style_example -->
+		</li>
+	</ul>
+</div> <!-- style_container tables -->

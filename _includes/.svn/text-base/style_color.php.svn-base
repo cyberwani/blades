@@ -1,0 +1,33 @@
+<div class="style_container color style_pane">
+	<ul>
+		<li class="style_node clearfix">
+			<label class="style_node_header">Politics Red</label>
+			<div class="style_meta_container">
+				<dl class="style_meta">
+					<dt>Selector</dt>
+					<dd>.pol_red</dd>
+					<dt>Hex</dt>
+					<dd>#c51e18</dd>
+					<?php echo $code_snip ?>
+				</dl> 
+			</div> <!-- style_meta -->
+			<div class="style_example style_color">
+				<div class="pol_red">
+				#c51e18</div></div></li>
+
+		<li class="style_node clearfix">
+			<label class="style_node_header">Politics Red - Leader</label>
+			<div class="style_meta_container">
+				<dl class="style_meta">
+					<dt>Selector</dt>
+					<dd>.pol_red.leader</dd>
+					<dt>Hex</dt>
+					<dd>#e28067</dd>
+					<?php echo $code_snip ?>
+				</dl> 
+			</div> <!-- style_meta -->
+			<div class="style_example style_color">
+				<div class="pol_red leader">
+				#e28067</div></div></li>
+	</ul>
+</div> <!-- style_container color -->
