@@ -11,32 +11,25 @@
 		$data['base'] = 'base-blank.twig';
 	} 
 
-		
 	$page = 0;
 	if ($wp_query->query_vars['paged']){
 		$page = $wp_query->query_vars['paged'];
 	}
+	
 	$data['title'] = "Blog";
 	$sticky = get_option('sticky_posts');
 	$sticky = PHPHelper::array_truncate($sticky, 4);
 	if ($page == 0){
-		$data['blog_featured'] = 	Timber::get_posts(array(	'post_type' => 'post', 
-															'numberposts' => 4,
-															'post__in'  => $sticky
-												));
+		$featured_query = array('post_type' => 'post', 'numberposts' => 4, 'post__in'  => $sticky);
+		$data['blog_featured'] = Timber::get_posts($featured_query);
 	}
 
+	$cron_query = array('post_type' => 'post', 'numberposts' => 6, 'post__not_in' => $sticky, 'offset' => $page * 6);
+	$data['blog_cron'] = Timber::get_posts($cron_query);
 
-	$data['blog_cron'] = 		Timber::get_posts(array(	'post_type' => 'post', 
-														'numberposts' => 6,
-														'post__not_in' => $sticky,
-														'offset' => $page * 6
-											));
-	$data['blog_next'] =		Timber::get_posts(array(	'post_type' => 'post', 
-														'numberposts' => 1,
-														'post__not_in' => $sticky,
-														'offset' => ($page+1) * 6
-											));
+	$next_query = array('post_type' => 'post', 'numberposts' => 1, 'post__not_in' => $sticky, 'offset' => ($page+1) * 6);
+	$data['blog_next'] = Timber::get_posts($next_query);
+
 	$next_page = $page + 1;
 	if ($page == 0){
 		$next_page = 2;
