@@ -2,9 +2,9 @@
 	global $has_children;
 	$has_children = array('page');
 	include('functions/functions-theme-preview.php');
-	//include('functions/functions-custom-menus.php');
 
 	include('acf/acf-blog-options.php');
+	include('wp/portfolio-entry.php');
 	add_theme_support('menus');
 	add_theme_support( 'post-thumbnails' );
 
@@ -38,6 +38,7 @@
 		wp_schedule_event( time(), 'hourly', 'ups_cron_hour');
 	}
 	categorize_tweets();
+	
 	function categorize_tweets(){
 		global $wpdb;
 		$query = "SELECT post_title, ID FROM $wpdb->posts WHERE menu_order = '0' AND post_type = 'tweets'";
@@ -54,24 +55,6 @@
 			wp_update_post($tweet);
 			update_post_meta($tweet->ID, 'tweet_type', $value);
 		}
-	}
-
-	function get_resized_image($src, $w, $h = 0, $ratio = 0, $append = ''){
-		if (isset($w) && $h == 0){
-			$base = basename($src);
-			$src = '/resize/timthumb.php/'.$base.'?src='.$src.'&amp;w='.$w . $append;
-			//$src = '/resize/'.$w.'x'.$h.'/r'.$src.$append;
-			if ($ratio){
-				$ratio = explode(':', $ratio);
-				$h = ($w/$ratio[0]) * $ratio[1];
-				$src .= '&h='.$h;
-			}
-		} else if (isset($w) && isset($h)){
-			$base = basename($src);
-			$src = '/resize/timthumb.php/'.$base.'?src='.$src.'&amp;w='.$w.'&amp;h='.$h.'&amp;'.$append;
-			//$src = '/resize/'.$w.'x'.$h.'/r'.$src.$append;
-		}
-		return $src;
 	}
 
 	add_action('wp_enqueue_scripts', 'load_scripts');
