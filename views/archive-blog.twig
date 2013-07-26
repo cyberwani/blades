@@ -5,20 +5,14 @@
 		<div class="wrapper">
 			<hgroup><h1 class="archive-blog-h1">{{title}}</h1></hgroup>
 		</div>
-	{%else%}{%endif%}
+	{% endif %}
 	
 	{% if blog_featured %}
 	<div class="featured-wrapper inset">
 		<div class="wrapper">
 		<section id="archive-blog-featured" class="blog-featured-mod">
 			{% for post in blog_featured %}
-			
-				<article class="media-block blog blog-featured" id="post-{{post.post_name}}">
-					<h2 class="h1 blog-featured-h"><a href="{{post.path}}">{{post.post_title}}</a></h2>
-					<p class="blog-author"><span>By</span> {{post.author.name}}</p>
-					<a class="blog-feat-img" href="{{post.path}}"><img src="{{post.thumbnail.src}}"/></a>
-					<p class="txt">{{post.post_content|excerpt}} &nbsp; <a href="{{post.path}}" class="read-more"> More &raquo;</a></p>
-				</article>
+				{% include "tz-blog-l.twig" %}
 			{% endfor %}
 		</section><!--archive-blog-featured -->
 		</div><!-- wrapper -->
@@ -35,5 +29,5 @@
 		</div><!-- wrapper -->
 	</div>
 </section><!-- archive-blog -->
-{{sidebar}}
+	{{sidebar}}
 {% endblock %}

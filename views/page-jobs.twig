@@ -1,0 +1,17 @@
+{% extends "base.twig" %}
+{% block content %}
+<!-- Jobs Cover Image -->
+<div class="cover-single">
+	<div id="slide-jobs" class="slide"><div class="jobs-pin"></div><img class="jobs-sign swing animated" src="http://cloudfront.upstatement.com/wp-content/themes/blades/images/dev/covers/jobs-sign.png" /></div>
+</div><!-- cover -->
+
+<!-- Jobs Content -->
+<section class="jobs-content wrapper">
+		{% for job in jobs %}
+		<article class="job-mod">
+			<h1 class="h1 jobs-h1 ui-block-1">{{job.title}}</h1>
+			<div class="article-txt-reverse jobs-txt ui-block-2">{{job.description | wpautop }}</div>
+		</article>
+		{% endfor %}
+</section> <!-- /about-intro -->
+{% endblock %}

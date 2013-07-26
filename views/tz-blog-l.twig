@@ -1,0 +1,6 @@
+<article class="media-block blog blog-featured" id="post-{{post.post_name}}">
+	<h2 class="h1 blog-featured-h"><a href="{{post.path}}">{{post.post_title}}</a></h2>
+	<p class="blog-author"><span>By</span> {{post.author.name}}</p>
+	<a class="blog-feat-img" href="{{post.path}}"><img src="{{post.thumbnail.src}}"/></a>
+	<p class="txt">{{post.get_preview(36)}}</p>
+</article>
