@@ -45,7 +45,7 @@
 		$data['next_button_url'] = '/blog/page/'.$next_page;
 	}
 	if ($api){
-		Timber::render('archive-blog-loop.html', $data);
+		Timber::render('archive-blog-loop.twig', $data);
 	} else {
 		$data['sidebar'] = Timber::get_sidebar('sidebar.php');
 		Timber::render('archive-blog.twig', $data);

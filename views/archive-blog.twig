@@ -21,7 +21,7 @@
 	<div class="inset">
 		<div class="wrapper">
 			<section id="archive-blog-cron" class="blog-cron">
-				{% include "archive-blog-loop.html" %}
+				{% include "archive-blog-loop.twig" %}
 			</section>
 			{% if next_button_url %}
 				<a href="{{next_button_url}}" class="blog-load-more api-next" data-target="#archive-blog-cron" data-api-items=".blog-small"><span class="more-txt">More</span><span class="arrow"></span></a>

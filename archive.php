@@ -52,9 +52,9 @@
 			$data['next_button_url'] = '';
 		}
 		if ($api){
-			render_twig('archive-blog-loop.html', $data);
+			Timber::render('archive-blog-loop.twig', $data);
 		} else {
-			render_twig('archive-blog.html', $data);
+			Timber::render('archive-blog.twig', $data);
 		}
 	}
 	

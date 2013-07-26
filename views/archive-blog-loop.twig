@@ -1,0 +1,11 @@
+{% for post in blog_cron %}
+	<article class="media-block blog blog-small" id="post-{{post.post_name}}">
+		<h3 class="h3"><a href="{{post.path}}">{{post.title}}</a></h3>
+		<p class="blog-author"><span>By</span> {{post.author.name}}</p>
+		<p class="txt">{{post.get_preview(30, false, '<nobr>More &raquo;</nobr>')|raw}}</p>
+	</article>
+{% endfor %}
+
+{% if next_button_url %}
+	<a href="{{next_button_url}}" class="blog-load-more api-next" data-target="#archive-blog-cron" data-api-items=".blog-small"><span class="more-txt">More</span><span class="arrow"></span></a>
+{% endif %}
