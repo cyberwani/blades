@@ -69,7 +69,7 @@
 				<article class="media-block blog blog-small" id="post-{{blog.post_name}}">
 					<h3 class="h3"><a href="{{blog.path}}">{{blog.title}}</a></h3>
 					<p class="blog-author"><span>By</span> {{blog.author.name}}</p>
-					<p class="txt txt-dark">{{blog.get_preview(20)}} &nbsp; <a class="read-more" href="{{blog.path}}"> More &raquo;</a></p>
+					<p class="txt txt-dark">{{blog.get_preview(25, true, 'More &raquo;')}}</p>
 				</article>
 			{% endfor %}
 		</section>
