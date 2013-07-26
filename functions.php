@@ -1,7 +1,6 @@
 <?php
 	global $has_children;
 	$has_children = array('page');
-	include('functions/functions-theme-preview.php');
 
 	include('wp/acf-blog-options.php');
 	include('wp/portfolio-entry.php');
@@ -21,11 +20,11 @@
 	function load_scripts(){
 		wp_enqueue_script('jquery');
 	}
-
+	/*
 	Timber::add_route('portfolio', function(){
 		Timber::load_template('archive-portfolio.php');
 	});
-
+	*/
 	add_action('ups_cron_hour', 'categorize_tweets');
 	
 	//categorize_tweets();
