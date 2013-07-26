@@ -15,26 +15,17 @@ Template Name: Person
  * @since Boilerplate 1.0
  */
 
-
-get_header(); ?>
-<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-	<?php
-		$data = array();
-		$pi = PostMaster::get_post_info(get_the_ID());
-		$data['post'] = $pi;
-		$template_file = 'page-person.html';
-		$data['post']->links = get_field('links');
-		foreach($data['post']->links as &$link){
-			$link['class'] = 'ss-social';
-			if ($link['icon'] == 'home'){
-				$link['class'] = ' ';
-			}
+	$data = Timber::get_context();
+	$pi = new TimberPost();
+	$data['post'] = $pi;
+	$data['post']->links = get_field('links');
+	foreach($data['post']->links as &$link){
+		$link['class'] = 'ss-social';
+		if ($link['icon'] == 'home'){
+			$link['class'] = ' ';
 		}
-		$data['post']->image_src = PostMaster::get_image_path($pi->image);
-		$data['post']->image_mobile_src = PostMaster::get_image_path($pi->image_mobile);
-		render_twig($template_file, $data);
-	?>
-<?php endwhile; // end of the loop. ?>
-
-
-<?php get_footer(); ?>
+	}
+	$data['post']->image = new TimberImage($pi->image);
+	$data['post']->image_mobile = new TimberImage($pi->image_mobile);
+	Timber::render(['page-person-'.$pi->post_name.'.twig', 'page-person.twig'], $data);
+	

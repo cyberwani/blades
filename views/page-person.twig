@@ -1,13 +1,15 @@
+{% extends 'base.twig' %}
+{% block content %}
 <section class="bio-container">
 	<div class="bio-content {{post.post_name}}">
 		<style type="text/css">
 		@media (min-width:959px) {
 			.bio-content {
-				background:url('{{post.image_src}}') no-repeat center center;
+				background:url('{{post.image.src}}') no-repeat center center;
 			} 
 		}
 		</style>
-		<img class="bio-img" src="{{post.image_mobile_src}}" />
+		<img class="bio-img" src="{{post.image_mobile.src}}" />
 
 		<div class="bio-wrap">
 
@@ -29,4 +31,4 @@
 	</div> <!-- bio-content -->		
 
 </section> <!-- /bio-content -->	
-
+{% endblock %}
