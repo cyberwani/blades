@@ -40,15 +40,15 @@
 			{% for promo in promos %}
 				<div class="hp-theme promo-{{loop.index}}" id="promo-{{promo.post_name}}">
 					<div class="hp-theme-intro ui-block-1">
-					<h3 class="h4"><a href="/portfolio/">{{promo.post_title|editable(promo.ID, 'post_title')}}</a></h3>
-						<section class="txt-lg">{{promo.post_content|editable(promo.ID, 'post_content')}}</section>
+					<h3 class="h4"><a href="/portfolio/">{{promo.title}}</a></h3>
+						<section class="txt-lg">{{promo.content}}</section>
 					</div>
 					<div class="hp-theme-tiles ui-block-2">
 						<article class="hp-theme-tile-grid">
 							{% for square in promo.squares %}
 							<a class="media-block" href="{{square.path}}">
-								<img src="{{square.thumb_path|resize(200, 200)}}" alt="{{square.post_title}}"/>
-								<h4 class="tile-h4 a11y-only">{{square.post_title}}</h4>
+								<img src="{{square.thumbnail.src|resize(200, 200)}}" alt="{{square.title}}"/>
+								<h4 class="tile-h4 a11y-only">{{square.title}}</h4>
 							</a>
 							{% endfor %}
 						</article> <!-- /hp-theme-tile-grid -->
@@ -65,11 +65,11 @@
 	<div class="hp-blog">
 		<h3 class="h4"><a href="/blog/">Blog</a></h3>
 		<section class="hp-blog-list">
-			{% for blog in blogs%}
+			{% for blog in blogs %}
 				<article class="media-block blog blog-small" id="post-{{blog.post_name}}">
-					<h3 class="h3"><a href="{{blog.path}}">{{blog.post_title}}</a></h3>
-					<p class="blog-author"><span>By</span> {{blog.author_data.display_name}}</p>
-					<p class="txt txt-dark">{{blog.post_content|excerpt(20)|raw}} &nbsp; <a class="read-more" href="{{blog.path}}"> More &raquo;</a></p>
+					<h3 class="h3"><a href="{{blog.path}}">{{blog.title}}</a></h3>
+					<p class="blog-author"><span>By</span> {{blog.author.name}}</p>
+					<p class="txt txt-dark">{{blog.get_preview(20)}} &nbsp; <a class="read-more" href="{{blog.path}}"> More &raquo;</a></p>
 				</article>
 			{% endfor %}
 		</section>

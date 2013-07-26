@@ -7,9 +7,8 @@
  * @since Boilerplate 1.0
  */
 
-get_header(); ?>
-<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-	<?php
+		$data = Timber::get_context();
+		
 		$pi = PostMaster::get_post_info(get_the_ID()); 
 		$content = get_portfolio_info($pi); //to send the layouts/content to twig, just appends it to the post_info object you retireved with get_post_info, we'll send it all under 'post'.
 		$data['post'] = $content;

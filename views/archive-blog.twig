@@ -1,0 +1,39 @@
+{% extends base %}
+{% block content %}
+<section id="archive-blog">
+	{% if title!="Blog"%}
+		<div class="wrapper">
+			<hgroup><h1 class="archive-blog-h1">{{title}}</h1></hgroup>
+		</div>
+	{%else%}{%endif%}
+	
+	{% if blog_featured %}
+	<div class="featured-wrapper inset">
+		<div class="wrapper">
+		<section id="archive-blog-featured" class="blog-featured-mod">
+			{% for post in blog_featured %}
+			
+				<article class="media-block blog blog-featured" id="post-{{post.post_name}}">
+					<h2 class="h1 blog-featured-h"><a href="{{post.path}}">{{post.post_title}}</a></h2>
+					<p class="blog-author"><span>By</span> {{post.author.name}}</p>
+					<a class="blog-feat-img" href="{{post.path}}"><img src="{{post.thumbnail.src}}"/></a>
+					<p class="txt">{{post.post_content|excerpt}} &nbsp; <a href="{{post.path}}" class="read-more"> More &raquo;</a></p>
+				</article>
+			{% endfor %}
+		</section><!--archive-blog-featured -->
+		</div><!-- wrapper -->
+	</div><!-- inset -->
+	{% endif %}
+	<div class="inset">
+		<div class="wrapper">
+			<section id="archive-blog-cron" class="blog-cron">
+				{% include "archive-blog-loop.html" %}
+			</section>
+			{% if next_button_url %}
+				<a href="{{next_button_url}}" class="blog-load-more api-next" data-target="#archive-blog-cron" data-api-items=".blog-small"><span class="more-txt">More</span><span class="arrow"></span></a>
+			{% endif %}
+		</div><!-- wrapper -->
+	</div>
+</section><!-- archive-blog -->
+{{sidebar}}
+{% endblock %}

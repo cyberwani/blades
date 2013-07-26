@@ -1,8 +1,8 @@
-{% for blog_item in blog_cron %}
-<article class="media-block blog blog-small" id="post-{{blog_item.post_name}}">
-	<h3 class="h3"><a href="{{blog_item.path}}">{{blog_item.post_title|editable(blog_item.ID, 'post_title')}}</a></h3>
-	<p class="blog-author"><span>By</span> {{blog_item.author_data.display_name}}</p>
-	<p class="txt">{{blog_item.post_content|excerpt(30)|raw}}<a href="{{blog_item.path}}" class="read-more"> More &raquo;</a></p>
+{% for post in blog_cron %}
+<article class="media-block blog blog-small" id="post-{{post.post_name}}">
+	<h3 class="h3"><a href="{{post.path}}">{{post.post_title}}</a></h3>
+	<p class="blog-author"><span>By</span> {{post.author.name}}</p>
+	<p class="txt">{{post.get_preview(30)|raw}}<a href="{{post.path}}" class="read-more"> More &raquo;</a></p>
 	
 </article>
 {% endfor %}
