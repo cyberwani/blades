@@ -48,20 +48,16 @@
 				}
 				$data['promos'][] = $promo;
 			}
-			
-			/* Now fetch the tiles in the middle of the page */
-			$data['tiles'] = get_homepage_tiles('featured', 4);
 
 			/* Get the stuff for the form */
-			$fid = 27;
-			$data['form'] = get_post($fid);
+			$data['form'] = new TimberPost(27);
 			$data['form']->actions = array(
 					array('link'=>'#url:trigger-form-contact', 'name' => 'Hire us for your project')
 			);
 
 			$data['blogs'] = Timber::get_posts('post_type=post&numberposts=4');
-			$tweets = Timber::get_posts('post_type=tweets&meta_key=tweet_type&meta_value=status');
-			$tweets = array_splice($tweets, 0, 1);	
+			//$tweets = Timber::get_posts('post_type=tweets&meta_key=tweet_type&meta_value=status');
+			//$tweets = array_splice($tweets, 0, 1);	
 
-			$data['tweets'] = $tweets;
-			render_twig('home.twig', $data);
+			//$data['tweets'] = $tweets;
+			Timber::render('home.twig', $data);

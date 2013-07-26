@@ -3,7 +3,7 @@
 	$has_children = array('page');
 	include('functions/functions-theme-preview.php');
 
-	include('acf/acf-blog-options.php');
+	include('wp/acf-blog-options.php');
 	include('wp/portfolio-entry.php');
 	add_theme_support('menus');
 	add_theme_support( 'post-thumbnails' );
@@ -20,24 +20,15 @@
 
 	function load_scripts(){
 		wp_enqueue_script('jquery');
-		wp_enqueue_script('modernizr', THEME_ABS.'/js/libs/modernizr.min.js', null, false, true);
-		
-		wp_enqueue_style('syntax-css', THEME_ABS.'/js/libs/sh/styles/shCore.css');
-		wp_enqueue_style('syntax-css-default', THEME_ABS.'/js/libs/sh/styles/shThemeDefault.css');
-
-
-		//wp_enqueue_style('bladescss', THEME_ABS.'/wp-content/themes/_design/_css/screen.css');
-		//wp_enqueue_style('bladescss', THEME_ABS.'/wp-content/themes/_design/_css/screen.css');
-		
 	}
 
-	register_activation_hook(__FILE__, 'my_activation');
+	Timber::add_route('portfolio', function(){
+		Timber::load_template('archive-portfolio.php');
+	});
+
 	add_action('ups_cron_hour', 'categorize_tweets');
-
-	function my_activation() {
-		wp_schedule_event( time(), 'hourly', 'ups_cron_hour');
-	}
-	categorize_tweets();
+	
+	//categorize_tweets();
 	
 	function categorize_tweets(){
 		global $wpdb;

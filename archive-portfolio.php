@@ -32,10 +32,11 @@
 
 
 		$fp = new TimberPost(3251);
+		$fp->squares = get_field('squares', $fp->ID);
 		$billboards = array();
 		foreach($fp->squares as $square){
-			$bb = Timber::get_post($square);
-			$bb->billboard_src = PostMaster::get_image_path($bb->billboard);
+			$bb = new TimberPost($square);
+			$bb->billboard = new TimberImage($bb->billboard);
 			$billboards[] = $bb;
 		}
 		$data['billboards'] = $billboards;
