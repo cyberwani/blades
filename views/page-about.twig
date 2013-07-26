@@ -1,0 +1,66 @@
+{% extends "base.twig" %}
+{% block content %}
+<div class="cover">
+	<div class="cover-slider">
+		<div id="slide-grind" class="slide"></div>
+		<div id="slide-jjm" class="slide"><a class="cover-credit" href="http://tv.adobe.com/watch/create-now/the-boston-globe-filament-group-inc-and-upstatement-and-rwd/">Photo by Adobe</a></div>
+		<div id="slide-office-4" class="slide"></div>
+		<div id="slide-conference" class="slide"><a class="cover-credit" href="http://tv.adobe.com/watch/create-now/the-boston-globe-filament-group-inc-and-upstatement-and-rwd/">Photo by Adobe</a></div>
+		<div id="slide-letters" class="slide"></div>
+		<div id="slide-tito" class="slide"><a class="cover-credit" href="http://tv.adobe.com/watch/create-now/the-boston-globe-filament-group-inc-and-upstatement-and-rwd/">Photo by Adobe</a></div>
+		<div id="slide-screen2" class="slide"></div>
+		<div id="slide-xmas-1" class="slide"></div>
+	</div><!-- slider -->
+
+	<div class="cover-overview">
+		<div class="wrapper">
+			<h1 class="h1"><span class="about-msg">About Upstatement</span></h1>
+		</div>	
+	</div>
+
+	<div class="slidenav">
+		<a class="next">&raquo;next</a>
+		<a class="prev">&laquo;prev</a>
+	</div>
+</div><!-- cover -->
+
+<!-- About Intro -->
+<section class="about-intro">
+	<div class="wrapper">
+		<h2 class="section-h">Where We Came From</h2>
+		<div class="l-txt txt-lg">{{post.post_content | wpautop }}</div>
+	</div> <!-- /wrapper -->
+</section> <!-- /about-intro -->
+
+<!-- Who We Are -->
+<section class="about-people">
+	<div class="inset">
+		<div class="wrapper">
+			<h2 class="section-h">Who We Are</h2>
+			<div class="about-person-grid">
+				{% for person in people %}
+					<article class="about-person media-block">
+
+						<div class="icn-box">
+							<img src="{{person.face}}" class="face"/>
+							<img src="{{person.image}}" class="icn"/>
+						</div>
+
+						<h4 class="h3 about-person-name">{{person.name}}</h4>
+						<p class="about-person-title">{{person.title}}   <span>&nbsp;&bull;&nbsp;</span> <a class="about-person-twtr" href="http://twitter.com/{{person.twitter}}">@{{person.twitter}}</a></p>
+						<p class="txt about-person-desc">{{person.description}}</p>
+					</article>
+				{% endfor %}
+			</div> <!-- /about-people-grid -->
+		</div> <!-- /wrapper -->
+	</div> <!-- /inset -->
+</section> <!-- /about-people -->
+
+<!-- What We Do -->
+<section class="about-what">
+		<div class="wrapper">
+			<h2 class="section-h">What We Do</h2>
+			<div class="l-txt txt-lg">{{post.what | wpautop }}</div>
+		</div> <!-- /wrapper -->
+</section> <!-- /about-what -->
+{% endblock %}
