@@ -1,5 +1,8 @@
-
-
+{% extends 'base.twig' %}
+{% block head %}
+	<link rel="stylesheet" href="{{theme_dir}}/css/page-drinks.css" />
+{% endblock %}
+{% block content %}
 <div class="blog-banner-container">
 	<img class="blog-banner-image" alt="decorative image of an iconic building in Boston" src="/wp-content/themes/blades/images/drink/boston-wharf.jpg">
 	<div class='banner-overlay-wrapper'>
@@ -48,5 +51,6 @@
 	</section>
 
 </div> <!-- /wrapper -->
+{% endblock %}
 
 
