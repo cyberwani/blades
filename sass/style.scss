@@ -1596,13 +1596,7 @@ html.ie8 .blog-cron .media-block {
 
 	.xoxo {
 
-		@media (min-width: 500px) and (max-width: 959px){
-			@include media-grid(2, 20px);
-		}
-
-		@media (min-width: 960px){
-			@include media-grid(4, 60px);
-		}
+		
 
 		.widget-container {
 			@extend .media-block;
@@ -2251,6 +2245,14 @@ html.ie8 .about-person {
 body.error404 {
 	.ftr {
 		margin-top: 0;
+	}
+}
+
+.archive-blog-ftr {
+	.wrapper {
+		@media (min-width:600px){
+			@include ui-grid-3(33%, 33%, 33%);
+		}
 	}
 }
 

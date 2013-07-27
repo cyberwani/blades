@@ -1,7 +1,7 @@
 {% extends base %}
 {% block content %}
 <section id="archive-blog">
-	{% if title!="Blog"%}
+	{% if title %}
 		<div class="wrapper">
 			<hgroup><h1 class="archive-blog-h1">{{title}}</h1></hgroup>
 		</div>
@@ -29,5 +29,5 @@
 		</div><!-- wrapper -->
 	</div>
 </section><!-- archive-blog -->
-	{{sidebar}}
+	{% include "sidebar.twig" %}
 {% endblock %}

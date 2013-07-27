@@ -88,7 +88,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid #ccc;
   margin: 1em 0;
   padding: 0;
 }
@@ -444,7 +444,7 @@ button {
   zoom: 1;
   *display: inline;
   line-height: normal;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -475,7 +475,7 @@ button {
   background-position: 0 -15px;
 }
 .btn-small-light:focus, .btn-small:focus {
-  outline: 1px dotted #666666;
+  outline: 1px dotted #666;
 }
 .btn-small-light.active, .active.btn-small, .btn-small-light:active, .btn-small:active {
   -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0 2px 4px inset, rgba(0, 0, 0, 0.05) 0 1px 2px;
@@ -501,7 +501,7 @@ button {
   zoom: 1;
   *display: inline;
   line-height: normal;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -533,7 +533,7 @@ button {
   background-position: 0 -15px;
 }
 .btn-small-dark:focus {
-  outline: 1px dotted #666666;
+  outline: 1px dotted #666;
 }
 
 .btn-small-alt {
@@ -545,7 +545,7 @@ button {
   zoom: 1;
   *display: inline;
   line-height: normal;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -566,7 +566,7 @@ button {
   background-position: 0 -15px;
 }
 .btn-small-alt:focus {
-  outline: 1px dotted #666666;
+  outline: 1px dotted #666;
 }
 
 .btn-med-light, .btn, .btn-med, .btn-light {
@@ -578,7 +578,7 @@ button {
   zoom: 1;
   *display: inline;
   line-height: normal;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -609,7 +609,7 @@ button {
   background-position: 0 -15px;
 }
 .btn-med-light:focus, .btn:focus, .btn-med:focus, .btn-light:focus {
-  outline: 1px dotted #666666;
+  outline: 1px dotted #666;
 }
 .btn-med-light.active, .active.btn, .active.btn-med, .active.btn-light, .btn-med-light:active, .btn:active, .btn-med:active, .btn-light:active {
   -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0 2px 4px inset, rgba(0, 0, 0, 0.05) 0 1px 2px;
@@ -635,7 +635,7 @@ button {
   zoom: 1;
   *display: inline;
   line-height: normal;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -667,7 +667,7 @@ button {
   background-position: 0 -15px;
 }
 .btn-med-dark:focus, .btn-dark:focus {
-  outline: 1px dotted #666666;
+  outline: 1px dotted #666;
 }
 
 .btn-med-alt, .btn-alt {
@@ -679,7 +679,7 @@ button {
   zoom: 1;
   *display: inline;
   line-height: normal;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -700,7 +700,7 @@ button {
   background-position: 0 -15px;
 }
 .btn-med-alt:focus, .btn-alt:focus {
-  outline: 1px dotted #666666;
+  outline: 1px dotted #666;
 }
 
 .btn-large-light, .btn-large, .respond #submit {
@@ -712,7 +712,7 @@ button {
   zoom: 1;
   *display: inline;
   line-height: normal;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -743,7 +743,7 @@ button {
   background-position: 0 -15px;
 }
 .btn-large-light:focus, .btn-large:focus, .respond #submit:focus {
-  outline: 1px dotted #666666;
+  outline: 1px dotted #666;
 }
 .btn-large-light.active, .active.btn-large, .respond .active#submit, .btn-large-light:active, .btn-large:active, .respond #submit:active {
   -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0 2px 4px inset, rgba(0, 0, 0, 0.05) 0 1px 2px;
@@ -769,7 +769,7 @@ button {
   zoom: 1;
   *display: inline;
   line-height: normal;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -801,7 +801,7 @@ button {
   background-position: 0 -15px;
 }
 .btn-large-dark:focus {
-  outline: 1px dotted #666666;
+  outline: 1px dotted #666;
 }
 
 .btn-large-alt {
@@ -813,7 +813,7 @@ button {
   zoom: 1;
   *display: inline;
   line-height: normal;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -834,7 +834,7 @@ button {
   background-position: 0 -15px;
 }
 .btn-large-alt:focus {
-  outline: 1px dotted #666666;
+  outline: 1px dotted #666;
 }
 
 /* ============================================= */
@@ -1004,7 +1004,7 @@ body {
 .txt-defaults .h2, .l-txt .h2, .article-txt .h2, .article-txt-reverse .h2,
 .portfolio-content .h2, .txt-defaults h2, .l-txt h2, .article-txt h2, .article-txt-reverse h2,
 .portfolio-content h2 {
-  border-bottom: 1px dotted #cccccc;
+  border-bottom: 1px dotted #CCC;
   padding: 10px 0;
   margin-bottom: 20px;
 }
@@ -1026,8 +1026,8 @@ body {
 .txt-defaults .img-border, .l-txt .img-border, .article-txt .img-border, .article-txt-reverse .img-border,
 .portfolio-content .img-border {
   padding: 20px 0;
-  border-bottom: 1px dotted #cccccc;
-  border-top: 1px dotted #cccccc;
+  border-bottom: 1px dotted #CCC;
+  border-top: 1px dotted #CCC;
 }
 .txt-defaults .caption, .l-txt .caption, .article-txt .caption, .article-txt-reverse .caption,
 .portfolio-content .caption {
@@ -1092,8 +1092,8 @@ body {
 
 .inset {
   background-color: #161616;
-  border-top: 1px solid #222222;
-  border-bottom: 1px solid #222222;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
   padding: 30px 0;
 }
 
@@ -1310,7 +1310,7 @@ body {
   width: 100%;
   overflow: hidden;
   height: 350px;
-  border-bottom: 1px solid #222222;
+  border-bottom: 1px solid #222;
 }
 @media (min-width: 800px) {
   .cover,
@@ -1583,7 +1583,7 @@ html.ie8 .cover-overview {
 .hp-theme {
   *zoom: 1;
   padding: 20px 0;
-  border-bottom: 1px dotted #222222;
+  border-bottom: 1px dotted #222;
 }
 .hp-theme:after {
   content: "";
@@ -1796,7 +1796,7 @@ html.ie8 .cover-overview {
 .hp-tweets {
   *zoom: 1;
   padding: 30px 0;
-  border-top: 1px solid #222222;
+  border-top: 1px solid #222;
   text-align: center;
 }
 .hp-tweets:after {
@@ -2648,8 +2648,8 @@ html.touch .tile {
 .article-txt blockquote, .article-txt-reverse blockquote,
 .portfolio-content blockquote {
   background-color: #EEE;
-  border-left: 2px dotted white;
-  border-right: 2px dotted white;
+  border-left: 2px dotted #FFF;
+  border-right: 2px dotted #FFF;
   padding: 20px 30px 10px;
 }
 .article-txt blockquote p, .article-txt-reverse blockquote p,
@@ -2750,7 +2750,7 @@ html.touch .tile {
   width: 100%;
   display: block;
   padding: 10px;
-  border: 1px solid #cccccc;
+  border: 1px solid #CCC;
 }
 .respond code {
   color: #666;
@@ -3175,7 +3175,7 @@ html.touch .tile {
   width: 70px;
   height: 70px;
   background-color: #000;
-  border: 1px solid black;
+  border: 1px solid #000;
   -webkit-border-radius: 75px;
   -moz-border-radius: 75px;
   -ms-border-radius: 75px;
@@ -3259,7 +3259,7 @@ html.touch .tile {
 .jobs-pin:after {
   content: "\0020";
   display: block;
-  background: transparent url('../images/dev/covers/jobs-pin.png?1359581106') no-repeat 50% 50%;
+  background: transparent url('../images/dev/covers/jobs-pin.png?1371830809') no-repeat 50% 50%;
   position: relative;
   margin: auto;
   height: 16px;
@@ -3477,7 +3477,7 @@ body.error404 .ftr {
 @media print {
   * {
     background: transparent !important;
-    color: black !important;
+    color: #000 !important;
     /* Black prints faster: h5bp.com/s */
     box-shadow: none !important;
     text-shadow: none !important;
@@ -3504,7 +3504,7 @@ body.error404 .ftr {
 
   pre,
   blockquote {
-    border: 1px solid #999999;
+    border: 1px solid #999;
     page-break-inside: avoid;
   }
 

@@ -30,6 +30,10 @@
 	$next_query = array('post_type' => 'post', 'numberposts' => 1, 'post__not_in' => $sticky, 'offset' => ($page+1) * 6);
 	$data['blog_next'] = Timber::get_posts($next_query);
 
+	$data['tags'] = Timber::get_terms('tax=tags&orderby=count&number=20');
+	shuffle($data['tags']);
+	$data['tags'] = WPHelper::array_truncate($data['tags'], 10);
+
 	$next_page = $page + 1;
 	if ($page == 0){
 		$next_page = 2;

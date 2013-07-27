@@ -2894,50 +2894,6 @@ html.touch .tile {
 .archive-blog-ftr {
   padding: 60px 20px 20px;
 }
-@media (min-width: 500px) and (max-width: 959px) {
-  .archive-blog-ftr .xoxo {
-    margin-left: -20px;
-    *zoom: 1;
-  }
-  .archive-blog-ftr .xoxo:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  .archive-blog-ftr .xoxo .media-block, .archive-blog-ftr .xoxo .widget-container {
-    float: left;
-    padding-left: 20px;
-    width: 50%;
-  }
-  .archive-blog-ftr .xoxo .media-block:nth-child(2n+3), .archive-blog-ftr .xoxo .widget-container:nth-child(2n+3) {
-    clear: left;
-  }
-  .archive-blog-ftr .xoxo .media-block.n3, .archive-blog-ftr .xoxo .n3.widget-container {
-    clear: left;
-  }
-}
-@media (min-width: 960px) {
-  .archive-blog-ftr .xoxo {
-    margin-left: -60px;
-    *zoom: 1;
-  }
-  .archive-blog-ftr .xoxo:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  .archive-blog-ftr .xoxo .media-block, .archive-blog-ftr .xoxo .widget-container {
-    float: left;
-    padding-left: 60px;
-    width: 25%;
-  }
-  .archive-blog-ftr .xoxo .media-block:nth-child(4n+5), .archive-blog-ftr .xoxo .widget-container:nth-child(4n+5) {
-    clear: left;
-  }
-  .archive-blog-ftr .xoxo .media-block.n5, .archive-blog-ftr .xoxo .n5.widget-container {
-    clear: left;
-  }
-}
 .archive-blog-ftr .xoxo .widget-container {
   margin-bottom: 20px;
 }
@@ -3885,6 +3841,41 @@ html.touch .tile {
 
 body.error404 .ftr {
   margin-top: 0;
+}
+
+@media (min-width: 600px) {
+  .archive-blog-ftr .wrapper, .archive-blog-ftr .page-404 {
+    *zoom: 1;
+  }
+  .archive-blog-ftr .wrapper:after, .archive-blog-ftr .page-404:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .archive-blog-ftr .wrapper > .ui-block-1, .archive-blog-ftr .page-404 > .ui-block-1,
+  .archive-blog-ftr .wrapper > .ui-block.first,
+  .archive-blog-ftr .page-404 > .ui-block.first {
+    width: 31.83333%;
+    display: inline;
+    float: left;
+    margin-right: 1.75%;
+  }
+  .archive-blog-ftr .wrapper > .ui-block-2, .archive-blog-ftr .page-404 > .ui-block-2,
+  .archive-blog-ftr .wrapper > .ui-block.second,
+  .archive-blog-ftr .page-404 > .ui-block.second {
+    width: 31.83333%;
+    display: inline;
+    float: left;
+    margin-right: 1.75%;
+  }
+  .archive-blog-ftr .wrapper > .ui-block-3, .archive-blog-ftr .page-404 > .ui-block-3,
+  .archive-blog-ftr .wrapper > .ui-block.last,
+  .archive-blog-ftr .page-404 > .ui-block.last {
+    width: 31.83333%;
+    display: inline;
+    float: left;
+    margin-right: 0;
+  }
 }
 
 /* ============================================= */

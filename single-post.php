@@ -10,7 +10,9 @@
 
 		$data = Timber::get_context();
 		$pi = new TimberPost();
-		$pi->banner_image = PostMaster::get_image_path($pi->banner_image);
+		if (isset($pi->banner_image)){
+			$pi->banner_image = PostMaster::get_image_path($pi->banner_image);
+		}
 		$data['post'] = $pi;
 		$data['comments'] = get_comments(array('post_id' => $pi->ID, 'type' => 'comment'));
 		$data['respond'] = WPHelper::get_comment_form(null, $pi->ID);
