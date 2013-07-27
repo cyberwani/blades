@@ -1,7 +1,7 @@
 <?php
 
 		$data = Timber::get_context();
-
+		$data['wp_title'] = 'Upstatement - Portfolio';
 		//Moved this over from the homepage and renamed it. It's no longer needed there. 
 		function get_featured_portfolio($where, $count = 0){
 			$posts = Timber::get_posts('post_type=portfolio&numberposts=-1');

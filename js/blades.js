@@ -53,9 +53,7 @@ var upSite;
 			$(this).attr('data-original', source).attr('src', '/wp-content/themes/blades/images/dev/placeholder.gif');
 		});
 
-		$('img.lazy').lazyload({
-			effect : "fadeIn"
-		});
+		$('img.lazy').unveil();
 		
 		$('#comment').on('focus', function(e){
 			var $this = $(e.currentTarget);

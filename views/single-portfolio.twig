@@ -38,7 +38,7 @@
 					{% if layout.images %}
 						<div class="portfolio-image-set image-count-{{layout.images|length}}">
 							{% for image in layout.images %}
-								<img class="lazy" data-original="{{image.src|tojpg}}" src="/wp-content/themes/blades/images/dev/placeholder.gif" alt="{{image.alt_text|raw}}"/>
+								<img class="lazy" data-original="{{image.src|tojpg}}" data-src="{{image.src|tojpg}}" src="/wp-content/themes/blades/images/dev/placeholder.gif" alt="{{image.alt_text|raw}}"/>
 								<p>{{image.caption}}</p>
 							{% endfor %}
 						</div>

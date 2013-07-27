@@ -3,7 +3,7 @@
 // Description: The Upstatement Theme. WordPress using MVC pattern for better(ish) management and control
 // Author: Upstatement
 // Template: boilerplate
-// 
+//  
 
 //  ## Bring in all Compass Helpers 
 @import "partials/base";
@@ -20,7 +20,7 @@
 // @import "project/tabs";
 // @import "project/modals";
 // @import "project/tooltips";
-
+@import "partials/simple-share";
 
   
 /* ============================================= */
@@ -530,6 +530,8 @@ body {
 
 .ftr {
 	text-align: center;
+	font-family: $proxima;
+	font-size:15px;
 	background-color: #000;
 	padding: 40px 0;
 	margin-top: 100px;
@@ -1390,6 +1392,10 @@ html.ie8 .cover-overview{
 	width: 100%;
 	border: 10px solid #1d1d1d;
 	@include trans;
+	.media-block:hover & {
+		border-color:lighten(#1d1d1d, 5);
+		@include box-shadow(0px 0px 5px rgba(black, .3));
+	}
 }
 
 .tile-h3 {

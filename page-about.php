@@ -18,6 +18,7 @@
 	$data['post'] = $pi;
 	$people = get_field('person', $pi->ID);
 	$data['people'] = array();
+	$data['wp_title'] = 'About Upstatement';
 	foreach($people as $person){
 		$person = PHPHelper::array_to_object($person);
 		if (strlen($person->image)){
@@ -28,4 +29,4 @@
 		}
 		$data['people'][] = $person;
 	}
-	render_twig('page-about.twig', $data);
+	Timber::render('page-about.twig', $data);

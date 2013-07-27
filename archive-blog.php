@@ -10,13 +10,12 @@
 	if ($api){
 		$data['base'] = 'base-blank.twig';
 	} 
-
+	$data['wp_title'] = 'Upstatement - Blog';
 	$page = 0;
 	if ($wp_query->query_vars['paged']){
 		$page = $wp_query->query_vars['paged'];
 	}
 	
-	$data['title'] = "Blog";
 	$sticky = get_option('sticky_posts');
 	$sticky = PHPHelper::array_truncate($sticky, 4);
 	if ($page == 0){

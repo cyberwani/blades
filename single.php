@@ -11,5 +11,5 @@
 		$data = Timber::get_context();
 		$data['post'] = new TimberPost();
 		$data['sidebar'] = Timber::get_sidebar('sidebar.php');
-		render_twig('single.twig', $data);
+		Timber::render('single.twig', $data);
 
