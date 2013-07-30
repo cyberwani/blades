@@ -45,15 +45,16 @@ var upSite;
 		$('.cover-overview').localScroll();
 
 		/* lazy load stuff*/
-		$('section.article-content img').addClass('lazy');
-
+		//$('section.article-content img').addClass('lazy');
+		/*
 		$('section.article-content img.lazy').each(function(index, value){
 			var source = $(this).attr('src');
 			// console.log(source);
 			$(this).attr('data-original', source).attr('src', '/wp-content/themes/blades/images/dev/placeholder.gif');
 		});
+		*/
 
-		$('img.lazy').unveil();
+		$('img[data-src]').unveil();
 		
 		$('#comment').on('focus', function(e){
 			var $this = $(e.currentTarget);
