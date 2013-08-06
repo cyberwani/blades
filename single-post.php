@@ -7,7 +7,6 @@
 	}
 	$data['post'] = $pi;
 	$data['wp_title'] = $pi->get_title() . ' - Upstatement Blog';
-	$data['comments'] = get_comments(array('post_id' => $pi->ID, 'type' => 'comment'));
-	$data['respond'] = WPHelper::get_comment_form(null, $pi->ID);
+	$data['comment_form'] = InkwellComments::get_dsq_comments($pid);
 	$data['sidebar'] = Timber::get_sidebar();
 	Timber::render('single.twig', $data);

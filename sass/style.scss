@@ -1718,7 +1718,7 @@ html.ie8 .blog-cron .media-block {
 /* ============================================= */
 
 .comments-mod {
-	max-width: 500px;
+	max-width: 600px;
 	margin: 70px auto 0;
 }
 
@@ -1823,8 +1823,7 @@ html.ie8 .blog-cron .media-block {
 
 	// This refers to the grouping of extra fields
 	// in addition to the comment textarea
-	#respond {
-		display: none;
+	#respond { 
 	}
 
 	.logged-in-as {

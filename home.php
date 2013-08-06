@@ -1,5 +1,4 @@
 <?php
-
 	function get_homepage_tiles($where, $count = 0){
 		$posts = Timber::get_posts('post_type=portfolio&numberposts=-1');
 		$arr = array();

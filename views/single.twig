@@ -1,7 +1,7 @@
 {% extends "base.twig" %}
 {% block content %}
-{% if post.banner_image.src %}
-	<img src="{{post.banner_image.src}}" class="blog-banner-image" alt="{{post.post_title}}" />
+{% if post.banner_image %}
+	<img src="{{post.banner_image}}" class="blog-banner-image" alt="{{post.post_title}}" />
 {% endif %}
 {% if post.thumb_src %}
 	<meta property="og:image" content="{{post.thumbnail.src}}" />
@@ -30,7 +30,7 @@
 								{{post.comments|length}} Comments
 						{% endif %}
 					</h3>
-					{{ respond }}
+					{{ comment_form }}
 				</section>
 
 				<section class="comments">
