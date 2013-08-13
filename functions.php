@@ -3,7 +3,9 @@
 	$has_children = array('page');
 
 	require_once('wp/acf-blog-options.php');
-	require_once('wp/portfolio-entry.php');
+	if (class_exists('Timber')){
+		require_once('wp/portfolio-entry.php');
+	}
 	require_once('wp/theme.php');
 	add_theme_support('menus');
 	add_theme_support( 'post-thumbnails' );
