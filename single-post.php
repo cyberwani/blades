@@ -7,6 +7,6 @@
 	}
 	$data['post'] = $pi;
 	$data['wp_title'] = $pi->get_title() . ' - Upstatement Blog';
-	$data['comment_form'] = InkwellComments::get_dsq_comments($pid);
+	$data['comment_form'] = InkwellComments::get_dsq_comments($pi->ID);
 	$data['sidebar'] = Timber::get_sidebar();
 	Timber::render('single.twig', $data);
