@@ -2,8 +2,15 @@
 
 	$data = Timber::get_context();
 
-	/* Get the billboarded tiles and stick them on the homepage */
 	$data['wp_title'] = 'Upstatement - '.get_bloginfo('description');
+
+	/* organzie the hero images */
+	$data['heros'] = get_field('billboards', 'options');
+	foreach($data['heros'] as &$slide){
+		$slide['post'] = new TimberPost($slide['portfolio'][0]);
+	}
+
+	/* organize the promos */
 	$data['promos'] = array();
 	$promos = get_field('homepage_promos', 'option');
 	foreach($promos as $promo){
@@ -13,11 +20,7 @@
 		}
 		$data['promos'][] = $promo;
 	}
-	/* Get the stuff for the form */
-	$data['form'] = new TimberPost(27);
-	$data['form']->actions = array(
-			array('link'=>'#url:trigger-form-contact', 'name' => 'Hire us for your project')
-	);
+
 	$data['blogs'] = Timber::get_posts('post_type=post&numberposts=4');
 
 	Timber::render('home.twig', $data);

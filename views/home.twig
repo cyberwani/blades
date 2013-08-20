@@ -2,28 +2,17 @@
 {% block content %}
 <div class="cover">
 	<div class="cover-slider">
-		<div id="slide-bglobe-2" class="slide">
-			<h3 class="slider-message-hidden"><a href="/portfolio/the-boston-globe/"><span class="br">We make smart editorial sites </span><span class="br">like the responsive <span class="highlight">BostonGlobe.com</span></a></h3>
+		{% for slide in heros %}
+		<div id="slide-{{slide.post.slug}}" class="slide">
+			<h3 class="slider-message-hidden"><a href="{{slide.post.permalink}}">{{slide.intro}}</a></h3>
 		</div>
-
-		<div id="slide-spark" class="slide">
-			<h3 class="slider-message-hidden"><a href="/portfolio/spark-camp"><span class="br">We design cool identities for </span><span class="br">clients we believe in like <span class="highlight">Spark Camp</span></a></h3>
-		</div>
-
-		<div id="slide-do" class="slide">
-			<h3 class="slider-message-hidden"><a href="/portfolio/the-daily-orange"/><span class="br">We craft great reading experiences </span><span class="br">for newspapers like <span class="highlight">The Daily Orange</span></a></h3>
-		</div>
-
-		<div id="slide-glypho" class="slide">
-			<h3 class="slider-message-hidden"><a href="/portfolio/glyphosaurus"><span class="br">We create homespun apps like </span><span class="br"><span class="highlight">Glyphosaurus</span>, our letter-finding resource</a></h3>
-		</div>
-	</div><!-- slider -->
-
+		{% endfor %}
+	</div>
 
 	<div class="cover-overview">
 		<div class="wrapper">
-			<h1 class="h1"><span id="cover-msg" class="cover-msg">Upstatement makes smart editorial sites like the responsive BostonGlobe.com</span></h1>
-		</div>	
+			<h1 class="h1"><span id="cover-msg" class="cover-msg">{{heros[0].intro}}</span></h1>
+		</div>
 	</div>
 
 	<div class="slidenav">
