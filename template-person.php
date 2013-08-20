@@ -18,6 +18,7 @@ Template Name: Person
 	$data = Timber::get_context();
 	$pi = new TimberPost();
 	$data['post'] = $pi;
+	$data['wp_title'] = $pi->title() . ' - About Upstatement';
 	$data['post']->links = get_field('links');
 	foreach($data['post']->links as &$link){
 		$link['class'] = 'ss-social';
