@@ -3,9 +3,9 @@
 // Description: The Upstatement Theme. WordPress using MVC pattern for better(ish) management and control
 // Author: Upstatement
 // Template: boilerplate
-//  
+//
 
-//  ## Bring in all Compass Helpers 
+//  ## Bring in all Compass Helpers
 @import "partials/base";
 
 //  ## Base CSS 
@@ -15,12 +15,11 @@
 @import "project/lists";
 
 //  ## Components 
-@import "project/buttons";  
+@import "project/buttons";
 // @import "project/dropdowns";
 // @import "project/tabs";
 // @import "project/modals";
 // @import "project/tooltips";
-@import "partials/simple-share";
 
   
 /* ============================================= */
@@ -792,10 +791,10 @@ html.ie8 .cover-overview{
 
 
 /* Homepage Slides */
-#slide-glypho 	{	background-image: url($cdn_theme_path+'images/dev/covers/glypho-cover.jpg'); 		}
-#slide-spark 	{ 	background-image: url($cdn_theme_path+'images/dev/covers/spark-cover.jpg'); 		}
-#slide-bglobe-2 {	background-image: url($cdn_theme_path+'images/dev/covers/bglobe-cover-3.jpg');	}
-#slide-do 		{	background-image: url($cdn_theme_path+'images/dev/covers/do-cover-2.jpg');		}
+#slide-glyphosaurus 	{	background-image: url($cdn_theme_path+'images/dev/covers/glypho-cover.jpg'); 		}
+#slide-spark-camp 	{ 	background-image: url($cdn_theme_path+'images/dev/covers/spark-cover.jpg'); 		}
+#slide-boston-globe {	background-image: url($cdn_theme_path+'images/dev/covers/bglobe-cover-3.jpg');	}
+#slide-the-daily-orange		{	background-image: url($cdn_theme_path+'images/dev/covers/do-cover-2.jpg');		}
 
 
 /* About Page Slides */
@@ -1046,13 +1045,13 @@ html.ie8 .cover-overview{
 		// &.john {
 		// 	background: url(images/dev/john-boilard.jpg) no-repeat center center; 
 		// 	@include background-size(cover);
-		// }	
-		
+		// }
+
 		background-repeat:no-repeat;
 		background-position:top center;
 		@include background-size(cover);
 		-webkit-background-size:cover !important;
-		
+
 	} // bio-content media query	
 }
 
@@ -1077,6 +1076,10 @@ html.ie8 .cover-overview{
 
 	@media (min-width: 1200px) {
 		margin-right: 10%;
+	}
+
+	.ss-icon {
+		color:inherit;
 	}
 }
 
@@ -2044,6 +2047,7 @@ html.ie8 .about-person {
 		.face { opacity: 1; }
 	}
 }
+
 
 .about-person-title {
 	font-size: 14px;
