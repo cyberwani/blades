@@ -6,5 +6,19 @@
         <nav id="access" class="hdr-nav" role="navigation">
             {{wp_nav_menu}}
         </nav><!-- #access -->
+        <nav class="menu-test">
+
+        	{% for item in menu_test.items %}
+        		<li><a href="{{item.permalink}}">{{item.title}}</a></li>
+        			{% if item.get_children|length %}
+        			<ul class="children">
+        				{% for child in item.get_children %}
+        					<li><a href="{{child.link}}">{{child.title}}</a></li>
+        				{% endfor %}
+        			</ul>
+        			{% endif %}
+        		</li>
+        	{% endfor %}
+        </nav>
     </div>
 </header>

@@ -9,18 +9,15 @@
 	$data['base'] = 'base.twig';
 	if ($api){
 		$data['base'] = 'base-blank.twig';
-	} 
+	}
 
 	$page = 0;
 	if ($wp_query->query_vars['paged']){
 		$page = $wp_query->query_vars['paged'];
 	}
-	
+
 	$term = new TimberTerm();
 	$data['title'] = "Archives for ".$term->name;
-	if ($page == 0){
-		
-	}
 
 	$data['blog_cron'] = Timber::get_posts();
 
@@ -35,8 +32,8 @@
 	$next_page = $page + 1;
 	if ($page == 0){
 		$next_page = 2;
-	}	
-	
+	}
+
 	if ($api){
 		Timber::render('archive-blog-loop.twig', $data);
 	} else {

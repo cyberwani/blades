@@ -35,7 +35,7 @@
 					<div class="hp-theme-tiles ui-block-2">
 						<article class="hp-theme-tile-grid">
 							{% for square in promo.squares %}
-							<a class="media-block" href="{{square.path}}">
+							<a class="media-block" href="{{square.permalink}}">
 								<img src="{{square.thumbnail.src|resize(200, 200)}}" alt="{{square.title}}"/>
 								<h4 class="tile-h4 a11y-only">{{square.title}}</h4>
 							</a>
@@ -56,7 +56,7 @@
 		<section class="hp-blog-list">
 			{% for blog in blogs %}
 				<article class="media-block blog blog-small" id="post-{{blog.post_name}}">
-					<h3 class="h3"><a href="{{blog.path}}">{{blog.title}}</a></h3>
+					<h3 class="h3"><a href="{{blog.link}}">{{blog.title}}</a></h3>
 					<p class="blog-author"><span>By</span> {{blog.author.name}}</p>
 					<p class="txt txt-dark">{{blog.get_preview(25, true, 'More &raquo;')}}</p>
 				</article>
@@ -71,5 +71,6 @@
 		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 		</div> <!-- /tweet-mod -->
 	</section>
+
 </div><!-- /hp-feeds -->
 {% endblock %}

@@ -33,6 +33,10 @@
 				</hgroup>
 			</div> <!-- /site-width -->
 
+			<div class="portfolio-content-before">
+				{% include ["portfolio/"~post.slug~"-before.twig", "portfolio/"~post.slug~".twig"] ignore missing %}
+			</div>
+
 			<div class="portfolio-content">
 				{% for layout in post.get_layouts %}
 					{% if layout.images %}
@@ -62,6 +66,10 @@
 					{% endif %}
 				{% endfor %}
 			</div> <!-- /portfolio-content-->
+
+			<div class="portfolio-content-after">
+				{% include ["portfolio/"~post.slug~"-after.twig"] ignore missing %}
+			</div>
 		</section> <!-- /portfolio-layouts -->
 
 		<section class="comments">

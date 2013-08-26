@@ -8,10 +8,28 @@
 	add_theme_support('menus');
 	add_theme_support( 'post-thumbnails' );
 
+	add_action( 'widgets_init', 'arphabet_widgets_init' );
+
+	function arphabet_widgets_init() {
+
+	register_sidebar( array(
+		'name' => 'Home right sidebar',
+		'id' => 'home_right_1',
+		'before_widget' => '<div>',
+		'after_widget' => '</div>',
+		'before_title' => '<h2 class="rounded">',
+		'after_title' => '</h2>',
+	) );
+}
+
 	if (function_exists('register_options_page')){
 		register_options_page('Look & Feel');
 		register_options_page('Promos');
 		register_options_page('Portfolio Entries');
+	}
+
+	function say_what($message = '', $suffix = ''){
+		echo 'say '.$message . ' and ' . $suffix;
 	}
 
 	function get_post_info($pid = 0){
@@ -27,9 +45,9 @@
 	});
 	*/
 	add_action('ups_cron_hour', 'categorize_tweets');
-	
+
 	//categorize_tweets();
-	
+
 	function categorize_tweets(){
 		global $wpdb;
 		$query = "SELECT post_title, ID FROM $wpdb->posts WHERE menu_order = '0' AND post_type = 'tweets'";

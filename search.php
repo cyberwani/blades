@@ -24,7 +24,7 @@ get_header(); ?>
 					<?php get_search_form(); ?>
 <?php endif; ?>
 <?php
-	render_twig('archive-blog.html', $data);
+	Timber::render('archive-blog.html', $data);
 ?>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

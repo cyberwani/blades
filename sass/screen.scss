@@ -7,7 +7,7 @@
 
 //  ## Bring in all Compass Helpers
 @import "partials/base";
-
+ 
 //  ## Base CSS 
 // @import "project/type";
 // @import "project/forms";
@@ -1851,6 +1851,11 @@ html.ie8 .blog-cron .media-block {
 /* ============================================= */
 
 // these are styles for how to display groups of images. 
+
+.video-mod {
+	@include video(); 
+	margin-bottom:20px;
+}
 .portfolio-layouts {
 
 	@include pie-clearfix;
@@ -1861,14 +1866,22 @@ html.ie8 .blog-cron .media-block {
 		> img {
 			margin: 50px 0;
 		}
+		@media (min-width:900px){
+			&+.portfolio-image-set {
+				> img {
+					margin-top:-50px;
+				}
+			}
+		}
 	}
+
 
 	@media (max-width: 899px){
 		.image-count-1, .image-count-2, .image-count-3 {
 			img {
 				width: 100%;
 				float: left;
-			}	
+			}
 		}
 	}
 

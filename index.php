@@ -1,14 +1,42 @@
 <?php
-/**
- * The main template file.
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query. 
- * E.g., it puts together the home page when no home.php file exists.
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Boilerplate
- * @since Boilerplate 1.0
- */
+
+	$data = Timber::get_context();
+	global $wp_query;
+	$api = false;
+	if (isset($_GET['api'])){
+		$api = $_GET['api'];
+	}
+	$data['base'] = 'base.twig';
+	if ($api){
+		$data['base'] = 'base-blank.twig';
+	}
+
+	$page = 0;
+	if ($wp_query->query_vars['paged']){
+		$page = $wp_query->query_vars['paged'];
+	}
+
+	$term = new TimberTerm();
+	$data['title'] = "Archives for ".$term->name;
+
+	$data['blog_cron'] = Timber::get_posts();
+
+
+	$data['tags'] = Timber::get_terms(array(
+		'tax' => 'tags',
+		'orderby' => 'count'
+	));
+	shuffle($data['tags']);
+	$data['tags'] = WPHelper::array_truncate($data['tags'], 10);
+
+	$next_page = $page + 1;
+	if ($page == 0){
+		$next_page = 2;
+	}
+
+	if ($api){
+		Timber::render('archive-blog-loop.twig', $data);
+	} else {
+		$data['sidebar'] = Timber::get_sidebar('sidebar.php');
+		Timber::render('archive-blog.twig', $data);
+	}

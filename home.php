@@ -14,7 +14,7 @@
 	$data['promos'] = array();
 	$promos = get_field('homepage_promos', 'option');
 	foreach($promos as $promo){
-		$promo = Timber::get_post($promo->ID);
+		$promo = new TimberPost($promo->ID);
 		foreach($promo->squares as &$square){
 			$square = new TimberPost($square);
 		}
