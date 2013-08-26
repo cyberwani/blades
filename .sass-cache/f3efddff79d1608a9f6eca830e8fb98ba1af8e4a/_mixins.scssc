@@ -1,0 +1,1151 @@
+3.2.7 (Media Mark)
+9d468450ed3fffeeb2e325f0916df37b217253c4
+o:Sass::Tree::RootNode
+:@template"á0// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+//	Mixins							 			   
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+// Layout container width for use as universal variable with em calculators
+$context: 960 !default;
+
+
+// Flexible Grid Propotion Calculator
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Figuring out the ideal percentage of a responsive container.
+// Based on the equation target / context = result.
+// Math usually based on values takne from a static design.
+// WHY: Math is easier this way.
+// REF: http://www.lukew.com/ff/entry.asp?1167
+// USE: width: resp(300px);
+@function resp($target, $context){
+	@return percentage($target / $context); 
+}
+
+// Em Calculator
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Filling psuedo-clases :before, :after with blank content
+// WHY: Psuedo classes won't appear unless you fill them with content.
+// This mixin includes the difficult-to-recall cross-browser character code for "blank". 
+// USE: @include content;
+@function em($px, $doc:13){
+	@return #{($px/$doc)}em;	
+}
+
+// Content
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Filling psuedo-clases :before, :after with blank content
+// WHY: Psuedo classes won't appear unless you fill them with content.
+// This mixin includes the difficult-to-recall cross-browser character code for "blank". 
+// USE: @include content;
+@mixin content($content: \0020) {
+	content: "#{$content}";
+}
+
+// Transitions
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Quick application of transition properties
+// WHY: This are our most common defaults
+// USE: @include trans;
+// USE: @include trans(.1s, opacity, linear);
+@mixin trans($trans-time: .2s, $trans-property: all, $trans-function: ease-in) {
+	@include single-transition(#{$trans-property}, #{$trans-time}, #{$trans-function}, false);
+}
+
+// User Select
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Making text unselectable by the user
+// WHY: Sometimes the cursor highlights text on clickable elements (in particular buttons),
+// which can confuse the user intent. This is especially true on touch interfaces. 
+// This mixin is an easy cross-browser way to repress text selection.
+// USE: @include user-select;
+@mixin user-select($user-select: none) {
+	-webkit-user-select: #{$user-select};
+	-khtml-user-select: #{$user-select};
+	-moz-user-select: #{$user-select};
+	-ms-user-select: #{$user-select};
+	-o-user-select: #{$user-select};
+	user-select: #{$user-select};
+}
+
+
+// Reset Clearfix
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Removing pie-clearfix from an element after it's been applied
+// WHY: Hard to remember attribute combo. Helpful in responsive layouts.
+// USE: @include reset-clearfix;
+@mixin reset-clearfix {
+	&:after {
+		display: initial;
+		clear: none;
+	}
+}
+
+
+// Triangles
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Quickly making CSS triangles
+// WHY: It's annoying to remember how these attribute work. 
+// Plus CSS triangles are really flexible and awesome.
+// USE: @include triangle(right, 6px, #000, .68);
+@mixin triangle($tri-orientation: down, $tri-width: 3px, $tri-color: #666, $mult:1) {
+	@include rotate(.1deg);
+	
+	@if $tri-orientation == "up" or $tri-orientation == "top" {
+		border-left: $tri-width*$mult solid transparent;
+		border-right: $tri-width*$mult solid transparent;
+		border-bottom: $tri-width solid $tri-color;
+	}
+
+	@if $tri-orientation == "down" or $tri-orientation == "bottom" {
+		border-left: $tri-width*$mult solid transparent;
+		border-right: $tri-width*$mult solid transparent;
+		border-top: $tri-width solid $tri-color;
+	}
+
+	@if $tri-orientation == "left" {
+		border-top: $tri-width*$mult solid transparent;
+		border-bottom: $tri-width*$mult solid transparent;
+		border-right: $tri-width solid $tri-color;
+		border-left:0px solid transparent;
+	}
+
+	@if $tri-orientation == "right" {
+		border-top: $tri-width*$mult solid transparent;
+		border-bottom: $tri-width*$mult solid transparent;
+		border-left: $tri-width solid $tri-color;
+		border-right:0px solid transparent;
+	}
+}
+
+
+// Absolute Positioning
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Quickly setting the top, right, left, and bottom positions of an absolutely positioned element
+// WHY: It's verbose to write everytime in CSS
+// USE: @include absolute(0 0 10px 0);
+@mixin absolute($coordinates: n n n n) {
+
+  $top: nth($coordinates, 1);
+  $right: nth($coordinates, 2);
+  $bottom: nth($coordinates, 3);
+  $left: nth($coordinates, 4);
+
+  position: absolute;
+
+  @if $top == auto or $top == a {
+    top: auto;
+  }
+  // Print nothing if we write an "n" or "none"
+  @else if $top == n or $top == none {
+  }
+  @else {
+    top: $top;
+  }
+
+  @if $right == auto or $right == a {
+    right: auto;
+  }
+  // Print nothing if we write an "n" or "none"
+  @else if $right == n or $right == none {
+  }
+  @else {
+    right: $right;
+  }
+
+  @if $bottom == auto or $bottom == a {
+    bottom: auto;
+  }
+  // Print nothing if we write an "n" or "none"
+  @else if $bottom == n or $bottom == none{
+  }
+  @else {
+    bottom: $bottom;
+  }
+
+  @if $left == auto or $left == a {
+    left: auto;
+  }
+  // Print nothing if we write an "n" or "none"
+  @else if $left == n or $left == none {
+  }
+  @else {
+    left: $left;
+  }
+}
+
+
+@mixin unabsolute {
+	position: static;
+	top: auto;
+	right: auto;
+	bottom: auto;
+	left: auto;
+}
+
+
+// Responsive Video
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Giving yourself a responsive video that maintains its aspect ratio 
+// WHY: Annoying to remember/lookup
+// REF: http://webdesignerwall.com/tutorials/css-elastic-videos
+// USE: @include video;
+
+@mixin video($aspect: wide) {
+
+	@if $aspect == wide or $aspect == cinema or $aspect == 16/9 {
+		$aspect: 56.25%;
+	}
+	@else if $aspect == tv or $aspect == 4/3 {
+		$aspect: 75%;
+	}
+
+    position: relative;
+    padding-bottom: $aspect;
+    padding-top: 30px;
+    height: 0;
+    iframe,  
+    object,  
+    embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
+}
+
+
+// Ellipsis
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Truncating text with an ellipsis the CSS way
+// WHY: It's hard to recall using this combination of attributes
+// USE: @include ellipsis;
+@mixin ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+
+// Placeholder Text
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Styling placeholder text color states (default, hover, focus) 
+// WHY: Provides a shortcut for writing the code, which is necessarily long
+// because selectors cannot be combined. Also a cross-browser solution.
+// USE: @include placholder(#999, #999, #222);
+@mixin placeholder($default: inherit, $hover: $default, $focus: $default){
+	// You have to declare these separately in order to work
+	&::-webkit-input-placeholder {
+	    color: $default;
+	}
+	&:-moz-placeholder {
+	    color: $default;
+	}
+	&:hover::-webkit-input-placeholder {
+	    color: $hover;
+	}
+	&:hover:-moz-placeholder {
+	    color: $hover;
+	}
+	&:focus::-webkit-input-placeholder {
+	    color: $focus;
+	}
+	&:focus:-moz-placeholder {
+	    color: $focus;
+	}
+}
+	
+
+// SVG Fallback Pattern
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Setting PNG fallbacks for SVG background images
+// WHY: Saves time and typing and is guaranteed to work across devices 
+// NOTE 1: You still need to set the display (inline-block or block) 
+// and a height/width for the container
+// NOTE 2: "image-url" is a helper that automatically creates a relative link to the _img folder
+// from wherever it's called. This function is built-in to Compass. It's rare that you'll need
+// change the base folder (_img) but it can be done in the config.rb file in the root 
+// REF: http://compass-style.org/reference/compass/helpers/urls
+// USE: @include svg(imageName);
+
+@mixin svg($image) {
+	// Variables
+	$path: "http://cloudfront.upstatement.com/wp-content/themes/blades/images/icons/";
+	$svg: $path + $image + ".svg";
+	$png: $path + $image + ".png";
+	$ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+ image-url($png) +"', sizingMethod='scale')";
+
+	// Universal properties
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-image: image-url($png);
+
+	// Fallback pattern
+	.no-svg & {
+		background-image: image-url($png);
+		// Makes sure that image scales if necessary, works for IE9
+		@include background-size(cover);
+		filter: $ms-filter;
+		-ms-filter: $ms-filter;
+	}
+	.svg & {
+		background-image: image-url($svg);
+	}
+} // svg
+
+
+// RGBA Background Fallback Pattern
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Setting safe fallbacks for RGBA background colors (black & white only)
+// WHY: Saves time and typing; guaranteed to work across devices 
+// USE: @include bg(.5, black);
+
+@mixin bg($color: white, $alpha: .1) {
+	// Turn decimal into whole number
+	$a-integer: $alpha * 100;
+
+
+	@if $color == transparent {
+		background-color: transparent;
+		.no-rgba & {
+			background-color: transparent;
+		}
+	}
+	@else {
+		background-color: $color;
+
+		@if $color == white {
+			background-color: rgba(255,255,255,$alpha);
+		}
+		@else {
+			background-color: rgba(0,0,0,$alpha);
+		}
+
+		.no-rgba & {
+			background: transparent image-url('bg/#{$color}-#{$a-integer}.png') 50% 50% repeat;
+		}
+	}
+}
+
+
+// FOUT: Flash of Unstyled Type
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Making text appear on the page only after webfonts have loaded.
+// Doesn't work without the hooks provided by using Google Webfont Loader (see: snips.html).
+// WHY: Who wants to write this same six lines of code over and over?
+// USE: @include fout;
+@mixin fout {
+	.wf-loading & {
+		visibility: hidden;
+	}
+	.wf-active &,
+	.wf-inactive & {
+		visibility: visible;
+	}	
+}
+
+// Retina Background Images
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Serving larger background images when the user agent has a retina display 
+// WHY: Because it's a long list of hard-to-remember proprietary code
+// REF: Idea originates here: http://37signals.com/svn/posts/3271-easy-retina-ready-images-using-scss
+// USE: @include retina(image.png, 8px, 10px);
+
+@mixin retina($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.1),
+         (-o-min-device-pixel-ratio: 2.1/2),
+         (-webkit-min-device-pixel-ratio: 1.1),
+         (min-device-pixel-ratio: 1.1),
+         (min-resolution: 96dpi) {
+    // on retina, use image that's scaled by 2
+	background-image: $image;
+	@include background-size($width $height);
+  }
+}
+
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+//
+// Sprites	
+//
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+
+// Let Compass make Sprites for us
+// http://compass-style.org/help/tutorials/spriting/
+@import "compass/utilities/sprites/base";
+
+// Make a sprite from all the images in the "_img > sprite" folder
+$sprite-layout:horizontal;
+$sprite-sprite-dimensions:true;
+@import "sprite/*.png";
+@include all-sprite-sprites;
+
+//
+// Retina Sprites 
+//
+
+// UNCOMMENT TO ENABLE RETINA SPRITES
+// Place all your retina images in retina folder
+
+// Make a sprite from all the images in the "_img > retina" folder
+// $retina-layout:horizontal;
+// @import "retina/*.png";
+// @include all-retina-sprites; 
+
+// .sprite-sprite {
+// 	@include retina($retina-sprites, 8px, 10px);		
+// }
+
+
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+//
+// Paul Irish HTML5 Helpers	
+//
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+// Image replacement
+@mixin ir { 
+	display: block; 
+	text-indent: -999em; 
+	overflow: hidden; 
+	background-repeat: no-repeat; 
+	text-align: left; 
+	direction: ltr; 
+}
+
+// Hide for both screenreaders and browsers
+//   css-discuss.incutio.com/wiki/Screenreader_Visibility
+@mixin hidden { 
+	display: none; 
+	visibility: hidden; 
+} 
+
+// Hide only visually, but have it available for screenreaders 
+//   www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden
+@mixin visuallyhidden { 
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px); 
+}
+
+// Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+// Hide visually and from screenreaders, but maintain layout
+@mixin invisible { 
+	visibility: hidden; 
+}:@has_childrenT:@options{ :@children[Ao:Sass::Tree::CommentNode
+:
+@type:silent:@value["8/* ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ */;@;	[ :
+@lineio;
+
+;;;["/*	Mixins							 			    */;@;	[ ;io;
+
+;;;["8/* ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ */;@;	[ ;i
+o;
+
+;;;["S/* Layout container width for use as universal variable with em calculators */;@;	[ ;io:Sass::Tree::VariableNode:@guarded"!default:
+@expro:Sass::Script::Number:@numerator_units[ :@original"960;i¿;@:@denominator_units[ ;i:
+@name"context;@;	[ ;io;
+
+;;;["z/* Flexible Grid Propotion Calculator
+ * ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+ * FOR: Figuring out the ideal percentage of a responsive container.
+ * Based on the equation target / context = result.
+ * Math usually based on values takne from a static design.
+ * WHY: Math is easier this way.
+ * REF: http://www.lukew.com/ff/entry.asp?1167
+ * USE: width: resp(300px); */;@;	[ ;io:Sass::Tree::FunctionNode;"	resp;T;@;	[o:Sass::Tree::ReturnNode	;o:Sass::Script::Funcall:@keywords{ ;"percentage;@:@splat0;i:
+@args[o:Sass::Script::Operation
+:@operand2o:Sass::Script::Variable	:@underscored_name"context;"context;@;i:@operand1o;	; "target;"target;@;i;@:@operator:div;i;@;	[ ;i;0;i;[[o;; "target;"target;@0[o;; "context;"context;@0o;
+
+;;;["@/* Em Calculator
+ * ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+ * FOR: Filling psuedo-clases :before, :after with blank content
+ * WHY: Psuedo classes won't appear unless you fill them with content.
+ * This mixin includes the difficult-to-recall cross-browser character code for "blank". 
+ * USE: @include content; */;@;	[ ;io;;"em;T;@;	[o;	;o: Sass::Script::Interpolation:@aftero:Sass::Script::String	;:identifier;"em;@;i#:@originally_textF:	@mido;
+;o;	; "doc;"doc;@;i#;!o;	; "px;"px;@;i#;@;";#;i#:@whitespace_after0;@:@before0;i#:@whitespace_beforei;@;	[ ;i#;0;i";[[o;; "px;"px;@0[o;; "doc;"doc;@o;;[ ;"13;i;@;@;i"o;
+
+;;;[":/* Content
+ * ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+ * FOR: Filling psuedo-clases :before, :after with blank content
+ * WHY: Psuedo classes won't appear unless you fill them with content.
+ * This mixin includes the difficult-to-recall cross-browser character code for "blank". 
+ * USE: @include content; */;@;	[ ;i&o:Sass::Tree::MixinDefNode;"content;T;@;	[o:Sass::Tree::PropNode;["content;o:&Sass::Script::StringInterpolation
+;%o;&	;:string;" ;@;i-;)o;	; "content;"content;@;i-;@;+o;&	;;0;" ;@;i-;i-:@prop_syntax:new;@:
+@tabsi ;	[ ;i-;0;i,;[[o;; "content;"content;@o;&	;;';"
+\0020;@;i,o;
+
+;;;["Â/* Transitions
+ * ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+ * FOR: Quick application of transition properties
+ * WHY: This are our most common defaults
+ * USE: @include trans;
+ * USE: @include trans(.1s, opacity, linear); */;@;	[ ;i0o;-;"
+trans;T;@;	[o:Sass::Tree::MixinNode;{ ;"single-transition;@;	[ ;0;i7;[	o;$;%0;(F;)o;	; "trans_property;"trans-property;@;i7;*0;@;+0;i7;,0o;$;%0;(F;)o;	; "trans_time;"trans-time;@;i7;*0;@;+0;i7;,i¸o;$;%0;(F;)o;	; "trans_function;"trans-function;@;i7;*0;@;+0;i7;,io:Sass::Script::Bool;F;@;i7;0;i6;[[o;; "trans_time;"trans-time;@o;;["s;"	0.2s;f0.20000000000000001 ôö;@;[ ;i6[o;; "trans_property;"trans-property;@o;&	;;';"all;@;i6[o;; "trans_function;"trans-function;@o;&	;;';"ease-in;@;i6o;
+
+;;;["É/* User Select
+ * ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+ * FOR: Making text unselectable by the user
+ * WHY: Sometimes the cursor highlights text on clickable elements (in particular buttons),
+ * which can confuse the user intent. This is especially true on touch interfaces. 
+ * This mixin is an easy cross-browser way to repress text selection.
+ * USE: @include user-select; */;@;	[ ;i:o;-;"user-select;T;@;	[o;.;["-webkit-user-select;o;$;%0;(F;)o;	; "user_select;"user-select;@;iB;*0;@;+0;iB;,iÎ;1;2;@;3i ;	[ ;iBo;.;["-khtml-user-select;o;$;%0;(F;)o;	; "user_select;"user-select;@;iC;*0;@;+0;iC;,i	;1;2;@;3i ;	[ ;iCo;.;["-moz-user-select;o;$;%0;(F;)o;	; "user_select;"user-select;@;iD;*0;@;+0;iD;,i5	;1;2;@;3i ;	[ ;iDo;.;["-ms-user-select;o;$;%0;(F;)o;	; "user_select;"user-select;@;iE;*0;@;+0;iE;,iX	;1;2;@;3i ;	[ ;iEo;.;["-o-user-select;o;$;%0;(F;)o;	; "user_select;"user-select;@;iF;*0;@;+0;iF;,iz	;1;2;@;3i ;	[ ;iFo;.;["user-select;o;$;%0;(F;)o;	; "user_select;"user-select;@;iG;*0;@;+0;iG;,iô	;1;2;@;3i ;	[ ;iG;0;iA;[[o;; "user_select;"user-select;@o;&	;;';"	none;@;iAo;
+
+;;;["ı/* Reset Clearfix
+ * ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+ * FOR: Removing pie-clearfix from an element after it's been applied
+ * WHY: Hard to remember attribute combo. Helpful in responsive layouts.
+ * USE: @include reset-clearfix; */;@;	[ ;iKo;-;"reset-clearfix;T;@;	[o:Sass::Tree::RuleNode:
+@rule["&:after:@parsed_ruleso:"Sass::Selector::CommaSequence:@filename" ;iQ:@members[o:Sass::Selector::Sequence;;[o:#Sass::Selector::SimpleSequence
+:@subject0;:@Î:@sourceso:Set:
+@hash{ ;iQ;;[o:Sass::Selector::Parent;:@Î;iQo:Sass::Selector::Pseudo
+;:
+class;["
+after;:@Î:	@arg0;iQ;T;@;3i ;	[o;.;["display;o;&;;';"initial;@;1;2;@;3i ;	[ ;iRo;.;["
+clear;o;&;;';"	none;@;1;2;@;3i ;	[ ;iS;iQ;0;iP;[ o;
+
+;;;["/* Triangles
+ * ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+ * FOR: Quickly making CSS triangles
+ * WHY: It's annoying to remember how these attribute work. 
+ * Plus CSS triangles are really flexible and awesome.
+ * USE: @include triangle(right, 6px, #000, .68); */;@;	[ ;iXo;-;"triangle;T;@;	[
+o;4;{ ;"rotate;@;	[ ;0;i_;[o;;["deg;"0.1deg;f0.10000000000000001 ôö;@;[ ;i_u:Sass::Tree::IfNode
+[o:Sass::Script::Operation
+:@operand2o; 
+;o:Sass::Script::String	:
+@type:string:@value"top:@options{ :
+@lineia:@operand1o:Sass::Script::Variable	:@underscored_name"tri_orientation:
+@name"tri-orientation;@
+;ia;@
+:@operator:eq;ia;o; 
+;o;	;;	;
+"up;@
+;ia;o;	;"tri_orientation;"tri-orientation;@
+;ia;@
+;;;ia;@
+;:or;ia0[o:Sass::Tree::PropNode;["border-left;
+o:Sass::Script::List	:@separator:
+space;
+[o; 
+;o;	;"	mult;"	mult;@
+;ib;o;	;"tri_width;"tri-width;@
+;ib;@
+;:
+times;ibo;	;:identifier;
+"
+solid;@
+;ibo;	;;;
+"transparent;@
+;ib;@
+;ib:@prop_syntax:new;@
+:
+@tabsi :@children[ ;ibo;;["border-right;
+o;	;;;
+[o; 
+;o;	;"	mult;"	mult;@
+;ic;o;	;"tri_width;"tri-width;@
+;ic;@
+;;;ico;	;;;
+"
+solid;@
+;ico;	;;;
+"transparent;@
+;ic;@
+;ic;;;@
+;i ;[ ;ico;;["border-bottom;
+o;	;;;
+[o;	;"tri_width;"tri-width;@
+;ido;	;;;
+"
+solid;@
+;ido;	;"tri_color;"tri-color;@
+;id;@
+;id;;;@
+;i ;[ ;idu;F[o:Sass::Script::Operation
+:@operand2o; 
+;o:Sass::Script::String	:
+@type:string:@value"bottom:@options{ :
+@lineig:@operand1o:Sass::Script::Variable	:@underscored_name"tri_orientation:
+@name"tri-orientation;@
+;ig;@
+:@operator:eq;ig;o; 
+;o;	;;	;
+"	down;@
+;ig;o;	;"tri_orientation;"tri-orientation;@
+;ig;@
+;;;ig;@
+;:or;ig0[o:Sass::Tree::PropNode;["border-left;
+o:Sass::Script::List	:@separator:
+space;
+[o; 
+;o;	;"	mult;"	mult;@
+;ih;o;	;"tri_width;"tri-width;@
+;ih;@
+;:
+times;iho;	;:identifier;
+"
+solid;@
+;iho;	;;;
+"transparent;@
+;ih;@
+;ih:@prop_syntax:new;@
+:
+@tabsi :@children[ ;iho;;["border-right;
+o;	;;;
+[o; 
+;o;	;"	mult;"	mult;@
+;ii;o;	;"tri_width;"tri-width;@
+;ii;@
+;;;iio;	;;;
+"
+solid;@
+;iio;	;;;
+"transparent;@
+;ii;@
+;ii;;;@
+;i ;[ ;iio;;["border-top;
+o;	;;;
+[o;	;"tri_width;"tri-width;@
+;ijo;	;;;
+"
+solid;@
+;ijo;	;"tri_color;"tri-color;@
+;ij;@
+;ij;;;@
+;i ;[ ;iju;FË[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:
+@type:string:@value"	left:@options{ :
+@lineim:@operand1o:Sass::Script::Variable	:@underscored_name"tri_orientation:
+@name"tri-orientation;@	;im;@	:@operator:eq;im0[	o:Sass::Tree::PropNode;["border-top;
+o:Sass::Script::List	:@separator:
+space;
+[o; 
+;o;	;"	mult;"	mult;@	;in;o;	;"tri_width;"tri-width;@	;in;@	;:
+times;ino;	;:identifier;
+"
+solid;@	;ino;	;;;
+"transparent;@	;in;@	;in:@prop_syntax:new;@	:
+@tabsi :@children[ ;ino;;["border-bottom;
+o;	;;;
+[o; 
+;o;	;"	mult;"	mult;@	;io;o;	;"tri_width;"tri-width;@	;io;@	;;;ioo;	;;;
+"
+solid;@	;ioo;	;;;
+"transparent;@	;io;@	;io;;;@	;i ;[ ;ioo;;["border-right;
+o;	;;;
+[o;	;"tri_width;"tri-width;@	;ipo;	;;;
+"
+solid;@	;ipo;	;"tri_color;"tri-color;@	;ip;@	;ip;;;@	;i ;[ ;ipo;;["border-left;
+o;;;;
+"0px solid transparent;@	;;;@	;i ;[ ;iqu;FÈ[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:
+@type:string:@value"
+right:@options{ :
+@lineit:@operand1o:Sass::Script::Variable	:@underscored_name"tri_orientation:
+@name"tri-orientation;@	;it;@	:@operator:eq;it0[	o:Sass::Tree::PropNode;["border-top;
+o:Sass::Script::List	:@separator:
+space;
+[o; 
+;o;	;"	mult;"	mult;@	;iu;o;	;"tri_width;"tri-width;@	;iu;@	;:
+times;iuo;	;:identifier;
+"
+solid;@	;iuo;	;;;
+"transparent;@	;iu;@	;iu:@prop_syntax:new;@	:
+@tabsi :@children[ ;iuo;;["border-bottom;
+o;	;;;
+[o; 
+;o;	;"	mult;"	mult;@	;iv;o;	;"tri_width;"tri-width;@	;iv;@	;;;ivo;	;;;
+"
+solid;@	;ivo;	;;;
+"transparent;@	;iv;@	;iv;;;@	;i ;[ ;ivo;;["border-left;
+o;	;;;
+[o;	;"tri_width;"tri-width;@	;iwo;	;;;
+"
+solid;@	;iwo;	;"tri_color;"tri-color;@	;iw;@	;iw;;;@	;i ;[ ;iwo;;["border-right;
+o;;;;
+"0px solid transparent;@	;;;@	;i ;[ ;ix;0;i^;[	[o;; "tri_orientation;"tri-orientation;@o;&	;;';"	down;@;i^[o;; "tri_width;"tri-width;@o;;["px;"3px;i;@;[ ;i^[o;; "tri_color;"tri-color;@o:Sass::Script::Color	:@attrs{	:redik:
+alphai:
+greenik:	blueik;0;@;i^[o;; "	mult;"	mult;@o;;[ ;"1;i;@;@;i^o;
+
+;;;["/* Absolute Positioning
+ * ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+ * FOR: Quickly setting the top, right, left, and bottom positions of an absolutely positioned element
+ * WHY: It's verbose to write everytime in CSS
+ * USE: @include absolute(0 0 10px 0); */;@;	[ ;i}o;-;"absolute;T;@;	[o;;0;o;;{ ;"nth;@;0;i;[o;	; "coordinates;"coordinates;@;io;;[ ;"1;i;@;@;i;"top;@;	[ ;io;;0;o;;{ ;"nth;@;0;iÄ;[o;	; "coordinates;"coordinates;@;iÄo;;[ ;"2;i;@;@;iÄ;"
+right;@;	[ ;iÄo;;0;o;;{ ;"nth;@;0;iÅ;[o;	; "coordinates;"coordinates;@;iÅo;;[ ;"3;i;@;@;iÅ;"bottom;@;	[ ;iÅo;;0;o;;{ ;"nth;@;0;iÇ;[o;	; "coordinates;"coordinates;@;iÇo;;[ ;"4;i	;@;@;iÇ;"	left;@;	[ ;iÇo;.;["position;o;&;;';"absolute;@;1;2;@;3i ;	[ ;iÑu;F”[o:Sass::Script::Operation
+:@operand2o; 
+;o:Sass::Script::String	:
+@type:identifier:@value"a:@options{ :
+@lineiÜ:@operand1o:Sass::Script::Variable	:@underscored_name"top:
+@name"top;@
+;iÜ;@
+:@operator:eq;iÜ;o; 
+;o;	;;	;
+"	auto;@
+;iÜ;o;	;"top;"top;@
+;iÜ;@
+;;;iÜ;@
+;:or;iÜu:Sass::Tree::IfNode[o:Sass::Script::Operation
+:@operand2o; 
+;o:Sass::Script::String	:
+@type:identifier:@value"	none:@options{ :
+@lineiä:@operand1o:Sass::Script::Variable	:@underscored_name"top:
+@name"top;@
+;iä;@
+:@operator:eq;iä;o; 
+;o;	;;	;
+"n;@
+;iä;o;	;"top;"top;@
+;iä;@
+;;;iä;@
+;:or;iäu:Sass::Tree::IfNode∑[00[o:Sass::Tree::PropNode:
+@name["top:@valueo:Sass::Script::Variable	:@underscored_name"top;"top:@options{ :
+@lineiç:@prop_syntax:new;
+@:
+@tabsi :@children[ ;iç[ [o:Sass::Tree::PropNode;["top;
+o;;;	;
+"	auto;@
+:@prop_syntax:new;@
+:
+@tabsi :@children[ ;iáu;FÎ[o:Sass::Script::Operation
+:@operand2o; 
+;o:Sass::Script::String	:
+@type:identifier:@value"a:@options{ :
+@lineiê:@operand1o:Sass::Script::Variable	:@underscored_name"
+right:
+@name"
+right;@
+;iê;@
+:@operator:eq;iê;o; 
+;o;	;;	;
+"	auto;@
+;iê;o;	;"
+right;"
+right;@
+;iê;@
+;;;iê;@
+;:or;iêu:Sass::Tree::IfNode[o:Sass::Script::Operation
+:@operand2o; 
+;o:Sass::Script::String	:
+@type:identifier:@value"	none:@options{ :
+@lineiî:@operand1o:Sass::Script::Variable	:@underscored_name"
+right:
+@name"
+right;@
+;iî;@
+:@operator:eq;iî;o; 
+;o;	;;	;
+"n;@
+;iî;o;	;"
+right;"
+right;@
+;iî;@
+;;;iî;@
+;:or;iîu:Sass::Tree::IfNodeΩ[00[o:Sass::Tree::PropNode:
+@name["
+right:@valueo:Sass::Script::Variable	:@underscored_name"
+right;"
+right:@options{ :
+@lineió:@prop_syntax:new;
+@:
+@tabsi :@children[ ;ió[ [o:Sass::Tree::PropNode;["
+right;
+o;;;	;
+"	auto;@
+:@prop_syntax:new;@
+:
+@tabsi :@children[ ;iëu;F˜[o:Sass::Script::Operation
+:@operand2o; 
+;o:Sass::Script::String	:
+@type:identifier:@value"a:@options{ :
+@lineiö:@operand1o:Sass::Script::Variable	:@underscored_name"bottom:
+@name"bottom;@
+;iö;@
+:@operator:eq;iö;o; 
+;o;	;;	;
+"	auto;@
+;iö;o;	;"bottom;"bottom;@
+;iö;@
+;;;iö;@
+;:or;iöu:Sass::Tree::IfNode%[o:Sass::Script::Operation
+:@operand2o; 
+;o:Sass::Script::String	:
+@type:identifier:@value"	none:@options{ :
+@lineiû:@operand1o:Sass::Script::Variable	:@underscored_name"bottom:
+@name"bottom;@
+;iû;@
+:@operator:eq;iû;o; 
+;o;	;;	;
+"n;@
+;iû;o;	;"bottom;"bottom;@
+;iû;@
+;;;iû;@
+;:or;iûu:Sass::Tree::IfNode¿[00[o:Sass::Tree::PropNode:
+@name["bottom:@valueo:Sass::Script::Variable	:@underscored_name"bottom;"bottom:@options{ :
+@linei°:@prop_syntax:new;
+@:
+@tabsi :@children[ ;i°[ [o:Sass::Tree::PropNode;["bottom;
+o;;;	;
+"	auto;@
+:@prop_syntax:new;@
+:
+@tabsi :@children[ ;iõu;Fﬂ[o:Sass::Script::Operation
+:@operand2o; 
+;o:Sass::Script::String	:
+@type:identifier:@value"a:@options{ :
+@linei§:@operand1o:Sass::Script::Variable	:@underscored_name"	left:
+@name"	left;@
+;i§;@
+:@operator:eq;i§;o; 
+;o;	;;	;
+"	auto;@
+;i§;o;	;"	left;"	left;@
+;i§;@
+;;;i§;@
+;:or;i§u:Sass::Tree::IfNode[o:Sass::Script::Operation
+:@operand2o; 
+;o:Sass::Script::String	:
+@type:identifier:@value"	none:@options{ :
+@linei®:@operand1o:Sass::Script::Variable	:@underscored_name"	left:
+@name"	left;@
+;i®;@
+:@operator:eq;i®;o; 
+;o;	;;	;
+"n;@
+;i®;o;	;"	left;"	left;@
+;i®;@
+;;;i®;@
+;:or;i®u:Sass::Tree::IfNode∫[00[o:Sass::Tree::PropNode:
+@name["	left:@valueo:Sass::Script::Variable	:@underscored_name"	left;"	left:@options{ :
+@linei´:@prop_syntax:new;
+@:
+@tabsi :@children[ ;i´[ [o:Sass::Tree::PropNode;["	left;
+o;;;	;
+"	auto;@
+:@prop_syntax:new;@
+:
+@tabsi :@children[ ;i•;0;i};[[o;; "coordinates;"coordinates;@o:Sass::Script::List	:@separator:
+space;[	o;&	;;';"n;@;i}o;&	;;';"n;@;i}o;&	;;';"n;@;i}o;&	;;';"n;@;i};@;i}o;-;"unabsolute;T;@;	[
+o;.;["position;o;&;;';"static;@;1;2;@;3i ;	[ ;i±o;.;["top;o;&;;';"	auto;@;1;2;@;3i ;	[ ;i≤o;.;["
+right;o;&;;';"	auto;@;1;2;@;3i ;	[ ;i≥o;.;["bottom;o;&;;';"	auto;@;1;2;@;3i ;	[ ;i¥o;.;["	left;o;&;;';"	auto;@;1;2;@;3i ;	[ ;iµ;0;i∞;[ o;
+
+;;;["/* Responsive Video
+ * ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+ * FOR: Giving yourself a responsive video that maintains its aspect ratio 
+ * WHY: Annoying to remember/lookup
+ * REF: http://webdesignerwall.com/tutorials/css-elastic-videos
+ * USE: @include video; */;@;	[ ;iπo;-;"
+video;T;@;	[u;F˛[o:Sass::Script::Operation
+:@operand2o; 
+;o; 
+;o:Sass::Script::Number:@numerator_units[ :@original"9:@valuei:@options{ :@denominator_units[ :
+@linei¬:@operand1o;;[ ;	"16;
+i;@;@;i¬;@:@operator:div;i¬;o:Sass::Script::Variable	:@underscored_name"aspect:
+@name"aspect;@;i¬;@;:eq;i¬;o; 
+;o; 
+;o:Sass::Script::String	:
+@type:identifier;
+"cinema;@;i¬;o;	;"aspect;"aspect;@;i¬;@;;;i¬;o; 
+;o;	;;;
+"	wide;@;i¬;o;	;"aspect;"aspect;@;i¬;@;;;i¬;@;:or;i¬;@;;;i¬u:Sass::Tree::IfNode;[o:Sass::Script::Operation
+:@operand2o; 
+;o; 
+;o:Sass::Script::Number:@numerator_units[ :@original"3:@valuei:@options{ :@denominator_units[ :
+@linei≈:@operand1o;;[ ;	"4;
+i	;@;@;i≈;@:@operator:div;i≈;o:Sass::Script::Variable	:@underscored_name"aspect:
+@name"aspect;@;i≈;@;:eq;i≈;o; 
+;o:Sass::Script::String	:
+@type:identifier;
+"tv;@;i≈;o;	;"aspect;"aspect;@;i≈;@;;;i≈;@;:or;i≈0[o:Sass::Tree::VariableNode:@guarded0:
+@expro;;["%;	"75%;
+iP;@;[ ;i∆;"aspect;@:@children[ ;i∆[o:Sass::Tree::VariableNode:@guarded0:
+@expro;;["%;	"56.25%;
+f
+56.25;@;[ ;i√;"aspect;@:@children[ ;i√o;.;["position;o;&;;';"relative;@;1;2;@;3i ;	[ ;i…o;.;["padding-bottom;o;	; "aspect;"aspect;@;i ;1;2;@;3i ;	[ ;i o;.;["padding-top;o;&;;';"	30px;@;1;2;@;3i ;	[ ;iÀo;.;["height;o;&;;';"0;@;1;2;@;3i ;	[ ;iÃo;6;7["&iframe,  
+    object,  
+    embed;8o;9;:" ;iœ;;[o;<;;[o;=
+;>0;:@”;?o;@;A{ ;iœ;;[o:Sass::Selector::Element	;["iframe;:@”:@namespace0;iœo;<;;["
+o;=
+;>0;:@”;?o;@;A{ ;iœ;;[o;P	;["object;:@”;Q0;iœo;<;;["
+o;=
+;>0;:@”;?o;@;A{ ;iœ;;[o;P	;["
+embed;:@”;Q0;iœ;T;@;3i ;	[
+o;.;["position;o;&;;';"absolute;@;1;2;@;3i ;	[ ;i–o;.;["top;o;&;;';"0;@;1;2;@;3i ;	[ ;i—o;.;["	left;o;&;;';"0;@;1;2;@;3i ;	[ ;i“o;.;["
+width;o;&;;';"	100%;@;1;2;@;3i ;	[ ;i”o;.;["height;o;&;;';"	100%;@;1;2;@;3i ;	[ ;i‘;iœ;0;i¿;[[o;; "aspect;"aspect;@o;&	;;';"	wide;@;i¿o;
+
+;;;["–/* Ellipsis
+ * ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+ * FOR: Truncating text with an ellipsis the CSS way
+ * WHY: It's hard to recall using this combination of attributes
+ * USE: @include ellipsis; */;@;	[ ;iŸo;-;"ellipsis;T;@;	[o;.;["overflow;o;&;;';"hidden;@;1;2;@;3i ;	[ ;iﬂo;.;["text-overflow;o;&;;';"ellipsis;@;1;2;@;3i ;	[ ;i‡o;.;["white-space;o;&;;';"nowrap;@;1;2;@;3i ;	[ ;i·;0;iﬁ;[ o;
+
+;;;["Q/* Placeholder Text
+ * ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+ * FOR: Styling placeholder text color states (default, hover, focus) 
+ * WHY: Provides a shortcut for writing the code, which is necessarily long
+ * because selectors cannot be combined. Also a cross-browser solution.
+ * USE: @include placholder(#999, #999, #222); */;@;	[ ;iÂo;-;"placeholder;T;@;	[o;
+
+;;;["@/* You have to declare these separately in order to work */;@;	[ ;iÏo;6;7["!&::-webkit-input-placeholder;8o;9;:" ;iÌ;;[o;<;;[o;=
+;>0;:@A;?o;@;A{ ;iÌ;;[o;B;:@A;iÌo;C
+;:element;["-webkit-input-placeholder;:@A;E0;iÌ;T;@;3i ;	[o;.;["
+color;o;	; "default;"default;@;iÓ;1;2;@;3i ;	[ ;iÓ;iÌo;6;7["&:-moz-placeholder;8o;9;:" ;i;;[o;<;;[o;=
+;>0;:@Y;?o;@;A{ ;i;;[o;B;:@Y;io;C
+;;D;["-moz-placeholder;:@Y;E0;i;T;@;3i ;	[o;.;["
+color;o;	; "default;"default;@;iÒ;1;2;@;3i ;	[ ;iÒ;io;6;7["'&:hover::-webkit-input-placeholder;8o;9;:" ;iÛ;;[o;<;;[o;=
+;>0;:@q;?o;@;A{ ;iÛ;;[o;B;:@q;iÛo;C
+;;D;["
+hover;:@q;E0;iÛo;C
+;;R;["-webkit-input-placeholder;:@q;E0;iÛ;T;@;3i ;	[o;.;["
+color;o;	; "
+hover;"
+hover;@;iÙ;1;2;@;3i ;	[ ;iÙ;iÛo;6;7["&:hover:-moz-placeholder;8o;9;:" ;iˆ;;[o;<;;[o;=
+;>0;:@å;?o;@;A{ ;iˆ;;[o;B;:@å;iˆo;C
+;;D;["
+hover;:@å;E0;iˆo;C
+;;D;["-moz-placeholder;:@å;E0;iˆ;T;@;3i ;	[o;.;["
+color;o;	; "
+hover;"
+hover;@;i˜;1;2;@;3i ;	[ ;i˜;iˆo;6;7["'&:focus::-webkit-input-placeholder;8o;9;:" ;i˘;;[o;<;;[o;=
+;>0;:@ß;?o;@;A{ ;i˘;;[o;B;:@ß;i˘o;C
+;;D;["
+focus;:@ß;E0;i˘o;C
+;;R;["-webkit-input-placeholder;:@ß;E0;i˘;T;@;3i ;	[o;.;["
+color;o;	; "
+focus;"
+focus;@;i˙;1;2;@;3i ;	[ ;i˙;i˘o;6;7["&:focus:-moz-placeholder;8o;9;:" ;i¸;;[o;<;;[o;=
+;>0;:@¬;?o;@;A{ ;i¸;;[o;B;:@¬;i¸o;C
+;;D;["
+focus;:@¬;E0;i¸o;C
+;;D;["-moz-placeholder;:@¬;E0;i¸;T;@;3i ;	[o;.;["
+color;o;	; "
+focus;"
+focus;@;i˝;1;2;@;3i ;	[ ;i˝;i¸;0;iÎ;[[o;; "default;"default;@o;&	;;';"inherit;@;iÎ[o;; "
+hover;"
+hover;@o;	; "default;"default;@;iÎ[o;; "
+focus;"
+focus;@o;	; "default;"default;@;iÎo;
+
+;;;["±/* SVG Fallback Pattern
+ * ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+ * FOR: Setting PNG fallbacks for SVG background images
+ * WHY: Saves time and typing and is guaranteed to work across devices 
+ * NOTE 1: You still need to set the display (inline-block or block) 
+ * and a height/width for the container
+ * NOTE 2: "image-url" is a helper that automatically creates a relative link to the _img folder
+ * from wherever it's called. This function is built-in to Compass. It's rare that you'll need
+ * change the base folder (_img) but it can be done in the config.rb file in the root 
+ * REF: http://compass-style.org/reference/compass/helpers/urls
+ * USE: @include svg(imageName); */;@;	[ ;io;-;"svg;T;@;	[o;
+
+;;;["/* Variables */;@;	[ ;io;;0;o;&	;;0;"Mhttp://cloudfront.upstatement.com/wp-content/themes/blades/images/icons/;@;i;"	path;@;	[ ;io;;0;o;
+;o;&	;;0;"	.svg;@;i;!o;
+;o;	; "
+image;"
+image;@;i;!o;	; "	path;"	path;@;i;@;":	plus;i;@;";S;i;"svg;@;	[ ;io;;0;o;
+;o;&	;;0;"	.png;@;i;!o;
+;o;	; "
+image;"
+image;@;i;!o;	; "	path;"	path;@;i;@;";S;i;@;";S;i;"png;@;	[ ;io;;0;o;
+;o;&	;;0;"', sizingMethod='scale');@;i;!o;
+;o;;{ ;"image-url;@;0;i;[o;	; "png;"png;@;i;!o;&	;;0;"=progid:DXImageTransform.Microsoft.AlphaImageLoader(src=';@;i;@;";S;i;@;";S;i;"ms-filter;@;	[ ;io;
+
+;;;["/* Universal properties */;@;	[ ;io;.;["background-position;o;&;;';"50% 50%;@;1;2;@;3i ;	[ ;io;.;["background-repeat;o;&;;';"no-repeat;@;1;2;@;3i ;	[ ;io;.;["background-image;o;;{ ;"image-url;@;0;i;[o;	; "png;"png;@;i;1;2;@;3i ;	[ ;io;
+
+;;;["/* Fallback pattern */;@;	[ ;io;6;7[".no-svg &;8o;9;:" ;i;;[o;<;;[o;=
+;>0;:@K;?o;@;A{ ;i;;[o:Sass::Selector::Class;["no-svg;:@K;io;=
+;>0;:@K;?o;@;A{ ;i;;[o;B;:@K;i;T;@;3i ;	[
+o;.;["background-image;o;;{ ;"image-url;@;0;i;[o;	; "png;"png;@;i;1;2;@;3i ;	[ ;io;
+
+;;;["C/* Makes sure that image scales if necessary, works for IE9 */;@;	[ ;io;4;{ ;"background-size;@;	[ ;0;i;[o;&	;;';"
+cover;@;io;.;["filter;o;	; "ms_filter;"ms-filter;@;i;1;2;@;3i ;	[ ;io;.;["-ms-filter;o;	; "ms_filter;"ms-filter;@;i ;1;2;@;3i ;	[ ;i ;io;6;7[".svg &;8o;9;:" ;i";;[o;<;;[o;=
+;>0;:@Ñ;?o;@;A{ ;i";;[o;T;["svg;:@Ñ;i"o;=
+;>0;:@Ñ;?o;@;A{ ;i";;[o;B;:@Ñ;i";T;@;3i ;	[o;.;["background-image;o;;{ ;"image-url;@;0;i#;[o;	; "svg;"svg;@;i#;1;2;@;3i ;	[ ;i#;i";0;i;[[o;; "
+image;"
+image;@0o;
+
+;;;["/* svg */;@;	[ ;i%o;
+
+;;;["/* RGBA Background Fallback Pattern
+ * ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+ * FOR: Setting safe fallbacks for RGBA background colors (black & white only)
+ * WHY: Saves time and typing; guaranteed to work across devices 
+ * USE: @include bg(.5, black); */;@;	[ ;i(o;-;"bg;T;@;	[o;
+
+;;;[")/* Turn decimal into whole number */;@;	[ ;i/o;;0;o;
+;o;;[ ;"100;ii;@;@;i0;!o;	; "
+alpha;"
+alpha;@;i0;@;":
+times;i0;"a-integer;@;	[ ;i0u;Fä[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:
+@type:identifier:@value"transparent:@options{ :
+@linei3:@operand1o:Sass::Script::Variable	:@underscored_name"
+color:
+@name"
+color;@	;i3;@	:@operator:eq;i3u:Sass::Tree::IfNode.	[00[o:Sass::Tree::PropNode:
+@name["background-color:@valueo:Sass::Script::Variable	:@underscored_name"
+color;"
+color:@options{ :
+@linei::@prop_syntax:new;
+@:
+@tabsi :@children[ ;i:u:Sass::Tree::IfNode;[o:Sass::Script::Operation
+:@operand2o:Sass::Script::Color	:@attrs{	:rediˇ:
+alphai:
+greeniˇ:	blueiˇ:@value0:@options{ :
+@linei<:@operand1o:Sass::Script::Variable	:@underscored_name"
+color:
+@name"
+color;@	;i<;@	:@operator:eq;i<u:Sass::Tree::IfNode∞[00[o:Sass::Tree::PropNode:
+@name["background-color:@valueo:Sass::Script::Funcall:@keywords{ ;"	rgba:@options{ :@splat0:
+@linei@:
+@args[	o:Sass::Script::Number:@numerator_units[ :@original"0;i ;
+@:@denominator_units[ ;i@o;;[ ;"0;i ;
+@;@;i@o;;[ ;"0;i ;
+@;@;i@o:Sass::Script::Variable	:@underscored_name"
+alpha;"
+alpha;
+@;i@:@prop_syntax:new;
+@:
+@tabsi :@children[ ;i@[o:Sass::Tree::PropNode;["background-color;o:Sass::Script::Funcall:@keywords{ ;"	rgba;@	:@splat0;i=:
+@args[	o:Sass::Script::Number:@numerator_units[ :@original"255;iˇ;@	:@denominator_units[ ;i=o;;[ ;"255;iˇ;@	;@;i=o;;[ ;"255;iˇ;@	;@;i=o;	;"
+alpha;"
+alpha;@	;i=:@prop_syntax:new;@	:
+@tabsi :@children[ ;i=o:Sass::Tree::RuleNode:
+@rule[".no-rgba &:@parsed_ruleso:"Sass::Selector::CommaSequence:@filename" ;iC:@members[o:Sass::Selector::Sequence;[o:#Sass::Selector::SimpleSequence
+:@subject0;@:@sourceso:Set:
+@hash{ ;iC;[o:Sass::Selector::Class;["no-rgba;@;iCo;
+;0;@;o;;{ ;iC;[o:Sass::Selector::Parent;@;iC:@has_childrenT;
+@;i ;[o; ;["background;o:Sass::Script::List	:@separator:
+space;[
+o:Sass::Script::String	:
+@type:identifier;"transparent;
+@;iDo:Sass::Script::Funcall:@keywords{ ;"image-url;
+@:@splat0;iD:
+@args[o:&Sass::Script::StringInterpolation
+:@aftero;*
+;+o;#	;$:string;"	.png;
+@;iD:	@mido;	;	"a_integer;"a-integer;
+@;iD;
+@:@beforeo;#	;$;,;"-;
+@;iD;iD;-o;	;	"
+color;"
+color;
+@;iD;
+@;.o;#	;$;,;"bg/;
+@;iD;iDo:Sass::Script::Number:@numerator_units["%:@original"50%;i7;
+@:@denominator_units[ ;iDo;/;0["%;1"50%;i7;
+@;2[ ;iDo;#	;$;%;"repeat;
+@;iD;
+@;iD;;;
+@;i ;[ ;iD;iC[o:Sass::Tree::PropNode;["background-color;
+o;;;	;
+"transparent;@	:@prop_syntax:new;@	:
+@tabsi :@children[ ;i4o:Sass::Tree::RuleNode:
+@rule[".no-rgba &:@parsed_ruleso:"Sass::Selector::CommaSequence:@filename" ;i5:@members[o:Sass::Selector::Sequence;[o:#Sass::Selector::SimpleSequence
+:@subject0;@:@sourceso:Set:
+@hash{ ;i5;[o:Sass::Selector::Class;["no-rgba;@;i5o; 
+;!0;@;"o;#;${ ;i5;[o:Sass::Selector::Parent;@;i5:@has_childrenT;@	;i ;[o;;["background-color;
+o;;;	;
+"transparent;@	;;;@	;i ;[ ;i6;i5;0;i.;[[o;; "
+color;"
+color;@o;G	;H{	;Iiˇ;Ji;Kiˇ;Liˇ;0;@;i.[o;; "
+alpha;"
+alpha;@o;;[ ;"0.1;f0.10000000000000001 ôö;@;@;i.o;
+
+;;;["U/* FOUT: Flash of Unstyled Type
+ * ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+ * FOR: Making text appear on the page only after webfonts have loaded.
+ * Doesn't work without the hooks provided by using Google Webfont Loader (see: snips.html).
+ * WHY: Who wants to write this same six lines of code over and over?
+ * USE: @include fout; */;@;	[ ;iJo;-;"	fout;T;@;	[o;6;7[".wf-loading &;8o;9;:" ;iQ;;[o;<;;[o;=
+;>0;:@Ÿ;?o;@;A{ ;iQ;;[o;T;["wf-loading;:@Ÿ;iQo;=
+;>0;:@Ÿ;?o;@;A{ ;iQ;;[o;B;:@Ÿ;iQ;T;@;3i ;	[o;.;["visibility;o;&;;';"hidden;@;1;2;@;3i ;	[ ;iR;iQo;6;7["".wf-active &,
+	.wf-inactive &;8o;9;:" ;iU;;[o;<;;[o;=
+;>0;:@Ù;?o;@;A{ ;iU;;[o;T;["wf-active;:@Ù;iUo;=
+;>0;:@Ù;?o;@;A{ ;iU;;[o;B;:@Ù;iUo;<;;["
+o;=
+;>0;:@Ù;?o;@;A{ ;iU;;[o;T;["wf-inactive;:@Ù;iUo;=
+;>0;:@Ù;?o;@;A{ ;iU;;[o;B;:@Ù;iU;T;@;3i ;	[o;.;["visibility;o;&;;';"visible;@;1;2;@;3i ;	[ ;iV;iU;0;iP;[ o;
+
+;;;["}/* Retina Background Images
+ * ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+ * FOR: Serving larger background images when the user agent has a retina display 
+ * WHY: Because it's a long list of hard-to-remember proprietary code
+ * REF: Idea originates here: http://37signals.com/svn/posts/3271-easy-retina-ready-images-using-scss
+ * USE: @include retina(image.png, 8px, 10px); */;@;	[ ;iZo;-;"retina;T;@;	[o:Sass::Tree::MediaNode;T;" ;@;3i ;	[o;
+
+;;;["2/* on retina, use image that's scaled by 2 */;@;	[ ;igo;.;["background-image;o;	; "
+image;"
+image;@;ih;1;2;@;3i ;	[ ;iho;4;{ ;"background-size;@;	[ ;0;ii;[o;M	;N;O;[o;	; "
+width;"
+width;@;iio;	; "height;"height;@;ii;@;ii:@query[""(o;&	;;';" min--moz-device-pixel-ratio;@;ib": o;;[ ;"1.1;f1.1000000000000001 ôö;@;@;ib")", "(o;&	;;';"-o-min-device-pixel-ratio;@;ic": o;
+;o;;[ ;"2;i;@;@;ic;!o;;[ ;"2.1;f2.1000000000000001 ÃÕ;@;@;ic;@;";#;ic")@G"(o;&	;;';"#-webkit-min-device-pixel-ratio;@;id": o;;[ ;"1.1;f1.1000000000000001 ôö;@;@;id")@G"(o;&	;;';"min-device-pixel-ratio;@;ie": o;;[ ;"1.1;f1.1000000000000001 ôö;@;@;ie")@G"(o;&	;;';"min-resolution;@;if": o;;["dpi;"
+96dpi;ie;@;[ ;if");if;0;ia;[[o;; "
+image;"
+image;@0[o;; "
+width;"
+width;@0[o;; "height;"height;@0o;
+
+;;;["{/* ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+ *
+ * Sprites	
+ *
+ * ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ */;@;	[ ;ino;
+
+;;;["_/* Let Compass make Sprites for us
+ * http://compass-style.org/help/tutorials/spriting/ */;@;	[ ;iuo:Sass::Tree::ImportNode:@imported_file0:@imported_filename"#compass/utilities/sprites/base;0;@;	[ ;iwo;
+
+;;;["J/* Make a sprite from all the images in the "_img > sprite" folder */;@;	[ ;iyo;;0;o;&	;;';"horizontal;@;iz;"sprite-layout;@;	[ ;izo;;0;o;5;T;@;i{;"sprite-sprite-dimensions;@;	[ ;i{o;X;Y0;Z"sprite/*.png;0;@;	[ ;i|o;4;{ ;"all-sprite-sprites;@;	[ ;0;i};[ o;
+
+;;;[" /*
+ * Retina Sprites 
+ * */;@;	[ ;io;
+
+;;;["^/* UNCOMMENT TO ENABLE RETINA SPRITES
+ * Place all your retina images in retina folder */;@;	[ ;iÉo;
+
+;;;["ü/* Make a sprite from all the images in the "_img > retina" folder
+ * $retina-layout:horizontal;
+ * @import "retina/*.png";
+ * @include all-retina-sprites;  */;@;	[ ;iÜo;
+
+;;;["S/* .sprite-sprite {
+ * 	@include retina($retina-sprites, 8px, 10px);		
+ * } */;@;	[ ;ião;
+
+;;;["á/* ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+ *
+ * Paul Irish HTML5 Helpers	
+ *
+ * ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ */;@;	[ ;iëo;
+
+;;;["/* Image replacement */;@;	[ ;ióo;-;"ir;T;@;	[o;.;["display;o;&;;';"
+block;@;1;2;@;3i ;	[ ;iôo;.;["text-indent;o;&;;';"-999em;@;1;2;@;3i ;	[ ;iöo;.;["overflow;o;&;;';"hidden;@;1;2;@;3i ;	[ ;iõo;.;["background-repeat;o;&;;';"no-repeat;@;1;2;@;3i ;	[ ;iúo;.;["text-align;o;&;;';"	left;@;1;2;@;3i ;	[ ;iùo;.;["direction;o;&;;';"ltr;@;1;2;@;3i ;	[ ;iû;0;iò;[ o;
+
+;;;["m/* Hide for both screenreaders and browsers
+ *   css-discuss.incutio.com/wiki/Screenreader_Visibility */;@;	[ ;i°o;-;"hidden;T;@;	[o;.;["display;o;&;;';"	none;@;1;2;@;3i ;	[ ;i§o;.;["visibility;o;&;;';"hidden;@;1;2;@;3i ;	[ ;i•;0;i£;[ o;
+
+;;;["è/* Hide only visually, but have it available for screenreaders 
+ *   www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */;@;	[ ;i®o;-;"visuallyhidden;T;@;	[	o;.;["position;o;&;;';"absolute !important;@;1;2;@;3i ;	[ ;i´o;.;["	clip;o;;{ ;"	rect;@;0;i¨;[o;M	;N;O;[	o;;["px;"1px;i;@;[ ;i¨o;;["px;"1px;i;@;[ ;i¨o;;["px;"1px;i;@;[ ;i¨o;;["px;"1px;i;@;[ ;i¨;@;i¨;1;2;@;3i ;	[ ;i¨o;
+
+;:normal;["/* IE6, IE7 */;@;	[ ;i¨o;.;["	clip;o;;{ ;"	rect;@;0;i≠;[	o;;["px;"1px;i;@;[ ;i≠o;;["px;"1px;i;@;[ ;i≠o;;["px;"1px;i;@;[ ;i≠o;;["px;"1px;i;@;[ ;i≠;1;2;@;3i ;	[ ;i≠;0;i™;[ o;
+
+;;;["á/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */;@;	[ ;i∞o;6;7["F.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus;8o;9;:" ;i≤;;[o;<;;[o;=
+;>0;:@F;?o;@;A{ ;i≤;;[o;T;["visuallyhidden;:@F;i≤o;T;["focusable;:@F;i≤o;C
+;;D;["active;:@F;E0;i≤o;<;;["
+o;=
+;>0;:@F;?o;@;A{ ;i≤;;[o;T;["visuallyhidden;:@F;i≤o;T;["focusable;:@F;i≤o;C
+;;D;["
+focus;:@F;E0;i≤;T;@;3i ;	[o;.;["	clip;o;&;;';"	auto;@;1;2;@;3i ;	[ ;i≤o;.;["height;o;&;;';"	auto;@;1;2;@;3i ;	[ ;i≤o;.;["margin;o;&;;';"0;@;1;2;@;3i ;	[ ;i≤o;.;["overflow;o;&;;';"visible;@;1;2;@;3i ;	[ ;i≤o;.;["position;o;&;;';"static;@;1;2;@;3i ;	[ ;i≤o;.;["
+width;o;&;;';"	auto;@;1;2;@;3i ;	[ ;i≤;i≤o;
+
+;;;["D/* Hide visually and from screenreaders, but maintain layout */;@;	[ ;i¥o;-;"invisible;T;@;	[o;.;["visibility;o;&;;';"hidden;@;1;2;@;3i ;	[ ;i∂;0;iµ;[ ;i

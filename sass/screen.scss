@@ -1037,7 +1037,7 @@ html.ie8 .cover-overview{
 	padding-bottom: 70px;
 
 
-	@media (min-width:959px){
+	@media (min-width:1050px) {
 		min-height: 1050px;
 		height: 1050px;
 		padding-bottom: 0px;
@@ -1064,7 +1064,7 @@ html.ie8 .cover-overview{
 		margin: 0px 75px;
 	}
 
-	@media (min-width:959px) {
+	@media (min-width:1050px) {
 		float: right;
 		margin-top: 50px;
 		padding: 10px 40px 70px 40px;
@@ -1075,7 +1075,7 @@ html.ie8 .cover-overview{
 	}
 
 	@media (min-width: 1200px) {
-		margin-right: 10%;
+		margin-right: 20px;
 	}
 
 	.ss-icon {
@@ -1085,10 +1085,10 @@ html.ie8 .cover-overview{
 
 .bio-img {
 	display: block;
-	max-width: 960px;
+	max-width: 1050px;
 	width: 100%;
 
-	@media (min-width:959px) {
+	@media (min-width:1050px) {
 		display: none;
 	}
 }
@@ -1101,7 +1101,7 @@ html.ie8 .cover-overview{
 	font-weight: 300;	
 	font-size: 30px;
 
-	@media (min-width:959px) {
+	@media (min-width:1050px) {
 		font-size: 45px;
 	}	
 }
@@ -1116,7 +1116,7 @@ html.ie8 .cover-overview{
 		color: $highlight;
 	}	
 
-	@media (min-width:959px) {
+	@media (min-width:1050px) {
 		font-size: 19px;
 		margin-bottom: 22px;
 	}
