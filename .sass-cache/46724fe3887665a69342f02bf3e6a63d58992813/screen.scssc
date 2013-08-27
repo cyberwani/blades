@@ -1,5 +1,5 @@
 3.2.7 (Media Mark)
-7dc0245a445481baa29dea910be9b4e55c0b947f
+7e862ffc4c82b8436c2fa055f7e63e86a4c8dfa7
 o:Sass::Tree::RootNode
 :@template"xŽ//
 // Theme Name: Blades
@@ -1123,7 +1123,7 @@ html.ie8 .cover-overview{
 
 .bio-txt {
 	@extend .txt;
-	color: #000;
+	color: #333;
 	font-size: 17px;
 	font-weight: 400;
 	line-height: 155%;
@@ -3012,7 +3012,7 @@ color;o;#;;$;"	#000;@;%;&;@;!i ;	[ ;iXo;"; ["font-weight;o;#;;$
 "(o;#	;;$;"min-width;@;i\": o;.;/["px;0"1050px;i;@;1[ ;i\");i\;iTo;;[".bio-txt;o;;" ;ia;[o;;[o;
 ;0;@a;o;;{ ;ia;[o;; ["bio-txt;@a;ia;T;@;!i ;	[o;A
 ;B["."txt;CF;@;	[ ;ibo;"; ["
-color;o;#;;$;"	#000;@;%;&;@;!i ;	[ ;ico;"; ["font-size;o;#;;$;"	17px;@;%;&;@;!i ;	[ ;ido;"; ["font-weight;o;#;;$;"400;@;%;&;@;!i ;	[ ;ieo;"; ["line-height;o;#;;$;"	155%;@;%;&;@;!i ;	[ ;ifo;;["> a;o;;" ;ig;[o;;[">o;
+color;o;#;;$;"	#333;@;%;&;@;!i ;	[ ;ico;"; ["font-size;o;#;;$;"	17px;@;%;&;@;!i ;	[ ;ido;"; ["font-weight;o;#;;$;"400;@;%;&;@;!i ;	[ ;ieo;"; ["line-height;o;#;;$;"	155%;@;%;&;@;!i ;	[ ;ifo;;["> a;o;;" ;ig;[o;;[">o;
 ;0;@Ž;o;;{ ;ig;[o;'	; ["a;@Ž;(0;ig;T;@;!i ;	[o;"; ["
 color;o;)	;*"highlight; "highlight;@;ih;%;&;@;!i ;	[ ;ih;igo;7;T;" ;@;!i ;	[o;"; ["font-size;o;#;;$;"	19px;@;%;&;@;!i ;	[ ;ilo;"; ["margin-bottom;o;#;;$;"	22px;@;%;&;@;!i ;	[ ;im;8[
 "(o;#	;;$;"min-width;@;ik": o;.;/["px;0"1050px;i;@;1[ ;ik");ik;iao;;[".social-list;o;;" ;iq;[o;;[o;
