@@ -17,7 +17,7 @@
 	}
 	
 	$sticky = get_option('sticky_posts');
-	$sticky = PHPHelper::array_truncate($sticky, 4);
+	$sticky = WPHelper::array_truncate($sticky, 4);
 	if ($page == 0){
 		$featured_query = array('post_type' => 'post', 'numberposts' => 4, 'post__in'  => $sticky);
 		$data['blog_featured'] = Timber::get_posts($featured_query);
