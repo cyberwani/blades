@@ -28,7 +28,7 @@
 				$entry_manual[] = $e->ID;
 			}
 		}
-		$entry_manual = PHPHelper::array_truncate($entry_manual, 3);
+		$entry_manual = WPHelper::array_truncate($entry_manual, 3);
 
 
 		$fp = new TimberPost(3251);

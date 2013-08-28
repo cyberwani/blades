@@ -33,6 +33,10 @@
 				</hgroup>
 			</div> <!-- /site-width -->
 
+			<!--<div class="portfolio-intro site-width">
+				{{post.content}}
+			</div>-->
+
 			<div class="portfolio-content-before">
 				{% include ["portfolio/"~post.slug~"-before.twig", "portfolio/"~post.slug~".twig"] ignore missing %}
 			</div>
@@ -46,8 +50,7 @@
 								<p>{{image.caption}}</p>
 							{% endfor %}
 						</div>
-					{% endif %}
-					{% if layout.description or layout.subhead %}
+					{% elseif layout.description or layout.subhead %}
 						<div class="site-width">
 							<div class="portfolio-desc txt-width">
 								{% if layout.subhead %}
@@ -61,8 +64,10 @@
 							</div>
 						</div> <!-- /site-width -->
 					{% endif %}
-					{% if layout.acf_fc_layout == 'custom' %}
-						{% include 'portfolio/' ~ layout.file_name %}
+					{% if layout.acf_fc_layout == 'include' %}
+						<div class="portfolio-include">
+							{% include 'portfolio/' ~ layout.file_name %}
+						</div>
 					{% endif %}
 				{% endfor %}
 			</div> <!-- /portfolio-content-->
