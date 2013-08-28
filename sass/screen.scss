@@ -1881,8 +1881,11 @@ html.ie8 .blog-cron .media-block {
 // these are styles for how to display groups of images. 
 
 .video-mod {
-	@include video(); 
+	@include video();
 	margin-bottom:20px;
+	&.ratio-tv {
+		@include video(tv);
+	}
 }
 .portfolio-layouts {
 
