@@ -54,7 +54,7 @@ var upSite;
 		});
 		*/
 
-		$('img[data-src]').unveil();
+		$('img[data-src]').unveil(500);
 		
 		$('#comment').on('focus', function(e){
 			var $this = $(e.currentTarget);
