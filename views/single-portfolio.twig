@@ -64,12 +64,14 @@
 							</div>
 						</div> <!-- /site-width -->
 					{% elseif layout.overline %}
-						<div>
-							<h4 class="portfolio-overline">{{layout.overline}}</h4>
-						</div>
+						<div class="flex-width">
+							<div class="portfolio-overline-mod">
+								<h4 class="portfolio-overline">{{layout.overline}}</h4>
+							</div><!-- /portfolio-overeline-mod -->
+						</div> <!-- /flex-width -->
 					{% elseif layout.gray_block %}
 						{% if layout.gray_block|trim == 'open' %}
-							<section class="portfolio-gray-splash" style="background-color:#DDD">
+							<section class="portfolio-color-splash">
 						{% else %}
 							</section>
 						{% endif %}
