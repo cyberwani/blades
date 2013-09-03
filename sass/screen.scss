@@ -343,12 +343,15 @@ body {
 	padding: 0 0 0 0;
 }
 
-.full-width {
-	width: 100%;
-}
+.portfolio-layouts .portfolio-image-set {
+	.full-width {
+		width: 100%;
+		max-width: none;
+	}
 
-.flex-width {
-	margin: 0 auto;
+	.flex-width {
+		margin: 0 auto;
+	}
 }
 
 //Three side by side blocks, infinite number
