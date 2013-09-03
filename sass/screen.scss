@@ -1940,7 +1940,13 @@ html.ie8 .blog-cron .media-block {
 				float: left;
 			}
 		}
-	}
+
+		.image-count-1 {
+			img {
+			float: none;
+			}//img	
+		}//image-count-1
+	}//mq
 
 	@media (min-width: 900px){
 		.image-count-1 {
@@ -1949,6 +1955,7 @@ html.ie8 .blog-cron .media-block {
 			img{
 				width: 100%;
 				height: auto;
+				float: none;
 			}
 		}
 
