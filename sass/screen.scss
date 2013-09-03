@@ -185,6 +185,16 @@ body {
 	}
 }
 
+.portfolio-overline {
+	font: 28px/140% $proxima;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: #000;
+	border-bottom: 1px solid;
+	border-color: #ccc;
+	text-align: center;
+}
+
 .txt-defaults {
 	.attr {
 		font-size: 11px;
