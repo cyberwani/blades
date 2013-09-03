@@ -44,7 +44,7 @@
 			<div class="portfolio-content">
 				{% for layout in post.get_layouts %}
 					{% if layout.images %}
-						<div class="portfolio-image-set image-count-{{layout.images|length}}">
+						<div class="portfolio-image-set image-count-{{layout.images|length}} {{layout.full_width == 1 ? 'full-width'}}">
 							{% for image in layout.images %}
 								<img class="lazy" data-original="{{image.src|tojpg}}" data-src="{{image.src|tojpg}}" src="/wp-content/themes/blades/images/dev/placeholder.gif" alt="{{image.alt_text|raw}}"/>
 								<p>{{image.caption}}</p>
@@ -64,9 +64,15 @@
 							</div>
 						</div> <!-- /site-width -->
 					{% elseif layout.overline %}
-						<div class="site-width">
-							<h4 class="portfolio-overline">{{layout.overline.overline}}</h4>
+						<div>
+							<h4 class="portfolio-overline">{{layout.overline}}</h4>
 						</div>
+					{% elseif layout.gray_block %}
+						{% if layout.gray_block|trim == 'open' %}
+							<section class="portfolio-gray-splash" style="background-color:#DDD">
+						{% else %}
+							</section>
+						{% endif %}
 					{% endif %}
 					{% if layout.acf_fc_layout == 'include' %}
 						<div class="portfolio-include">
