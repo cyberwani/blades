@@ -185,6 +185,24 @@ body {
 	}
 }
 
+.portfolio-overline-mod {
+	text-align: center;
+	@include pie-clearfix;
+	margin-bottom: 75px;
+}
+
+.portfolio-overline {
+	display: inline-block;
+	font: 28px/140% $proxima;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: #333;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+	padding: 0px 10px 10px 10px;
+	margin: auto;
+}
+
 .txt-defaults {
 	.attr {
 		font-size: 11px;
@@ -323,6 +341,15 @@ body {
 
 #content {
 	padding: 0 0 0 0;
+}
+
+.portfolio-layouts.portfolio-image-set.fullwidth {
+	width: 100%;
+	max-width: none;	
+}
+
+.flex-width {
+	margin: 0 auto;
 }
 
 //Three side by side blocks, infinite number
@@ -1955,6 +1982,12 @@ html.ie8 .blog-cron .media-block {
 
 .portfolio-desc-txt {
 	color: #333;	
+}
+
+.portfolio-color-splash {
+	background-color: #eef0f0;
+	padding: 75px 0px 55px 0px;
+	margin-bottom: 75px;
 }
 
 
