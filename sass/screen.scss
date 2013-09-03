@@ -343,9 +343,8 @@ body {
 	padding: 0 0 0 0;
 }
 
-.portfolio-layouts.portfolio-image-set.fullwidth {
-	width: 100%;
-	max-width: none;	
+.full-width {
+
 }
 
 .flex-width {
@@ -1923,7 +1922,7 @@ html.ie8 .blog-cron .media-block {
 		max-width: 1050px;
 		> img {
 			margin: 50px 0;
-		}
+		}	
 		@media (min-width:900px){
 			&+.portfolio-image-set {
 				> img {
@@ -1973,7 +1972,12 @@ html.ie8 .blog-cron .media-block {
 			}
 		}
 	}//media > 900
-}
+
+	.full-width {
+		max-width: none;
+	}
+
+} //portfolio-layouts
 
 .portfolio-desc {
 	color: #000;
