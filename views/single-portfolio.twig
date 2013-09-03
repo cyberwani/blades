@@ -85,7 +85,9 @@
 <div class="wrapper">
 	<section id="archive-tiles">
 		{% for tile in tiles %}
-			{% include 'tile.html' %}
+			{% if tile.thumbnail.src %}
+				{% include 'tile.html' %}
+			{% endif %}
 		{% endfor %}
 	</section>
 </div>
