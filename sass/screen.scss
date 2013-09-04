@@ -184,12 +184,7 @@ body {
 		font-size: 72px;
 	}
 }
-input[type="text"]{
 
-}
-img[data-original="/wp-content/uploads/2013/09/share-tools-movie-grey-bg.gif"] {
-
-}
 .portfolio-overline-mod {
 	text-align: center;
 	@include pie-clearfix;
@@ -348,13 +343,6 @@ img[data-original="/wp-content/uploads/2013/09/share-tools-movie-grey-bg.gif"] {
 	padding: 0 0 0 0;
 }
 
-.full-width {
-
-}
-
-.flex-width {
-	margin: 0 auto;
-}
 
 //Three side by side blocks, infinite number
 // [ 1 ] [ 2 ] [ 3 ]
@@ -1925,6 +1913,7 @@ html.ie8 .blog-cron .media-block {
 	.portfolio-image-set {
 		margin: auto;
 		max-width: 1050px;
+		text-align: center;
 		> img {
 			margin: 50px 0;
 		}	
@@ -1990,6 +1979,10 @@ html.ie8 .blog-cron .media-block {
 	}
 
 	.flex-width {
+		width: auto;
+	}
+
+	img[data-original="/wp-content/uploads/2013/09/share-tools-movie-grey-bg.gif"] {
 		width: auto;
 	}
 
