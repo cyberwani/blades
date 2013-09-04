@@ -3,12 +3,12 @@ var upSite;
 ;(function($) {
 
 	function UpSite() {
-		this.createSlider();  
+		this.createSlider();
 		this.bindHandlers();
 		this.initAPI();
 		this.initClassFixing();
 		this.initSyntaxHighlighting();
-	};
+	}
 
 	UpSite.prototype.initSyntaxHighlighting = function(){
 		SyntaxHighlighter.defaults['toolbar'] = true;
@@ -20,7 +20,6 @@ var upSite;
 		var $newButton = $('.api-next').first();
 		var $oldButton = $('.api-next').last();
 		this.setAPIButtons($newButton, $oldButton);
-		
 	};
 
 	UpSite.prototype.initClassFixing = function(){
@@ -44,18 +43,8 @@ var upSite;
 		$('#archive-blog').on('click', '.blog-load-more', $.proxy(this.loadFromAPI, this));
 		$('.cover-overview').localScroll();
 
-		/* lazy load stuff*/
-		//$('section.article-content img').addClass('lazy');
-		/*
-		$('section.article-content img.lazy').each(function(index, value){
-			var source = $(this).attr('src');
-			// console.log(source);
-			$(this).attr('data-original', source).attr('src', '/wp-content/themes/blades/images/dev/placeholder.gif');
-		});
-		*/
+		$('img[data-src]').unveil(1000);
 
-		$('img[data-src]').unveil(500);
-		
 		$('#comment').on('focus', function(e){
 			var $this = $(e.currentTarget);
 			var $commentMod = $this.closest('.respond');
@@ -69,7 +58,7 @@ var upSite;
 
 	UpSite.prototype.resizeTwitter = function(){
 		$('#twitter-widget-0').attr('width', '600');
-	}
+	};
 
 	UpSite.prototype.loadFromAPI = function(e){
 		e.preventDefault();
@@ -84,14 +73,13 @@ var upSite;
 			var $oldButton = $target.next('.api-next');
 			THIS.setAPIButtons($newButton, $oldButton);
 			$target.append($items);
-		})
-	}
+		});
+	};
 
 	UpSite.prototype.setAPIButtons = function($newButton, $oldButton){
 		$oldButton.after($newButton);
 		$oldButton.remove();
-		
-	}
+	};
 
 	UpSite.prototype.slideTarget = function(e){
 		var $this = $(e.currentTarget);
@@ -102,21 +90,21 @@ var upSite;
 		$slide.css('opacity', '1');
 		console.log($slide);
 		console.log(targetSlide);
-	}
+	};
 
 	UpSite.prototype.createSlider = function(){
-	  $('.cover').iosSlider({
-	    snapToChildren: true,
-	    desktopClickDrag: true,
-	    keyboardControls: true,
-	    navNextSelector: $('.slidenav .next'),
-	    navPrevSelector: $('.slidenav .prev'),
-	    infiniteSlider: true,
-	    onSliderLoaded: slideText,
-	    onSlideChange: slideText,
-	    //and many more things, see website for documentation http://iosscripts.com/iosslider/
+		$('.cover').iosSlider({
+			snapToChildren: true,
+			desktopClickDrag: true,
+			keyboardControls: true,
+			navNextSelector: $('.slidenav .next'),
+			navPrevSelector: $('.slidenav .prev'),
+			infiniteSlider: true,
+			onSliderLoaded: slideText,
+			onSlideChange: slideText,
+			//and many more things, see website for documentation http://iosscripts.com/iosslider/
 		});
-	}
+	};
 
 	function slideText(args) {
 		var o = args.currentSlideObject;
