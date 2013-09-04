@@ -1915,7 +1915,7 @@ html.ie8 .blog-cron .media-block {
 		max-width: 1050px;
 		text-align: center;
 		> img {
-			margin: 50px 0;
+			margin: 0 0 50px 0;
 		}	
 		@media (min-width:900px){
 			&+.portfolio-image-set {
@@ -1993,6 +1993,7 @@ html.ie8 .blog-cron .media-block {
 .portfolio-desc {
 	color: #000;
 	clear: both;
+	margin-bottom: 50px;
 }
 
 .portfolio-desc-txt {
