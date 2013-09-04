@@ -184,7 +184,12 @@ body {
 		font-size: 72px;
 	}
 }
+input[type="text"]{
 
+}
+img[data-original="/wp-content/uploads/2013/09/share-tools-movie-grey-bg.gif"] {
+
+}
 .portfolio-overline-mod {
 	text-align: center;
 	@include pie-clearfix;
@@ -1982,6 +1987,10 @@ html.ie8 .blog-cron .media-block {
 
 	.full-width {
 		max-width: none;
+	}
+
+	.flex-width {
+		width: auto;
 	}
 
 } //portfolio-layouts
