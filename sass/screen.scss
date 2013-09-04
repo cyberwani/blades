@@ -1979,12 +1979,14 @@ html.ie8 .blog-cron .media-block {
 	}
 
 	.flex-width {
-		width: auto;
-	}
+		img {
+			width: auto;
+		}//img
+	}//flex-width
 
 	img[data-original="/wp-content/uploads/2013/09/share-tools-movie-grey-bg.gif"] {
 		width: auto;
-	}
+	}//img data-orig
 
 } //portfolio-layouts
 
