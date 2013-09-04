@@ -72,3 +72,10 @@
 
 	update_option('siteurl', 'http://'.$_SERVER['HTTP_HOST']);
 	update_option('home', 'http://'.$_SERVER['HTTP_HOST']);
+	if (class_exists('Jigsaw')){
+		Jigsaw::add_column('portfolio', 'preview_image', 'Preview', function($pid){
+	    	$data = array();
+	    	$data['post'] = new TimberPost($pid);
+			Timber::render('admin/portfolio-square-preview.twig', $data);
+		}, -10000);
+	}
