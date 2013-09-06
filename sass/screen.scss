@@ -2279,10 +2279,14 @@ html.ie8 .about-person {
 	position: absolute;
 	bottom: 0px;
 	left: 0px;
-	@include opacity(0);
 	@include trans;
+	@include opacity(1);
 	z-index: 1;
-		max-width: 1600px;
+	max-width: 1600px;
+
+	@media (min-width: 401px){
+		@include opacity(0);
+	}//mq
 
 
 	&:hover {
@@ -2291,6 +2295,9 @@ html.ie8 .about-person {
 	}//hover
 }
 
+.drinks-kicker {
+	text-align: center;
+}
 
 
 // CSS Animation				   				   
