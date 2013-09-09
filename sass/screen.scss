@@ -1980,7 +1980,7 @@ html.ie8 .blog-cron .media-block {
 
 	.flex-width {
 		img {
-			width: auto;
+			max-width: 100%;
 		}//img
 	}//flex-width
 
@@ -2310,25 +2310,12 @@ html.ie8 .about-person {
 // CSS Animation				   				   
 
 .animated {
-	-webkit-animation-fill-mode: both;
-	-moz-animation-fill-mode: both;
-	-ms-animation-fill-mode: both;
-	-o-animation-fill-mode: both;
-	animation-fill-mode: both;
-
-	-webkit-animation-duration: 3s;
-	-moz-animation-duration: 3s;
-	-ms-animation-duration: 3s;
-	-o-animation-duration: 3s;
-	animation-duration: 3s;
+	@include animation-fill-mode(both);
+	@include animation-duration(3s);
 }
 
 .animated.hinge {
-	-webkit-animation-duration: 2s;
-	-moz-animation-duration: 2s;
-	-ms-animation-duration: 2s;
-	-o-animation-duration: 2s;
-	animation-duration: 2s;
+	@include animation-duration(2s);
 }
 
 @-webkit-keyframes swing {
