@@ -22,5 +22,6 @@
 	foreach($people as $person){
 		$person = WPHelper::array_to_object($person);
 		$data['people'][] = $person;
+
 	}
 	Timber::render('page-about.twig', $data);
