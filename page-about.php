@@ -20,13 +20,7 @@
 	$data['people'] = array();
 	$data['wp_title'] = 'About Upstatement';
 	foreach($people as $person){
-		$person = PHPHelper::array_to_object($person);
-		if (strlen($person->image)){
-			$person->image = PostMaster::get_path($person->image);
-		} 
-		if (strlen($person->face)){
-			$person->face = PostMaster::get_path($person->face);
-		}
+		$person = WPHelper::array_to_object($person);
 		$data['people'][] = $person;
 	}
 	Timber::render('page-about.twig', $data);
