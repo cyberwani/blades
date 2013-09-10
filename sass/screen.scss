@@ -2044,12 +2044,12 @@ html.ie8 .blog-cron .media-block {
 	display: none;
 
 	@media (min-width: 760px) {
-		display: inline;	
+		display: block;	
 	}//mq
 }
 
 .mobile-img-swap {
-	display: inline;
+	display: block;
 
 	@media (min-width: 760px) {
 		display: none;
