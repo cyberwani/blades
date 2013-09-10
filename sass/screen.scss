@@ -2040,6 +2040,21 @@ html.ie8 .blog-cron .media-block {
 	margin-top: 60px;
 }
 
+.img-swap {
+	display: none;
+
+	@media (min-width: 760px) {
+		display: inline;	
+	}//mq
+}
+
+.mobile-img-swap {
+	display: inline;
+
+	@media (min-width: 760px) {
+		display: none;
+	}//mq
+}
 
 /* ============================================= */
 /*	Pages				   						 */ 
@@ -2150,6 +2165,15 @@ html.ie8 .about-person {
 	span {
 		color: #666;
 	}
+}
+
+.about-person-name a {
+	@include trans;
+
+	&:hover {
+		color: #27b99e;
+		@include trans;
+	}//hover
 }
 
 .about-person-twtr {
