@@ -456,17 +456,13 @@ body {
 	border-bottom: 1px solid #1d1d1d;
 	@include pie-clearfix;
 
-	@media (min-width: 500px) {
+	@media (min-width: 700px) {
 		padding-bottom: 15px;
-	}
-
-	@media (min-width: 900px){
-		//height: 70px;
 	}
 
 	.wrapper {
 		padding: 0;
-		@media (min-width: 500px) {
+		@media (min-width: 700px) {
 			padding: 0 40px;
 		}
 	}
@@ -477,9 +473,12 @@ body {
 /* ============================================= */
 
 .hdr-logo {
-	@media (min-width: 500px){
-		float: left;
-	}	
+	float: left;
+	padding-left: 15px;
+
+	@media (min-width: 700px) {
+		padding-left: 0px;
+	}//mq
 }
 
 .hdr-logo-img {
@@ -488,7 +487,6 @@ body {
 	height: 41px;
 	text-indent: -10000px;
 	@include svg(ups-logo);
-	margin: 0 auto 10px auto;
 
 	@media (min-width: 500px){
 		display: block;
@@ -500,8 +498,15 @@ body {
 
 
 .hdr-nav {
+	display: none;
+	@media (min-width: 700px) {
+		display: block;
+	}//mq
 	#menu-main-nav li {
-		@include inline-block;
+
+		@media (min-width: 700px) {
+			@include inline-block;
+		}//mq
 	}
 
 	#menu-main-nav li a {
@@ -514,37 +519,40 @@ body {
 		&:hover {
 			color: #FFF;
 		}
-
-		@media (max-width: 600px){
-		}
 	}
 
 	#menu-main-nav li.current-menu-item a {
 		color: #FFF;
 	}
 
-	@media (max-width: 500px){
+	@media (max-width: 700px){
 
 		#menu-main-nav li {
-			width: 32.5%;
+			width: 100%;
 			margin: 0;
+			padding: 10px 20px;
+			border-bottom: 1px solid #222;
+
+			&:last-child {
+				border-bottom: 0px;
+				padding-bottom: 12px;
+			}//lc
+
 			a {
 				display: block;
 				height: 40px;
 				padding: 10px;
 				font: 700 12px $proxima;
-				text-align: center;
-				background-color: #161616;
+				background-color: #121212;
 			}
 		}
-	} // max-width 600
+	} // max-width 500
 
-	@media (min-width: 500px) {
-
+	@media (min-width: 700px) {
 		float: right;
 
 		#menu-main-nav li {
-			margin: 0 20px 0 0;
+			margin: 0 20px 0 0;											
 		}
 
 		#menu-main-nav li a {
@@ -553,6 +561,31 @@ body {
 	}
 }
 
+.nav-chrome {
+	padding: 0px 20px;
+	height: 58px;
+	background-color: #000;
+
+	@media (min-width: 700px) {
+		display: none;
+	}//mq
+}
+
+.nav-toggle-m {
+	background-image: url(/wp-content/themes/blades/images/nav-toggle-m.png);
+	background-size: 25px;
+	display: block;
+	max-width: 25px;
+	width: 100%;
+	float: right;
+	height: 19px;
+	margin-top: 9px;
+}
+
+.visible {
+	display: block;
+	background-color: #121212;
+}
 
 /* ============================================= */
 /*	Footer						   			 */ 
