@@ -188,7 +188,7 @@ body {
 .portfolio-overline-mod {
 	text-align: center;
 	@include pie-clearfix;
-	margin-bottom: 75px;
+	margin-bottom: 60px;
 }
 
 .portfolio-overline {
@@ -456,17 +456,13 @@ body {
 	border-bottom: 1px solid #1d1d1d;
 	@include pie-clearfix;
 
-	@media (min-width: 500px) {
+	@media (min-width: 700px) {
 		padding-bottom: 15px;
-	}
-
-	@media (min-width: 900px){
-		//height: 70px;
 	}
 
 	.wrapper {
 		padding: 0;
-		@media (min-width: 500px) {
+		@media (min-width: 700px) {
 			padding: 0 40px;
 		}
 	}
@@ -477,9 +473,12 @@ body {
 /* ============================================= */
 
 .hdr-logo {
-	@media (min-width: 500px){
-		float: left;
-	}	
+	float: left;
+	padding-left: 15px;
+
+	@media (min-width: 700px) {
+		padding-left: 0px;
+	}//mq
 }
 
 .hdr-logo-img {
@@ -488,7 +487,6 @@ body {
 	height: 41px;
 	text-indent: -10000px;
 	@include svg(ups-logo);
-	margin: 0 auto 10px auto;
 
 	@media (min-width: 500px){
 		display: block;
@@ -500,8 +498,15 @@ body {
 
 
 .hdr-nav {
+	display: none;
+	@media (min-width: 700px) {
+		display: block;
+	}//mq
 	#menu-main-nav li {
-		@include inline-block;
+
+		@media (min-width: 700px) {
+			@include inline-block;
+		}//mq
 	}
 
 	#menu-main-nav li a {
@@ -514,37 +519,40 @@ body {
 		&:hover {
 			color: #FFF;
 		}
-
-		@media (max-width: 600px){
-		}
 	}
 
 	#menu-main-nav li.current-menu-item a {
 		color: #FFF;
 	}
 
-	@media (max-width: 500px){
+	@media (max-width: 700px){
 
 		#menu-main-nav li {
-			width: 32.5%;
+			width: 100%;
 			margin: 0;
+			padding: 10px 20px;
+			border-bottom: 1px solid #222;
+
+			&:last-child {
+				border-bottom: 0px;
+				padding-bottom: 12px;
+			}//lc
+
 			a {
 				display: block;
 				height: 40px;
 				padding: 10px;
 				font: 700 12px $proxima;
-				text-align: center;
-				background-color: #161616;
+				background-color: #121212;
 			}
 		}
-	} // max-width 600
+	} // max-width 500
 
-	@media (min-width: 500px) {
-
+	@media (min-width: 700px) {
 		float: right;
 
 		#menu-main-nav li {
-			margin: 0 20px 0 0;
+			margin: 0 20px 0 0;											
 		}
 
 		#menu-main-nav li a {
@@ -553,6 +561,31 @@ body {
 	}
 }
 
+.nav-chrome {
+	padding: 0px 20px;
+	height: 58px;
+	background-color: #000;
+
+	@media (min-width: 700px) {
+		display: none;
+	}//mq
+}
+
+.nav-toggle-m {
+	background-image: url(/wp-content/themes/blades/images/nav-toggle-m.png);
+	background-size: 25px;
+	display: block;
+	max-width: 25px;
+	width: 100%;
+	float: right;
+	height: 19px;
+	margin-top: 9px;
+}
+
+.visible {
+	display: block;
+	background-color: #121212;
+}
 
 /* ============================================= */
 /*	Footer						   			 */ 
@@ -1980,7 +2013,7 @@ html.ie8 .blog-cron .media-block {
 
 	.flex-width {
 		img {
-			width: auto;
+			max-width: 100%;
 		}//img
 	}//flex-width
 
@@ -2040,6 +2073,21 @@ html.ie8 .blog-cron .media-block {
 	margin-top: 60px;
 }
 
+.img-swap {
+	display: none;
+
+	@media (min-width: 760px) {
+		display: block;	
+	}//mq
+}
+
+.mobile-img-swap {
+	display: block;
+
+	@media (min-width: 760px) {
+		display: none;
+	}//mq
+}
 
 /* ============================================= */
 /*	Pages				   						 */ 
@@ -2152,6 +2200,15 @@ html.ie8 .about-person {
 	}
 }
 
+.about-person-name a {
+	@include trans;
+
+	&:hover {
+		color: #27b99e;
+		@include trans;
+	}//hover
+}
+
 .about-person-twtr {
 	font-size: 14px;
 	font-family: $proxima;
@@ -2211,42 +2268,138 @@ html.ie8 .about-person {
 }
 
 .job-mod {
-	margin: 20px 0;
+	margin: 0 auto;
+	padding: 20px 20px;
 	border-bottom: 1px solid #222;
+	max-width: 1100px;
 
 	&:last-child {
 		border: 0;
 	}
 
-	@media (min-width: 700px){
-		margin: 40px 0;
+	@media (min-width: 675px){
+		padding: 40px 90px;
+	}
+
+	@media (min-width: 950px){
+		padding: 40px 20px;
 		@include ui-grid-lr(30%, 70%, 10%);
 	}
 }
 
+.jobs-overview {
+	margin: 20px 0;
+
+	@media (min-width: 700px){
+		margin: 40px 0;
+	}
+}
+
+.jobs-overview-mod {
+	max-width: 1100px;
+	padding-top: 1px;
+
+	@media (min-width: 760px){
+		margin: 0 auto;
+	}
+
+	@media (min-width: 950px){
+		margin: 0 auto;
+		@include ui-grid-lr(30%, 70%, 10%);
+	}
+}
+
+//
+// Drinks Page
+//
+
+.drinks-banner {
+	background: url(/wp-content/themes/blades/images/drink/star-bg.gif);
+	height: 150px;
+	background-size: 85% 85%;
+	position: relative;
+
+	@media (min-width: 400px) {
+		height: 200px;
+		background-size: 75% 75%;
+	}//mq 400px
+
+	@media (min-width: 401px) {
+		height: 250px;
+	}//mq 400px	
+
+	@media (min-width: 700px) {
+		height: 400px;
+		background-size: 50% 50%;
+	}//mq 700px
+
+	@media (min-width: 1200px) {
+		height: 600px;
+	}//mq 1200px	
+
+	@media (min-width: 1800px) {
+		height: 900px;
+	}//mq 1600px	
+}//drinks-banner
+
+.drinks-buildings {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+}
+
+.banner-img-mod {
+	margin: 0 auto;
+}
+
+.drinks-sign {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	max-width: 1600px;
+}
+
+.drinks-sign-neon {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	@include trans;
+	@include opacity(1);
+	z-index: 1;
+	max-width: 1600px;
+
+	@media (min-width: 401px){
+		@include opacity(0);
+	}//mq
+
+
+	&:hover {
+		@include opacity(1);
+		@include trans;
+	}//hover
+}
+
+.drinks-kicker {
+	text-align: center;
+}
+
+.bg-audio {
+	display: none;
+
+	@media (min-width: 401px) {
+		display: inline;
+	}
+}
 
 // CSS Animation				   				   
 
 .animated {
-	-webkit-animation-fill-mode: both;
-	-moz-animation-fill-mode: both;
-	-ms-animation-fill-mode: both;
-	-o-animation-fill-mode: both;
-	animation-fill-mode: both;
-
-	-webkit-animation-duration: 3s;
-	-moz-animation-duration: 3s;
-	-ms-animation-duration: 3s;
-	-o-animation-duration: 3s;
-	animation-duration: 3s;
+	@include animation-fill-mode(both);
+	@include animation-duration(3s);
 }
 
 .animated.hinge {
-	-webkit-animation-duration: 2s;
-	-moz-animation-duration: 2s;
-	-ms-animation-duration: 2s;
-	-o-animation-duration: 2s;
-	animation-duration: 2s;
+	@include animation-duration(2s);
 }
 
 @-webkit-keyframes swing {

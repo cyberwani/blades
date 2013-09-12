@@ -6,12 +6,21 @@
 </div><!-- cover -->
 
 <!-- Jobs Content -->
-<section class="jobs-content wrapper">
+<section class="jobs-content inset">
 		{% for job in jobs %}
-		<article class="job-mod">
+		<article class="job-mod wrapper">
 			<h1 class="h1 jobs-h1 ui-block-1">{{job.title}}</h1>
 			<div class="article-txt-reverse jobs-txt ui-block-2">{{job.description | wpautop }}</div>
 		</article>
-		{% endfor %}
+	{% endfor %}
 </section> <!-- /about-intro -->
+
+<section class="jobs-overview">
+	<div class="jobs-overview-mod wrapper">
+		<h2 class="h2 section-h">{{overview.title|default('Working at Upstatement')}}</h2>
+		<div class="l-txt txt-lg"><p>{{overview.description|default('body copy here')}}</p></div>
+	</div> <!-- /wrapper -->	
+</section> <!-- /jobs-overview -->	
+
 {% endblock %}
+

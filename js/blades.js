@@ -106,6 +106,12 @@ var upSite;
 		});
 	};
 
+	//Mobile nav toggling action-action-action
+	$(".nav-toggle-m").click(function(){
+	  	console.log('clicked');
+	    $("#access").toggleClass("visible");
+	});
+
 	function slideText(args) {
 		var o = args.currentSlideObject;
 		var sliderMessage = $(o).find('.slider-message-hidden').html();
