@@ -7,7 +7,7 @@
 			{% if billboard == billboards[0] %}
 			<a class="portfolio-promo portfolio-promo-top" href="{{billboard.permalink}}">
 				<div class="portfolio-promo-img">
-					<img src="{{ billboard.billboard.src }}"/>
+					<img src="{{ billboard.billboard.src|resize(1200) }}"/>
 				</div> <!-- /portfolio-promo-img -->
 				<hgroup class="portfolio-promo-hgroup">
 					{% if billboard.kicker %}
@@ -21,7 +21,7 @@
 			{% else %}
 			<div class="media-block">
 				<a class="portfolio-promo" href="{{billboard.permalink}}">
-					<div class="portfolio-promo-img"><img src="{{ billboard.billboard.src }}"/></div>
+					<div class="portfolio-promo-img"><img src="{{ billboard.billboard.src | resize(1200)}}"/></div>
 					<hgroup class="portfolio-promo-hgroup">
 						{% if billboard.kicker %}
 						<h3 class="h4 portfolio-promo-kicker">{{billboard.kicker}}</h3>
