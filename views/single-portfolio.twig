@@ -46,7 +46,7 @@
 					{% if layout.images %}
 						<div class="portfolio-image-set image-count-{{layout.images|length}} {{layout.size|length ? layout.size}}">
 							{% for image in layout.images %}
-								<img class="lazy" data-original="{{image.get_pathinfo.filename == image.get_pathinfo.filename|upper ? image.src : image.src|tojpg}}" data-src="{{image.get_pathinfo.filename == image.get_pathinfo.filename|upper ? image.src : image.src|tojpg}}" src="/wp-content/themes/blades/images/dev/placeholder.gif" alt="{{image.alt_text|raw}}"/>
+								<img class="lazy viz-resp {{layout.visibility|join(' ')}}" data-original="{{image.get_pathinfo.filename == image.get_pathinfo.filename|upper ? image.src : image.src|tojpg}}" data-src="{{image.get_pathinfo.filename == image.get_pathinfo.filename|upper ? image.src : image.src|tojpg}}" src="/wp-content/themes/blades/images/dev/placeholder.gif" alt="{{image.alt_text|raw}}" id="portfolio-img-{{image.ID}}"/>
 								<p>{{image.caption}}</p>
 							{% endfor %}
 						</div>

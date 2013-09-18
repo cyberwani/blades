@@ -697,6 +697,7 @@ body {
 	background-color: rgba(0,0,0,.5);
 	color: rgba(255,255,255,.5);
 	@include trans;
+	font-family:"Helvetica Neue", Arial, sans;
 }
 
 .slide {
@@ -740,7 +741,7 @@ html.ie8 .cover-overview{
 		font-style: italic;
 		color: #999;
 	}
-	
+
 	.wrapper {
 		margin: 0 15px;
 	}
@@ -1938,6 +1939,37 @@ html.ie8 .blog-cron .media-block {
 	&.ratio-tv {
 		@include video(tv);
 	}
+}
+
+.portfolio-layouts {
+	img.viz-resp {
+		display:none;
+	}
+	img.viz-mobile {
+		// @include mq($small, max) {
+
+		// }
+
+		@media (max-width:599px){
+			display:block;
+		}
+	}
+	img.viz-tablet {
+		// @include mq($small, $med) {
+		// 	display:block;
+		// }
+		@media (min-width:600px) and (max-width:899px){
+			display:block;
+		}
+	}
+	img.viz-desktop {
+		// @include mq($large) {
+		// }
+		@media (min-width:900px){
+			display:block;
+		}
+	}
+
 }
 .portfolio-layouts {
 
