@@ -1946,10 +1946,6 @@ html.ie8 .blog-cron .media-block {
 		display:none;
 	}
 	img.viz-mobile {
-		// @include mq($small, max) {
-
-		// }
-
 		@media (max-width:599px){
 			display:block;
 		}
@@ -1995,7 +1991,7 @@ html.ie8 .blog-cron .media-block {
 	@media (max-width: 899px){
 		.image-count-1, .image-count-2, .image-count-3 {
 			img {
-				width: 100%;
+				max-width: 100%;
 				float: left;
 			}
 		}
@@ -2012,7 +2008,7 @@ html.ie8 .blog-cron .media-block {
 			margin: 20px auto;
 
 			img{
-				width: 100%;
+				max-width: 100%;
 				height: auto;
 				float: none;
 			}
