@@ -78,7 +78,7 @@
 					{% endif %}
 					{% if layout.acf_fc_layout == 'include' %}
 						<div class="portfolio-include">
-							{% include 'portfolio/' ~ layout.file_name %}
+							{% include 'portfolio/' ~ layout.file_name ignore missing %}
 						</div>
 					{% endif %}
 				{% endfor %}
