@@ -1947,22 +1947,18 @@ html.ie8 .blog-cron .media-block {
 	}
 	img.viz-mobile {
 		@media (max-width:599px){
-			display:block;
+			display: inline;
 		}
 	}
 	img.viz-tablet {
-		// @include mq($small, $med) {
-		// 	display:block;
-		// }
 		@media (min-width:600px) and (max-width:899px){
-			display:block;
+			display: inline;
 		}
 	}
 	img.viz-desktop {
-		// @include mq($large) {
-		// }
+		
 		@media (min-width:900px){
-			display:block;
+			display: inline;
 		}
 	}
 
