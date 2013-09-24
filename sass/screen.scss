@@ -57,6 +57,7 @@ body {
 .txt {
 	font: 100 16px/150% $proxima;
 	margin: 0 0 20px 0;
+	color: #666;
 	> p {
 		margin-bottom: 18px;		
 	}
@@ -64,6 +65,7 @@ body {
 
 .txt-sm {
 	font: 300 14px/150% $proxima;
+	color: #666;
 	> p {
 		margin-bottom: 18px;		
 	}
@@ -78,7 +80,7 @@ body {
 }
 
 .txt-dark {
-		color: $highlight;
+	color: #666;
 	font-weight: 400;
 }
 
