@@ -70,7 +70,7 @@ body {
 }
 
 .txt a, .txt-lg a{
-	color: #666;
+	color: $highlight;
 
 	&:hover {
 		color: $highlight-hover;
@@ -78,7 +78,7 @@ body {
 }
 
 .txt-dark {
-	color: #666;
+		color: $highlight;
 	font-weight: 400;
 }
 
