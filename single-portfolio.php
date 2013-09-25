@@ -20,7 +20,7 @@
 	if ($pi->custom_description){
 		$data['meta_desc'] = $pi->custom_description;
 	} else {
-		$data['meta_desc'] = $pi->get_preview(30, true, '', true);
+		$data['meta_desc'] = strip_tags($pi->get_preview(30, true, '', true));
 	}
 	$tiles = array('post_type' => 'portfolio', 'meta_key' => '_thumbnail_id', 'numberposts' => '-1', 'post__not_in' => array($pi->ID));
 	$data['tiles'] = Timber::get_posts($tiles);
