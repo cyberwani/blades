@@ -6,7 +6,7 @@
 			{% if post.billboard_src %}
 			<!-- Portfolio Banner -->
 			<div class="portfolio-banner">
-				<img class="portfolio-banner-img" src="{{post.billboard_src}}" />
+				<img class="portfolio-banner-img" src="{{post.billboard_src|resize(1600)}}" alt="Banner image for {{post.title}}" />
 				{% if post.billboard_credit %}
 				<p class="cover-credit">Photo by {{post.billboard_credit}}</p>
 				{% endif %}
@@ -15,7 +15,7 @@
 
 			<!-- Portfolio Headline -->
 			<div class="site-width">
-				<hgroup class="portfolio-h-outer">
+				<div class="portfolio-h-outer">
 					<div class="portfolio-h-inner">
 						{% if post.kicker %}
 						<h3 class="h4 portfolio-kicker">{{post.kicker}}</h3>
@@ -30,7 +30,7 @@
 							{% endif %}
 						</h1>
 					</div> <!-- /.portfolio-title-inner -->
-				</hgroup>
+				</div>
 			</div> <!-- /site-width -->
 
 			<!--<div class="portfolio-intro site-width">
