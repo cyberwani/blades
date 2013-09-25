@@ -7,7 +7,7 @@
 			{% if billboard == billboards[0] %}
 			<a class="portfolio-promo portfolio-promo-top" href="{{billboard.permalink}}">
 				<div class="portfolio-promo-img">
-					<img src="{{ billboard.billboard.src|resize(1200) }}"/>
+					<img src="{{ billboard.billboard.src|resize(1200) }}" alt="Banner for {{billboard.title}}"/>
 				</div> <!-- /portfolio-promo-img -->
 				<hgroup class="portfolio-promo-hgroup">
 					{% if billboard.kicker %}
