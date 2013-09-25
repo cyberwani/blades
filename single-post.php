@@ -14,7 +14,7 @@
 	if ($pi->custom_description){
 		$data['meta_desc'] = $pi->custom_description;
 	} else {
-		$data['meta_desc'] = $pi->get_preview(30, true, '', true);
+		$data['meta_desc'] = strip_tags($pi->get_preview(30, true, '', true));
 	}
 	$data['comment_form'] = InkwellComments::get_dsq_comments($pi->ID);
 	$data['sidebar'] = Timber::get_sidebar();
