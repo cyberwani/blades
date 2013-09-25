@@ -7,28 +7,28 @@
 			{% if billboard == billboards[0] %}
 			<a class="portfolio-promo portfolio-promo-top" href="{{billboard.permalink}}">
 				<div class="portfolio-promo-img">
-					<img src="{{ billboard.billboard.src|resize(1200) }}" alt="Banner for {{billboard.title}}"/>
+					<img src="{{ billboard.billboard.src|resize(1200) }}" alt="Banner for {{billboard.title}}" />
 				</div> <!-- /portfolio-promo-img -->
-				<hgroup class="portfolio-promo-hgroup">
+				<div class="portfolio-promo-hgroup">
 					{% if billboard.kicker %}
 						<h3 class="h4 portfolio-promo-kicker">{{billboard.kicker}}</h3>
 					{% endif %}
 					<h2 class="h1 portfolio-promo-h">{{ billboard.title }}</h2>
 					{# <p class="txt">{{ billboard.billboard_message }}</p> #}
-				</hgroup>
+				</div>
 			</a> <!-- /portfolio-promo -->
 			<section id="archive-portfolio-promo" class="portfolio-promo-btm">
 			{% else %}
 			<div class="media-block">
 				<a class="portfolio-promo" href="{{billboard.permalink}}">
-					<div class="portfolio-promo-img"><img src="{{ billboard.billboard.src | resize(1200)}}"/></div>
-					<hgroup class="portfolio-promo-hgroup">
+					<div class="portfolio-promo-img"><img src="{{ billboard.billboard.src | resize(1200)}}" alt="Banner for {{billboard.title}}" /></div>
+					<div class="portfolio-promo-hgroup">
 						{% if billboard.kicker %}
 						<h3 class="h4 portfolio-promo-kicker">{{billboard.kicker}}</h3>
 						{% endif %}
 						<h2 class="h2 portfolio-promo-h">{{ billboard.post_title }}</h2>
 						{# <p class="txt">{{ billboard.billboard_message }}</p> #}
-					</hgroup>
+					</div>
 				</a> <!-- /portfolio-promo -->
 			</div> <!-- /media-block -->
 			{% endif %}
