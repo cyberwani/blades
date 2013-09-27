@@ -22,5 +22,6 @@
 	}
 
 	$data['blogs'] = Timber::get_posts('post_type=post&numberposts=4');
+	$data['highlights'] = Timber::get_posts('post_type=highlights&numberposts=2');
 
 	Timber::render('home.twig', $data);
