@@ -2,11 +2,11 @@
 {% block content %}
 <div class="content-wrapper">
 	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-		<section class="portfolio-layouts {% if post.billboard_src %}billboard-on{% endif %}">
-			{% if post.billboard_src %}
+		<section class="portfolio-layouts {% if post.billboard %}billboard-on{% endif %}">
+			{% if post.billboard %}
 			<!-- Portfolio Banner -->
 			<div class="portfolio-banner">
-				<img class="portfolio-banner-img" src="{{post.billboard_src|resize(1600)}}" alt="Banner image for {{post.title}}" />
+				<img class="portfolio-banner-img" src="{{TimberImage(post.billboard).src|resize(1600)}}" alt="Banner image for {{post.title}}" />
 				{% if post.billboard_credit %}
 				<p class="cover-credit">Photo by {{post.billboard_credit}}</p>
 				{% endif %}

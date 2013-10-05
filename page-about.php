@@ -16,12 +16,6 @@
 	$data = Timber::get_context();
 	$pi = new TimberPost();
 	$data['post'] = $pi;
-	$people = get_field('person', $pi->ID);
-	$data['people'] = array();
+	$data['people'] = get_field('person', $pi->ID);
 	$data['wp_title'] = 'About Upstatement';
-	foreach($people as $person){
-		$person = WPHelper::array_to_object($person);
-		$data['people'][] = $person;
-
-	}
 	Timber::render('page-about.twig', $data);

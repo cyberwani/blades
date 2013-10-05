@@ -28,13 +28,14 @@
 		<div class="wrapper">
 			{% for promo in promos %}
 				<div class="hp-theme promo-{{loop.index}}" id="promo-{{promo.post_name}}">
+
 					<div class="hp-theme-intro ui-block-1">
 					<h3 class="h4"><a href="/portfolio/">{{promo.title}}</a></h3>
 						<section class="txt-lg">{{promo.content}}</section>
 					</div>
 					<div class="hp-theme-tiles ui-block-2">
 						<article class="hp-theme-tile-grid">
-							{% for square in promo.squares %}
+							{% for square in TimberPost(promo.get_field('squares')) %}
 							<a class="media-block" href="{{square.permalink}}">
 								<img src="{{square.thumbnail.src|resize(200, 200)}}" alt="{{square.title}}"/>
 								<h4 class="tile-h4 a11y-only">{{square.title}}</h4>
@@ -76,15 +77,7 @@
 		<h3 class="h4">Firm Highlights</h3>
 		<section class="hp-highlight-list">
 			{% for highlight in highlights %}
-			<article class="highlight ui-block-{{loop.index}}">
-				<div class="hl-img-mod ui-block-1">
-					<img src="{{highlight.thumbnail.src}}" alt="{{highlight.title}}" />
-				</div>
-				<div class="hl-txt-mod ui-block-2">
-					<h4 class="h3">{{highlight.title}}</h4>
-					<div class="txt txt-dark">{{highlight.content}}</div>
-				</div>
-			</article>
+				{% include 'components/highlight.twig' %}
 			{% endfor %}
 		</section>
 	</section>

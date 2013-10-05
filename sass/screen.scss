@@ -2546,10 +2546,10 @@ body.error404 {
 	padding-top:10px;
 	@include pie-clearfix;
 	@media (min-width:760px){
-		@include ui-grid-2(52.5%, 47.5%);
+		@include ui-grid-2(52%, 48%, 3%);
 		.highlight:first-of-type {
 			border-bottom:0px;
-			padding-right:5%;
+			padding-right:3%;
 			border-right:1px dotted #222;
 		}
 	}
@@ -2590,6 +2590,11 @@ body.error404 {
 		margin:auto;
 		max-width:100%;
 		width:100%;
+		@include opacity(0.6);
+		@include trans;
+		.highlight:hover & {
+			@include opacity(0.9);
+		}
 	}
 }
 

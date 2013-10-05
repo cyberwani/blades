@@ -10,19 +10,6 @@
 	add_theme_support('menus');
 	add_theme_support( 'post-thumbnails' );
 
-	add_action( 'widgets_init', 'arphabet_widgets_init' );
-
-	function arphabet_widgets_init() {
-
-	register_sidebar( array(
-		'name' => 'Home right sidebar',
-		'id' => 'home_right_1',
-		'before_widget' => '<div>',
-		'after_widget' => '</div>',
-		'before_title' => '<h2 class="rounded">',
-		'after_title' => '</h2>',
-	) );
-}
 
 	if (function_exists('register_options_page')){
 		register_options_page('Look & Feel');
@@ -34,18 +21,10 @@
 		echo 'say '.$message . ' and ' . $suffix;
 	}
 
-	function get_post_info($pid = 0){
-		PostMaster::get_post_info($pid);
-	}
-
 	function load_scripts(){
 		wp_enqueue_script('jquery');
 	}
-	/*
-	Timber::add_route('portfolio', function(){
-		Timber::load_template('archive-portfolio.php');
-	});
-	*/
+
 	add_action('ups_cron_hour', 'categorize_tweets');
 
 	//categorize_tweets();
@@ -61,7 +40,7 @@
 				$value = 'reply';
 			} else if ($letter == 'r'){
 				$value = 'retweet';
-			} 
+			}
 			$tweet->menu_order = 1;
 			wp_update_post($tweet);
 			update_post_meta($tweet->ID, 'tweet_type', $value);
@@ -73,9 +52,62 @@
 	update_option('siteurl', 'http://'.$_SERVER['HTTP_HOST']);
 	update_option('home', 'http://'.$_SERVER['HTTP_HOST']);
 	if (class_exists('Jigsaw')){
+
+		Jigsaw::add_column('highlights', 'Thumb', function($pid){
+	    	$data = array();
+	    	$data['post'] = new TimberPost($pid);
+			Timber::render('admin/portfolio-square-preview.twig', $data);
+		}, -1000);
+
 		Jigsaw::add_column('portfolio', 'Preview', function($pid){
 	    	$data = array();
 	    	$data['post'] = new TimberPost($pid);
 			Timber::render('admin/portfolio-square-preview.twig', $data);
-		}, -10000);
+		}, -1000);
 	}
+
+	$routes = new Routes();
+
+	$routes->map('blog', function($params) use ($routes){
+		$sticky = get_option('sticky_posts');
+		$sticky = WPHelper::array_truncate($sticky, 4);
+		$page = 0;
+		$query = array('post_type' => 'post', 'posts_per_page' => 6, 'post__not_in' => $sticky, 'offset' => $page * 6);
+		$routes->load('archive-blog.php', $query);
+	});
+
+	$routes->redirect('pk2', 'blog/2013/01/welcome-pete/');
+	$routes->redirect('swa', 'http://connected.southwestwifi.com');
+
+	$routes->map('blog/page/:pg', function($params) use ($routes){
+		$sticky = get_option('sticky_posts');
+		$sticky = WPHelper::array_truncate($sticky, 4);
+		$page = $params['pg'];
+		$page -= 1;
+		$page = max(0, $page);
+		$query = array('post_type' => 'post', 'posts_per_page' => 6, 'post__not_in' => $sticky, 'offset' => $page * 6);
+		$routes->load('archive-blog.php', $query);
+	});
+
+
+
+	/*
+	Timber::add_route('blog', function($params){
+		$sticky = get_option('sticky_posts');
+		$sticky = WPHelper::array_truncate($sticky, 4);
+		$page = 0;
+		$query = array('post_type' => 'post', 'posts_per_page' => 6, 'post__not_in' => $sticky, 'offset' => $page * 6);
+		Timber::load_template('archive-blog.php', $query);
+	});
+
+	Timber::add_route('blog/page/:pg', function($params){
+		$sticky = get_option('sticky_posts');
+		$sticky = WPHelper::array_truncate($sticky, 4);
+		$page = $params['pg'];
+		$page -= 1;
+		$page = max(0, $page);
+		$query = array('post_type' => 'post', 'posts_per_page' => 6, 'post__not_in' => $sticky, 'offset' => $page * 6);
+		Timber::load_template('archive-blog.php', $query);
+	});
+	*/
+
