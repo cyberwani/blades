@@ -187,6 +187,8 @@ body {
 	}
 }
 
+
+
 .portfolio-overline-mod {
 	text-align: center;
 	@include pie-clearfix;
@@ -375,6 +377,11 @@ body {
 	border-top: 1px solid #222;
 	border-bottom: 1px solid #222;
 	padding: 30px 0;
+}
+
+.home-inset {
+	border-top: 0px;
+	padding: 0px;
 }
 
 // Used for content striping on white backgrounds
@@ -907,6 +914,29 @@ html.ie8 .cover-overview{
 
 }//hp-theme
 
+.hp-theme-alt {
+	@include pie-clearfix;
+	padding: 20px 0px 0px 0px;
+	border-bottom: 1px dotted #222;
+	&:last-child { 
+		border: 0;
+	}
+
+	.txt-lg {
+		color: #666;
+		font-weight: 300;
+	}
+
+	@media (min-width: 960px){
+		@include ui-grid-lr(50%, 50%, 0%);
+		padding: 20px 0px 0px 0px;
+		.hp-theme-intro {
+			border: 0;
+		}
+	} // mq
+
+}//hp-theme
+
 
 .hp-theme-intro {
 	margin-bottom: 10px;
@@ -948,6 +978,37 @@ html.ie8 .cover-overview{
 	} // mq
 }//hp theme tiles 
 
+
+// Home Banner
+.home-banner {
+	position: relative;
+	height: 0;
+	padding-bottom: 45.5%;
+	//background: url(/wp-content/themes/blades/images/dev/covers/hero-table.jpg) 50% 50% no-repeat;
+	//background-size: 117%;
+	overflow: hidden;
+	@media (min-width: 900px) {
+		margin-top: 0px;
+	}
+
+	// Mask to create the circle effect
+	&:after {
+		@include content;
+		width: 100%;
+		height: 0;
+		padding-bottom: 5.5%;
+		background: url(/wp-content/themes/blades/images/covers/round-mask-bk.png) 50% 0% no-repeat;
+		background-size: 110%;
+		@include absolute(n n -2px n);
+	}
+
+}
+
+.home-banner-img {
+	@include absolute(0 0 n 0);
+	width: 117%;
+	margin-left: -8.5%;
+}
 
 
 // This is the section below the themes, right now with contact info
@@ -1045,7 +1106,7 @@ html.ie8 .cover-overview{
 
 
 /* ============================================= */
-/*	Pages 				   			 */ 
+/*	Pages 				   			 			 */ 
 /* ============================================= */
 
 #port-window {
@@ -1491,9 +1552,81 @@ html.ie8 .cover-overview{
 	font: 300 19px/22px $proxima;
 	@include trans;
 
-	.tile:hover & {
+	.tile:hover  {
 		color: #FFF;
 		opacity: 1;
+	}
+}
+
+.junk {
+	background-color: #161616;
+	margin-top: -12%;
+}
+
+.alt-tile {
+	padding-top: 60px;
+
+	.h1 {
+		margin-bottom: 4px;
+		font-size: 32px;
+	}
+
+	.txt-lg {
+		line-height: 155%;
+	}
+}
+
+.alt-tile-img {
+	max-width: 445px;
+	margin-bottom: 20px;
+}
+
+.tile-border {
+	border-right: 1px solid #222;
+	padding-right: 60px;
+	padding-bottom: 60px;
+}
+
+.title-border-alt {
+	padding-left: 60px;
+	padding-bottom: 60px;
+}
+
+.tile-row-mod {
+	border-bottom: 1px solid #222;
+
+	@media (min-width: 960px) {
+		@include ui-grid-lr(50%, 50%, 0%);
+	} //mq
+}
+
+.btm-row {
+	border-bottom: 0px;
+}
+
+.logo-pond-mod {
+	border-top: 1px solid #222;
+	border-bottom: 1px solid #222;
+	padding-top: 30px;
+}
+
+.logo-pond-mod {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.pond-item {
+	display: inline;
+	margin-right: 4%;
+	width: 100%;
+
+	img {
+		max-width: 165px;
+		padding-bottom: 30px;
+	}
+
+	&:last-child {
+		margin-right: 0px;
 	}
 }
 

@@ -1,0 +1,100 @@
+{% extends "base.twig" %}
+{% block content %}
+
+<div class="home-banner">
+	<img class="home-banner-img" src="http://upstatement.com/wp-content/uploads/2013/10/dumbfoundead_concert-r-1600x0.jpg" alt="Banner image for NPR Code Switch">
+</div> <!-- /home-banner -->
+
+<div class="junk">
+	<div class="portfolio-h-outer">
+		<div class="portfolio-h-inner">
+			<h3 class="h4 portfolio-kicker">Responsive Design System</h3>
+		</div>
+	</div>
+</div>
+
+<section class="hp-themes">
+	<div class="inset home-inset">
+		<div class="wrapper">
+			<div class="hp-theme-alt">
+				<section class="logo-pond-mod">
+					<ul class="logo-pond">
+						<li class="pond-item">
+							<img class="stuff" src="/wp-content/themes/blades/images/logo-pond-globe.png" />
+						</li>
+						<li class="pond-item">
+							<img class="stuff" src="/wp-content/themes/blades/images/logo-pond-rh.png" />
+						</li>
+						<li class="pond-item">
+							<img class="stuff" src="/wp-content/themes/blades/images/logo-pond-npr.png" />
+						</li>
+						<li class="pond-item">
+							<img class="stuff" src="/wp-content/themes/blades/images/logo-pond-gn.png" />
+						</li>
+						<li class="pond-item">
+							<img class="stuff" src="/wp-content/themes/blades/images/logo-pond-kellogg.png" />
+						</li>
+					</ul> <!-- /logo-pond -->	
+				</section> <!-- /logo-pond -->	
+
+				<div class="tile-row-mod">
+					<div class="alt-tile tile-border ui-block-1">
+						<h3 class="h4">Open Source</h3>
+						<img class="alt-tile-img" src="/wp-content/themes/blades/images/open-src-tz-img.jpg" />
+						<h2 class="h1">Timber for WordPress</h2>
+						<p class="txt-lg txt-dark">We're more than just a web design studio. We also make rad open source jams like Timber for WordPress and things.</p>
+					</div><!-- /alt-tile -->	
+
+					<div class="alt-tile title-border-alt ui-block-2">
+						<h3 class="h4">Events</h3>
+						<img class="alt-tile-img" src="/wp-content/themes/blades/images/events-tz-img.jpg" />
+						<h2 class="h1">WordCamp Boston</h2>
+						<p class="txt-lg txt-dark">This October we'll be sponsoring WordCamp Boston. You can catch a talk by Jared and stop by our booth and say "hello"!</p>				
+					</div> <!-- /alt-title -->	
+				</div> <!-- /tile-row-mod -->	
+
+				<div class="tile-row-mod btm-row">	
+					<div class="alt-tile tile-border ui-block-1">
+						<h3 class="h4">Awards</h3>
+						<img class="alt-tile-img" src="/wp-content/themes/blades/images/awards-tz-img.jpg" />
+						<h2 class="h1">Worlds Best Website</h2>
+						<p class="txt-lg txt-dark">Our work on The Boston Globe helped the site win World’s Best Designed website: BostonGlobe.com via The Society for News Design.</p>
+					</div><!-- /alt-tile -->	
+
+					<div class="alt-tile title-border-alt ui-block-2">
+						<h3 class="h4">Jobs</h3>
+						<img class="alt-tile-img" src="/wp-content/themes/blades/images/jobs-tz-img.jpg" />
+						<h2 class="h1">Now Hiring Interns</h2>
+						<p class="txt-lg txt-dark">Are you pumped on web design? Is your enthusiasm for development hard to contain? We want to meet you! We're currently hiring for our 2014 intern program.</p>				
+					</div> <!-- /alt-title -->	
+				</div> <!-- /title-row-mod -->	
+			</div> <!-- /hp-theme-alt -->	
+		</div> <!-- /wrapper -->	
+	</div> <!-- /inset -->	
+</secton> <!-- /hp-themes -->	
+
+<!-- Feeds -->
+<div class="hp-feeds wrapper">
+	<div class="hp-blog">
+		<h3 class="h4"><a href="/blog/">Blog</a></h3>
+		<section class="hp-blog-list">
+			{% for blog in blogs %}
+				<article class="media-block blog blog-small" id="post-{{blog.post_name}}">
+					<h3 class="h3"><a href="{{blog.link}}">{{blog.title}}</a></h3>
+					<p class="blog-author"><span>By</span> {{blog.author.name}}</p>
+					<p class="txt txt-dark">{{blog.get_preview(25, true, 'More &raquo;')}}</p>
+				</article>
+			{% endfor %}
+		</section>
+	</div> <!-- /hp-blog -->
+
+
+	<section class="hp-tweets">
+		<div class="tweet-mod">
+			<a class="twitter-timeline" style="min-width: 650px"; width="900" height="100" data-dnt="true" href="https://twitter.com/upstatement" data-widget-id="357596072165658624" data-chrome="noheader noborders transparent nofooter" data-tweet-limit="1">Tweets by @upstatement </a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		</div> <!-- /tweet-mod -->
+	</section>
+
+</div><!-- /hp-feeds -->
+{% endblock %}

@@ -23,4 +23,4 @@
 
 	$data['blogs'] = Timber::get_posts('post_type=post&numberposts=4');
 
-	Timber::render('home.twig', $data);
+	Timber::render('home-new.twig', $data);
