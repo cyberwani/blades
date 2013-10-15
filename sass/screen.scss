@@ -1558,45 +1558,77 @@ html.ie8 .cover-overview{
 	}
 }
 
-.junk {
+.hp-topper-intro {
 	background-color: #161616;
-	margin-top: -12%;
+	margin-top: -14%;
+	text-align: center;
+	padding-bottom: 10px;
+
+	.h1 {
+		margin-bottom: 15px;
+	}//h1
+
+	.portfolio-h-outer {
+		margin-bottom: 20px;
+		max-width: 600px;
+	}//portfolio-h-outer
+}//hp-topper-intro
+
+.hp-intro-txt {
+	max-width: 600px;
+	text-align: center;
+	margin: 0 auto;
 }
 
+.tiles-mod {
+	max-width: 470px;
+	margin: 0 auto;
+	margin-bottom: 60px;
+
+	@media (min-width: 860px) {
+		max-width: 1020px;
+		margin-bottom: 0px;
+	}//mq
+}//tiles-mod
+
 .alt-tile {
-	padding-top: 60px;
+	padding-top: 40px;
 
 	.h1 {
 		margin-bottom: 4px;
 		font-size: 32px;
-	}
+	}//h1
 
 	.txt-lg {
 		line-height: 155%;
-	}
+	}//txt-lg
 }
 
 .alt-tile-img {
-	max-width: 445px;
+	max-width: 470px;
 	margin-bottom: 20px;
+	width: 100%;
 }
 
 .tile-border {
-	border-right: 1px solid #222;
-	padding-right: 60px;
-	padding-bottom: 60px;
-}
+	@media (min-width: 860px) {
+		padding-right: 40px;
+		padding-bottom: 40px;
+		border-right: 1px solid #222;
+	}//mq
+}//tile-border
 
-.title-border-alt {
-	padding-left: 60px;
-	padding-bottom: 60px;
-}
+.tile-border-alt {
+	@media (min-width: 860px) {
+		padding-left: 40px;
+		padding-bottom: 40px;
+	}//mq
+}//tile-border-alt
 
 .tile-row-mod {
-	border-bottom: 1px solid #222;
-
-	@media (min-width: 960px) {
+	@media (min-width: 860px) {
 		@include ui-grid-lr(50%, 50%, 0%);
+		border-bottom: 1px solid #222;
 	} //mq
 }
 
@@ -1605,10 +1637,13 @@ html.ie8 .cover-overview{
 }
 
 .logo-pond-mod {
-	border-top: 1px solid #222;
 	border-bottom: 1px solid #222;
-	padding-top: 30px;
-}
+	
+	@media (min-width: 560px) {
+		border-top: 1px solid #222;
+		padding-top: 30px;
+	}//mq	
+}//logo-pond
 
 .logo-pond-mod {
 	margin: 0 auto;
@@ -1617,18 +1652,22 @@ html.ie8 .cover-overview{
 
 .pond-item {
 	display: inline;
-	margin-right: 4%;
+	margin-right: 3%;
 	width: 100%;
 
 	img {
-		max-width: 165px;
+		max-width: 98px;
 		padding-bottom: 30px;
-	}
+
+		@media (min-width: 560px) {
+			max-width: 127px;
+		}//mq	
+	}//img
 
 	&:last-child {
 		margin-right: 0px;
-	}
-}
+	}//lc
+}//pond-item
 
 /* ============================================= */
 /*	Blog archive					   			 */ 
