@@ -1986,15 +1986,16 @@ html.ie8 .blog-cron .media-block {
 	@include pie-clearfix;
 	border-top: 1px solid #ddd;
 
-	@media (min-width: 700px) {
+	@media (min-width: 760px) {
 		@include ui-grid-lr(25%, 75%, 0%);
 	}//mq
 }//read-more-mod
 
 .read-more-overline {
 	color: #333;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 	padding-right: 20px;
+	font-size: 13px;
 }
 
 .read-more-meta-mod {
@@ -2002,8 +2003,7 @@ html.ie8 .blog-cron .media-block {
 }
 
 .read-more-detail-mod {
-
-	@media (min-width: 700px) {
+	@media (min-width: 760px) {
 		border-left: 1px solid #ddd;
 		padding-left: 20px;
 	}//mq
@@ -2023,6 +2023,8 @@ html.ie8 .blog-cron .media-block {
 
 .read-more-source {
 	font-size: 15px;
+	font-style: italic;
+	word-wrap: break-word;
 }
 
 /* ============================================= */
