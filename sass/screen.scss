@@ -997,7 +997,7 @@ html.ie8 .cover-overview{
 		width: 100%;
 		height: 0;
 		padding-bottom: 5.5%;
-		background: url(/wp-content/themes/blades/images/covers/round-mask-bk.png) 50% 0% no-repeat;
+		background: url(/wp-content/themes/blades/images/covers/round-mask-bk-3.png) 50% 0% no-repeat;
 		background-size: 110%;
 		@include absolute(n n -2px n);
 	}
@@ -1594,9 +1594,13 @@ html.ie8 .cover-overview{
 .alt-tile {
 	padding-top: 40px;
 
-	.h1 {
+	a {
 		margin-bottom: 4px;
 		font-size: 32px;
+
+		&:hover {
+			color: #fff;
+		}//hover
 	}//h1
 
 	.txt-lg {
@@ -1614,7 +1618,6 @@ html.ie8 .cover-overview{
 	@media (min-width: 860px) {
 		padding-right: 40px;
 		padding-bottom: 40px;
-		border-right: 1px solid #222;
 	}//mq
 }//tile-border
 
@@ -1622,6 +1625,7 @@ html.ie8 .cover-overview{
 	@media (min-width: 860px) {
 		padding-left: 40px;
 		padding-bottom: 40px;
+		border-left: 1px solid #222;
 	}//mq
 }//tile-border-alt
 
@@ -1635,6 +1639,12 @@ html.ie8 .cover-overview{
 .btm-row {
 	border-bottom: 0px;
 }
+
+.btm-tile {
+	@media (min-width: 560px) {
+		padding-bottom: 60px;
+	}//mq
+}//btm-tile
 
 .logo-pond-mod {
 	border-bottom: 1px solid #222;
@@ -1970,6 +1980,36 @@ html.ie8 .blog-cron .media-block {
 	}
 }
 
+.read-more-mod {
+	background-color: #f7f7f7;
+	@include ui-grid-lr(25%, 75%, 1%);
+	padding: 20px 20px 2px 20px;
+	@include pie-clearfix;
+	border-top: 1px solid #ddd;
+
+}
+
+.read-more-overline {
+	color: #000;
+	margin-bottom: 10px;
+}
+
+.read-more-detail-mod {
+	border-left: 1px solid #ddd;
+	padding-left: 20px;
+}
+
+.read-more-tz {
+	font-size: 22px;
+
+	a {
+		color: $highlight;
+	
+		&:hover {
+			color: $highlight-hover;
+		}
+	}
+}
 
 /* ============================================= */
 /*	Comments				   					 */ 
