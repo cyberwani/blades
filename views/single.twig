@@ -18,15 +18,22 @@
 				<article class="article-txt">
 					{{post.content|pretags}}
 				</article>
-				<div class="read-more-mod">
-					<div class="read-more-meta-mod ui-block-1">
-						<h4 class="h4 read-more-overline">Read More at</h4>	
-						<div class="read-more-source">thehalfandhalf.com</div>
-					</div> <!-- /read-more-meta-mod -->	
-					<div class="read-more-detail-mod ui-block-2">
-						<h4 class="h2 read-more-tz"><a href="#">What is WordPress Lacking? A Template Language</a></h4>
-					</div> <!-- /read-more-detail-mod -->	
-				</div> <!-- /read-more-mod -->		
+				{% for cta in post.get_field('calls_to_action') %}
+					<div class="read-more-mod">
+						<div class="read-more-meta-mod ui-block-1">
+							<h4 class="h4 read-more-overline">{{cta.action}}</h4>
+							{% if cta.site %}
+								<div class="read-more-source"><a href="{{cta.url}}" {{cta.target_blank ? 'target="_blank"'}}>{{cta.site}}</a></div>
+							{% endif %}
+						</div> <!-- /read-more-meta-mod -->
+						<div class="read-more-detail-mod ui-block-2">
+							<h4 class="h2 read-more-tz"><a href="{{cta.url}}" {{cta.target_blank ? 'target="_blank"'}}>{{cta.title}}</a></h4>
+							{% if cta.desc %}
+								<p class="read-more-p">{{cta.desc}}</p>
+							{% endif %}
+						</div> <!-- /read-more-detail-mod -->
+					</div> <!-- /read-more-mod -->
+				{% endfor %}
 			</section>
 			<div class="comments-mod">
 				<section class="respond">

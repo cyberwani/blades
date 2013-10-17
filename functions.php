@@ -6,7 +6,6 @@
 	if (class_exists('Timber')){
 		require_once('wp/portfolio-entry.php');
 	}
-	require_once(__DIR__.'/wp/theme.php');
 	add_theme_support('menus');
 	add_theme_support( 'post-thumbnails' );
 
