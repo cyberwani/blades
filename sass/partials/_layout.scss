@@ -257,6 +257,30 @@ $margin-r: 5%;
 	> .ui-block.last {
 		width: $width5-5 - ($margin5-r/5);
 		@include float-left;
-		margin-right: 0;	
+		margin-right: 0;
+	}
+}
+
+@mixin ui-grid-reset(){
+	> .ui-block-1,
+	> .ui-block.first {
+		width: auto;
+		display:block;
+		float:none;
+		margin-right: 0;
+	}
+	> .ui-block-2,
+	> .ui-block.second {
+		width: auto;
+		display:block;
+		float:none;
+		margin-right: 0;
+	}
+	> .ui-block-3,
+	> .ui-block.third {
+		width: auto;
+		display:block;
+		float:none;
+		margin-right: 0;
 	}
 }
