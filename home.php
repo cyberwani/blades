@@ -17,4 +17,4 @@
 	$highlights = get_field('highlights', 'options');
 	$data['highlights'] = Timber::get_posts($highlights);
 
-	Timber::render('home.twig', $data);
+	Timber::render('home-new.twig', $data);
