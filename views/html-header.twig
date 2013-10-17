@@ -12,8 +12,7 @@
 		<meta name="description" content="{{meta_desc|default('Upstatement is a small, cross-disciplinary firm that solves problems through design, code, and rapid prototyping.')}}" />
 		<link rel="stylesheet" href="{{theme_dir}}/css/screen.css" />
 		<link rel="stylesheet" href="{{theme_dir}}/js/libs/sh/sh-upstatement.css" />
-		<script type="text/javascript" src="{{theme_dir}}/js/libs/modernizr.min.js"></script>
 		<link rel="pingback" href="/xmlrpc.php" />
 		{% include "components/typekit.twig" %}
 		{% include "components/google-analytics.twig" %}
-		{{wp_head}}
+		{{function('wp_head')}}

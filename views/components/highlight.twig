@@ -1,0 +1,16 @@
+<article class="highlight ui-block-{{loop.index}}">
+	<div class="hl-img-mod ui-block-1">
+		<img src="{{highlight.thumbnail.src}}" alt="{{highlight.title}}" />
+	</div>
+	<div class="hl-txt-mod ui-block-2">
+		<h4 class="h3">{{highlight.title}}</h4>
+		<div class="txt txt-dark">{{highlight.content}}</div>
+		{% if highlight.links %}
+			<ul>
+				{% for link in highlight.links %}
+					<li><a href="{{link.url}}" target="_blank">{{link.title}}</a></li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+	</div>
+</article>
