@@ -14,7 +14,7 @@
 	$data['promos'] = Timber::get_posts($promos);
 
 	$data['blogs'] = Timber::get_posts('post_type=post&numberposts=4');
-	$highlights = get_field('highlights', 'options');
-	$data['highlights'] = Timber::get_posts($highlights);
+	//$highlights = get_field('highlights', 'options');
+	//$data['highlights'] = Timber::get_posts($highlights);
 
-	Timber::render('home-new.twig', $data);
+	Timber::render('home.twig', $data);

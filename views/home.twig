@@ -73,14 +73,16 @@
 		</div> <!-- /tweet-mod -->
 	</section>
 
-	<section class="hp-highlights">
-		<h3 class="h4">Firm Highlights</h3>
-		<section class="hp-highlight-list">
-			{% for highlight in highlights %}
-				{% include 'components/highlight.twig' %}
-			{% endfor %}
+	{% if highlights %}
+		<section class="hp-highlights">
+			<h3 class="h4">Firm Highlights</h3>
+			<section class="hp-highlight-list">
+				{% for highlight in highlights %}
+					{% include 'components/highlight.twig' %}
+				{% endfor %}
+			</section>
 		</section>
-	</section>
+	{% endif %}
 
 </div><!-- /hp-feeds -->
 {% endblock %}
