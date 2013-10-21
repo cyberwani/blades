@@ -9,6 +9,11 @@
 	add_theme_support('menus');
 	add_theme_support( 'post-thumbnails' );
 
+	add_filter('timber_context', function($data){
+		$data['menu'] = new TimberMenu();
+		return $data;
+	});
+
 
 	if (function_exists('register_options_page')){
 		register_options_page('Look & Feel');

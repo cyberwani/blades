@@ -1,6 +1,6 @@
 <?php
 	$data = Timber::get_context();
-	$data['meta_desc'] = 'Upstatement is a small, cross-disciplinary firm that solves problems through design, code, and rapid prototyping.';
+	$data['meta_desc'] = 'Upstatement is a boutique, cross-disciplinary design firm that solves problems through design, code, and rapid prototyping.';
 	$data['wp_title'] = 'Upstatement - '.get_bloginfo('description');
 
 	/* organzie the hero images */
@@ -17,4 +17,4 @@
 	//$highlights = get_field('highlights', 'options');
 	//$data['highlights'] = Timber::get_posts($highlights);
 
-	Timber::render('home.twig', $data);
+	Timber::render('home.twig', $data, true, 3600);
