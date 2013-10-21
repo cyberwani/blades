@@ -8,6 +8,7 @@
 	foreach($data['heros'] as &$slide){
 		$slide['post'] = new TimberPost($slide['portfolio'][0]);
 	}
+	$data['rand'] = rand();
 
 	/* organize the promos */
 	$promos = get_field('homepage_promos', 'option');
@@ -17,4 +18,4 @@
 	//$highlights = get_field('highlights', 'options');
 	//$data['highlights'] = Timber::get_posts($highlights);
 
-	Timber::render('home.twig', $data, true, 3600);
+	Timber::render('home-new.twig', $data);

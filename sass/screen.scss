@@ -1664,7 +1664,9 @@ html.ie8 .cover-overview{
 	display: inline;
 	margin-right: 3%;
 	width: 100%;
-
+	@include opacity(.5);
+	@include trans;
+	cursor:pointer;
 	img {
 		max-width: 98px;
 		padding-bottom: 30px;
@@ -1677,6 +1679,9 @@ html.ie8 .cover-overview{
 	&:last-child {
 		margin-right: 0px;
 	}//lc
+	&:hover {
+		@include opacity(1);
+	}
 }//pond-item
 
 /* ============================================= */
