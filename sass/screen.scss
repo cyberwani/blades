@@ -942,7 +942,6 @@ html.ie8 .cover-overview{
 	@include pie-clearfix;
 	padding: 10px 0px 0px 0px;
 	border-bottom: 1px dotted #222;
-	padding-top: 40px;
 	&:last-child { 
 		border: 0;
 	}
@@ -1024,7 +1023,7 @@ html.ie8 .cover-overview{
 		@include absolute(n n -2px n);
 
 		@media (min-width: 600px) {
-			background: url(/wp-content/themes/blades/images/covers/round-mask-bk-3.png) 50% 0% no-repeat;
+			background: url(/wp-content/themes/blades/images/covers/round-mask-bk-6.png) 50% 0% no-repeat;
 			background-size: 110%;
 		}//mq
 		
@@ -1633,13 +1632,12 @@ html.ie8 .cover-overview{
 }//tiles-mod
 
 .alt-tile {
-	padding: 30px 0px;
+	padding: 40px 0px;
 	border-bottom: 1px solid #222;
-	margin-bottom: 30px;
 	&:last-child {
-		border-bottom: 0px;
-		margin-bottom: 0px;
-		padding-bottom: 0px;
+		// border-bottom: 0px;
+		// margin-bottom: 0px;
+		// padding-bottom: 0px;
 	}
 
 	@media (min-width: 860px){
@@ -1696,7 +1694,7 @@ html.ie8 .cover-overview{
 		&:last-child {
 			border-right: 0px;
 			padding-right: 0px;
-			padding-left: 30px;
+			padding-left: 40px;
 		}//lc
 	}//mq
 }//tile-border
@@ -1713,7 +1711,7 @@ html.ie8 .cover-overview{
 	@media (min-width: 860px) {
 		@include ui-grid-lr(50%, 50%, 0%);
 		border-bottom: 1px solid #222;
-		padding-top: 30px;
+		padding-top: 40px;
 		
 		&:last-child {
 			border-bottom: 0px;
@@ -1724,9 +1722,37 @@ html.ie8 .cover-overview{
 	&:last-child {
 		padding-top: 0px;
 	}//lc
+
 	&:first-child .alt-tile {
-		padding-top:0px;
-	}
+		padding-top: 40px;
+
+		@media (min-width: 860px) {
+			padding-top: 0px;
+		}//mq
+
+	}//fc
+
+	&:last-child .alt-tile {
+		padding-bottom: 40px;
+
+		&:last-child {
+			border-bottom: 0px;
+			padding-bottom: 0px;
+		}	
+
+		@media (min-width: 860px) {
+			padding-top: 0px;
+			padding-top: 40px;
+		}//mq
+
+	}//lc
+	
+	.txt-lg {
+		p {
+			margin-bottom: 0px;
+		}
+	}//txt-lg
+
 }//tile-row-mod
 
 .btm-row {
