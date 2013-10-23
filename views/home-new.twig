@@ -15,24 +15,11 @@
 
 	<section class="logo-pond-mod">
 					<ul class="logo-pond">
-						<a class="pond-item" href="#">
-							<img class="stuff" src="/wp-content/themes/blades/images/logo-pond-globe.png" />
-						</a>
-						<a class="pond-item" href="#">
-							<img class="stuff" src="/wp-content/themes/blades/images/logo-pond-rh.png" />
-						</a>
-						<a class="pond-item" href="#">
-							<img class="stuff" src="/wp-content/themes/blades/images/logo-pond-npr.png" />
-						</a>
-						<a class="pond-item" href="#">
-							<img class="stuff" src="/wp-content/themes/blades/images/logo-pond-gn.png" />
-						</a>
-						<a class="pond-item" href="#">
-							<img class="stuff" src="/wp-content/themes/blades/images/logo-pond-kellogg.png" />
-						</a>
-						<a class="pond-item" href="#">
-							<img class="stuff" src="/wp-content/themes/blades/images/logo-pond-harvard.png" />
-						</a>
+						{% for item in logo_pond %}
+							<a class="pond-item" href="{{item.links}}">
+								<img class="stuff" src="{{TimberImage(item.logo).src}}" />
+							</a>
+						{% endfor %}
 					</ul> <!-- /logo-pond -->
 				</section> <!-- /logo-pond -->
 </div><!-- /hp-topper-intro -->
