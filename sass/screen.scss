@@ -942,7 +942,7 @@ html.ie8 .cover-overview{
 
 .hp-theme-alt {
 	@include pie-clearfix;
-	padding: 20px 0px 0px 0px;
+	padding: 10px 0px 0px 0px;
 	border-bottom: 1px dotted #222;
 	&:last-child { 
 		border: 0;
@@ -955,7 +955,6 @@ html.ie8 .cover-overview{
 
 	@media (min-width: 960px){
 		@include ui-grid-lr(50%, 50%, 0%);
-		padding: 20px 0px 0px 0px;
 		.hp-theme-intro {
 			border: 0;
 		}
@@ -1586,9 +1585,13 @@ html.ie8 .cover-overview{
 
 .hp-topper-intro {
 	background-color: #161616;
-	margin-top: -12%;
+	margin-top: 0px;
 	text-align: center;
-	padding-bottom: 10px;
+	padding-bottom: 5px;
+
+	@media (min-width: 760px) {
+		margin-top: -12%;
+	}//mq
 
 	.h1 {
 		margin-bottom: 15px;
@@ -1596,7 +1599,7 @@ html.ie8 .cover-overview{
 
 	.portfolio-h-outer {
 		margin-bottom: 20px;
-		max-width: 600px;
+		max-width: 700px;
 	}//portfolio-h-outer
 }//hp-topper-intro
 
@@ -1613,12 +1616,19 @@ html.ie8 .cover-overview{
 
 	@media (min-width: 860px) {
 		max-width: 1020px;
-		margin-bottom: 0px;
 	}//mq
 }//tiles-mod
 
 .alt-tile {
-	padding-top: 40px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #222;
+	margin-bottom: 30px;
+
+	@media (min-width: 860px){
+		padding-bottom: 0px;
+		border-bottom: 0px;
+		margin-bottom: 0px;
+	}//mq
 
 	a {
 		margin-bottom: 4px;
@@ -1632,6 +1642,25 @@ html.ie8 .cover-overview{
 	.txt-lg {
 		line-height: 155%;
 	}//txt-lg
+}
+
+.alt-tile-btm {
+	padding-top: 0px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #222;
+	margin-bottom: 30px;
+
+	&:last-child {
+		border-bottom: 0px;
+		padding-bottom: 0px;
+	}
+
+	@media (min-width: 860px) {
+		padding-top: 40px;
+		padding-bottom: 0px;
+		border-bottom: 0px;
+		margin-bottom: 0px;
+	}//mq
 }
 
 .alt-tile-img {
@@ -1673,17 +1702,15 @@ html.ie8 .cover-overview{
 }//btm-tile
 
 .logo-pond-mod {
-	border-bottom: 1px solid #222;
-	
-	@media (min-width: 560px) {
-		border-top: 1px solid #222;
-		padding-top: 30px;
-	}//mq	
-}//logo-pond
-
-.logo-pond-mod {
 	margin: 0 auto;
 	text-align: center;
+	border-bottom: 1px solid #222;
+	margin-bottom: 30px;
+	padding-bottom: 20px;
+
+	@media (min-width: 760px) {
+		margin-bottom: 80px;
+	}//mq
 }
 
 .pond-item {
