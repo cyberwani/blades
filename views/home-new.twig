@@ -41,48 +41,22 @@
 	<div class="inset home-inset">
 		<div class="wrapper">
 			<div class="hp-theme-alt">
-				
 
 				<section class="tiles-mod">
+					{% for hl_group in highlights %}
 					<div class="tile-row-mod">
-						<div class="alt-tile tile-border ui-block-1">
-							<h3 class="h4">Open Source</h3>
-						<a href="http://jarednova.github.io/timber/">
-	 							<img class="alt-tile-img" src="/wp-content/themes/blades/images/open-src-tz-img.jpg"/>
+						{% for highlight in hl_group %}
+						<div class="alt-tile tile-border ui-block-{{loop.index}}">
+							<h3 class="h4">{{highlight.kicker}}</h3>
+							<a href="{{highlight.link}}">
+	 							<img class="alt-tile-img" src="{{highlight.thumbnail.src}}"/>
 	 						</a>
-							<h2 class="h2"><a href="http://jarednova.github.io/timber/">Timber for WordPress</a></h2>
-							<p class="txt-lg txt-dark">We're more than just a web design studio, our open source tools for WordPress and Javascript power sites across the internet.</p>
+							<h2 class="h2"><a href="{{highlight.link}}">{{highlight.title}}</a></h2>
+							<div class="txt-lg txt-dark">{{highlight.content}}</div>
 						</div><!-- /alt-tile -->
-
-						<div class="alt-tile tile-border-alt ui-block-2">
-							<h3 class="h4">Events</h3>
-						<a href="http://upstatement.com/blog/2013/10/upstatement-and-wordcamp-boston-a-duet-of-pleasures/">
-	 							<img class="alt-tile-img" src="/wp-content/themes/blades/images/events-tz-img.jpg" />
-	 						</a>
-	 						<a href="http://upstatement.com/blog/2013/10/upstatement-and-wordcamp-boston-a-duet-of-pleasures/">
-								<h2 class="h2">WordCamp Boston</h2>
-							</a>
-							<p class="txt-lg txt-dark">This October we're sponsoring WordCamp Boston. Catch a special workshop from us and stop by our booth to say "hello"!</p>
-						</div> <!-- /alt-title -->
+						{% endfor %}
 					</div> <!-- /tile-row-mod -->
-
-					<div class="tile-row-mod btm-row">
-						<div class="alt-tile-btm tile-border ui-block-1">
-							<h3 class="h4">Awards</h3>
-							<img class="alt-tile-img" src="/wp-content/themes/blades/images/awards-tz-img.jpg" />
-							<h2 class="h2">World's Best Designed Website Award</h2>
-							<p class="txt-lg txt-dark">Our work on BostonGlobe.com won World’s Best Designed website from The Society for News Design.</p>
-						</div><!-- /alt-tile -->
-
-						<div class="alt-tile-btm tile-border-alt btm-tile ui-block-2">
-						<h3 class="h4">Jobs</h3>
-						<a href="/jobs">
-	 							<img class="alt-tile-img" src="/wp-content/themes/blades/images/jobs-tz-img.jpg" />
-	 						</a>
-							<h2 class="h2"><a href="/jobs">Now Hiring Interns</a></h2>
-							<p class="txt-lg txt-dark">Are you pumped on web design? Is your enthusiasm for development hard to contain? We want to meet you! We're currently hiring for our paid intern program.</p>
-						</div> <!-- /alt-title -->
-					</div> <!-- /title-row-mod -->
+					{% endfor %}
 				</section> <!-- /tiles-mod -->
 
 			</div> <!-- /hp-theme-alt -->
