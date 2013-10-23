@@ -942,6 +942,7 @@ html.ie8 .cover-overview{
 	@include pie-clearfix;
 	padding: 10px 0px 0px 0px;
 	border-bottom: 1px dotted #222;
+	padding-top: 40px;
 	&:last-child { 
 		border: 0;
 	}
@@ -953,6 +954,7 @@ html.ie8 .cover-overview{
 
 	@media (min-width: 960px){
 		@include ui-grid-lr(50%, 50%, 0%);
+		padding-top: 50px;
 		.hp-theme-intro {
 			border: 0;
 		}
@@ -1007,8 +1009,6 @@ html.ie8 .cover-overview{
 	position: relative;
 	height: 0;
 	padding-bottom: 45.5%;
-	//background: url(/wp-content/themes/blades/images/dev/covers/hero-table.jpg) 50% 50% no-repeat;
-	//background-size: 117%;
 	overflow: hidden;
 	@media (min-width: 900px) {
 		margin-top: 0px;
@@ -1020,12 +1020,17 @@ html.ie8 .cover-overview{
 		width: 100%;
 		height: 0;
 		padding-bottom: 5.5%;
-		background: url(/wp-content/themes/blades/images/covers/round-mask-bk-3.png) 50% 0% no-repeat;
-		background-size: 110%;
-		@include absolute(n n -2px n);
-	}
 
-}
+		@include absolute(n n -2px n);
+
+		@media (min-width: 600px) {
+			background: url(/wp-content/themes/blades/images/covers/round-mask-bk-3.png) 50% 0% no-repeat;
+			background-size: 110%;
+		}//mq
+		
+	}//after
+
+}//home-banner
 
 .home-banner-img {
 	@include absolute(0 0 n 0);
@@ -1582,13 +1587,18 @@ html.ie8 .cover-overview{
 }
 
 .hp-topper-intro {
-	background-color: #161616;
+	background-color: transparent;
 	margin-top: 0px;
 	text-align: center;
 	padding-bottom: 5px;
+	border-bottom: 1px solid #222;
 
 	@media (min-width: 760px) {
-		margin-top: -12%;
+		margin-top: -30px;
+	}//mq
+
+	@media (min-width: 900px) {
+		margin-top: -55px;
 	}//mq
 
 	.h1 {
@@ -1596,9 +1606,14 @@ html.ie8 .cover-overview{
 	}//h1
 
 	.portfolio-h-outer {
-		margin-bottom: 20px;
+		margin-bottom: 0px;
 		max-width: 700px;
+		background-color: transparent;
 	}//portfolio-h-outer
+
+	.portfolio-h-inner {
+		background-color: transparent;
+	}//portfolio-h-inner
 }//hp-topper-intro
 
 .hp-intro-txt {
@@ -1621,6 +1636,12 @@ html.ie8 .cover-overview{
 	padding-bottom: 30px;
 	border-bottom: 1px solid #222;
 	margin-bottom: 30px;
+
+	&:last-child {
+		border-bottom: 0px;
+		margin-bottom: 0px;
+		padding-bottom: 0px;
+	}
 
 	@media (min-width: 860px){
 		padding-bottom: 0px;
@@ -1671,6 +1692,13 @@ html.ie8 .cover-overview{
 	@media (min-width: 860px) {
 		padding-right: 40px;
 		padding-bottom: 40px;
+		border-right: 1px solid #222;
+		
+		&:last-child {
+			border-right: 0px;
+			padding-right: 0px;
+			padding-left: 30px;
+		}//lc
 	}//mq
 }//tile-border
 
@@ -1686,8 +1714,18 @@ html.ie8 .cover-overview{
 	@media (min-width: 860px) {
 		@include ui-grid-lr(50%, 50%, 0%);
 		border-bottom: 1px solid #222;
+		padding-top: 30px;
+		
+		&:last-child {
+			border-bottom: 0px;
+		}//lc
+
 	} //mq
-}
+
+	&:last-child {
+		padding-top: 0px;
+	}//lc
+}//tile-row-mod
 
 .btm-row {
 	border-bottom: 0px;
@@ -1702,13 +1740,8 @@ html.ie8 .cover-overview{
 .logo-pond-mod {
 	margin: 0 auto;
 	text-align: center;
-	border-bottom: 1px solid #222;
-	margin-bottom: 30px;
 	padding-bottom: 20px;
-
-	@media (min-width: 760px) {
-		margin-bottom: 80px;
-	}//mq
+	max-width: 920px;
 }
 
 .pond-item {
