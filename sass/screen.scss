@@ -1084,6 +1084,9 @@ $theme_grid_bp : '760px';
 	@media (min-width: 600px) and (max-width:959px){
 		@include media-grid(2,40px);
 		padding: 0;
+		.media-block:nth-child(3){
+			display:none;
+		}
 	}
 
 	@media (min-width: 960px){
@@ -1660,7 +1663,7 @@ $theme_grid_bp : '760px';
 }//tiles-mod
 
 .highlight-headline {
-	@extend .h4;
+	@extend .h3;
 	font-size:24px;
 	text-transform:none;
 	margin-bottom:10px;
@@ -1808,10 +1811,9 @@ $theme_grid_bp : '760px';
 
 .hp-logo-pond {
 	border-top:1px solid #222;
-	padding-top:25px;
+	padding:25px 20px 20px;
 	border-bottom:1px solid #222;
 	background-color:#161616;
-	padding-bottom:20px;
 }
 
 .hp-logo-pond-header {
@@ -1840,7 +1842,7 @@ $theme_grid_bp : '760px';
 
 		@media (min-width: 560px) {
 			max-width: 127px;
-		}//mq	
+		}//mq
 	}//img
 
 	&:last-child {
