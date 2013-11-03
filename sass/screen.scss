@@ -116,9 +116,16 @@ body {
 
 .h1 {
 	font-size: 34px;
-	@media (min-width: 500px) {	
-		font-size: 42px;  	
-	} 
+	@media (min-width: 500px) {
+		font-size: 42px;
+	}
+}
+
+.h1-5 {
+	font-size:32px;
+	@media (min-width: 500px) {
+		font-size: 38px;
+	}
 }
 .h2 {	
 	font-size: 30px;
@@ -175,6 +182,8 @@ body {
 		@include absolute(n 0 0 0); 
 	}
 }
+
+
 
 .dropcap {
 	font: 100 61px/104% $proxima;
@@ -641,18 +650,19 @@ body {
 	text-align: center;
 	color:#555;
 	margin-bottom: 6px;
-	font-size: 15px;
+	font-size: 13px;
 
 	@media (min-width: 700px) {
-		font-size: 17px;
+		font-size: 15px;
 	}//mq
 }//ftr-info
 
 .ftr-msg {
 	@extend .txt-lg;
-	font-size: 18px;
-	margin-bottom: 21px;
+	font-size: 22px;
+	margin-bottom: 30px;
 	color: #888;
+	line-height:30px;
 	a {
 		color: $text;
 	}
@@ -665,7 +675,7 @@ body {
 }
 
 .ftr-social-mod {
-	margin-bottom: 25px;
+	margin-bottom: 13px;
 }
 
 .social-item {
@@ -675,7 +685,7 @@ body {
 		width: 100%;
 		max-width: 25px;
 		@include trans;
-		@include opacity(.7);
+		@include opacity(.35);
 	
 		&:hover {
 			@include opacity(1);
@@ -915,6 +925,21 @@ html.ie8 .cover-overview{
 
 //These are the areas beneath the main slider
 
+$theme_grid_bp : '760px';
+
+.hp-themes {
+	padding-top:20px;
+}
+
+.hp-themes-header {
+	padding-top:10px;
+	text-align:center;
+	margin-bottom:35px;
+	color:#999;
+}
+
+
+
 .hp-theme {
 	@include pie-clearfix;
 	padding: 20px 0;
@@ -940,9 +965,8 @@ html.ie8 .cover-overview{
 
 .hp-theme-alt {
 	@include pie-clearfix;
-	padding: 10px 0px 0px 0px;
 	border-bottom: 1px dotted #222;
-	&:last-child { 
+	&:last-child {
 		border: 0;
 	}
 
@@ -951,9 +975,8 @@ html.ie8 .cover-overview{
 		font-weight: 300;
 	}
 
-	@media (min-width: 960px){
+	@media (min-width: $theme_grid_bp){
 		@include ui-grid-lr(50%, 50%, 0%);
-		padding-top: 50px;
 		.hp-theme-intro {
 			border: 0;
 		}
@@ -1064,7 +1087,7 @@ html.ie8 .cover-overview{
 	}
 
 	@media (min-width: 960px){
-		@include media-grid(4,40px);
+		@include media-grid(3,40px);
 		padding: 0;
 	}
 }
@@ -1590,14 +1613,13 @@ html.ie8 .cover-overview{
 	margin-top: 0px;
 	text-align: center;
 	padding-bottom: 5px;
-	border-bottom: 1px solid #222;
 
 	@media (min-width: 760px) {
 		margin-top: -30px;
 	}//mq
 
 	@media (min-width: 900px) {
-		margin-top: -55px;
+		margin-top: -125px;
 	}//mq
 
 	.h1 {
@@ -1607,11 +1629,9 @@ html.ie8 .cover-overview{
 	.portfolio-h-outer {
 		margin-bottom: 0px;
 		max-width: 700px;
-		background-color: transparent;
 	}//portfolio-h-outer
 
 	.portfolio-h-inner {
-		background-color: transparent;
 	}//portfolio-h-inner
 }//hp-topper-intro
 
@@ -1619,6 +1639,14 @@ html.ie8 .cover-overview{
 	max-width: 600px;
 	text-align: center;
 	margin: 0 auto;
+	font-family: $adelle;
+	font-weight: 100;
+	font-style:italic;
+	font-size:22px;
+}
+
+.home-kicker {
+	@extend .portfolio-kicker;
 }
 
 .tiles-mod {
@@ -1626,10 +1654,18 @@ html.ie8 .cover-overview{
 	margin: 0 auto;
 	margin-bottom: 60px;
 
-	@media (min-width: 860px) {
+	@media (min-width: $theme_grid_bp) {
 		max-width: 1020px;
 	}//mq
 }//tiles-mod
+
+.highlight-headline {
+	@extend .h4;
+	font-size:24px;
+	text-transform:none;
+	margin-bottom:10px;
+	letter-spacing:0px;
+}
 
 .alt-tile {
 	padding: 40px 0px;
@@ -1640,15 +1676,14 @@ html.ie8 .cover-overview{
 		// padding-bottom: 0px;
 	}
 
-	@media (min-width: 860px){
+	@media (min-width: $theme_grid_bp){
 		padding-bottom: 0px;
 		border-bottom: 0px;
 		margin-bottom: 0px;
-	}//mq
+	}
 
 	a {
 		margin-bottom: 4px;
-		font-size: 32px;
 
 		&:hover {
 			color: #fff;
@@ -1686,7 +1721,7 @@ html.ie8 .cover-overview{
 }
 
 .tile-border {
-	@media (min-width: 860px) {
+	@media (min-width: $theme_grid_bp) {
 		padding-right: 40px;
 		padding-bottom: 40px;
 		border-right: 1px solid #222;
@@ -1700,7 +1735,7 @@ html.ie8 .cover-overview{
 }//tile-border
 
 .tile-border-alt {
-	@media (min-width: 860px) {
+	@media (min-width: 760px) {
 		padding-left: 40px;
 		padding-bottom: 40px;
 		border-left: 1px solid #222;
@@ -1708,11 +1743,16 @@ html.ie8 .cover-overview{
 }//tile-border-alt
 
 .tile-row-mod {
-	@media (min-width: 860px) {
+	&:first-child {
+		padding-top:0px;
+	}
+	@media (min-width: 760px) {
 		@include ui-grid-lr(50%, 50%, 0%);
 		border-bottom: 1px solid #222;
 		padding-top: 40px;
-		
+		&:first-child {
+			padding-top:0px;
+		}
 		&:last-child {
 			border-bottom: 0px;
 		}//lc
@@ -1724,9 +1764,9 @@ html.ie8 .cover-overview{
 	}//lc
 
 	&:first-child .alt-tile {
-		padding-top: 40px;
+		padding-top: 0px;
 
-		@media (min-width: 860px) {
+		@media (min-width: $theme_grid_bp) {
 			padding-top: 0px;
 		}//mq
 
@@ -1738,9 +1778,9 @@ html.ie8 .cover-overview{
 		&:last-child {
 			border-bottom: 0px;
 			padding-bottom: 0px;
-		}	
+		}
 
-		@media (min-width: 860px) {
+		@media (min-width: $theme_grid_bp) {
 			padding-top: 0px;
 			padding-top: 40px;
 		}//mq
@@ -1765,10 +1805,25 @@ html.ie8 .cover-overview{
 	}//mq
 }//btm-tile
 
+
+.hp-logo-pond {
+	border-top:1px solid #222;
+	padding-top:25px;
+	border-bottom:1px solid #222;
+	background-color:#161616;
+	padding-bottom:20px;
+}
+
+.hp-logo-pond-header {
+	padding-top:5px;
+	margin-bottom:28px;
+	text-align:center;
+	color:#666;
+}
+
 .logo-pond-mod {
 	margin: 0 auto;
 	text-align: center;
-	padding-bottom: 20px;
 	max-width: 920px;
 }
 

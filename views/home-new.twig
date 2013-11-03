@@ -8,71 +8,63 @@
 <div class="hp-topper-intro">
 	<div class="portfolio-h-outer">
 		<div class="portfolio-h-inner">
-			<h2 class="h1">Smart Editorial Sites</h2>
-			<p class="txt-lg hp-intro-txt">Our first love is the news. We specialize in crafting refined digital reading experiences for magazines, newspapers, tv and online-only publications.</p>
+			<h2 class="h4 home-kicker">Smart Editorial Sites</h2>
+			<p class="txt-lg hp-intro-txt">Our first love is the news. We specialize in crafting refined digital reading experiences for clients like <a href="/portfolio/boston-globe/">BostonGlobe.com</a>, <a href="upstatement.com/portfolio/random-house/">Random House</a>, <a href="/portfolio/npr-code-switch/">NPR</a> and Canada's <a href="/portfolio/global-news/">Global News</a>.</p>
 		</div><!-- /portfolio-h-inner -->
 	</div><!-- /portfolio-h-outer -->
-
-	<section class="logo-pond-mod">
-					<ul class="logo-pond">
-						{% for item in logo_pond %}
-							<a class="pond-item" href="{{item.links}}">
-								<img class="stuff" src="{{TimberImage(item.logo).src}}" />
-							</a>
-						{% endfor %}
-					</ul> <!-- /logo-pond -->
-				</section> <!-- /logo-pond -->
 </div><!-- /hp-topper-intro -->
 
-<section class="hp-themes">
-	<div class="inset home-inset">
-		<div class="wrapper">
-			<div class="hp-theme-alt">
-
-				<section class="tiles-mod">
-					{% for hl_group in highlights %}
-					<div class="tile-row-mod">
-						{% for highlight in hl_group %}
-						<div class="alt-tile tile-border ui-block-{{loop.index}}">
-							<h3 class="h4">{{highlight.kicker}}</h3>
-							<a href="{{highlight.link}}">
-	 							<img class="alt-tile-img" src="{{highlight.thumbnail.src}}"/>
-	 						</a>
-							<h2 class="h2"><a href="{{highlight.link}}">{{highlight.title}}</a></h2>
-							<div class="txt-lg txt-dark">{{highlight.content}}</div>
-						</div><!-- /alt-tile -->
-						{% endfor %}
-					</div> <!-- /tile-row-mod -->
+<section class="hp-themes home-inset">
+	<div class="wrapper">
+		<header class="hp-themes-header">
+			<!-- <h2 class="h3">Here's what's going on at Upstatement</h2> -->
+		</header>
+		<div class="hp-theme-alt">
+			<section class="tiles-mod">
+				{% for hl_group in highlights %}
+				<div class="tile-row-mod">
+					{% for highlight in hl_group %}
+					<div class="alt-tile tile-border ui-block-{{loop.index}}">
+						<!--<h3 class="h4">{{highlight.kicker}}</h3>-->
+						<a href="{{highlight.link}}">
+ 							<img class="alt-tile-img" src="{{highlight.thumbnail.src}}"/>
+ 						</a>
+						<h2 class="highlight-headline"><a href="{{highlight.link}}">{{highlight.title}}</a></h2>
+						<div class="txt-lg txt-dark">{{highlight.content}}</div>
+					</div><!-- /alt-tile -->
 					{% endfor %}
-				</section> <!-- /tiles-mod -->
+				</div> <!-- /tile-row-mod -->
+				{% endfor %}
+			</section> <!-- /tiles-mod -->
 
-			</div> <!-- /hp-theme-alt -->
-		</div> <!-- /wrapper -->
-	</div> <!-- /inset -->
+		</div> <!-- /hp-theme-alt -->
+	</div> <!-- /wrapper -->
 </secton> <!-- /hp-themes -->
+
+<div class="hp-logo-pond">
+	<header class="hp-logo-pond-header">
+		<h2 class="h3">We work with great <nobr>organizations and publications like</nobr></h2>
+	</header>
+	{% include 'home-logo-pond.twig' %}
+</div>
 
 <!-- Feeds -->
 <div class="hp-feeds wrapper">
 	<div class="hp-blog">
-		<h3 class="h4"><a href="/blog/">Blog</a></h3>
+		<h3 class="h4"><a href="/blog/">On Our Blog</a></h3>
 		<section class="hp-blog-list">
 			{% for blog in blogs %}
 				<article class="media-block blog blog-small" id="post-{{blog.post_name}}">
 					<h3 class="h3"><a href="{{blog.link}}">{{blog.title}}</a></h3>
 					<p class="blog-author"><span>By</span> {{blog.author.name}}</p>
-					<p class="txt txt-dark">{{blog.get_preview(25, true, 'More &raquo;')}}</p>
+					<p class="txt txt-dark">{{blog.get_preview(22, true, 'More &raquo;')}}</p>
 				</article>
 			{% endfor %}
 		</section>
 	</div> <!-- /hp-blog -->
 
 
-	<section class="hp-tweets">
-		<div class="tweet-mod">
-			<a class="twitter-timeline" style="min-width: 650px"; width="900" height="100" data-dnt="true" href="https://twitter.com/upstatement" data-widget-id="357596072165658624" data-chrome="noheader noborders transparent nofooter" data-tweet-limit="1">Tweets by @upstatement </a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-		</div> <!-- /tweet-mod -->
-	</section>
+	{# include "home-tweets.twig" #}
 
 </div><!-- /hp-feeds -->
 {% endblock %}

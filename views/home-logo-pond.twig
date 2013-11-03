@@ -1,0 +1,9 @@
+<section class="logo-pond-mod">
+	<ul class="logo-pond">
+		{% for item in logo_pond %}
+			<a class="pond-item" href="{{item.links}}">
+				<img class="stuff" src="{{TimberImage(item.logo).src}}" />
+			</a>
+		{% endfor %}
+	</ul> <!-- /logo-pond -->
+</section> <!-- /logo-pond -->

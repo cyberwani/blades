@@ -23,30 +23,28 @@
 </div><!-- cover -->
 
 <!-- Themes -->
-<section class="hp-themes">
-	<div class="inset">
-		<div class="wrapper">
-			{% for promo in promos %}
-				<div class="hp-theme promo-{{loop.index}}" id="promo-{{promo.post_name}}">
+<section class="hp-themes inset">
+	<div class="wrapper">
+		{% for promo in promos %}
+			<div class="hp-theme promo-{{loop.index}}" id="promo-{{promo.post_name}}">
 
-					<div class="hp-theme-intro ui-block-1">
-					<h3 class="h4"><a href="/portfolio/">{{promo.title}}</a></h3>
-						<section class="txt-lg">{{promo.content}}</section>
-					</div>
-					<div class="hp-theme-tiles ui-block-2">
-						<article class="hp-theme-tile-grid">
-							{% for square in TimberPost(promo.get_field('squares')) %}
-							<a class="media-block" href="{{square.permalink}}">
-								<img src="{{square.thumbnail.src|resize(200, 200)}}" alt="{{square.title}}"/>
-								<h4 class="tile-h4 a11y-only">{{square.title}}</h4>
-							</a>
-							{% endfor %}
-						</article> <!-- /hp-theme-tile-grid -->
-					</div>
-				</div><!-- hp-theme -->
-			{% endfor %}
-		</div> <!-- /wrapper -->
-	</div> <!-- /inset -->
+				<div class="hp-theme-intro ui-block-1">
+				<h3 class="h4"><a href="/portfolio/">{{promo.title}}</a></h3>
+					<section class="txt-lg">{{promo.content}}</section>
+				</div>
+				<div class="hp-theme-tiles ui-block-2">
+					<article class="hp-theme-tile-grid">
+						{% for square in TimberPost(promo.get_field('squares')) %}
+						<a class="media-block" href="{{square.permalink}}">
+							<img src="{{square.thumbnail.src|resize(200, 200)}}" alt="{{square.title}}"/>
+							<h4 class="tile-h4 a11y-only">{{square.title}}</h4>
+						</a>
+						{% endfor %}
+					</article> <!-- /hp-theme-tile-grid -->
+				</div>
+			</div><!-- hp-theme -->
+		{% endfor %}
+	</div> <!-- /wrapper -->
 </section> <!-- /hp-themes -->
 
 
