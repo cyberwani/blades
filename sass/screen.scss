@@ -1030,7 +1030,7 @@ $theme_grid_bp : '760px';
 .home-banner {
 	position: relative;
 	height: 0;
-	padding-bottom: 45.5%;
+	padding-bottom: 55.5%;
 	overflow: hidden;
 	@media (min-width: 900px) {
 		margin-top: 0px;
@@ -1056,7 +1056,7 @@ $theme_grid_bp : '760px';
 
 .home-banner-img {
 	@include absolute(0 0 n 0);
-	width: 117%;
+	width: 114%;
 	margin-left: -8.5%;
 }
 
@@ -1631,7 +1631,7 @@ $theme_grid_bp : '760px';
 
 	.portfolio-h-outer {
 		margin-bottom: 0px;
-		max-width: 700px;
+		max-width: 800px;
 	}//portfolio-h-outer
 
 	.portfolio-h-inner {
@@ -1639,13 +1639,18 @@ $theme_grid_bp : '760px';
 }//hp-topper-intro
 
 .hp-intro-txt {
-	max-width: 600px;
+	max-width: 700px;
 	text-align: center;
 	margin: 0 auto;
 	font-family: $adelle;
 	font-weight: 100;
-	font-style:italic;
-	font-size:22px;
+	font-size: 32px;
+
+	a {
+		color: #CCC;
+		border-bottom: 1px dotted #666;
+		font-style: italic;
+	}
 }
 
 .home-kicker {
