@@ -21,7 +21,7 @@
 			{% else %}
 			<div class="media-block">
 				<a class="portfolio-promo" href="{{billboard.permalink}}">
-					<div class="portfolio-promo-img"><img src="{{ billboard.billboard.src | resize(1200)}}" alt="Banner for {{billboard.title}}" /></div>
+					<div class="portfolio-promo-img"><img src="{{billboard.hero_tease.src|default(billboard.billboard.src) | resize(1200, 690)}}" alt="Banner for {{billboard.title}}" /></div>
 					<div class="portfolio-promo-hgroup">
 						{% if billboard.kicker %}
 						<h3 class="h4 portfolio-promo-kicker">{{billboard.kicker}}</h3>
