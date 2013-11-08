@@ -9,6 +9,11 @@
 	add_theme_support('menus');
 	add_theme_support( 'post-thumbnails' );
 
+	add_filter('timber_context', function($data){
+		$data['menu'] = new TimberMenu();
+		return $data;
+	});
+
 
 	if (function_exists('register_options_page')){
 		register_options_page('Look & Feel');
@@ -64,29 +69,7 @@
 			Timber::render('admin/portfolio-square-preview.twig', $data);
 		}, -1000);
 	}
-	/*
-	Timber::add_route('blog', function($params) use ($routes){
-		$sticky = get_option('sticky_posts');
-		$sticky = WPHelper::array_truncate($sticky, 4);
-		$page = 0;
-		$query = array('post_type' => 'post', 'posts_per_page' => 6, 'post__not_in' => $sticky, 'offset' => $page * 6);
-		$routes->load('archive-blog.php', $query);
-	});
 
-
-	Timber::add_route('blog/page/:pg', function($params) use ($routes){
-		$sticky = get_option('sticky_posts');
-		$sticky = WPHelper::array_truncate($sticky, 4);
-		$page = $params['pg'];
-		$page -= 1;
-		$page = max(0, $page);
-		$query = array('post_type' => 'post', 'posts_per_page' => 6, 'post__not_in' => $sticky, 'offset' => $page * 6);
-		$routes->load('archive-blog.php', $query);
-	});*/
-
-
-
-	
 	Timber::add_route('blog', function($params){
 		$sticky = get_option('sticky_posts');
 		$sticky = WPHelper::array_truncate($sticky, 4);
@@ -104,5 +87,3 @@
 		$query = array('post_type' => 'post', 'posts_per_page' => 6, 'post__not_in' => $sticky, 'offset' => $page * 6);
 		Timber::load_template('archive-blog.php', $query);
 	});
-	
-
