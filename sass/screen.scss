@@ -15,7 +15,7 @@
 @import "project/lists";
 
 //  ## Components
-@import "project/buttons";
+// @import "project/buttons";
 // @import "project/dropdowns";
 // @import "project/tabs";
 // @import "project/modals";
@@ -2473,7 +2473,6 @@ html.ie8 .blog-cron .media-block {
 	margin-bottom: 75px;
 }
 
-
 //
 // Global News Portfolio 
 //
@@ -3005,6 +3004,20 @@ body.error404 {
 		}
 	}
 }
+
+//Needed a button style, button mixins too complex. Uncommenting _buttons.scss from screen.
+
+.btn-large {
+	background-color: $link;
+	color: #FFF;
+	padding: 10px;
+	@include border-radius(8px);
+
+	&:hover {
+		background-color: darken($link, 10%);
+	}
+}
+
 
 /* ============================================= */
 /*	Print Styles
