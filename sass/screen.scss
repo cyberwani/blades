@@ -3007,7 +3007,7 @@ body.error404 {
 
 //Needed a button style, button mixins too complex. Uncommenting _buttons.scss from screen.
 
-.btn-large {
+a.btn-large {
 	background-color: $link;
 	color: #FFF;
 	padding: 10px;
@@ -3015,6 +3015,13 @@ body.error404 {
 
 	&:hover {
 		background-color: darken($link, 10%);
+	}
+
+	&.center {
+		text-align: center;
+		margin: 0 auto;
+		display: block;
+		width: 130px;
 	}
 }
 
