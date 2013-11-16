@@ -2344,7 +2344,7 @@ html.ie8 .blog-cron .media-block {
 // these are styles for how to display groups of images. 
 
 .video-mod {
-	@include video();
+	@include video;
 	margin-bottom:20px;
 	&.ratio-tv {
 		@include video(tv);
@@ -2521,6 +2521,23 @@ html.ie8 .blog-cron .media-block {
 		display: none;
 	}//mq
 }
+
+//
+// NPR About Portfolio 
+//
+
+.npr-video-parent {
+	position: relative;
+}
+
+.npr-video-mod {
+	@include video(63%);
+	position: absolute;
+	width: 58%;
+	top: 17%;
+	left: 21%;
+}
+
 
 /* ============================================= */
 /*	Pages				   						 */ 
