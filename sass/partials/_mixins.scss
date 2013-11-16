@@ -274,7 +274,8 @@ $prefix-for-spec:      true !default; // required for keyframe mixin
     height: 0;
     iframe,  
     object,  
-    embed {
+    embed,
+    .embed {
       position: absolute;
       top: 0;
       left: 0;
