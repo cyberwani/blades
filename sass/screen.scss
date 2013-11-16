@@ -2531,11 +2531,27 @@ html.ie8 .blog-cron .media-block {
 }
 
 .npr-video-mod {
-	@include video(63%);
 	position: absolute;
 	width: 58%;
-	top: 17%;
+	top: 14%;
 	left: 21%;
+	@include border-radius(2px);
+	@media (min-width: 400px) {
+		top: 15%;
+	}
+	@media (min-width: 600px) {
+		top: 16%;
+	}
+	@media (min-width: 800px) {
+		top: 17%;
+	}
+	@media (min-width: 800px) {
+		top: 18%;
+	}
+}
+
+.npr-video {
+	width: 100%;
 }
 
 
