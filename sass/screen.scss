@@ -2545,9 +2545,19 @@ html.ie8 .blog-cron .media-block {
 	@media (min-width: 800px) {
 		top: 17%;
 	}
-	@media (min-width: 800px) {
+	@media (min-width: 900px) {
 		top: 18%;
 	}
+}
+
+.npr-laptop-video-mod {
+	width: 75%;
+	margin: auto;
+	border: 5px solid #e5e5e5;
+	@media (min-width: 600px) {
+		border-width: 10px;
+	}
+
 }
 
 .npr-video {
