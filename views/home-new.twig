@@ -8,7 +8,7 @@
 <div class="hp-topper-intro">
 	<div class="portfolio-h-outer">
 		<div class="portfolio-h-inner">
-			<h1 class="txt-lg hp-intro-txt">We specialize in crafting content-focused websites for clients like <a href="/portfolio/boston-globe/">BostonGlobe.com</a>, <a href="upstatement.com/portfolio/random-house/">Random House</a>, <a href="/portfolio/npr-code-switch/">NPR</a> and <a href="/portfolio/global-news/">Global News</a>.</h1>
+			<h1 class="txt-lg hp-intro-txt">We specialize in crafting content-focused websites for clients like <a href="/portfolio/boston-globe/">BostonGlobe.com</a>, <a href="upstatement.com/portfolio/random-house/">Random House</a>, <a href="/portfolio/about-npr/">NPR</a> and <a href="/portfolio/global-news/">Global News</a>.</h1>
 		</div><!-- /portfolio-h-inner -->
 	</div><!-- /portfolio-h-outer -->
 </div><!-- /hp-topper-intro -->
@@ -19,14 +19,14 @@
 			<!-- <h2 class="h3">Here's what's going on at Upstatement</h2> -->
 		</header>
 		<div class="hp-theme-alt">
-			<section class="tiles-mod">
+			<div class="tiles-mod">
 				{% for hl_group in highlights %}
 				<div class="tile-row-mod">
 					{% for highlight in hl_group %}
 					<div class="alt-tile tile-border ui-block-{{loop.index}}">
 						<!--<h3 class="h4">{{highlight.kicker}}</h3>-->
 						<a href="{{highlight.link}}">
- 							<img class="alt-tile-img" src="{{highlight.thumbnail.src}}"/>
+ 							<img class="alt-tile-img" src="{{highlight.thumbnail.src}}" alt="{{highlight.title|e}}"/>
  						</a>
 						<h2 class="highlight-headline"><a href="{{highlight.link}}">{{highlight.title}}</a></h2>
 						<div class="txt-lg txt-dark">{{highlight.content}}</div>
@@ -34,11 +34,11 @@
 					{% endfor %}
 				</div> <!-- /tile-row-mod -->
 				{% endfor %}
-			</section> <!-- /tiles-mod -->
+			</div> <!-- /tiles-mod -->
 
 		</div> <!-- /hp-theme-alt -->
 	</div> <!-- /wrapper -->
-</secton> <!-- /hp-themes -->
+</section> <!-- /hp-themes -->
 
 <div class="hp-logo-pond">
 
