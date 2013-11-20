@@ -1,9 +1,9 @@
 <section class="logo-pond-mod">
-	<ul class="logo-pond">
+	<div class="logo-pond">
 		{% for item in logo_pond %}
 			<a class="pond-item" href="{{TimberPost(item.link).permalink}}">
-				<img class="stuff" src="{{TimberImage(item.logo).src}}" />
+				<img class="stuff" src="{{TimberImage(item.logo).src}}" alt="{{item.link.post_title|default('Client logo')|e}}" />
 			</a>
 		{% endfor %}
-	</ul> <!-- /logo-pond -->
+	</div> <!-- /logo-pond -->
 </section> <!-- /logo-pond -->
