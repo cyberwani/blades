@@ -414,7 +414,7 @@ $prefix-for-spec:      true !default; // required for keyframe mixin
 
 @mixin svg($image) {
 	// Variables
-	$path: "http://cloudfront.upstatement.com/wp-content/themes/blades/images/icons/";
+	$path: "http://upstatement.upstatement12.netdna-cdn.com/wp-content/themes/blades/images/icons/";
 	$svg: $path + $image + ".svg";
 	$png: $path + $image + ".png";
 	$ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+ image-url($png) +"', sizingMethod='scale')";
