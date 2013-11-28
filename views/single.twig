@@ -16,7 +16,7 @@
 					<p class="blog-author"><span>By</span> {{ post.author.name }} <span>&bull;</span> {{ post.display_date }}</p>
 				</div>
 				<article class="article-txt">
-					{{post.content|pretags}}
+					{{post.content}}
 				</article>
 				{% for cta in post.get_field('calls_to_action') %}
 					<div class="read-more-mod">
