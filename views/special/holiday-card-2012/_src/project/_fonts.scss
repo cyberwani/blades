@@ -1,0 +1,30 @@
+/* !============================================= */
+
+/* ! Custom Fonts					   			  */ 
+
+/* !============================================= */
+
+@mixin font-import {
+
+// Follow this format, y'hear: 
+
+	@font-face {
+	    font-family: 'silkscreen';
+	    src: url('../fonts/slkscr-webfont.eot');
+	    src: url('../fonts/slkscr-webfont.eot?#iefix') format('embedded-opentype'),
+	         url('../fonts/slkscr-webfont.woff') format('woff'),
+	         url('../fonts/slkscr-webfont.ttf') format('truetype'),
+	         url('../fonts/slkscr-webfont.svg#SilkscreenNormal') format('svg');
+	}
+	@font-face {
+	    font-family: 'BPdots';
+	    src: url('../fonts/bpdots-webfont.otf');
+		src: url('../fonts/bpdots-webfont.eot?#iefix') format('embedded-opentype'),
+	         url('../fonts/bpdots-webfont.woff') format('woff'),
+	         url('../fonts/bpdots-webfont.ttf') format('truetype'),
+	         url('../fonts/bpdots-webfont.svg#BPdots') format('svg');	    
+	}
+
+}
+// Import custom fonts
+@include font-import;

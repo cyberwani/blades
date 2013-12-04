@@ -1,0 +1,23 @@
+# osx noise
+.DS_Store
+profile
+
+# xcode noise
+build/*
+*.mode1
+*.mode1v3
+*.mode2v3
+*.perspective
+*.perspectivev3
+*.pbxuser
+*.xcworkspace
+xcuserdata
+
+# SASS noise
+.sass-cache
+/.sass-cache
+.sass-cache/*
+
+# svn & cvs
+.svn
+CVS

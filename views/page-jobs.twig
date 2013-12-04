@@ -8,7 +8,7 @@
 <!-- Jobs Content -->
 <section class="jobs-content inset">
 		{% for job in jobs %}
-		<article class="job-mod wrapper">
+		<article class="job-mod wrapper" id="{{job.title|sanitize|e}}">
 			<h1 class="h1 jobs-h1 ui-block-1">{{job.title}}</h1>
 			<div class="article-txt-reverse jobs-txt ui-block-2">{{job.description | wpautop }}</div>
 		</article>

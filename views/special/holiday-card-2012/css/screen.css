@@ -1,0 +1,815 @@
+/* ## Bring in all Compass Helpers */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+img {
+  line-height: 0;
+  vertical-align: middle;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+body {
+  font: 13px/1.231 sans-serif;
+  *font-size: small;
+  /*text-rendering: optimizeLegibility;*/
+  /* this causes problems in Chrome for Windows and on iOS */
+  -webkit-overflow-scrolling: touch;
+}
+
+select, input, textarea, button {
+  font: 99% sans-serif;
+}
+
+pre, code, kbd, samp {
+  font-family: monospace, sans-serif;
+}
+
+body, select, input, textarea {
+  color: #444;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+a:hover, a:active {
+  outline: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+nav ul, nav li {
+  margin: 0;
+}
+
+small {
+  font-size: 85%;
+}
+
+strong, th {
+  font-weight: bold;
+}
+
+td, td img {
+  vertical-align: top;
+}
+
+sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
+sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+pre {
+  padding: 15px;
+  white-space: pre;
+  white-space: pre-wrap;
+  white-space: pre-line;
+  word-wrap: break-word;
+}
+
+textarea {
+  overflow: auto;
+}
+
+.ie6 legend, .ie7 legend {
+  margin-left: -7px;
+}
+
+input[type="radio"] {
+  vertical-align: text-bottom;
+}
+
+input[type="checkbox"] {
+  vertical-align: bottom;
+}
+
+.ie7 input[type="checkbox"] {
+  vertical-align: baseline;
+}
+
+.ie6 input {
+  vertical-align: text-bottom;
+}
+
+label, input[type=button], input[type=submit], button {
+  cursor: pointer;
+}
+
+button, input, select, textarea {
+  margin: 0;
+}
+
+input:invalid, textarea:invalid {
+  border-radius: 1px;
+  -moz-box-shadow: 0px 0px 5px red;
+  -webkit-box-shadow: 0px 0px 5px red;
+  box-shadow: 0px 0px 5px red;
+}
+
+.no-boxshadow input:invalid,
+.no-boxshadow textarea:invalid {
+  background-color: #f0dddd;
+}
+
+a:link {
+  -webkit-tap-highlight-color: #FF5E99;
+}
+
+button {
+  width: auto;
+  overflow: visible;
+}
+
+.ie7 img {
+  -ms-interpolation-mode: bicubic;
+}
+
+.clearfix:before, .clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.a11y-only {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* !============================================= */
+/* ! Custom Fonts					   			  */
+/* !============================================= */
+@font-face {
+  font-family: 'silkscreen';
+  src: url("../fonts/slkscr-webfont.eot");
+  src: url("../fonts/slkscr-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/slkscr-webfont.woff") format("woff"), url("../fonts/slkscr-webfont.ttf") format("truetype"), url("../fonts/slkscr-webfont.svg#SilkscreenNormal") format("svg");
+}
+
+@font-face {
+  font-family: 'BPdots';
+  src: url("../fonts/bpdots-webfont.otf");
+  src: url("../fonts/bpdots-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/bpdots-webfont.woff") format("woff"), url("../fonts/bpdots-webfont.ttf") format("truetype"), url("../fonts/bpdots-webfont.svg#BPdots") format("svg");
+}
+
+/* !============================================= */
+/* ! Variables						  			  */
+/* !============================================= */
+/* !-- Universal ------------------------------------ */
+/* !-- Project ------------------------------------ */
+.sprite-sprite, .sprite-edit-off {
+  background: url('../img/sprite-se876eea90a.png') no-repeat;
+}
+
+.sprite-edit-off {
+  background-position: 0 0;
+  height: 1px;
+  width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/* !============================================= */
+/* ! Universal						   			  */
+/* !============================================= */
+/* Kill the margin on the last column */
+.ui-block:last-child,
+.ui-block.last {
+  margin-right: 0;
+}
+
+/* !============================================= */
+/* ! Media Grid							   			  */
+/* !============================================= */
+/* !============================================= */
+/* ! Grids							   			  */
+/* !============================================= */
+/* Grid-2 vars */
+/* Grid-3 vars */
+/* Grid-3-rrl vars */
+/* Grid-4 vars */
+/* Grid-5 vars */
+/* ! Columns */
+.ui-block-25 {
+  width: 25%;
+}
+
+.ui-block-50 {
+  width: 50%;
+}
+
+.ui-block-75 {
+  width: 75%;
+}
+
+/* !============================================= */
+/* ! Spacers						   			  */
+/* !============================================= */
+/* Variables & Mixins */
+/* Selectors */
+.spacer {
+  margin-bottom: 50px;
+}
+
+.spacer-small {
+  margin-bottom: 10px;
+}
+
+.spacer-med {
+  margin-bottom: 25px;
+}
+
+.spacer-large {
+  margin-bottom: 75px;
+}
+
+/* !============================================= */
+/* ! Image Blocks						   		  */
+/* !============================================= */
+.imageblock-image {
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+.imageblock-image-right {
+  float: right;
+  margin: 0 0 0 10px;
+}
+
+.imageblock-content {
+  display: table-cell;
+  vertical-align: top;
+  width: 1000em;
+}
+
+.ie6 .imageblock-content,
+.ie7 .imageblock-content {
+  display: block;
+  width: auto;
+  zoom: 1;
+}
+
+/* ## Base CSS */
+/* ## Components */
+/* ============================================= */
+/*	Universal						   			 */
+/* ============================================= */
+body {
+  background-color: #000;
+  font-family: helvetica, sans serif;
+  font-size: 14px;
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+#main {
+  overflow: hidden;
+}
+
+#computer-holder {
+  height: 700px;
+  width: 100%;
+  bottom: 73px;
+  position: absolute;
+  z-index: 9999;
+}
+@media (max-width: 1200px) {
+  #computer-holder {
+    height: 600px;
+  }
+}
+
+#computer {
+  width: 529px;
+  height: 700px;
+  margin: 0 auto;
+  padding: 100px;
+  z-index: 9000;
+  background: url(../img/puter.png) 50% 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/puter.png', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/puter.png', sizingMethod='scale')";
+}
+@media (max-width: 1200px) {
+  #computer {
+    width: 453px;
+    height: 600px;
+    padding: 80px;
+  }
+}
+
+#ie_code {
+  display: none;
+}
+
+#screen {
+  background-color: #2a2f2c;
+  color: #a1b9ac;
+  height: 56%;
+  overflow: hidden;
+}
+#screen pre {
+  font-family: "silkscreen", Courier, mono;
+  font-size: 20px;
+  padding: 0px;
+}
+
+#newton-holder {
+  display: none;
+}
+
+#table {
+  height: 65%;
+  width: 100%;
+  position: absolute;
+  bottom: 0%;
+  z-index: 501;
+}
+@media (min-width: 600px) {
+  #table {
+    background: url(../img/bg-scene.png) bottom repeat-x;
+  }
+}
+
+#wall {
+  position: absolute;
+  width: 100%;
+  height: 47%;
+  bottom: 0%;
+  background-color: #f8ead3;
+  z-index: 500;
+  background: url(../img/window-small.png) top repeat-x, #f8ead3;
+}
+
+#printout {
+  width: 100%;
+  margin-top: 100%;
+  top: 0;
+  height: 0;
+  bottom: 100%;
+  position: absolute;
+  background-color: #FFF;
+  z-index: 10000;
+  overflow: hidden;
+  background: url(../img/print-bg-left.png) top left repeat-y, url(../img/print-bg-right.png) top right repeat-y, url(../img/print-perf.png) top repeat-x, white;
+}
+#printout pre {
+  padding: 40px;
+  font-family: "BPdots", "silkscreen", Courier, mono;
+  color: #000;
+  font-size: 48px;
+  text-align: center;
+  font-weight: bold;
+}
+#printout pre span {
+  color: #bd9c56;
+}
+
+#fine-print {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 150px;
+  font-size: 10px;
+}
+
+/* ============================================= */
+/*	Newton						   			 */
+/* ============================================= */
+@media screen and (max-width: 600px) {
+  body {
+    height: auto;
+    background: url(../img/table-bg.png) 50% 50%;
+  }
+
+  #newton-holder {
+    width: 90%;
+    margin: 20px auto;
+    position: static;
+    height: 100%;
+    bottom: 0px;
+    display: block;
+  }
+
+  #newton {
+    background-size: 100%;
+    width: 100%;
+    height: auto;
+    padding: 20% 22% 50% 18%;
+    background: url(../img/newton-full.png) top left no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/newton-full.png', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/newton-full.png', sizingMethod='scale')";
+  }
+  #newton img {
+    width: 100%;
+  }
+
+  #wall,
+  #printout,
+  #computer-holder,
+  #snowflakesContainer {
+    display: none;
+  }
+}
+/* ============================================= */
+/*	Snowflake						   			 */
+/* ============================================= */
+/**********************************************/
+/* Based on the CSS3 snow demo created */
+/* by Estelle Weyl (@estellevw) available at: */
+/* http://www.standardista.com/sxsw/ */
+/***********************************************/
+/* make sure horizontal scrollbars don't pop up because snowflakes stray over the edge */
+body {
+  overflow-x: hidden;
+}
+
+/* snowflakes container */
+#snowflakesContainer {
+  top: -15px;
+  position: absolute;
+  height: 60%;
+  width: 100%;
+}
+
+/* default animation and transform */
+.snowflake {
+  position: absolute;
+  display: inline-block;
+  background-color: white;
+  opacity: 0.5;
+  height: 7px;
+  width: 7px;
+  z-index: -1;
+  -webkit-transform-origin: left -20px;
+  -webkit-animation: falling 7.7s linear 2s infinite;
+  -moz-animation: falling 7.7s linear 2s infinite;
+}
+
+/* animation used for ALL snowflakes, 1000px will be updated by Snowflakes.create() to reflect true height of window */
+@-webkit-keyframes falling {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 1000px, 0) rotate(360deg);
+  }
+}
+
+@-moz-keyframes falling {
+  0% {
+    -moz-transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  100% {
+    -moz-transform: translate(0, 1000px) rotate(360deg);
+  }
+}
+
+/* different sizes, and default origins based on size */
+.snowflakeSizeLRG {
+  height: 11px;
+  width: 11px;
+  -webkit-transform-origin: left -30px;
+  -moz-transform-origin: left -30px;
+}
+
+.snowflakeSizeMED {
+  height: 9px;
+  width: 9px;
+  -webkit-transform-origin: left -30px;
+  -moz-transform-origin: left -30px;
+}
+
+.snowflakeSizeSM {
+  height: 5px;
+  width: 5px;
+  -webkit-transform-origin: -30px 0;
+  -moz-transform-origin: -30px 0;
+}
+
+/* different speeds so flakes look just that much different */
+.snowflakeSpeedSlow {
+  -webkit-animation-duration: 7.1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-transform-origin: -10px -20px;
+  -moz-animation-duration: 7.1s;
+  -moz-animation-iteration-count: infinite;
+  -moz-transform-origin: -10px -20px;
+}
+
+.snowflakeSpeedMed {
+  -webkit-animation-duration: 6.6s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-transform-origin: -10px -20px;
+  -moz-animation-duration: 6.6s;
+  -moz-animation-iteration-count: 12;
+  -moz-transform-origin: -10px -20px;
+}
+
+.snowflakeSpeedFast {
+  -webkit-animation-duration: 5.9s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-transform-origin: -10px -20px;
+  -moz-animation-duration: 5.9s;
+  -moz-animation-iteration-count: 12;
+  -moz-transform-origin: -10px -20px;
+}
+
+/* different opacities so flakes look just that much different */
+.snowflakeOpacityFaint {
+  opacity: 0.1;
+}
+
+.snowflakeOpacityLight {
+  opacity: 0.3;
+}
+
+.snowflakeOpacityDark {
+  opacity: 0.7;
+}
+
+/* different delays so they don't all start at the same time */
+.snowflakeDelay1 {
+  -webkit-animation-delay: 3.4s;
+  -moz-animation-delay: 3.4s;
+}
+
+.snowflakeDelay2 {
+  -webkit-animation-delay: 1.5s;
+  -moz-animation-delay: 1.5s;
+}
+
+.snowflakeDelay3 {
+  -webkit-animation-delay: 4.6s;
+  -moz-animation-delay: 4.6s;
+}
+
+.snowflakeDelay4 {
+  -webkit-animation-delay: 6.3s;
+  -moz-animation-delay: 6.3s;
+}
+
+.snowflakeDelay5 {
+  -webkit-animation-delay: 0.4s;
+  -moz-animation-delay: 0.4s;
+}
+
+.snowflakeDelay6 {
+  -webkit-animation-delay: 8.1s;
+  -moz-animation-delay: 8.1s;
+}
+
+/* playing with timing functions to make it a teeny bit more random like */
+.snowflakeSizeLRG.snowflakeDelay2 {
+  -webkit-animation-timing-function: ease-in-out;
+}
+
+.snowflakeSizeLRG.snowflakeDelay1 {
+  -webkit-animation-timing-function: ease-out;
+}
+
+.snowflakeSizeLRG.snowflakeDelay2 {
+  -moz-animation-timing-function: ease-in-out;
+}
+
+.snowflakeSizeLRG.snowflakeDelay1 {
+  -moz-animation-timing-function: ease-out;
+}
+
+/* playing with opacity to make it a teeny bit more random like */
+.snowflakeSpeedMed.snowflakeDelay2 {
+  opacity: 0.5;
+}
+
+.snowflakeSpeedMed.snowflakeDelay1 {
+  opacity: 0.3;
+}
+
+.snowflakeSpeedFast.snowflakeDelay2 {
+  opacity: 0.7;
+}
+
+.snowflakeSpeedFast.snowflakeDelay1 {
+  opacity: 0.6;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-transform-origin: left 10px;
+  -moz-animation-timing-function: ease-in;
+  -moz-transform-origin: left 10px;
+}
+
+.snowflakeSpeedSlow {
+  opacity: 0.8;
+}
+
+/* ============================================= */
+/*	Print Styles							     
+	Inline to avoid required HTTP connection     */
+/* ============================================= */
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+}
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
