@@ -1752,6 +1752,10 @@ $theme_grid_bp : '760px';
 	}//mq
 }//tile-border-alt
 
+.no-border {
+	border: 0px solid;
+}
+
 .tile-row-mod {
 	&:first-child {
 		padding-top:0px;
@@ -2787,6 +2791,60 @@ html.ie8 .about-person {
 	}
 }
 
+
+//
+// Holiday Page
+//
+
+.page-banner-img {
+	img {
+		width: 100%;
+	}
+}
+
+.holiday-logo {
+	postion: relative;
+}
+
+.logo-caption {
+	postion: absolute;
+	top: 0px;
+
+}
+
+.holiday-pond {
+	padding-bottom: 20px;
+}
+
+.holiday-pond-img {
+	margin-right: 6%;
+	img {
+		max-width: 190px;
+		padding-bottom: 10px;
+	}
+}
+
+.holiday-play-btn {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 3;
+	max-width: 90px;
+	margin-left: -45px;
+	margin-top: -55px;
+
+
+	@media (min-width: 650px) {
+		max-width: 180px;
+		margin-left: -90px;
+		margin-top: -140px;
+	}//mq
+}
+
+.holiday-bg {
+	background: url(/wp-content/themes/blades/images/drink/star-bg.gif);
+}
+
 //
 // Drinks Page
 //
@@ -2868,6 +2926,51 @@ html.ie8 .about-person {
 		display: inline;
 	}
 }
+
+
+// Mail Chimp
+
+#mc_embed_signup {
+	background-color: none;
+
+	#mc-embedded-subscribe.button {
+		background-color: #be9b53;
+	}	
+
+	form#mc-embedded-subscribe-form {
+		padding-left: 0px;
+	}
+}
+
+.mailing-list-mod {
+	margin: 0 auto;
+	padding: 50px 30px;
+	max-width: 1020px;
+
+	@media (min-width:600px) {
+		padding: 100px 40px;
+	}
+
+	@media (min-width: 1100px) {
+		padding: 100px 0px;
+		@include ui-grid-2(40%, 60%);
+	}
+}
+
+.sign-up-mod {
+	max-width: 700px;
+}
+
+#mc_embed_signup form {
+	margin-left: 0px;
+}
+
+.mailing-list-copy {
+	p {
+		padding-top: 53px;
+	}
+}
+
 
 // CSS Animation				   				   
 
