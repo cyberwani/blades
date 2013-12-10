@@ -106,6 +106,15 @@ var upSite;
 		});
 	};
 
+	//Holiday Video delivery
+	var holidayVideo = '<iframe src="//player.vimeo.com/video/81147811" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+	
+	$('.holiday-play-btn').on('click', function(){
+		$('.vimeo-target-div').toggleClass('active');
+		$('.holiday-2k13-banner').toggleClass('active');
+		$('.vimeo-movie-container').html(holidayVideo);
+	});
+
 	//Mobile nav toggling action-action-action
 	$(".nav-toggle-m").click(function(){
 	  	console.log('clicked');
