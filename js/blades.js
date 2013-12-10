@@ -107,7 +107,7 @@ var upSite;
 	};
 
 	//Holiday Video delivery
-	var holidayVideo = '<iframe src="//player.vimeo.com/video/81147811" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+	var holidayVideo = '<iframe src="//player.vimeo.com/video/81147811?autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
 	
 	$('.holiday-play-btn').on('click', function(){
 		$('.vimeo-target-div').toggleClass('active');
