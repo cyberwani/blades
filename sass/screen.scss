@@ -2820,6 +2820,16 @@ html.ie8 .about-person {
 	}
 }
 
+.metal-mode {
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+	font-size: 10px;
+	padding: 3px;
+	background-color: rgba(0,0,0,.8);
+}
+
 .page-banner-img {
 	img {
 		width: 100%;
@@ -2883,6 +2893,16 @@ html.ie8 .about-person {
 
 	&.active {
 		background-color: #111;
+
+		.holiday-play-btn {
+			display: none;
+		}
+	}
+
+	&.metallica {
+		background-color: #111;
+		background-image: url("/wp-content/themes/blades/images/lightning.jpg");
+		@include background-size(cover);
 
 		.holiday-play-btn {
 			display: none;
