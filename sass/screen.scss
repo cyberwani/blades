@@ -2808,7 +2808,7 @@ html.ie8 .about-person {
 	@include trans;
 
 	&.active {
-		padding-bottom: 68%;
+		padding-bottom: 72%;
 
 		@media (min-width: 600px) and (max-width: 1149px){
 			padding-bottom: 60%;
@@ -2895,7 +2895,7 @@ html.ie8 .about-person {
 
 	iframe {
 		width: 100%;
-		height: 280px;
+		height: 220px;
 	}
 
 	@media(min-width: 600px) and (max-width: 1449px){
