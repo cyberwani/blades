@@ -2796,6 +2796,17 @@ html.ie8 .about-person {
 // Holiday Page
 //
 
+.page-id-4236 {
+	.ftr {
+		position: relative;
+		margin-top: 0;
+	}
+}
+
+.holiday-2k13-mod {
+	position: relative;
+}
+
 .holiday-2k13-banner {
 	position: relative;
 	height: 0;
@@ -2807,27 +2818,38 @@ html.ie8 .about-person {
 
 	@include trans;
 
-	&.active {
-		padding-bottom: 72%;
+	.video-playing & {
+		padding-bottom: 58%;
 
-		@media (min-width: 600px) and (max-width: 1149px){
+		@media (min-width: 750px) {
 			padding-bottom: 60%;
 		}
-
-		@media (min-width: 1150px){
-			padding-bottom: 45%;
+		@media (min-width: 900px) {
+			padding-bottom: 70%;
 		}
 	}
 }
 
 .metal-mode {
+	z-index: 10;
+	display: none;
 	cursor: pointer;
-	position: absolute;
-	right: 0;
-	bottom: 10px;
+	@include absolute(n 0 n n);
+	text-align: center;
 	font-size: 10px;
 	padding: 3px;
 	background-color: rgba(0,0,0,.8);
+	color: rgba(255, 255, 255, .35);
+	@include trans;
+	&:hover {
+		color: rgba(255,255,255,.75);
+	}
+	.video-playing & {
+		display: block;
+	}
+	@media (min-width: 900px) {
+		margin-top: -125px;
+	}
 }
 
 .page-banner-img {
@@ -2836,14 +2858,37 @@ html.ie8 .about-person {
 	}
 }
 
+.hp-topper-intro .holiday-h-outer {
+	max-width: 700px;	
+}
+
+.holiday-intro-txt {
+	max-width: 700px;
+	margin: 0 auto 20px;
+	font: 300 26px $adelle;
+	text-align: center;
+	@media (min-width: 600px) {
+		font-size: 32px;
+	}
+}
+
+.holiday-deck {
+	font-size: 19px;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	@media (min-width: 600px) {
+		font-size: 24px;
+	}
+}
+
 .holiday-logo {
 	postion: relative;
 }
 
 .logo-caption {
-	postion: absolute;
+	position: absolute;
 	top: 0px;
-
 }
 
 .holiday-pond {
@@ -2878,7 +2923,7 @@ html.ie8 .about-person {
 }
 
 
-.vimeo-target-div {
+.vimeo-target {
 	position:absolute;
 	top: 0;
 	bottom: 0;
@@ -2891,7 +2936,7 @@ html.ie8 .about-person {
 		}
 	}
 
-	&.active {
+	.video-playing & {
 		background-color: #111;
 
 		.holiday-play-btn {
@@ -2910,36 +2955,16 @@ html.ie8 .about-person {
 	}
 }
 
-.vimeo-movie-container {
-	width: 100%;
-
-	iframe {
-		width: 100%;
-		height: 220px;
+.holiday-movie-mod {
+	@include video(52.5%);
+	margin: auto;
+	.metallica & {
+		@media (min-width: 750px) {
+			@include video(36.25%);
+			margin-top: 30px;
+			width: 70%;
+		}	
 	}
-
-	@media(min-width: 600px) and (max-width: 1449px){
-		width: 70%;
-		margin: 40px auto 40px auto;
-
-		iframe {
-			width: 100%;
-			height: 350px;
-			margin: 0 auto;
-		}
-	}
-
-	@media(min-width: 1450px){
-		width: 70%;
-		margin: 40px auto 40px auto;
-
-		iframe {
-			width: 100%;
-			height: 600px;
-			margin: 0 auto;
-		}
-	}
-
 }
 
 .holiday-bg {
@@ -3047,19 +3072,32 @@ html.ie8 .about-person {
 	margin: 0 auto;
 	padding: 50px 30px;
 	max-width: 1020px;
+	text-align: center;
 
-	@media (min-width:600px) {
+	@media (min-width: 600px) {
 		padding: 100px 40px;
 	}
 
 	@media (min-width: 1100px) {
+		text-align: left;
 		padding: 100px 0px;
 		@include ui-grid-2(40%, 60%);
 	}
 }
 
 .sign-up-mod {
-	max-width: 700px;
+	max-width: 400px;
+	margin: auto;
+	@media (min-width: 1100px) {
+		max-width: 700px;
+	}
+}
+
+.holiday-submit-mod {
+	text-align: center;
+	@media (min-width: 1100px) {
+		text-align: left;
+	}
 }
 
 #mc_embed_signup form {
