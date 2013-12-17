@@ -2,7 +2,7 @@
 {% block content %}
 	{% if post.mp4 %}
 	<div class="video-topper-mod">
-		<video loop autoplay class="">
+		<video loop autoplay width="100%">
 			 <source src="{{TimberImage(post.mp4).get_src}}" type="video/mp4" />
 			 <source src="{{TimberImage(post.ogv).get_src}}" type="video/ogg" />
 		</video>
