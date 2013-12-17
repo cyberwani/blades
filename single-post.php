@@ -18,4 +18,9 @@
 	}
 	$data['comment_form'] = InkwellComments::get_dsq_comments($pi->ID);
 	$data['sidebar'] = Timber::get_sidebar();
-	Timber::render('single.twig', $data);
+	if ($pi->ID == 4009) {
+		Timber::render('single-video.twig', $data);
+	} else {
+		Timber::render('single.twig', $data);
+	}
+	

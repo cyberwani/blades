@@ -1,0 +1,68 @@
+{% extends "base.twig" %}
+{% block content %}
+	{% if post.mp4 %}
+	<div class="video-topper-mod">
+		<video loop autoplay class="">
+			 <source src="{{TimberImage(post.mp4).get_src}}" type="video/mp4" />
+			 <source src="{{TimberImage(post.ogv).get_src}}" type="video/ogg" />
+		</video>
+	</div> <!-- /video mod -->
+	{% elseif post.banner_image.src %}
+		<img src="{{post.banner_image.src}}" class="blog-banner-image" alt="{{post.post_title}}" />
+	{% endif %}
+
+
+{% if post.thumb_src %}
+	<meta property="og:image" content="{{post.thumbnail.src}}" />
+{% endif %}
+<div class="content-wrapper">
+	<div class="wrapper">
+		<article class="post-type-{{post.post_type}}" id="post-{{ID}}">
+			<section class="article-content">
+				<div class="hgroup article-hgroup">
+					<h1 class="article-h1">{{post.title}}</h1>
+					<h2 class="subline">{{post.subline}}</h2>
+					<p class="blog-author"><span>By</span> {{ post.author.name }} <span>&bull;</span> {{ post.display_date }}</p>
+				</div>
+				<article class="article-txt">
+					{{post.content}}
+				</article>
+				{% for cta in post.get_field('calls_to_action') %}
+					<div class="read-more-mod">
+						<div class="read-more-meta-mod ui-block-1">
+							<h4 class="h4 read-more-overline">{{cta.action}}</h4>
+							{% if cta.site %}
+								<div class="read-more-source"><a href="{{cta.url}}" {{cta.target_blank ? 'target="_blank"'}}>{{cta.site}}</a></div>
+							{% endif %}
+						</div> <!-- /read-more-meta-mod -->
+						<div class="read-more-detail-mod ui-block-2">
+							<h4 class="h2 read-more-tz"><a href="{{cta.url}}" {{cta.target_blank ? 'target="_blank"'}}>{{cta.title}}</a></h4>
+							{% if cta.desc %}
+								<p class="read-more-p">{{cta.desc}}</p>
+							{% endif %}
+						</div> <!-- /read-more-detail-mod -->
+					</div> <!-- /read-more-mod -->
+				{% endfor %}
+			</section>
+			<div class="comments-mod">
+				<section class="respond">
+					<h3 class="h2 respond-h">
+						Comments
+					</h3>
+					{{ comment_form }}
+				</section>
+			</div> <!-- /comments-mod -->
+		</article>
+	</div> <!-- /wrapper -->
+</div> <!-- /content-wrapper -->
+
+
+
+<section class="archive-blog-ftr">
+	<div class="wrapper">
+{{sidebar}}
+	</div>
+</section>
+
+
+{% endblock %}
