@@ -106,6 +106,23 @@ var upSite;
 		});
 	};
 
+	//Holiday Video delivery
+	var holidayVideo = '<iframe src="//player.vimeo.com/video/81147811?autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+	var metallicaVideo = '<iframe src="//player.vimeo.com/video/81546746?autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+
+	$('.holiday-play-btn').on('click', function(){
+		$('body').addClass('video-playing');
+		$('.vimeo-target').toggleClass('active');
+		$('.holiday-movie-mod').html(holidayVideo);
+	});
+
+	$('.metal-mode').on('click',function(){
+		$('body').addClass('video-playing metallica');
+		$('.vimeo-target').addClass('metallica');
+		$('.holiday-movie-mod').html(metallicaVideo);
+		console.log("METALLICA MODE");
+	});
+
 	//Mobile nav toggling action-action-action
 	$(".nav-toggle-m").click(function(){
 	  	console.log('clicked');

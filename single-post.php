@@ -18,4 +18,7 @@
 	}
 	$data['comment_form'] = InkwellComments::get_dsq_comments($pi->ID);
 	$data['sidebar'] = Timber::get_sidebar();
+
 	Timber::render('single.twig', $data);
+
+	
