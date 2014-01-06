@@ -3,7 +3,7 @@
 {% if post.banner_image.src %}
 	<img src="{{post.banner_image.src}}" class="blog-banner-image" alt="{{post.post_title}}" />
 {% endif %}
-{% if post.thumb_src %}
+{% if post.thumbnail %}
 	<meta property="og:image" content="{{post.thumbnail.src}}" />
 {% endif %}
 <div class="content-wrapper">
