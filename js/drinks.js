@@ -1,3 +1,5 @@
+//awesome snow script by WebSonick http://codepen.io/WebSonick/
+
 /************* SHIM ************************/
 window.requestAnimFrame = (function(){
   return  window.requestAnimationFrame       ||
