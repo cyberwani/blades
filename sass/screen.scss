@@ -2987,6 +2987,14 @@ html.ie8 .about-person {
 // Drinks Page
 //
 
+.page-id-2995 {
+	.hdr {
+		position: relative;
+		z-index: 100;
+	}//hdr
+}
+
+
 .drinks-banner {
 	background: url(/wp-content/themes/blades/images/drink/star-bg.gif);
 	height: 150px;
@@ -3068,6 +3076,18 @@ html.ie8 .about-person {
 .fbook-btn-mod {
 	text-align: center;
 }
+
+#snow {
+	position: absolute;
+	top: 72px;
+	z-index: 0;
+	pointer-events: none;
+
+	@media (min-width: 700px) {
+		z-index: 1;
+	}//mq
+}
+
 
 // Mail Chimp
 

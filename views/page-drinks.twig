@@ -3,15 +3,15 @@
 	<link rel="stylesheet" href="{{post.css_file}}" />
 {% endblock %}
 {% block content %}
-<div class="blog-banner-container drinks-banner">
-	<div class="banner-img-mod">
+<div class="blog-banner-container drinks-banner" id="snow-height">
 		<img class="blog-banner-image drinks-buildings" alt="decorative image of an iconic building in Boston" src="/wp-content/themes/blades/images/drink/buildings-bg.png">
-
 		<img class="blog-banner-image drinks-sign-neon fadein" alt="decorative image of an iconic building in Boston" src="/wp-content/themes/blades/images/drink/drinks-sign-neon-2.png">
 
 		<img class="blog-banner-image drinks-sign" alt="decorative image of an iconic building in Boston" src="/wp-content/themes/blades/images/drink/drinks-sign-2.png">
 	</div><!-- /banner-img-mod -->	
 </div> <!-- /blog-banner-container -->
+	<canvas id="snow"></canvas>
+
 
 <div class="inset">
 	<div class="wrapper">
@@ -43,16 +43,6 @@
 
 	<p class="fbook-btn-mod"><a href="https://www.facebook.com/events/498682630241380/?source=1" target="_blank"><img src="/wp-content/themes/blades/images/drink/facebook_button.png"></a></p>
 
-<!-- 	<section class="about-intro">
-		<div class="wrapper">
-			<h2 class="section-h">The Gourmet Snackfest</h2>
-			<div class="l-txt txt-lg"><p>We are pleased to be working with our new friends at Bee&rsquo;s Knees Supply Co., a gourmet grocery and catering company opening soon in South Boston.</p></div>
-			<div class="provisions">
-				<a href="http://www.beeskneessupply.com"><img src="/wp-content/themes/blades/images/drink/beesknees.png"></a>
-			</div>
-		</div> 
-	</section> -->
-
 </div> <!-- /wrapper -->
 
 <audio class="bg-audio" preload="auto" tabindex="0" autoplay="true" loop="true">
@@ -61,6 +51,10 @@
 <audio class="bg-audio" preload="auto" tabindex="0" autoplay="true" loop="true">
     <source src="/wp-content/themes/blades/images/drink/car-passing.mp3" type="audio/mpeg" />
 </audio>
+
+<!-- Snow Script -->
+<script type="text/javascript" src="/wp-content/themes/blades/js/drinks.js"></script>
+
 {% endblock %}
 
 
