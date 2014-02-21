@@ -1,17 +1,119 @@
 {% extends 'base.twig' %}
 {% block head %}
 	<link rel="stylesheet" href="/wp-content/themes/blades/css/opensource.css" />
+
+	<link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css">
+	<script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
 {% endblock %}
 {% block content %}
 
-<div class="timber-topper">
-<a href="https://github.com/you"><img style="position: absolute; top: 100px; right: 0; border: 0;" src="https://github-camo.global.ssl.fastly.net/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "http://connect.facebook.net/en_US/all.js#xfbml=1&appId=218779621487337";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
 
 
-	<div class="timber-logo">Timber for Wordpress.</div>
-	<div class="timber-tagline">
-	<h2 class="tag-h2">Because wordpress is awesome, but TheLoop isn't.</h2>
+<div class="page-topper">
+	<div class="page-wrapper">
+
+	<a href="https://github.com/you"><img style="position: absolute; top: 100px; right: 0; border: 0;" src="https://github-camo.global.ssl.fastly.net/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+
+
+	<div class="logo">Timber for Wordpress.</div>
+
+
+	<div class="social-tools">
+		<nav class="nav-social">
+			<div class="social-item facebook">
+				<div class="fb-like" data-href="http://jarednova.github.io/timber/" data-width="100" data-layout="button_count" data-show-faces="false" data-send="false"></div>
+			</div><!-- social-item facebook -->
+
+			<div class="social-item twitter">
+				<a href="https://twitter.com/share" class="twitter-share-button" data-text="Timber: because WordPress is awesome, but the_loop isn't." data-via="upstatement">Tweet</a>
+			</div><!-- social-item twitter -->
+
+			<div class="social-item github">
+				<span class="gh-button">
+					<span class="github-btn github-watchers" id="github-btn">
+						<a class="gh-btn" id="gh-btn" href="https://github.com/jarednova/timber/" target="_blank">
+							<span class="gh-ico"></span>
+							<span class="gh-text" id="gh-text">GitHub</span>
+						</a>
+						<a class="gh-count" id="gh-count" href="https://github.com/jarednova/timber/" target="_blank" style="display: block;">390</a>
+					</span>
+				</span>
+			</div><!-- social-item github -->
+
+		</nav>
 	</div>
-</div>
+
+	<ul class="page-nav">
+		<li><a href="#">Documentation</a></li>
+		<li><a href="#">Screencasts</a></li>
+		<li><a class="download" href="#">Download</a></li>
+	</ul>
+
+	</div><!-- page-wrapper -->
+</div><!-- page-topper -->
+
+	<div class="page-body">
+		<div class="center-txt">
+			<h2 class="h2">Because wordpress is awesome, but TheLoop isn't.</h2>
+
+			<p class="txt-large">We had a problem at Upstatement. We make a lot of large websites that need to be maintainable by teams. We loved WordPress and our clients ask for it by name. But working with TheLoop and theme files is messy and annoying. Enter Timber. We made Timber so we can write WordPress themes with beautiful, simple markup + code. </p>
+
+			<p class="txt-large">Timber is a free open-source project for everyone who uses WordPress. The best payment is to Tweet and star the project on GitHub so others can find it and contribute.</p>
+
+		<div class="section">
+			<h3 class="section-head">What's it look like?</h3>
+			<p class="txt-large">With Timber you manage your theme in PHP and <a href="#">Twig</a> (HTML) files. This separates the logic (getting stuff from WordPress) from presentation (adding tags, classes, etc.) — just like Rails, Django, Node and other platforms.</p>
+
+			<div class="code-example side-by-side">
+				<div class="ui-block-1">
+					block 1
+				</div>
+
+				<div class="ui-block-2">
+					block 2
+				</div>
+			</div>
+		</div><!-- section -->
+
+
+		<div class="section">
+			<h3 class="section-head">Object Oriented Posts, Terms, Users and More</h3>
+			<p class="txt-large">Speak to the common WordPress objects in a way that makes sense. Have you ever tried to get the thumbnail of a post? Don't lie to me, of course you have! It probably looked something like this:</p>
+
+			<p class="txt-large">Yuk! Maybe you can remember all those functions, but I sure can't. If you're a pro WordPress dev you probably have a mess of shortcut functions to help you with a common task. But here's the rub YOUR shortcuts are going different than everyone else's.</p>
+		</div><!-- section -->
+
+		<div class="section">
+			<h3 class="section-head">Express/Node-style Routing</h3>
+			<p class="txt-large">When I first used routes in Node.js I fell in love. But when I tried to do the same, WordPress broke my heart.</p>
+		</div><!-- section -->
+
+		<div class="section">
+			<h3 class="section-head">It's a library, not a Framework</h3>
+			<p class="txt-large">The tools I've come to rely on are the tools that evolve into your workflow. I didn't know I wanted to use jQuery or SASS until I started using them. Bit-by-bit they replaced the 'old' ways of doing things until I couldn't imagine life without them. Timber lets you start with just a bit. Say you want to just include an HTML snippet with a variable from your database:</p>
+		</div><!-- section -->
+
+		<div class="section">
+			<h3 class="section-head">Showcase</h3>
+		</div>
+
+
+
+		</div><!-- center-txt -->
+
+	</div>
 
 {% endblock %}
