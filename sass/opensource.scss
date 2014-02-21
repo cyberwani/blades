@@ -1,0 +1,25 @@
+@import "project/variables";
+
+.timber-topper {
+	background-color: #009344;
+	padding: 120px;
+}
+
+.timber-logo {
+	width: 400px;
+	height: 100px;
+	margin: 0 auto 30px auto;
+	background-image: url(/wp-content/themes/blades/images/timber/timber-logo.svg);
+}
+
+.timber-tagline {
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.tag-h2 {
+	color: #FFF;
+	font-family: $proxima;
+	font-weight: 100;
+	font-size: 26px;
+}
