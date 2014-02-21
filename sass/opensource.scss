@@ -4,10 +4,52 @@
 
 $timber: #009344;
 
+//
+//Fade Animation
+//
+
+@-webkit-keyframes fadeIn { from { opacity:0;} to { opacity:1;} }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+
+.fade-in {
+    opacity:0;  /* make things invisible upon start */
+    -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+ 
+    -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+ 
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    animation-duration:1s;
+}
+
+//
+//Page Structure
+//
+
+
 .page-wrapper {
 	max-width: 1100px;
 	margin: 0 auto;
 }
+
+.page-body {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 30px;
+	background-color: #FFF;
+}
+
+
+//
+// Page top stuff 
+//
+
 .page-topper {
 	background-color: $timber;
 	padding: 60px 0 0 0;
@@ -15,18 +57,26 @@ $timber: #009344;
 }
 
 .logo {
+	@include trans;
 	text-indent: -10000px;
 	width: 100%;
 	height: 60px;
 	background-repeat: no-repeat;
 	background-position: center center;
-	background-image: url(/wp-content/themes/blades/images/timber/timber-logo.svg);
+	background-size: 80%;
 
-	@media (min-width: 600px){
+	&:hover {
+		background-size: 81%;
+	}
+	@media (min-width: 400px){
 		width: 400px;
 		height: 100px;
 		margin: 0 auto 30px auto;
 	}
+}
+
+.timber-logo {
+	background-image: url(/wp-content/themes/blades/images/timber/timber-logo.svg);
 }
 
 .social-tools {
@@ -48,7 +98,6 @@ $timber: #009344;
 			font-family: $proxima;
 			color: #FFF;
 			font-size: 16px;
-			// background-color: rgba(0,0,0,.1);
 			display: block;
 			padding: 10px;
 
@@ -64,17 +113,12 @@ $timber: #009344;
 			}
 		}
 	}
-}
+}//page-nav
 
 
-.page-body {
-	max-width: 1100px;
-	margin: 0 auto;
-	padding: 30px;
-	background-color: #FFF;
-}
-
-
+//
+//Typography
+//
 
 .h2 {
 	padding: 10px;
@@ -97,6 +141,11 @@ $timber: #009344;
 	}
 }
 
+//
+//Page Sections
+//
+
+
 .section-head {
 	font-family: $proxima;
 	font-weight: 800;
@@ -116,6 +165,9 @@ $timber: #009344;
 	margin: 0 auto;
 }
 
+//
+//Code Snippets
+//
 
 .code-examples {
 	padding: 30px;
