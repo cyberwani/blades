@@ -52,8 +52,14 @@ $timber: #009344;
 
 .page-topper {
 	background-color: $timber;
+	@include background-image(radial-gradient(#5EBA4B, $timber));
 	padding: 60px 0 0 0;
 	@include pie-clearfix;
+	text-align: center;
+
+	@media (min-width: 600px){
+		height: 400px;
+	}
 }
 
 .page-topper:after {
@@ -62,7 +68,7 @@ $timber: #009344;
 		width: 100%;
 		height: 0;
 		padding-bottom: 5.5%;
-		background: url(/wp-content/themes/blades/images/dev/covers/round-mask.png) 50% 0% no-repeat;
+		// background: url(/wp-content/themes/blades/images/dev/covers/round-mask.png) 50% 0% no-repeat;
 		background-size: 140%;
 		bottom: -2px;
 	}
@@ -80,7 +86,7 @@ $timber: #009344;
 	@media (min-width: 400px){
 		width: 400px;
 		height: 100px;
-		margin: 0 auto 30px auto;
+		margin: 80px auto 30px auto;
 	}
 }
 
@@ -93,12 +99,11 @@ $timber: #009344;
 }
 
 .page-nav {
-	float: right;
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
 
 	li {
-		float: left;
+		@include inline-block;
 		margin: 0 10px 10px 0;
 
 		a {
@@ -139,6 +144,11 @@ $timber: #009344;
 		font-size: 32px;
 		margin: 0 0 30px 0;
 	}
+}
+
+.tagline {
+	text-align: center;
+	margin: 40px 0 80px 0;
 }
 
 
