@@ -1,0 +1,133 @@
+{% extends 'base.twig' %}
+{% block head %}
+	<link rel="stylesheet" href="{{post.css_file}}" />
+{% endblock %}
+{% block content %}
+
+
+<div class="intern-banner">
+	<div class="video-mask"></div>
+	<video autoplay="true" id="banner-video"></video> 
+</div>
+
+
+<div class="inset extra-space">
+	<div class="wrapper">
+		<h3 class="h4 portfolio-promo-kicker drinks-kicker">Picture yourself here</h3>
+		<h1 class="h1 cover-msg">Internships at Upstatement</h1>
+	</div> <!-- /wrapper -->
+</div>
+
+
+<div class="wrapper">
+	<div class="grid-container-3">
+		<article class="media-block">
+			<h4 class="h3">Deadline for Summer term: April 1, 2014</em></h4>
+			<p class="txt">Applications are due APRIL 1, 2014 or something. Fill out the form below and FOLLOW INSTRUCTIONS.</p>
+			<p class="txt">Internships are 10 - 14 weeks and begin in May. Position is paid. </p>
+		</article>
+		
+		<article class="media-block">
+			<h4 class="h3">What we're looking for</em></h4>
+			<p class="txt">A few words about the type of candidate we're seeking. Should have these kinds of skills.</p>
+			<p class="txt">You'll be doing work for REAL CLIENTS and stuff. </p>
+		</article>
+
+		<article class="media-block">
+			<h4 class="h3">Join the family!</h4>
+			<p class="txt">We've had a great crew of really talented people over the last couple of years who've gone on to great things. Check 'em out here:</p>
+			<p class="txt"><a href="#">[LINK] Maya Gao, Lonely Planet</a></p>
+			<p class="txt"><a href="#">[LINK] Gus Weszerek, Fast Company</a></p>
+			<p class="txt"><a href="#">[LINK] Nathan Hass, Upstatement</a></p>
+			<p class="txt"><a href="#">[LINK] Carol Liao, Some Startup</a></p>
+		</article>
+	</div> <!-- /about-people-grid -->
+</div> <!-- /wrapper -->
+
+
+<div class="inset">
+	<div class="content-wrapper">
+		<h3 class="h4 drinks-kicker application-kicker">Apply<br/> Within</h3>
+
+
+		<form id="position-chooser"><fieldset>
+			<span class="position"><input type="radio" name="position" id="r-designer" checked="true"/> <label class="txt" for="r-designer">Designer</label></span>&nbsp; or &nbsp;
+			<span class="position"><input type="radio" name="position" id="r-developer"/> <label class="txt" for="r-developer">Developer</label></span>
+		</fieldset></form>
+
+		<form id="designer-form" class="form">
+			<fieldset class="fieldset">
+				<label class="label"><h4 class="h3">Design Question 1</h4></label>
+				<textarea class="textarea"></textarea>
+			</fieldset>
+
+			<fieldset class="fieldset">
+				<label class="label"><h4 class="h3">Design Question 1</h4></label>
+				<textarea class="textarea"></textarea>
+			</fieldset>
+
+			<fieldset class="fieldset">
+				<label class="label"><h4 class="h3">Design Question 1</h4></label>
+				<textarea class="textarea"></textarea>
+			</fieldset>
+		</form>
+
+		<form id="developer-form" class="form">
+			<fieldset class="fieldset">
+				<label class="label"><h4 class="h3">Question 1</h4></label>
+				<textarea class="textarea"></textarea>
+			</fieldset>
+
+			<fieldset class="fieldset">
+				<label class="label"><h4 class="h3">Question 1</h4></label>
+				<textarea class="textarea"></textarea>
+			</fieldset>
+
+			<fieldset class="fieldset">
+				<label class="label"><h4 class="h3">Question 1</h4></label>
+				<textarea class="textarea"></textarea>
+			</fieldset>
+		</form>
+
+		<p class="txt txt-center">We'll review your application and get back to you by DATE. Thanks for applying!</p>
+		<a class="btn-large center">Submit</a>
+	</div><!-- content-wrapper -->
+</div><!-- inset -->
+
+
+
+<script type="text/javascript">
+	// Grab the users webcam and stick it in the video element
+	var video = document.querySelector("#banner-video");
+	 
+	navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+	 
+	if (navigator.getUserMedia) {       
+	    navigator.getUserMedia({video: true}, handleVideo, videoError);
+	}
+	 
+	function handleVideo(stream) {
+	    video.src = window.URL.createObjectURL(stream);
+	}
+	 
+	function videoError(e) {
+	    // do nothing
+	}
+
+	// quick script to show/hide diff forms
+	jQuery('#position-chooser input:radio[name=position]').on('click', function(){
+
+			if(jQuery('#r-developer').attr('checked') === "checked"){
+				jQuery('#designer-form').css('display', 'none');
+				jQuery('#developer-form').css('display', 'block');
+			} else {
+				jQuery('#developer-form').css('display', 'none');
+				jQuery('#designer-form').css('display', 'block');
+			}
+	});
+
+</script>
+
+{% endblock %}
+
+

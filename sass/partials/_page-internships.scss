@@ -1,0 +1,85 @@
+#banner-video {
+	width: 100%;
+	height: 200px;
+
+	@media (min-width: 700px){
+		height: 400px;
+	}
+
+	background-image: url(/wp-content/themes/blades/images/internships/video-bg.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.video-mask {
+	background-image: url(/wp-content/themes/blades/images/internships/internships-2.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: absolute;
+	@include background-size(cover);
+	width: 100%;
+	height: 200px;
+
+	@media (min-width: 700px){
+		height: 400px;
+	}
+}
+
+.h4.application-kicker {
+	margin-bottom: 20px;
+	background-color: #111;
+	width: 140px;
+	height: 140px;
+	margin: -100px auto 0 auto;
+	padding: 60px 0 0 0;
+	@include border-radius(140px);
+}
+
+
+/* adding some mor space to the inset, in the future let's fix inset */
+.inset.extra-space {
+	padding: 40px 0;
+}
+
+/* Form Stuff */
+
+#position-chooser {
+	text-align: center;
+	font-size: 14px;
+
+	.position {
+		color: #000;
+	}
+}
+
+.form {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+
+
+	.fieldset {
+		padding: 0 0 20px 0;
+		margin: 0 0 20px 0;
+		border-bottom: 1px solid #EEE;
+	}
+
+	.label {
+		display: block;
+	}
+
+	.textarea {
+		display: block;
+		width: 100%;
+		padding: 10px;
+		font-size: 14px;
+	}
+
+	.h3 {
+		color: #000;
+	}
+
+	&#developer-form {
+		display: none;
+	}
+}
