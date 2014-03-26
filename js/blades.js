@@ -11,9 +11,10 @@ var upSite;
 	}
 
 	UpSite.prototype.initSyntaxHighlighting = function(){
-		SyntaxHighlighter.defaults['toolbar'] = true;
-
-		SyntaxHighlighter.all();
+		if (typeof SyntaxHighlighter != 'undefined') {
+			SyntaxHighlighter.defaults['toolbar'] = true;
+			SyntaxHighlighter.all();
+		}
 	};
 
 	UpSite.prototype.initAPI = function(){
