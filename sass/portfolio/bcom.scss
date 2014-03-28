@@ -578,17 +578,18 @@ body {
 a.bcom-proto-btn {
 	display: block;
 	margin: 0 auto;
-	font-size: 14px;
+	font-size: 13px;
 	text-transform: uppercase;
 	font-weight: 700;
 	letter-spacing: .1em;
 	color: white;
 	background-color: #444;
 	text-align: center;
-	width: 290px;
-	border-radius: 19px;
-	padding: 3px 0 1px;
+	width: 237px;
+	border-radius: 18px;
+	padding: 2px 0 0px;
 	margin-top: 50px;
+	height: 36px;
 	@include trans;
 	&:hover {
 		color: white;
@@ -675,4 +676,133 @@ a.bcom-proto-btn {
 		height: 300px;
 		left: -1600px;
 	}
+}
+
+// bcom-logo-include
+
+.bcom-logo-include-mod {
+ 	text-align: center;
+	color: rgb(51,51,51);
+	font: 400 18px $proxima;
+	@include mq(500px) {
+		@include media-grid(2, 50px);
+		padding: 0 20px;
+	}
+}
+
+.bcom-logo {
+	background-color: red;
+	display: block;
+	margin: 0 auto 20px;
+}
+
+.bcom-logo-mod-inner {
+	@include mq(max, 500px) {
+		margin-bottom: 40px;
+	}
+}
+
+.bcom-logo-bcom {
+	@include size(144px 20px);
+	background: url(../../images/portfolio/bcom/bcom-logo.svg) no-repeat;
+}
+.bcom-logo-globe {
+	@include size(187px 25px);
+	background: url(../../images/portfolio/bcom/globe-logo.svg) no-repeat;
+	@include mq (500px) {
+		margin-top: -5px;
+	}
+}
+
+.bcom-logo-txt {
+	max-width: 300px;
+	margin: 0 auto;
+}
+
+// bcom user include
+.bcom-user-mod {
+	color: rgb(51,51,51);
+	padding: 0 20px;
+	max-width: 500px;
+	margin: 0 auto 50px;
+}
+
+.bcom-user-top-width {
+	max-width: 302px;
+	margin: 0 auto;
+}
+.bcom-user-top {
+	@include media-grid(2, 50px);
+	margin-bottom: 20px;
+}
+
+.bcom-user-list-h,
+.bcom-avatar-title {
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font: 700 14px $proxima;
+}
+
+.bcom-user-avatar{
+	display: block;
+	@include size(75px);
+	background: url(../../images/portfolio/bcom/bcom-avatar.svg) no-repeat;
+	margin: 0 auto 10px;
+	border-radius: 50%;
+}
+
+.bcom-user-avatar-1 {	
+	background-color: #777;
+}
+
+.bcom-user-avatar-2 {	
+	background-color: #777;
+}
+
+.bcom-user-list-h {
+	margin-bottom: 15px;
+}
+
+.bcom-user-item {
+	max-width: 350px;
+	display: block;
+	margin: 0 auto 15px;
+	padding: 0 20px 15px;
+	font: 400 16px $proxima;
+	text-align: left;
+	border-bottom: solid 1px #ccc;
+ 	&:first-child {
+ 		border-top: solid 1px #ccc;
+ 		padding-top: 15px;
+ 	}
+ 	@include mq(500px) {
+ 		padding: 0 50px 15px;
+ 	}
+}
+
+.bcom-user-icon {
+	@include size(30px);
+	display: inline-block;
+	margin-right: 12px;
+	margin-bottom: -8px;
+	@include size(20px);
+	margin-bottom: -5px;
+}
+
+
+.bcom-user-icon-1 {
+	background: url(../../images/portfolio/bcom/bcom-path.svg) no-repeat;
+}
+
+.bcom-user-icon-2 {
+	background: url(../../images/portfolio/bcom/bcom-time.svg) no-repeat;
+}
+
+.bcom-user-icon-4 {
+	background: url(../../images/portfolio/bcom/bcom-bounce.svg) no-repeat;
+}
+
+.bcom-user-icon-3 {
+	background: url(../../images/portfolio/bcom/bcom-visit.svg) no-repeat;
 }
