@@ -204,8 +204,8 @@ function getHeights() {
 
 
 		if($(window).width() > 600) {
-			// $('.device-content-mod').one('inview', function(event, isInView) {
-			//   	if (isInView) {
+			$('.device-content-mod').one('inview', function(event, isInView) {
+			  	if (isInView) {
 					setTimeout(function() {
 						$('.bcom-stream-section').addClass('side-by-side');
 						setTimeout(function() {
@@ -215,8 +215,8 @@ function getHeights() {
 							advanceStreamAnim();
 						}, 700);
 					}, 1000);
-			// 	}
-			// });
+				}
+			});
 		} else if($(window).width() < 600) {
 			$('.bcom-stream-section').addClass('side-by-side')
 			advanceStreamAnim();
