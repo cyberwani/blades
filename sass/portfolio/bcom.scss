@@ -23,12 +23,12 @@
 
 // Absolute Centering
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
-// FOR: Centering (both horizontally & vertically) 
+// FOR: Centering (both horizontally & vertically)
 // absolutely positioned items
 // WHY: This does the math for you
 // USE: @include absolute-center(n 22px);
 @mixin absolute-center($dimensions) {
-  // If only one value is supplied, 
+  // If only one value is supplied,
   // default to center the width
   @if length($dimensions) == 1 {
     $dimensions: $dimensions n;
@@ -66,47 +66,47 @@
 
 // Psuedo
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
-// FOR: Quickly pasting essential and commonly used properties that make psuedo classes work 
+// FOR: Quickly pasting essential and commonly used properties that make psuedo classes work
 // WHY: Easier than remembering and writing each time. Should cut down on mistakes/debugging.
 // USE: @include pseudo;
 @mixin psuedo($coordinates: none) {
   @include content;
   display: block;
   @if $coordinates != "none" {
-    @include absolute($coordinates); 
+    @include absolute($coordinates);
   }
 }
 // Size
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 // FOR: Applying width & height in a single declaration
 // WHY: Faster. Less typing. Easier to deal with squares.
-// NOTE: If you supply a single value, the result is a square  
+// NOTE: If you supply a single value, the result is a square
 // REF: http://bourbon.io/docs/#size
 // USE: @include size(50px 100px);
- 
+
 @mixin size($size) {
   @if length($size) == 1 {
     @if $size == auto {
       width:  $size;
       height: $size;
     }
- 
+
     @else if unitless($size) {
       width:  $size + px;
       height: $size + px;
     }
- 
+
     @else if not(unitless($size)) {
       width:  $size;
       height: $size;
     }
   }
- 
+
   // Width x Height
   @if length($size) == 2 {
     $width:  nth($size, 1);
     $height: nth($size, 2);
- 
+
     @if $width == auto {
       width: $width;
     }
@@ -116,7 +116,7 @@
     @else if unitless($width) {
       width: $width + px;
     }
- 
+
     @if $height == auto {
       height: $height;
     }
@@ -209,9 +209,9 @@ body {
 
 
 
-// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
-// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
-// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
 
 .site-width {
@@ -285,7 +285,7 @@ body {
 .stream-message-h {
 	padding: 0 15px;
 	font-size: 16px;
-	
+
 	font: 600 16px $proxima;
 	margin-bottom: 7px;
 	@include mq($ug-break-1) {
@@ -347,7 +347,7 @@ body {
 		.stream-img-6,
 		.stream-img-7,
 		.stream-img-8 {
-			opacity: 1; 
+			opacity: 1;
 		}
 	}
 }
@@ -360,7 +360,7 @@ body {
 	@include mq(max, $ug-break-1) {
 		margin: 10px auto 0;
 	}
-	
+
 	.noclick &{
 		pointer-events: none;
 	}
@@ -390,7 +390,7 @@ body {
 		margin: 0 auto;
 		@include box-shadow(0 0 10px rgba(0,0,0,.15));
 		margin-top: 10px;
-		@include border-radius(3px); 
+		@include border-radius(3px);
 	}
 	@include mq($ug-break-1){
 		background-color: #000;
@@ -615,7 +615,7 @@ a.bcom-proto-btn {
 	}
 	@include mq(800px) {
 		font-size: 40px;
-	} 
+	}
 }
 
 .pull-quote-author {
@@ -657,6 +657,8 @@ a.bcom-proto-btn {
 	}
 }
 
+// bcom card swiper
+
 .bcom-social-card-mod {
 	position: relative;
 	height: 150px;
@@ -667,15 +669,51 @@ a.bcom-proto-btn {
 	}
 }
 
-.bcom-social-card {
-	position: absolute;
-	margin-left: 50%;
+
+.swiper-container, .swiper-slide {
+	width: auto;
 	height: 150px;
-	left: -781px;
 	@include mq(700px) {
 		height: 300px;
-		left: -1600px;
 	}
+}
+
+.bcom-card-img {
+	height: 140px;
+	@include border-radius(3px);
+	@include box-shadow(0 0 4px rgba(0,0,0,.1));
+	border: solid 1px #ddd;
+	@include mq(700px) {
+		height: 280px;
+		@include border-radius(5px);
+		@include box-shadow(0 0 8px rgba(0,0,0,.1));
+	}
+}
+
+.bcom-swiper-slide {
+	padding: 5px;
+	@include mq(700px) {
+		padding: 10px;
+	}
+}
+
+.bcom-card-btn {
+	z-index: 1;
+	@include input-default;
+	text-indent: -9999pc;
+	.touch & {
+		display: none;
+	}
+}
+
+.bcom-card-btn-next {
+	@include absolute(0 0 0 n);
+	width: 70%;
+}
+
+.bcom-card-btn-prev {
+	@include absolute(0 n 0 0);
+	width: 30%;
 }
 
 // bcom-logo-include
@@ -752,11 +790,11 @@ a.bcom-proto-btn {
 	border-radius: 50%;
 }
 
-.bcom-user-avatar-1 {	
+.bcom-user-avatar-1 {
 	background-color: #777;
 }
 
-.bcom-user-avatar-2 {	
+.bcom-user-avatar-2 {
 	background-color: #777;
 }
 

@@ -30,6 +30,29 @@ if (!$.support.transition)
 		$('.bcom-stream-section').css('max-height', (wHeight) + 'px');
 	}
 
+	// swiper mod
+	var bcomCardSwiper;
+	$(function(){
+		bcomCardSwiper = $('.swiper-container').swiper({
+			//Your options here:
+			mode:'horizontal',
+			slidesPerView: 'auto',
+			loop: true,
+			loopedSlides: 10,
+			centeredSlides: true,
+			keyboardControl: true,
+			onImagesReady: function(swiper) {
+				swiper.swipeNext();
+				swiper.swipePrev();
+			}
+		});
+		$('.bcom-card-btn-next').click(function() {
+				bcomCardSwiper.swipeNext();
+		});
+		$('.bcom-card-btn-prev').click(function() {
+				bcomCardSwiper.swipePrev();
+		});
+	})
 
 	var filterh;
 	var streamButtonh;
@@ -74,7 +97,7 @@ function getHeights() {
 	setTimeout(function() {
 
 		// Section Stream Animations
-			
+
 		var $streamMod = $('.bcom-stream-section');
 		var $streamImgMod = $('.stream-img-mod');
 
@@ -99,7 +122,7 @@ function getHeights() {
 				}, 1000, function(){
 					$streamMod.addClass('stream-sh-1');
 					addClick();
-				});			
+				});
 			},
 			function() {
 				noClick();
@@ -221,7 +244,7 @@ function getHeights() {
 			$('.bcom-stream-section').addClass('side-by-side')
 			advanceStreamAnim();
 		}
-		
+
 
 		// Stream anims
 		function noClick() {
@@ -236,7 +259,7 @@ function getHeights() {
 		$('.bcom-stream-section').on('click', function() {
 			if (!$('.bcom-stream-section').hasClass('noclick')) {
 				advanceStreamAnim();
-			} 
+			}
 		});
 
 		// Inits
