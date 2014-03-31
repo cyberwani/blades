@@ -216,6 +216,10 @@ body {
 	margin: auto;
 }
 
+.portfolio-desc-h {
+	text-align: center;
+}
+
 .txt-defaults {
 	.attr {
 		font-size: 11px;
@@ -1430,15 +1434,23 @@ $theme_grid_bp : '760px';
 
 .portfolio-h-outer {
 	position: relative;
-	margin: 0 auto 80px;
-	padding: 8px;
+	margin: 0 -20px 80px;
+	padding: 5px;
 	text-align: center;
 	@include bg(black, .6);
 	color: #fff;
 	max-width: 525px;
+	@media (min-width: 400px) {
+		// reset negative margin
+		margin-left: auto;
+		margin-right: auto;
+		// effectively increases border size 
+		padding: 8px;
+	}
+
 	.billboard-on & {
-		margin-top: -12%; 		
-	}	
+		margin-top: -12%;
+	}
 }
 
 .portfolio-h-inner {
@@ -1454,6 +1466,10 @@ $theme_grid_bp : '760px';
 	position: relative;
 	padding-bottom: 12px;
 	margin-bottom: 21px;
+	// Matches portfolio-h1
+	@media (max-width: 499px) {
+		font-size: 12px;
+	}
 	&:after {
 		@include content;
 		height: 0;
@@ -1475,13 +1491,13 @@ $theme_grid_bp : '760px';
 }
 
 .portfolio-include {
-	margin-bottom:20px;
-	padding-top:20px;
+	// margin-bottom:20px;
+	// padding-top:20px;
 }
 
 .portfolio-h1 {
-	font-size: 36px;
-	margin-bottom:10px;
+	font-size: 30px;
+	// Matches portfolio-kicker
 	@media (min-width: 500px) {
 		font-size: 42px;
 	}
