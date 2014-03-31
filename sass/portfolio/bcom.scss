@@ -942,7 +942,7 @@ a.bcom-proto-btn {
  	text-align: center;
 	color: rgb(51,51,51);
 	font: 400 18px $proxima;
-	padding: 0 20px 0 40px;
+	padding: 0 20px;
 	margin: auto;
 	@include mq(500px) {
 		@include media-grid(2, 50px);
