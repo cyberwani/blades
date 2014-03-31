@@ -55,17 +55,32 @@
 			calculateHeight: true
 		});
 
+		var slideCount = bcomSwiper.slides.length - 1;
+
 		$('.bcom-feat-prev').on('click', function() {
-            $('.bcom-feat-mod').addClass('transition-active');
-            setTimeout(function(){
-				bcomSwiper.swipePrev();
-            }, speedButton);
+			if(bcomSwiper.activeIndex > 0 ) {
+	            $('.bcom-feat-mod').addClass('transition-active');
+	            setTimeout(function(){
+					bcomSwiper.swipePrev();
+	            }, speedButton);
+        	} else {
+        		console.log(slideCount);
+	            $('.bcom-feat-mod').addClass('transition-active');
+	            setTimeout(function(){
+        			bcomSwiper.swipeTo(slideCount);
+        			bcomSwiper_caption.swipeTo(slideCount);
+        		}, speedButton);
+			}
 		});
 		$('.bcom-feat-next').on('click', function() {
-            $('.bcom-feat-mod').addClass('transition-active');
-            setTimeout(function(){
-				bcomSwiper.swipeNext();
-            }, speedButton);		
+			if(bcomSwiper.activeIndex < (bcomSwiper.slides.length - 1)) {
+	            $('.bcom-feat-mod').addClass('transition-active');
+	            setTimeout(function(){
+					bcomSwiper.swipeNext();
+         	   }, speedButton);
+			} else {
+				$('html,body').animate({scrollTop:($('#jump-to').position().top - 100)}, 1000);
+			}
         });
 
 
@@ -93,7 +108,6 @@
 	} // bcom_swiper
 
 	initBcomSwiper();
-
 
 
 	// window.setInterval(triggerNextFast, 7000);
@@ -326,10 +340,20 @@
 			}
 		});
 
+		// triggers swiper inview
+		$('.bcom-social-card-mod').one('inview', function(event, isInView) {
+			if (isInView) {
+				setTimeout(function() {
+				  	$('.bcom-card-btn-next').trigger('click');
+				}, 500);
+			}
+		});
+
 		// Inits
 		streamInit();
 
 	}, 1000);
 	resizeThings();
+
 
 })(jQuery);
