@@ -1,6 +1,10 @@
 {% extends 'single-portfolio.twig' %}
 {% block head %}
-	<link rel="stylesheet" href="/wp-content/themes/blades/css/portfolio/bcom.css">
-	<script src="/wp-content/themes/blades/js/portfolio/bcom.js"></script>
-	<script src="/wp-content/themes/blades/js/libs/jquery.inview.min.js"></script>
+	<link rel="stylesheet" href="/{{theme_dir}}/css/portfolio/bcom.css">
+{% endblock %}
+
+{% block scripts %}
+	<script src="/{{theme_dir}}/js/libs/idangerous.swiper.js"></script>
+	<script src="/{{theme_dir}}/js/portfolio/bcom.js"></script>
+	<script src="/{{theme_dir}}/js/libs/jquery.inview.min.js"></script>
 {% endblock %}

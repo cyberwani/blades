@@ -11,6 +11,10 @@
     @media (max-width:$breakpoint-2 - 1) { @content; }
   }
 
+  @if $breakpoint-2 == "max" {
+    @media (max-width:$breakpoint-1 - 1) { @content; }
+  }
+
   @elseif unitless($breakpoint-2) {
     @media (min-width: $breakpoint-1) { @content; }
   } //single breakpoint
@@ -173,6 +177,7 @@ $bg: #f4f6f1;
 
 body {
 	background-color: #111;
+	-webkit-font-smoothing: antialiased;
 }
 
 .outer {
@@ -213,6 +218,194 @@ body {
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
 
+
+// ================================= 
+// Feature Slider  
+// ================================= 
+
+$feat-img-max: 801px;
+
+.bcom-feat-mod {
+	position: relative;
+}
+
+.bcom-feat-img-mod {
+	z-index: 0;
+	height: 220px;
+	max-width: $feat-img-max;
+	position: relative;
+	margin: 0 20px;
+	overflow: hidden;
+	background-color: #fff;
+	@include box-shadow(0 0 5px rgba(0,0,0,.1));
+	@include border-radius(6px 6px 0 0);
+
+	@include mq(500px) {
+		height: 320px;		
+	}
+
+	@include mq(600px) {
+		height: 450px;
+	}
+
+	// Max width + margin
+	@include mq(841px) {
+		margin: auto;
+		height: 525px;
+	}
+}
+
+.swiper-img-mod,
+.swiper-caption-mod	{
+	@include trans;
+	.transition-active & {
+		opacity: 0 !important;
+	}
+}
+
+.bcom-feat-img {
+	width: 100%;
+	display: block;
+	@include absolute(0 n n n);
+}
+
+.bcom-feat-caption {
+	z-index: 1;
+	background-color: #222;
+	color: #fff;
+	padding: 16px 20px;
+	position: relative;
+	@include mq(400px) {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+}
+
+.bcom-feat-caption-inner {
+	max-width: $feat-img-max;
+	margin: 0 auto;
+	text-align: center;
+	@include mq(500px) {
+		text-align: left;
+	}
+}
+
+.bcom-feat-h,
+.bcom-feat-txt {
+	color: #fff;
+}
+
+.bcom-feat-h {
+	font: 600 18px $adelle;
+	margin-bottom: 6px;
+	@include mq(400px) {
+		font-size: 21px;
+	}
+}
+
+.bcom-feat-txt {
+	line-height: 160%;
+	@include mq(max, 400px) {
+		font-size: 15px;
+	}
+}
+
+//
+// Prev/Next Buttons
+//
+
+.bcom-feat-btns {
+	margin: -45px 0 20px 20px;
+	@include mq(500px) {
+		margin: -2px 0 10px 20px;
+		float: right;
+	}
+}
+
+.bcom-feat-btn {
+	z-index: 10;
+	@include input-default;
+	display: inline-block;
+	@include size(40px);
+	padding: 10px;
+	text-align: center;
+	color: #fff;
+	@include border-radius(1px);
+	@include box-shadow(0px 0px 0 7px #222);
+	background-color: $highlight;
+	@include trans;
+	&:hover {
+		background-color: darken($highlight, 2.5%);
+	}
+
+	@include mq(500px) {
+		@include box-shadow(none);
+	}
+}
+
+.bcom-feat-next {
+	margin-left: 5px;
+}
+
+.bcom-feat-btn-arrow {
+	display: block;
+	text-indent: -9999em;
+	@include background-size(40px);
+}
+
+.bcom-feat-btn-arrow.next {
+	@include svg(arrow-right);
+}
+
+.bcom-feat-btn-arrow.prev {
+	@include svg(arrow-left);
+}
+
+
+// ================================= 
+// Swiper Styles
+// ================================= 
+
+$swiper-timing: cubic-bezier(0.645,0.045,0.355,1);
+
+.swiper-img-mod,
+.swiper-caption-mod {
+	margin-left: auto;
+	margin-right: auto;
+	position:relative;
+	overflow:hidden;
+	@include backface-visibility(hidden);
+	/* Fix of Webkit flickering */
+	z-index:1;
+	.swiper-slide {
+		width: 100%;
+		float: left;
+	}
+}
+
+.swiper-wrapper {
+	position:relative;
+	width:100%;
+	//@include transition-property(transform, left, top);
+	@include transition-duration(0s);
+	@include translate3d(0px,0,0);
+	@include transition-timing-function(ease-in);
+	@include pie-clearfix;
+}
+
+/* IE10 Windows Phone 8 Fixes */
+.swiper-wp8-horizontal {
+	-ms-touch-action: pan-y;
+}
+.swiper-wp8-vertical {
+	-ms-touch-action: pan-x;
+}
+
+
+
+// ================================= 
+// Nathan's Code  
+// ================================= 
 
 .site-width {
 	max-width: 1050px;
@@ -684,9 +877,11 @@ a.bcom-proto-btn {
  	text-align: center;
 	color: rgb(51,51,51);
 	font: 400 18px $proxima;
+	padding: 0 20px 0 40px;
+	margin: auto;
 	@include mq(500px) {
 		@include media-grid(2, 50px);
-		padding: 0 20px;
+		padding: 0;
 	}
 }
 
@@ -713,6 +908,18 @@ a.bcom-proto-btn {
 		margin-top: -5px;
 	}
 }
+
+.bcom-logo-list {
+	border-top: 1px solid #ccc;
+}
+
+.bcom-logo-item {
+	font: 400 16px $proxima;
+	display: block;
+	padding: 14px 6px 16px;
+	border-bottom: 1px solid #ccc;
+}
+
 
 .bcom-logo-txt {
 	max-width: 300px;
