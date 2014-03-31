@@ -11,12 +11,24 @@
 	// Initialize Swiper
 	function initBcomSwiper() {
 
+		// Swiper Video Commands
+		function stopSwiperVideos() {
+			var $swiperVideos = $('.bcom-feat-img');
+			$swiperVideos[0].pause();
+		}
+		function playSwiperVideo(swiper) {
+			var active = swiper.activeSlide();
+				$video = $(active).find('.bcom-feat-img');
+			$video[0].play();
+		}
+
+		// Controls transition & timeout speeds
 		var speedOrigin = 10,
 			speedButton = speedOrigin + 100;
 
+		// Creates Image Swiper
 		var bcomSwiper = $('.swiper-img-mod').swiper({
 			mode:'horizontal',
-			loop: true,
 			speed: speedOrigin,
 			calculateHeight: true,
             onSlideChangeEnd: function() {
@@ -24,17 +36,22 @@
                 var slide = bcomSwiper.activeSlide();
             },
 		    onSlideNext:function(swiper){
+		    	stopSwiperVideos();
+		    	playSwiperVideo(swiper);
 				bcomSwiper_caption.swipeNext();
 		    },
 		    onSlidePrev:function(swiper){
+		    	stopSwiperVideos();
+		    	playSwiperVideo(swiper);
 				bcomSwiper_caption.swipePrev();
 		    }
 		});
 
+		// Creates Caption Swiper
 		var bcomSwiper_caption = $('.swiper-caption-mod').swiper({
 			mode:'horizontal',
-			loop: true,
 			speed: speedOrigin,
+			simulateTouch: false,
 			calculateHeight: true
 		});
 
@@ -50,6 +67,28 @@
 				bcomSwiper.swipeNext();
             }, speedButton);		
         });
+
+
+		// Creates Card Swiper
+		var bcomCardSwiper = $('.swiper-container').swiper({
+			//Your options here:
+			mode:'horizontal',
+			slidesPerView: 'auto',
+			loop: true,
+			loopedSlides: 10,
+			centeredSlides: true,
+			keyboardControl: true,
+			onImagesReady: function(swiper) {
+				swiper.swipeNext();
+				swiper.swipePrev();
+			}
+		});
+		$('.bcom-card-btn-next').click(function() {
+				bcomCardSwiper.swipeNext();
+		});
+		$('.bcom-card-btn-prev').click(function() {
+				bcomCardSwiper.swipePrev();
+		});
 
 	} // bcom_swiper
 
@@ -90,32 +129,8 @@
 		var stream6h;
 		var stream7h;
 
-	// swiper mod
-	var bcomCardSwiper;
-	$(function(){
-		bcomCardSwiper = $('.swiper-container').swiper({
-			//Your options here:
-			mode:'horizontal',
-			slidesPerView: 'auto',
-			loop: true,
-			loopedSlides: 10,
-			centeredSlides: true,
-			keyboardControl: true,
-			onImagesReady: function(swiper) {
-				swiper.swipeNext();
-				swiper.swipePrev();
-			}
-		});
-		$('.bcom-card-btn-next').click(function() {
-				bcomCardSwiper.swipeNext();
-		});
-		$('.bcom-card-btn-prev').click(function() {
-				bcomCardSwiper.swipePrev();
-		});
-	})
 
-		// Everything in a set timeout so we can get element heights
-
+	// Everything in a set timeout so we can get element heights
 	function heightsOnSize() {
 		filterh = $('.stream-img-filter').height();
 		streamButtonh = $('.stream-img-button').height();

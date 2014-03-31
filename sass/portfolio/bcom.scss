@@ -770,7 +770,7 @@ $swiper-timing: cubic-bezier(0.645,0.045,0.355,1);
 
 a.bcom-proto-btn {
 	display: block;
-	margin: 0 auto;
+	margin: 40px auto 86px;
 	font-size: 13px;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -781,7 +781,6 @@ a.bcom-proto-btn {
 	width: 237px;
 	border-radius: 18px;
 	padding: 2px 0 0px;
-	margin-top: 50px;
 	height: 36px;
 	@include trans;
 	&:hover {
