@@ -56,6 +56,7 @@
 		});
 
 		var slideCount = bcomSwiper.slides.length - 1;
+		var jumpToOffset = 100;
 
 		$('.bcom-feat-prev').on('click', function() {
 			if(bcomSwiper.activeIndex > 0 ) {
@@ -64,7 +65,6 @@
 					bcomSwiper.swipePrev();
 	            }, speedButton);
         	} else {
-        		console.log(slideCount);
 	            $('.bcom-feat-mod').addClass('transition-active');
 	            setTimeout(function(){
         			bcomSwiper.swipeTo(slideCount);
@@ -84,7 +84,7 @@
         			bcomSwiper.swipeTo(0);
         			bcomSwiper_caption.swipeTo(0);
         		}, speedButton);
-				$('html,body').animate({scrollTop:($('#jump-to').position().top - 100)}, 1000);
+				$('html,body').animate({scrollTop:($('#jump-to').position().top - jumpToOffset)}, 1000);
 			}
         });
 
