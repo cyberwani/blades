@@ -68,7 +68,7 @@
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 // FOR: Quickly pasting essential and commonly used properties that make psuedo classes work
 // WHY: Easier than remembering and writing each time. Should cut down on mistakes/debugging.
-// USE: @include pseudo;
+// USE: @include psuedo;
 @mixin psuedo($coordinates: none) {
   @include content;
   display: block;
@@ -701,19 +701,42 @@ a.bcom-proto-btn {
 	z-index: 1;
 	@include input-default;
 	text-indent: -9999pc;
-	.touch & {
-		display: none;
+	opacity: .7;
+	@include trans;
+	.bcom-social-card-mod:hover & {
+		opacity: 1;
+	}
+	&:after {
+		@include content;
+		display: block;
+		position: absolute;
+		@include absolute-center (n 36px);
+		@include size(20px 36px);
+		background-size: cover;
+		background-repeat: no-repeat;
+		@include mq(700px) {
+			@include absolute-center (n 54px);
+			@include size(30px 54px);
+		}
 	}
 }
 
 .bcom-card-btn-next {
 	@include absolute(0 0 0 n);
-	width: 70%;
+	width: 20%;
+	&:after {
+		right: 20px;
+		background-image: url(../../images/portfolio/bcom/bcom-arrow-next.png);
+	}
 }
 
 .bcom-card-btn-prev {
 	@include absolute(0 n 0 0);
 	width: 30%;
+	&:after {
+		left: 20px;
+		background-image: url(../../images/portfolio/bcom/bcom-arrow-prev.png);
+	}
 }
 
 // bcom-logo-include
