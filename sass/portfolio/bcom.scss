@@ -863,7 +863,8 @@ a.bcom-proto-btn {
 }
 
 
-.swiper-container, .swiper-slide {
+.bcom-swiper-container, 
+.bcom-swiper-slide {
 	width: auto;
 	height: 150px;
 	@include mq(700px) {
@@ -884,6 +885,7 @@ a.bcom-proto-btn {
 }
 
 .bcom-swiper-slide {
+	float: left;
 	padding: 5px;
 	@include mq(700px) {
 		padding: 10px;
