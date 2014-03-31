@@ -79,6 +79,11 @@
 					bcomSwiper.swipeNext();
          	   }, speedButton);
 			} else {
+	            $('.bcom-feat-mod').addClass('transition-active');
+	            setTimeout(function(){
+        			bcomSwiper.swipeTo(0);
+        			bcomSwiper_caption.swipeTo(0);
+        		}, speedButton);
 				$('html,body').animate({scrollTop:($('#jump-to').position().top - 100)}, 1000);
 			}
         });
