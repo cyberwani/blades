@@ -90,6 +90,29 @@
 		var stream6h;
 		var stream7h;
 
+	// swiper mod
+	var bcomCardSwiper;
+	$(function(){
+		bcomCardSwiper = $('.swiper-container').swiper({
+			//Your options here:
+			mode:'horizontal',
+			slidesPerView: 'auto',
+			loop: true,
+			loopedSlides: 10,
+			centeredSlides: true,
+			keyboardControl: true,
+			onImagesReady: function(swiper) {
+				swiper.swipeNext();
+				swiper.swipePrev();
+			}
+		});
+		$('.bcom-card-btn-next').click(function() {
+				bcomCardSwiper.swipeNext();
+		});
+		$('.bcom-card-btn-prev').click(function() {
+				bcomCardSwiper.swipePrev();
+		});
+	})
 
 		// Everything in a set timeout so we can get element heights
 
@@ -123,7 +146,7 @@
 	setTimeout(function() {
 
 		// Section Stream Animations
-			
+
 		var $streamMod = $('.bcom-stream-section');
 		var $streamImgMod = $('.stream-img-mod');
 
@@ -148,7 +171,7 @@
 				}, 1000, function(){
 					$streamMod.addClass('stream-sh-1');
 					addClick();
-				});			
+				});
 			},
 			function() {
 				noClick();
@@ -270,7 +293,7 @@
 			$('.bcom-stream-section').addClass('side-by-side')
 			advanceStreamAnim();
 		}
-		
+
 
 		// Stream anims
 		function noClick() {
@@ -285,7 +308,7 @@
 		$('.bcom-stream-section').on('click', function() {
 			if (!$('.bcom-stream-section').hasClass('noclick')) {
 				advanceStreamAnim();
-			} 
+			}
 		});
 
 		// Inits
