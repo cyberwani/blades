@@ -420,12 +420,14 @@ $swiper-timing: cubic-bezier(0.645,0.045,0.355,1);
 	overflow: hidden;
 	position: relative;
 	height: 600px;
-	border-bottom: solid 1px #ccc;
 	&.noclick {
 		pointer-events: none;
 	}
 	@include mq(max, $ug-break-1) {
 		margin: 0 -20px;
+	}
+	@include mq($ug-break-1) {
+		border-bottom: solid 1px #ccc;
 	}
 }
 
@@ -735,7 +737,8 @@ $swiper-timing: cubic-bezier(0.645,0.045,0.355,1);
 		background-color: #eef0f0;
 	}
 }
-.portfolio-layouts img.viz-mobile {
+
+.bcom-laptop-img {
 	display: none;
 	@include mq(600px) {
 		display: block;
