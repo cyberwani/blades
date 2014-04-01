@@ -421,12 +421,11 @@ $swiper-timing: cubic-bezier(0.645,0.045,0.355,1);
 	position: relative;
 	height: 600px;
 	border-bottom: solid 1px #ccc;
-	margin-bottom: 75px;
 	&.noclick {
 		pointer-events: none;
 	}
 	@include mq(max, $ug-break-1) {
-		margin: 0 -20px 75px;
+		margin: 0 -20px;
 	}
 }
 
