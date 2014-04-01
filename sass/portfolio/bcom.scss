@@ -255,6 +255,13 @@ $feat-img-max: 800px;
 	}
 }
 
+
+.video-ratio-mod {
+	width: 100%;
+	padding-bottom: 87.75%;
+	position: relative;
+}
+
 .swiper-img-mod,
 .swiper-caption-mod	{
 	@include trans;
@@ -265,8 +272,9 @@ $feat-img-max: 800px;
 
 .bcom-feat-img {
 	width: 100%;
+	height: 100%;
 	display: block;
-	@include absolute(0 n n n);
+	@include absolute(0 0 0 0);
 }
 
 .bcom-feat-caption {
@@ -747,7 +755,7 @@ $swiper-timing: cubic-bezier(0.645,0.045,0.355,1);
 
 .bcom-laptop-video-mod {
 	position: relative;
-	padding: 30px;
+	padding-bottom: 62.4%;
 	margin-bottom: 50px;
 	@include mq(600px) {
 		padding: 0;
@@ -756,6 +764,7 @@ $swiper-timing: cubic-bezier(0.645,0.045,0.355,1);
 		width: 58%;
 		left: 21%;
 		@include border-radius(2px);
+		padding-bottom: 36.3%;;
 	}
 }
 
@@ -769,7 +778,13 @@ $swiper-timing: cubic-bezier(0.645,0.045,0.355,1);
 	@include mq(max, 600px) {
 		border-radius: 3px;
 		@include box-shadow(0 0 10px rgba(0,0,0,.3));
+		@include absolute(5% 5% 5% 5%);
+		width: 90%;
+		height: 90%;
 	}
+	width: 100%;
+	height: 100%;
+	@include absolute(0 0 0 0);
 }
 
 //  intro button
