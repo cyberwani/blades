@@ -745,6 +745,7 @@ $swiper-timing: cubic-bezier(0.645,0.045,0.355,1);
 .bcom-laptop-video-mod {
 	position: relative;
 	padding: 30px;
+	margin-bottom: 50px;
 	@include mq(600px) {
 		padding: 0;
 		top: 18%;
