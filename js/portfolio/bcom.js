@@ -376,6 +376,7 @@
 			$('.device-content-mod').one('inview', function(event, isInView) {
 				if (isInView) {
 					heightsOnSize();
+					$('.stream-img-mod').css('margin-top', (stream1h - streamButtonh) + 'px');
 					setTimeout(function() {
 						$('.bcom-stream-section').addClass('side-by-side');
 						setTimeout(function() {
