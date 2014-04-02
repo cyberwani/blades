@@ -214,8 +214,8 @@
 	// Everything in a set timeout so we can get element heights
 	function heightsOnSize() {
 		filterh = $('.stream-img-filter').height();
-		streamButtonh = $('.stream-img-button').height();
 		stream3h = $('.stream-img-3').height();
+		streamButtonh = (stream3h * .4090909);
 		stream4h = $('.stream-img-4').height();
 		stream5h = $('.stream-img-5').height();
 		stream6h = $('.stream-img-6').height();
@@ -375,6 +375,8 @@
 		if ($(window).width() > 600) {
 			$('.device-content-mod').one('inview', function(event, isInView) {
 				if (isInView) {
+					heightsOnSize();
+					$('.stream-img-mod').css('margin-top', (stream1h - streamButtonh) + 'px');
 					setTimeout(function() {
 						$('.bcom-stream-section').addClass('side-by-side');
 						setTimeout(function() {
