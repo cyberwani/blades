@@ -214,8 +214,8 @@
 	// Everything in a set timeout so we can get element heights
 	function heightsOnSize() {
 		filterh = $('.stream-img-filter').height();
-		streamButtonh = stream3h * .4090909;
 		stream3h = $('.stream-img-3').height();
+		streamButtonh = (stream3h * .4090909);
 		stream4h = $('.stream-img-4').height();
 		stream5h = $('.stream-img-5').height();
 		stream6h = $('.stream-img-6').height();
