@@ -375,6 +375,7 @@
 		if ($(window).width() > 600) {
 			$('.device-content-mod').one('inview', function(event, isInView) {
 				if (isInView) {
+					resizeThings();
 					setTimeout(function() {
 						$('.bcom-stream-section').addClass('side-by-side');
 						setTimeout(function() {
