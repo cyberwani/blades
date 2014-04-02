@@ -1,0 +1,11 @@
+{
+  "name": "wp-theme-blades",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Upstatement/blades",
+  "authors": [
+    "Nathan Hass <nathan@upstatement.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {}
+}
