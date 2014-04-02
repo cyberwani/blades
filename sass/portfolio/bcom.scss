@@ -428,6 +428,7 @@ $swiper-timing: cubic-bezier(0.645,0.045,0.355,1);
 	overflow: hidden;
 	position: relative;
 	height: 600px;
+	margin-bottom: -55px;
 	&.noclick {
 		pointer-events: none;
 	}
@@ -435,7 +436,7 @@ $swiper-timing: cubic-bezier(0.645,0.045,0.355,1);
 		margin: 0 -20px;
 	}
 	@include mq($ug-break-1) {
-		border-bottom: solid 1px #ccc;
+		// border-bottom: solid 1px #ccc;
 	}
 }
 
@@ -449,7 +450,7 @@ $swiper-timing: cubic-bezier(0.645,0.045,0.355,1);
 		left: 0;
 		right: 0;
 		bottom: 0;
-		min-height: 140px;
+		min-height: 164px;
 		z-index: 1;
 		text-align: center;
 		background: #eef0f0;
