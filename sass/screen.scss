@@ -39,9 +39,10 @@ body {
 	color: $text;
 }
 
+// moved
 
 /* ============================================= */
-/*	Type styles					   				 */ 
+/*	Type styles					   				 */
 /* ============================================= */
 
 .txt-lg {
@@ -50,7 +51,7 @@ body {
 		font-size: 19px;
 	}
 	> p {
-		margin-bottom: 18px;		
+		margin-bottom: 18px;
 	}
 }
 
@@ -59,7 +60,7 @@ body {
 	margin: 0 0 20px 0;
 	color: #666;
 	> p {
-		margin-bottom: 18px;		
+		margin-bottom: 18px;
 	}
 }
 
@@ -67,7 +68,7 @@ body {
 	font: 300 14px/150% $proxima;
 	color: #666;
 	> p {
-		margin-bottom: 18px;		
+		margin-bottom: 18px;
 	}
 }
 
@@ -127,12 +128,12 @@ body {
 		font-size: 38px;
 	}
 }
-.h2 {	
+.h2 {
 	font-size: 30px;
 	margin-bottom: 20px;
-	@media (min-width: 500px) {	
-		font-size: 36px;  	
-	} 
+	@media (min-width: 500px) {
+		font-size: 36px;
+	}
 }
 .h3 {	font-size: 23px; margin-bottom: 10px;  }
 .h4 {	font-size: 14px;  }
@@ -179,7 +180,7 @@ body {
 		width: 200px;
 		margin: auto;
 		border-top: 1px solid #aaa;
-		@include absolute(n 0 0 0); 
+		@include absolute(n 0 0 0);
 	}
 }
 
@@ -248,7 +249,7 @@ body {
 		margin-bottom: 10px;
 	}
 
-	// spacing for heading elements 
+	// spacing for heading elements
 	h2, h3, h4, h5, h6 {
 		margin: 65px 0 10px 0;
 	}
@@ -270,7 +271,7 @@ body {
 
 	img {
 		display: block;
-		margin: auto;		
+		margin: auto;
 	}
 
 	// When images are inserted directly into post
@@ -311,7 +312,7 @@ body {
 		@media (min-width: 600px) {
 			float: right;
 			margin: 0 0 20px 40px;
-		}		
+		}
 	}
 } // txt-defaults
 
@@ -319,17 +320,17 @@ body {
 	@include video;
 }
 
-
+// copied
 
 /* ============================================= */
-/*	Layout Boxes						   		 */ 
+/*	Layout Boxes						   		 */
 /* ============================================= */
 
 .txt-width {
 	@media (min-width: 525px){
 		max-width: 567px;
 		margin: auto;
-	}	
+	}
 }
 
 // For containing long runs of txt
@@ -377,12 +378,13 @@ body {
 	}
 }
 
+// copied
 
 /* ============================================= */
-/*	Object Boxes						   		 */ 
+/*	Object Boxes						   		 */
 /* ============================================= */
 
-// Used for content striping on black backgrounds 
+// Used for content striping on black backgrounds
 .inset {
 	background-color: #161616;
 	border-top: 1px solid #222;
@@ -463,9 +465,10 @@ body {
 	} // mq
 }
 
+// copied
 
 /* ============================================= */
-/*	Header						   			 */ 
+/*	Header						   			 */
 /* ============================================= */
 
 
@@ -488,8 +491,10 @@ body {
 	}
 }
 
+// copied
+
 /* ============================================= */
-/*	Navigation						   			 */ 
+/*	Navigation						   			 */
 /* ============================================= */
 
 .hdr-logo {
@@ -572,7 +577,7 @@ body {
 		float: right;
 
 		#menu-main-nav li {
-			margin: 0 20px 0 0;											
+			margin: 0 20px 0 0;
 		}
 
 		#menu-main-nav li a {
@@ -607,8 +612,10 @@ body {
 	background-color: #121212;
 }
 
+// copied
+
 /* ============================================= */
-/*	Footer						   			 */ 
+/*	Footer						   			 */
 /* ============================================= */
 
 .ftr {
@@ -690,18 +697,19 @@ body {
 		max-width: 25px;
 		@include trans;
 		@include opacity(.35);
-	
+
 		&:hover {
 			@include opacity(1);
 			@include trans;
 		}//hover
 
-	}//img
-}//social-item
+	} // img
+} // social-item
 
+// copied
 
 /* ============================================= */
-/*	Homepage						   			 */ 
+/*	Homepage						   			 */
 /* ============================================= */
 
 
@@ -828,7 +836,7 @@ html.ie8 .cover-overview{
 	.cover-overview .h1 {
 		display: table;
 		@media (min-width: 800px){
-			display: block;		
+			display: block;
 		}
 	}
 
@@ -898,7 +906,7 @@ html.ie8 .cover-overview{
 			}
 		}
 	} // mq
-} // slidenav 
+} // slidenav
 
 
 
@@ -948,7 +956,7 @@ $theme_grid_bp : '760px';
 	@include pie-clearfix;
 	padding: 20px 0;
 	border-bottom: 1px dotted #222;
-	&:last-child { 
+	&:last-child {
 		border: 0;
 	}
 
@@ -1002,7 +1010,7 @@ $theme_grid_bp : '760px';
 		@media (min-width:960px){
 			max-width:100%;
 		}
-		
+
 	}
 } // mq
 
@@ -1027,7 +1035,7 @@ $theme_grid_bp : '760px';
 	@media (min-width: 480px) {
 		@include media-grid(3);
 	} // mq
-}//hp theme tiles 
+}//hp theme tiles
 
 
 // Home Banner
@@ -1053,7 +1061,7 @@ $theme_grid_bp : '760px';
 			background: url(/wp-content/themes/blades/images/covers/round-mask-bk-6.png) 50% 0% no-repeat;
 			background-size: 110%;
 		}//mq
-		
+
 	}//after
 
 }//home-banner
@@ -1121,7 +1129,7 @@ $theme_grid_bp : '760px';
 	text-transform: uppercase;
 	color: #fff;
 
-	
+
 }
 
 .tweet {
@@ -1136,7 +1144,7 @@ $theme_grid_bp : '760px';
 	@extend .txt-lg;
 	> a {
 		color: $highlight;
-	}	 
+	}
 }
 
 .tweet-icon {
@@ -1148,8 +1156,8 @@ $theme_grid_bp : '760px';
 	@include svg(twtr-wht);
 	@media (min-width: 600px) {
 		display: inline-block;
-		margin: 0 9px 0 0;		
-	}	
+		margin: 0 9px 0 0;
+	}
 }
 
 .tweet-handle-txt {
@@ -1158,13 +1166,16 @@ $theme_grid_bp : '760px';
 	top: -5px;
 	@media (min-width: 600px) {
 		display: inline-block;
-	}	
+	}
 }
 
+// copied
 
 /* ============================================= */
-/*	Pages 				   			 			 */ 
+/*	Pages 				   			 			 */
 /* ============================================= */
+
+// FIX: NEEDS A HOME!!!!V
 
 #port-window {
 	height: 200px;
@@ -1180,6 +1191,7 @@ $theme_grid_bp : '760px';
 	background-size: cover;
 }
 
+// End fix
 
 // might not use this
 .blog-window {
@@ -1200,6 +1212,8 @@ $theme_grid_bp : '760px';
 	}
 }
 
+// copied
+
 .window-h1 {
 	font-family: $adelle;
 	font-weight: 100;
@@ -1213,6 +1227,7 @@ $theme_grid_bp : '760px';
 	text-indent: none;
 }
 
+// copied
 
 .bio-content {
 	height: auto;
@@ -1228,7 +1243,7 @@ $theme_grid_bp : '760px';
 		padding-bottom: 0px;
 
 		// &.john {
-		// 	background: url(images/dev/john-boilard.jpg) no-repeat center center; 
+		// 	background: url(images/dev/john-boilard.jpg) no-repeat center center;
 		// 	@include background-size(cover);
 		// }
 
@@ -1237,7 +1252,7 @@ $theme_grid_bp : '760px';
 		@include background-size(cover);
 		-webkit-background-size:cover !important;
 
-	} // bio-content media query	
+	} // bio-content media query
 }
 
 .bio-wrap {
@@ -1255,8 +1270,8 @@ $theme_grid_bp : '760px';
 		padding: 10px 40px 70px 40px;
 		margin-right: 20px;
 		min-width: 460px;
-		max-width: 600px;	
-		background-color: rgba(255, 255, 255, 0.9);			
+		max-width: 600px;
+		background-color: rgba(255, 255, 255, 0.9);
 	}
 
 	@media (min-width: 1200px) {
@@ -1283,12 +1298,12 @@ $theme_grid_bp : '760px';
 	padding: 30px 0 0 0;
 	margin: 0 0 10px 0;
 	color: #000;
-	font-weight: 300;	
+	font-weight: 300;
 	font-size: 30px;
 
 	@media (min-width:1050px) {
 		font-size: 45px;
-	}	
+	}
 }
 
 .bio-txt {
@@ -1299,7 +1314,7 @@ $theme_grid_bp : '760px';
 	line-height: 155%;
 	> a {
 		color: $highlight;
-	}	
+	}
 
 	@media (min-width:1050px) {
 		font-size: 19px;
@@ -1307,8 +1322,7 @@ $theme_grid_bp : '760px';
 	}
 }
 
-.social-list {
-}
+// coppied
 
 .social-item {
 	display: inline;
@@ -1329,7 +1343,7 @@ $theme_grid_bp : '760px';
 		> a {
 			color: $highlight;
 			font-size: 15px;
-		}		
+		}
 	}
 }
 
@@ -1337,8 +1351,10 @@ $theme_grid_bp : '760px';
 	color: #fff;
 }
 
+// copied
+
 /* ============================================= */
-/*	Portfolio Archive				   			 */ 
+/*	Portfolio Archive				   			 */
 /* ============================================= */
 
 .portfolio-promo {
@@ -1375,7 +1391,7 @@ $theme_grid_bp : '760px';
 	}
 	.portfolio-promo-kicker {
 		font-size: 11px;
-	}	
+	}
 } //mq
 
 
@@ -1444,7 +1460,7 @@ $theme_grid_bp : '760px';
 		// reset negative margin
 		margin-left: auto;
 		margin-right: auto;
-		// effectively increases border size 
+		// effectively increases border size
 		padding: 8px;
 	}
 
@@ -1455,7 +1471,7 @@ $theme_grid_bp : '760px';
 
 .portfolio-h-inner {
 	padding: 18px 18px 28px;
-	@include bg(black, .9);	
+	@include bg(black, .9);
 	@media (min-width: 500px) {
 		padding: 25px 25px 35px;
 	}
@@ -1476,7 +1492,7 @@ $theme_grid_bp : '760px';
 		width: 200px;
 		margin: auto;
 		border-top: 1px solid #aaa;
-		@include absolute(n 0 0 0); 
+		@include absolute(n 0 0 0);
 	}
 }
 
@@ -1557,9 +1573,10 @@ $theme_grid_bp : '760px';
 	}
 }
 
+// copied
 
 /* ============================================= */
-/*	Tiles						   			 */ 
+/*	Tiles						   			 */
 /* ============================================= */
 
 
@@ -1751,7 +1768,7 @@ $theme_grid_bp : '760px';
 		padding-right: 40px;
 		padding-bottom: 40px;
 		border-right: 1px solid #222;
-		
+
 		&:last-child {
 			border-right: 0px;
 			padding-right: 0px;
@@ -1816,7 +1833,7 @@ $theme_grid_bp : '760px';
 		}//mq
 
 	}//lc
-	
+
 	.txt-lg {
 		p {
 			margin-bottom: 0px;
@@ -1880,8 +1897,10 @@ $theme_grid_bp : '760px';
 	}
 }//pond-item
 
+// copied
+
 /* ============================================= */
-/*	Blog archive					   			 */ 
+/*	Blog archive					   			 */
 /* ============================================= */
 
 #archive-blog, .hp-blog-list {
@@ -1919,11 +1938,11 @@ $theme_grid_bp : '760px';
 	}
 }
 
-#archive-blog .blog-small, 
+#archive-blog .blog-small,
 .hp-blog-list .blog-small  {
 	.h3:hover,
-	.read-more:hover { 
-		color: #fff; 
+	.read-more:hover {
+		color: #fff;
 	}
 }
 
@@ -2071,7 +2090,7 @@ html.ie8 .blog-cron .media-block {
 
 	.xoxo {
 
-		
+
 
 		.widget-container {
 			@extend .media-block;
@@ -2113,8 +2132,10 @@ html.ie8 .blog-cron .media-block {
 	}
 }
 
+// copied
+
 /* ============================================= */
-/*	Blog detail 			 					 */ 
+/*	Blog detail 			 					 */
 /* ============================================= */
 
 .content-wrapper {
@@ -2216,7 +2237,7 @@ html.ie8 .blog-cron .media-block {
 
 	a {
 		color: $highlight;
-	
+
 		&:hover {
 			color: $highlight-hover;
 		}//hover
@@ -2235,7 +2256,7 @@ html.ie8 .blog-cron .media-block {
 }
 
 /* ============================================= */
-/*	Comments				   					 */ 
+/*	Comments				   					 */
 /* ============================================= */
 
 .comments-mod {
@@ -2264,7 +2285,7 @@ html.ie8 .blog-cron .media-block {
 	padding: 4px 0;
 	margin: auto;
 	color: #666;
-	margin-bottom: 7px;	
+	margin-bottom: 7px;
 	@include border-radius(100px);
 }
 
@@ -2344,14 +2365,14 @@ html.ie8 .blog-cron .media-block {
 
 	// This refers to the grouping of extra fields
 	// in addition to the comment textarea
-	#respond { 
+	#respond {
 	}
 
 	.logged-in-as {
 		font-size: 11px;
 		text-align: center;
 		color: #666;
-		margin-top: -10px;		
+		margin-top: -10px;
 		> a {
 			color: $highlight;
 		}
@@ -2359,16 +2380,16 @@ html.ie8 .blog-cron .media-block {
 }
 
 // Bring in extra styles that
-// beautify individual blog posts 
+// beautify individual blog posts
 @import "project/blog";
 
-
+// copied
 
 /* ============================================= */
-/*	Portfolio Detail 			 				 */ 
+/*	Portfolio Detail 			 				 */
 /* ============================================= */
 
-// these are styles for how to display groups of images. 
+// these are styles for how to display groups of images.
 
 .video-mod {
 	@include video;
@@ -2393,7 +2414,7 @@ html.ie8 .blog-cron .media-block {
 		}
 	}
 	img.viz-desktop {
-		
+
 		@media (min-width:900px){
 			display: inline;
 		}
@@ -2410,7 +2431,7 @@ html.ie8 .blog-cron .media-block {
 		text-align: center;
 		> img {
 			margin: 0 0 50px 0;
-		}	
+		}
 		@media (min-width:900px){
 			&+.portfolio-image-set {
 				> img {
@@ -2432,7 +2453,7 @@ html.ie8 .blog-cron .media-block {
 		.image-count-1 {
 			img {
 			float: none;
-			}//img	
+			}//img
 		}//image-count-1
 	}//mq
 
@@ -2460,7 +2481,7 @@ html.ie8 .blog-cron .media-block {
 		.image-count-3 {
 			margin: 20px auto;
 			@include pie-clearfix;
-			
+
 			img {
 				width: 33%;
 				float: left;
@@ -2491,7 +2512,7 @@ html.ie8 .blog-cron .media-block {
 }
 
 .portfolio-desc-txt {
-	color: #333;	
+	color: #333;
 }
 
 .portfolio-color-splash {
@@ -2501,7 +2522,7 @@ html.ie8 .blog-cron .media-block {
 }
 
 //
-// Global News Portfolio 
+// Global News Portfolio
 //
 
 .gn-laptops {
@@ -2537,7 +2558,7 @@ html.ie8 .blog-cron .media-block {
 	display: none;
 
 	@media (min-width: 760px) {
-		display: block;	
+		display: block;
 	}//mq
 }
 
@@ -2549,8 +2570,10 @@ html.ie8 .blog-cron .media-block {
 	}//mq
 }
 
+// copied
+
 //
-// NPR About Portfolio 
+// NPR About Portfolio
 //
 
 .npr-video-parent {
@@ -2594,17 +2617,18 @@ html.ie8 .blog-cron .media-block {
 	width: 100%;
 }
 
+// copied
 
 /* ============================================= */
-/*	Pages				   						 */ 
+/*	Pages				   						 */
 /* ============================================= */
 
 //
-// About page 
+// About page
 //
 
 .page-id-48 {
-	// Vertically center the message 
+	// Vertically center the message
 	.cover-overview {
 		padding-top: 45px;
 	}
@@ -2612,7 +2636,7 @@ html.ie8 .blog-cron .media-block {
 	@media (min-width: 800px) {
 		.slidenav .prev,
 		.slidenav .next {
-			bottom: 42px;		
+			bottom: 42px;
 		}
 	}
 }
@@ -2724,6 +2748,7 @@ html.ie8 .about-person {
 	}
 }
 
+// copied
 
 //
 // Jobs Page
@@ -2815,6 +2840,7 @@ html.ie8 .about-person {
 	}
 }
 
+// copied
 
 //
 // Holiday Page
@@ -2890,7 +2916,7 @@ html.ie8 .about-person {
 }
 
 .hp-topper-intro .holiday-h-outer {
-	max-width: 700px;	
+	max-width: 700px;
 }
 
 .holiday-intro-txt {
@@ -2994,13 +3020,15 @@ html.ie8 .about-person {
 			@include video(36.25%);
 			margin-top: 30px;
 			width: 70%;
-		}	
+		}
 	}
 }
 
 .holiday-bg {
 	background: url(/wp-content/themes/blades/images/drink/star-bg.gif);
 }
+
+// copied
 
 //
 // Drinks Page
@@ -3027,7 +3055,7 @@ html.ie8 .about-person {
 
 	@media (min-width: 401px) {
 		height: 250px;
-	}//mq 400px	
+	}//mq 400px
 
 	@media (min-width: 700px) {
 		height: 400px;
@@ -3036,11 +3064,11 @@ html.ie8 .about-person {
 
 	@media (min-width: 1200px) {
 		height: 600px;
-	}//mq 1200px	
+	}//mq 1200px
 
 	@media (min-width: 1800px) {
 		height: 900px;
-	}//mq 1600px	
+	}//mq 1600px
 }//drinks-banner
 
 .drinks-buildings {
@@ -3107,6 +3135,7 @@ html.ie8 .about-person {
 	}//mq
 }
 
+// copied
 
 // Mail Chimp
 
@@ -3115,7 +3144,7 @@ html.ie8 .about-person {
 
 	#mc-embedded-subscribe.button {
 		background-color: #be9b53;
-	}	
+	}
 
 	form#mc-embedded-subscribe-form {
 		padding-left: 0px;
@@ -3164,8 +3193,9 @@ html.ie8 .about-person {
 	}
 }
 
+// copied
 
-// CSS Animation				   				   
+// CSS Animation
 
 .animated {
 	@include animation-fill-mode(both);
@@ -3178,34 +3208,34 @@ html.ie8 .about-person {
 
 @-webkit-keyframes swing {
 	20%, 40%, 60%, 80%, 100% { -webkit-transform-origin: top center; }
-	20% { -webkit-transform: rotate(10deg); }	
+	20% { -webkit-transform: rotate(10deg); }
 	40% { -webkit-transform: rotate(-10deg); }
-	60% { -webkit-transform: rotate(5deg); }	
-	80% { -webkit-transform: rotate(-5deg); }	
+	60% { -webkit-transform: rotate(5deg); }
+	80% { -webkit-transform: rotate(-5deg); }
 	100% { -webkit-transform: rotate(0deg); }
 }
 
 @-moz-keyframes swing {
-	20% { -moz-transform: rotate(10deg); }	
+	20% { -moz-transform: rotate(10deg); }
 	40% { -moz-transform: rotate(-10deg); }
-	60% { -moz-transform: rotate(5deg); }	
-	80% { -moz-transform: rotate(-5deg); }	
+	60% { -moz-transform: rotate(5deg); }
+	80% { -moz-transform: rotate(-5deg); }
 	100% { -moz-transform: rotate(0deg); }
 }
 
 @-o-keyframes swing {
-	20% { -o-transform: rotate(10deg); }	
+	20% { -o-transform: rotate(10deg); }
 	40% { -o-transform: rotate(-10deg); }
-	60% { -o-transform: rotate(5deg); }	
-	80% { -o-transform: rotate(-5deg); }	
+	60% { -o-transform: rotate(5deg); }
+	80% { -o-transform: rotate(-5deg); }
 	100% { -o-transform: rotate(0deg); }
 }
 
 @keyframes swing {
-	20% { transform: rotate(10deg); }	
+	20% { transform: rotate(10deg); }
 	40% { transform: rotate(-10deg); }
-	60% { transform: rotate(5deg); }	
-	80% { transform: rotate(-5deg); }	
+	60% { transform: rotate(5deg); }
+	80% { transform: rotate(-5deg); }
 	100% { transform: rotate(0deg); }
 }
 
@@ -3277,6 +3307,9 @@ body.error404 {
 	}
 }
 
+
+// copied
+
 .archive-blog-ftr {
 	.wrapper {
 		@media (min-width:600px){
@@ -3284,6 +3317,8 @@ body.error404 {
 		}
 	}
 }
+
+// copied
 
 .hp-highlights {
 	border-top: 1px solid #222;
@@ -3302,6 +3337,11 @@ body.error404 {
 		}
 	}
 }
+
+
+// copied
+
+// FIX: I NEED A HOME
 
 .highlight {
 	&:first-of-type {
@@ -3330,6 +3370,7 @@ body.error404 {
 	}
 }
 
+
 .hl-img-mod {
 	width:40%;
 	margin:0 auto 20px;
@@ -3345,6 +3386,8 @@ body.error404 {
 		}
 	}
 }
+
+// END FIX
 
 //Needed a button style, button mixins too complex. Uncommenting _buttons.scss from screen.
 
@@ -3365,13 +3408,14 @@ body.error404 {
 		margin: 0 auto;
 		display: block;
 		width: 130px;
-	}	
+	}
 }
 
 a.btn-large {
 	@extend %btn-large;
 }
 
+// copied
 
 //
 // Password Protected Pages
@@ -3397,7 +3441,7 @@ a.btn-large {
 }
 
 .password-btn {
-	// Tito says: 
+	// Tito says:
 	// "I want to use this mixin but it's not
 	//  available and I don't wanna fuck with shit."
 	//@include input-default;
@@ -3409,10 +3453,10 @@ a.btn-large {
 	-webkit-appearance: none;
 	&:focus {
 		outline: 0;
-	}	
+	}
 }
 
-
+// copied
 
 
 
@@ -3423,3 +3467,5 @@ a.btn-large {
 
 // Import Print Styles
 @import "project/print";
+
+// copied

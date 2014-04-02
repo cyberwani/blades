@@ -1,0 +1,476 @@
+
+
+.cover,
+.cover-single {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	height: 350px;
+	border-bottom: 1px solid #222;
+
+	@media (min-width: 800px) {
+		height: 500px;
+	}
+}
+
+.cover-deep {
+	@extend .cover-single;
+
+	@media (min-width: 600px) {
+		height: 500px;
+	}
+
+	@media (min-width: 800px) {
+		height: 700px;
+	}
+
+	.slide {
+		height: 700px;
+	}
+}
+
+.cover-credit {
+	font-size: 10px;
+	padding: 5px;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	@include border-radius(2px);
+	background-color: rgba(0,0,0,.5);
+	color: rgba(255,255,255,.5);
+	@include trans;
+	font-family:"Helvetica Neue", Arial, sans;
+}
+
+.slide {
+	@include background-size(cover);
+	background-repeat: no-repeat;
+	float: left;
+	width:100%;
+	height: 500px;
+
+	@media (max-width: 800px) {
+		background-position: 50% 50%;
+	}
+
+	@media (min-width: 800px) {
+		height: 500px;
+	}
+}
+
+//Jeff's fix for IE8
+html.ie8 .cover-overview{
+	background-color: #000000;
+}
+
+
+.cover-overview {
+	background-color: rgba(0,0,0,.85);
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 10px;
+	height: 130px;
+	z-index: 10000;
+
+	.h1 {
+		font: 300 18px/140% $adelle;
+		color: #fff;
+		text-align: center;
+	}
+
+	.highlight {
+		font-style: italic;
+		color: #999;
+	}
+
+	.wrapper {
+		margin: 0 15px;
+	}
+
+	@media (min-width: 500px){
+		.h1 {
+			font-size: 23px;
+		}
+	}
+
+	@media (min-width: 650px){
+		.h1 {
+			font-size: 26px;
+		}
+	}
+
+	@media (min-width: 800px){
+		width: 100%;
+		margin-top: -200px;
+		padding: 50px 10px;
+		height: auto;
+
+		.h1 {
+			font-size: 30px;
+			line-height: 42px;
+		}
+		.br {
+			display: block;
+		}
+		.wrapper {
+			margin: 0 auto;
+		}
+	}
+}
+
+.home {
+	.cover-overview .h1 {
+		display: table;
+		@media (min-width: 800px){
+			display: block;
+		}
+	}
+
+	#cover-msg {
+		display: table-cell !important;
+		height: 110px;
+		vertical-align: middle;
+		margin: auto;
+		@media (min-width: 800px){
+			height: auto;
+			display: block !important;
+		}
+	}
+}
+
+/* slider */
+.cover .cover-slider {
+	/* required */
+	width: 100%;
+	height: 100%;
+}
+
+.cover-msg {
+	text-align: center;
+
+	.highlight {
+		color: #FFF;
+	}
+}
+
+.slider-message-hidden {
+	display:none;
+}
+
+.slidenav {
+	.next, .prev {
+		z-index: 10000;
+		position: absolute;
+		top: 254px;
+		width: 10%;
+		height: 50px;
+		background-color: rgba(0,0,0,.25);
+		text-indent: -10000px;
+		@include trans;
+	}
+
+	.next {
+		right: 0;
+		@include svg(arrow-right);
+	}
+
+	.prev {
+		left: 0;
+		@include svg(arrow-left);
+	}
+
+	@media (min-width: 800px){
+		.next, .prev {
+			top: auto;
+			bottom: 60px;
+			width: 80px;
+			height: 60px;
+
+			&:hover {
+				background-color: rgba(0,0,0,.75);
+				width: 60px;
+			}
+		}
+	} // mq
+} // slidenav
+
+
+
+/* Homepage Slides */
+#slide-glyphosaurus 	{	background-image: url($cdn_theme_path+'images/dev/covers/glypho-cover.jpg'); 		}
+#slide-spark-camp 	{ 	background-image: url($cdn_theme_path+'images/dev/covers/spark-cover.jpg'); 		}
+#slide-boston-globe {	background-image: url($cdn_theme_path+'images/dev/covers/bglobe-cover-3.jpg');	}
+#slide-the-daily-orange		{	background-image: url($cdn_theme_path+'images/dev/covers/do-cover-2.jpg');		}
+
+
+/* About Page Slides */
+#slide-office 	{	background-image: url($cdn_theme_path+'images/dev/covers/slide-office.jpg');		}
+#slide-office-3 {	background-image: url($cdn_theme_path+'images/dev/covers/slide-office-3.jpg');	}
+#slide-office-4 {	background-image: url($cdn_theme_path+'images/dev/covers/slide-office-4.jpg');	}
+#slide-xmas-1 	{	background-image: url($cdn_theme_path+'images/dev/covers/slide-xmas.jpg');		}
+
+#slide-conference 	{	background-image: url($cdn_theme_path+'images/dev/covers/conference-cover.jpg');		}
+#slide-jjm 		{	background-image: url($cdn_theme_path+'images/dev/covers/jjm-cover.jpg');		}
+#slide-grind 	{	background-image: url($cdn_theme_path+'images/dev/covers/grindstone-cover.jpg');		}
+#slide-screen2 	{	background-image: url($cdn_theme_path+'images/dev/covers/screen-cover.jpg');		}
+#slide-letters 	{	background-image: url($cdn_theme_path+'images/dev/covers/letters-perspective.jpg');		}
+#slide-sign 	{	background-image: url($cdn_theme_path+'images/dev/covers/ups-sign.jpg');		}
+#slide-tito 	{	background-image: url($cdn_theme_path+'images/dev/covers/tito-cover.jpg');		}
+
+/* Job Page Slides */
+#slide-jobs 	{	background-image: url($cdn_theme_path+'images/dev/covers/jobs-bg-2.jpg');	 }
+
+
+//These are the areas beneath the main slider
+
+$theme_grid_bp : '760px';
+
+.hp-themes {
+	padding-top:20px;
+}
+
+.hp-themes-header {
+	padding-top:10px;
+	text-align:center;
+	margin-bottom:35px;
+	color:#999;
+}
+
+
+
+.hp-theme {
+	@include pie-clearfix;
+	padding: 20px 0;
+	border-bottom: 1px dotted #222;
+	&:last-child {
+		border: 0;
+	}
+
+	.txt-lg {
+		color: #666;
+		font-weight: 300;
+	}
+
+	@media (min-width: 960px){
+		@include ui-grid-lr(35%, 65%, 6%);
+		padding: 20px;
+		.hp-theme-intro {
+			border: 0;
+		}
+	} // mq
+
+}//hp-theme
+
+.hp-theme-alt {
+	@include pie-clearfix;
+	border-bottom: 1px dotted #222;
+	&:last-child {
+		border: 0;
+	}
+
+	.txt-lg {
+		color: #666;
+		font-weight: 300;
+	}
+
+	@media (min-width: $theme_grid_bp){
+		@include ui-grid-lr(50%, 50%, 0%);
+		.hp-theme-intro {
+			border: 0;
+		}
+	} // mq
+
+}//hp-theme
+
+
+.hp-theme-intro {
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
+
+@media (min-width: 480px) {
+	.hp-theme-intro,
+	.hp-theme-tiles {
+		max-width: 500px;
+		margin: auto;
+		@media (min-width:960px){
+			max-width:100%;
+		}
+
+	}
+} // mq
+
+.hp-theme-tile-grid {
+	img {
+		width: 100%;
+		clear: both;
+		margin-bottom: em(20);
+	}
+
+	@media (max-width: 479px) {
+		@include media-grid(2);
+		.media-block.n3 {
+			float: none;
+			width: 50%;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	} //mq
+
+	@media (min-width: 480px) {
+		@include media-grid(3);
+	} // mq
+}//hp theme tiles
+
+
+// Home Banner
+.home-banner {
+	position: relative;
+	height: 0;
+	padding-bottom: 55.5%;
+	overflow: hidden;
+	@media (min-width: 900px) {
+		margin-top: 0px;
+	}
+
+	// Mask to create the circle effect
+	&:after {
+		@include content;
+		width: 100%;
+		height: 0;
+		padding-bottom: 5.5%;
+
+		@include absolute(n n -2px n);
+
+		@media (min-width: 600px) {
+			background: url(/wp-content/themes/blades/images/covers/round-mask-bk-6.png) 50% 0% no-repeat;
+			background-size: 110%;
+		}//mq
+
+	}//after
+
+}//home-banner
+
+.home-banner-img {
+	@include absolute(0 0 n 0);
+	width: 114%;
+	margin-left: -8.5%;
+}
+
+
+// This is the section below the themes, right now with contact info
+.hp-downpage {
+	padding: 20px 10px;
+	text-align: center;
+	@media (min-width: 900px){
+		padding: 30px 0 0 0;
+		@include ui-grid-lr;
+		margin: 0 0 30px 0;
+	}
+	.hp-form {
+		max-width: 395px;
+		margin: 10px auto;
+	}
+}
+
+.hp-feeds {
+	padding-top: 60px;
+}
+
+.hp-blog-list {
+	@media (min-width: 600px) and (max-width:959px){
+		@include media-grid(2,40px);
+		padding: 0;
+		.media-block:nth-child(3){
+			display:none;
+		}
+	}
+
+	@media (min-width: 960px){
+		@include media-grid(3,40px);
+		padding: 0;
+	}
+}
+
+.hp-tweets {
+	@include pie-clearfix;
+	padding: 30px 0 0 0;
+	border-top: 1px solid #222;
+	text-align: center;
+
+	@media (min-width: 600px) {
+		margin: 0 auto;
+	}
+}
+
+.tweet-mod {
+	max-width: 840px;
+	margin: 0 auto;
+}
+
+.tweet-handle {
+	font: 700 16px $proxima;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	color: #fff;
+
+
+}
+
+.tweet {
+	margin-top: -1px;
+
+	@media(min-width: 600px){
+		margin-left: 220px;
+	}
+}
+
+.tweet-txt {
+	@extend .txt-lg;
+	> a {
+		color: $highlight;
+	}
+}
+
+.tweet-icon {
+	display: block;
+	height: 22px;
+	width: 22px;
+	margin: 0 auto 20px;
+	@include opacity(.45);
+	@include svg(twtr-wht);
+	@media (min-width: 600px) {
+		display: inline-block;
+		margin: 0 9px 0 0;
+	}
+}
+
+.tweet-handle-txt {
+	display: none;
+	position: relative;
+	top: -5px;
+	@media (min-width: 600px) {
+		display: inline-block;
+	}
+}
+
+.hp-highlights {
+	border-top: 1px solid #222;
+	padding-top:30px;
+}
+
+.hp-highlight-list {
+	padding-top:10px;
+	@include pie-clearfix;
+	@media (min-width:760px){
+		@include ui-grid-2(52%, 48%, 3%);
+		.highlight:first-of-type {
+			border-bottom:0px;
+			padding-right:3%;
+			border-right:1px dotted #222;
+		}
+	}
+}
+

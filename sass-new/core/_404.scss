@@ -1,0 +1,36 @@
+.page-404 {
+	background-image: url(/wp-content/themes/blades/images/dev/404.jpg);
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	@extend .wrapper;
+	padding: 10% 10% 100% 10%;
+	background-size: 70%;
+
+	@media (min-width: 768px) {
+		padding: 30% 10%;
+		background-size: 50%;
+	}
+
+	@media (min-width: 1200px){
+		background-size: 60%;
+		padding-top: 20%;
+	}
+}
+
+.page-404-text {
+	background-color: rgba(0,0,0,.75);
+	padding: 20px;
+}
+.page-404-h1 {
+	font: 100 30px/42px $proxima;
+
+	@media (min-width: 768px) {
+		font: 100 60px/72px $proxima;
+	}
+}
+
+body.error404 {
+	.ftr {
+		margin-top: 0;
+	}
+}

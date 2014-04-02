@@ -1,0 +1,756 @@
+
+//  Portfolio Typography - also uses styles from _typography.scss
+
+.portfolio-overline-mod {
+	text-align: center;
+	@include pie-clearfix;
+	margin-bottom: 60px;
+}
+
+.portfolio-overline {
+	display: inline-block;
+	font: 600 20px/140% $proxima;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: #333;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+	padding: 0px 10px 8px 10px;
+	margin: auto;
+}
+
+.portfolio-desc-h {
+	text-align: center;
+}
+
+
+/* ============================================= */
+/*	Portfolio Archive				   			 */
+/* ============================================= */
+
+.portfolio-promo {
+	display: block;
+	position: relative;
+	margin-bottom: 40px;
+}
+
+.portfolio-promo-hgroup {
+	color: #fff;
+	text-align: center;
+	background-color: rgba(0,0,0,.7);
+	padding: 20px;
+	@include absolute (n 0 0 0);
+	@include trans(.15s, padding);
+	.portfolio-promo:hover & {
+		padding-bottom: 40px;
+	}
+} //portfolio-top-text
+
+.portfolio-promo-h {
+	line-height: 100%;
+	margin-bottom: 0;
+}
+
+.portfolio-promo-kicker {
+	color: #ccc;
+	margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+	.portfolio-promo .portfolio-promo-h {
+		font-size: 23px;
+	}
+	.portfolio-promo-kicker {
+		font-size: 11px;
+	}
+} //mq
+
+
+.portfolio-promo-btm {
+	.portfolio-promo-kicker {
+		font-size: 11px;
+	}
+	@media(min-width:768px){
+		@include media-grid(2, 40px);
+	}
+}
+
+.portfolio-promo-img {
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+// Portfolio Banner
+.portfolio-banner {
+	position: relative;
+	margin-top: -20px;
+	height: 0;
+	padding-bottom: 45.5%;
+	//background: url(/wp-content/themes/blades/images/dev/covers/hero-table.jpg) 50% 50% no-repeat;
+	//background-size: 117%;
+	overflow: hidden;
+	@media (min-width: 900px) {
+		margin-top: -30px;
+	}
+
+	// Mask to create the circle effect
+	&:after {
+		@include content;
+		width: 100%;
+		height: 0;
+		padding-bottom: 5.5%;
+		background: url(/wp-content/themes/blades/images/dev/covers/round-mask.png) 50% 0% no-repeat;
+		background-size: 110%;
+		@include absolute(n n -2px n);
+	}
+
+}
+
+.portfolio-banner-img {
+	@include absolute(0 0 n 0);
+	width: 117%;
+	margin-left: -8.5%;
+}
+
+// Portfolio Dropcap
+.portfolio-content .site-width:first-child .portfolio-desc:first-letter {
+	//@extend .dropcap;
+}
+
+.portfolio-h-outer {
+	position: relative;
+	margin: 0 -20px 80px;
+	padding: 5px;
+	text-align: center;
+	@include rgba-bg(black, .6);
+	color: #fff;
+	max-width: 525px;
+	@media (min-width: 400px) {
+		// reset negative margin
+		margin-left: auto;
+		margin-right: auto;
+		// effectively increases border size
+		padding: 8px;
+	}
+
+	.billboard-on & {
+		margin-top: -12%;
+	}
+}
+
+.portfolio-h-inner {
+	padding: 18px 18px 28px;
+	@include rgba-bg(black, .9);
+	@media (min-width: 500px) {
+		padding: 25px 25px 35px;
+	}
+}
+
+.portfolio-kicker {
+	color: #e5e5e5;
+	position: relative;
+	padding-bottom: 12px;
+	margin-bottom: 21px;
+	// Matches portfolio-h1
+	@media (max-width: 499px) {
+		font-size: 12px;
+	}
+	&:after {
+		@include content;
+		height: 0;
+		width: 200px;
+		margin: auto;
+		border-top: 1px solid #aaa;
+		@include absolute(n 0 0 0);
+	}
+}
+
+.portfolio-intro {
+	p {
+		font-size:21px;
+		font-style:italic;
+		font-family:$adelle;
+		line-height:30px;
+		color:lighten(black, 35);
+	}
+}
+
+.portfolio-include {
+	// margin-bottom:20px;
+	// padding-top:20px;
+}
+
+.portfolio-h1 {
+	font-size: 30px;
+	// Matches portfolio-kicker
+	@media (min-width: 500px) {
+		font-size: 42px;
+	}
+	> a {
+		border-bottom: 1px solid rgba(255,255,255,0);
+		@include trans(.2s, border-color);
+	}
+	> a:hover {
+		cursor: pointer;
+		border-color: rgba(255,255,255,.2);
+	}
+
+}
+
+.portfolio-meta {
+	font: 300 17px $proxima;
+	color: #333;
+	a {
+		color: $highlight;
+	}
+}
+
+
+.archive {
+	.ftr {
+		margin-top: 0;
+	}
+}
+
+#archive-clients {
+	border-bottom: 0;
+	padding-bottom: 80px;
+}
+
+.archive-clients-list {
+	font: 500 14px $proxima;
+	margin-bottom: 40px;
+
+	li {
+		color: #666;
+		display: block;
+		margin-bottom: 12px;
+	}
+
+	li a {
+		color: #ccc;
+		&:hover {
+			color: $highlight;
+		}
+	}
+
+	@media (max-width: 749px) {
+		@include column-count(2);
+	}
+
+	@media(min-width: 750px){
+		@include column-count(4);
+	}
+}
+
+
+/* ============================================= */
+/*	Tiles						   			 */
+/* ============================================= */
+
+
+#archive-tiles {
+	padding-top: 30px;
+	@include trans;
+
+	@media (min-width: 751px){
+		@include media-grid(4, 30px);
+		.media-block {
+			margin-bottom: 20px;
+		}
+	}
+
+	@media (min-width: 500px) and (max-width: 750px){
+		@include media-grid(3);
+		margin-bottom: 20px;
+	}
+
+	@media (max-width: 499px){
+		@include media-grid(2);
+		margin-bottom: 20px;
+	}
+}
+
+.tile {
+	position: relative;
+	margin-bottom: 20px;
+
+	@media(min-width: 768px){
+		/* opacity: .5; */
+		@include trans;
+
+		.wrapper:hover &{
+			opacity: 1;
+		}
+	}
+
+	html.touch &{
+		opacity: 1;
+	}
+}
+
+.tile img {
+	@include border-radius(5px 5px 0 0);
+	width: 100%;
+	border: 10px solid #1d1d1d;
+	@include trans;
+	.media-block:hover & {
+		border-color:lighten(#1d1d1d, 5);
+		@include box-shadow(0px 0px 5px rgba(black, .3));
+	}
+}
+
+.tile-h3 {
+	padding: 10px 0;
+	text-align: center;
+	color: #666;
+	font: 300 19px/22px $proxima;
+	@include trans;
+
+	.tile:hover  {
+		color: #FFF;
+		opacity: 1;
+	}
+}
+
+.hp-topper-intro {
+	background-color: transparent;
+	margin-top: 0px;
+	text-align: center;
+	padding-bottom: 5px;
+
+	@media (min-width: 760px) {
+		margin-top: -30px;
+	}//mq
+
+	@media (min-width: 900px) {
+		margin-top: -125px;
+	}//mq
+
+	.h1 {
+		margin-bottom: 15px;
+	}//h1
+
+	.portfolio-h-outer {
+		margin-bottom: 0px;
+		max-width: 800px;
+	}//portfolio-h-outer
+
+	.portfolio-h-inner {
+	}//portfolio-h-inner
+}//hp-topper-intro
+
+.hp-intro-txt {
+	max-width: 700px;
+	text-align: center;
+	margin: 0 auto;
+	font-family: $adelle;
+	font-weight: 100;
+	font-size:18px;
+	@media (min-width:700px){
+		font-size: 32px;
+	}
+	a {
+		color: #CCC;
+		border-bottom: 1px dotted #666;
+		font-style: italic;
+	}
+}
+
+.home-kicker {
+	@extend .portfolio-kicker;
+}
+
+.tiles-mod {
+	max-width: 470px;
+	margin: 0 auto;
+	margin-bottom: 60px;
+
+	@media (min-width: $theme_grid_bp) {
+		max-width: 1020px;
+	}//mq
+}//tiles-mod
+
+.highlight-headline {
+	@extend .h3;
+	font-size:24px;
+	text-transform:none;
+	margin-bottom:10px;
+	letter-spacing:0px;
+}
+
+.alt-tile {
+	padding: 40px 0px;
+	border-bottom: 1px solid #222;
+	&:last-child {
+		// border-bottom: 0px;
+		// margin-bottom: 0px;
+		// padding-bottom: 0px;
+	}
+
+	@media (min-width: $theme_grid_bp){
+		padding-bottom: 0px;
+		border-bottom: 0px;
+		margin-bottom: 0px;
+	}
+
+	a {
+		margin-bottom: 4px;
+
+		&:hover {
+			color: #fff;
+		}//hover
+	}//h1
+
+	.txt-lg {
+		line-height: 155%;
+	}//txt-lg
+}
+
+.alt-tile-btm {
+	padding-top: 0px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #222;
+	margin-bottom: 30px;
+
+	&:last-child {
+		border-bottom: 0px;
+		padding-bottom: 0px;
+	}
+
+	@media (min-width: 860px) {
+		padding-top: 40px;
+		padding-bottom: 0px;
+		border-bottom: 0px;
+		margin-bottom: 0px;
+	}//mq
+}
+
+.alt-tile-img {
+	max-width: 470px;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+.tile-border {
+	@media (min-width: $theme_grid_bp) {
+		padding-right: 40px;
+		padding-bottom: 40px;
+		border-right: 1px solid #222;
+
+		&:last-child {
+			border-right: 0px;
+			padding-right: 0px;
+			padding-left: 40px;
+		}//lc
+	}//mq
+}//tile-border
+
+.tile-border-alt {
+	@media (min-width: 760px) {
+		padding-left: 40px;
+		padding-bottom: 40px;
+		border-left: 1px solid #222;
+	}//mq
+}//tile-border-alt
+
+.no-border {
+	border: 0px solid;
+}
+
+.tile-row-mod {
+	&:first-child {
+		padding-top:0px;
+	}
+	@media (min-width: 760px) {
+		@include ui-grid-lr(50%, 50%, 0%);
+		border-bottom: 1px solid #222;
+		padding-top: 40px;
+		&:first-child {
+			padding-top:0px;
+		}
+		&:last-child {
+			border-bottom: 0px;
+		}//lc
+
+	} //mq
+
+	&:last-child {
+		padding-top: 0px;
+	}//lc
+
+	&:first-child .alt-tile {
+		padding-top: 0px;
+
+		@media (min-width: $theme_grid_bp) {
+			padding-top: 0px;
+		}//mq
+
+	}//fc
+
+	&:last-child .alt-tile {
+		padding-bottom: 40px;
+
+		&:last-child {
+			border-bottom: 0px;
+			padding-bottom: 0px;
+		}
+
+		@media (min-width: $theme_grid_bp) {
+			padding-top: 0px;
+			padding-top: 40px;
+		}//mq
+
+	}//lc
+
+	.txt-lg {
+		p {
+			margin-bottom: 0px;
+		}
+	}//txt-lg
+
+}//tile-row-mod
+
+.btm-row {
+	border-bottom: 0px;
+}
+
+.btm-tile {
+	@media (min-width: 560px) {
+		padding-bottom: 60px;
+	}//mq
+}//btm-tile
+
+
+.hp-logo-pond {
+	border-top:1px solid #222;
+	padding:25px 20px 10px 20px;
+	border-bottom:1px solid #222;
+	background-color:#161616;
+}
+
+.hp-logo-pond-header {
+	padding-top:5px;
+	margin-bottom:28px;
+	text-align:center;
+	color:#666;
+}
+
+.logo-pond-mod {
+	margin: 0 auto;
+	text-align: center;
+	max-width: 920px;
+}
+
+.pond-item {
+	display: inline;
+	margin-right: 3%;
+	width: 100%;
+	@include opacity(.5);
+	@include trans;
+	cursor:pointer;
+	img {
+		max-width: 98px;
+		padding-bottom: 30px;
+
+		@media (min-width: 560px) {
+			max-width: 127px;
+		}//mq
+	}//img
+
+	&:last-child {
+		margin-right: 0px;
+	}//lc
+	&:hover {
+		@include opacity(1);
+	}
+}//pond-item
+
+
+
+/* ============================================= */
+/*	Portfolio Detail 			 				 */
+/* ============================================= */
+
+// these are styles for how to display groups of images.
+
+.video-mod {
+	@include video;
+	margin-bottom:20px;
+	&.ratio-tv {
+		@include video(tv);
+	}
+}
+
+.portfolio-layouts {
+	img.viz-resp {
+		display:none;
+	}
+	img.viz-mobile {
+		@media (max-width:599px){
+			display: inline;
+		}
+	}
+	img.viz-tablet {
+		@media (min-width:600px) and (max-width:899px){
+			display: inline;
+		}
+	}
+	img.viz-desktop {
+
+		@media (min-width:900px){
+			display: inline;
+		}
+	}
+
+}
+.portfolio-layouts {
+
+	@include pie-clearfix;
+
+	.portfolio-image-set {
+		margin: auto;
+		max-width: 1050px;
+		text-align: center;
+		> img {
+			margin: 0 0 50px 0;
+		}
+		@media (min-width:900px){
+			&+.portfolio-image-set {
+				> img {
+					margin-top:-50px;
+				}
+			}
+		}
+	}
+
+
+	@media (max-width: 899px){
+		.image-count-1, .image-count-2, .image-count-3 {
+			img {
+				max-width: 100%;
+				float: left;
+			}
+		}
+
+		.image-count-1 {
+			img {
+			float: none;
+			}//img
+		}//image-count-1
+	}//mq
+
+	@media (min-width: 900px){
+		.image-count-1 {
+			margin: 20px auto;
+
+			img{
+				max-width: 100%;
+				height: auto;
+				float: none;
+			}
+		}
+
+		.image-count-2 {
+			margin: 20px auto;
+			@include pie-clearfix;
+
+			img {
+				width: 50%;
+				float: left;
+			}
+		}
+
+		.image-count-3 {
+			margin: 20px auto;
+			@include pie-clearfix;
+
+			img {
+				width: 33%;
+				float: left;
+			}
+		}
+	}//media > 900
+
+	.full-width {
+		max-width: none;
+	}
+
+	.flex-width {
+		img {
+			max-width: 100%;
+		}//img
+	}//flex-width
+
+	img[data-original="/wp-content/uploads/2013/09/share-tools-movie-grey-bg.gif"] {
+		width: auto;
+	}//img data-orig
+
+} //portfolio-layouts
+
+.portfolio-desc {
+	color: #000;
+	clear: both;
+	margin-bottom: 50px;
+}
+
+.portfolio-desc-txt {
+	color: #333;
+}
+
+.portfolio-color-splash {
+	background-color: #eef0f0;
+	padding: 75px 0px 55px 0px;
+	margin-bottom: 75px;
+}
+
+//
+// Global News Portfolio
+//
+
+.gn-laptops {
+	margin: 60px 0 80px;
+}
+
+.gn-feed-item {
+	position: relative;
+	.pin-bubble {
+		@media (min-width: 768px) {
+			top: 20px;
+			&.right {
+				right: -120px;
+			}
+			&.left {
+				left: -133px;
+			}
+		}
+	}
+}
+
+.gn-feed-item-comment {
+	.pin-bubble {
+		top: 165px;
+	}
+}
+
+.gn-feed {
+	margin-top: 60px;
+}
+
+.img-swap {
+	display: none;
+
+	@media (min-width: 760px) {
+		display: block;
+	}//mq
+}
+
+.mobile-img-swap {
+	display: block;
+
+	@media (min-width: 760px) {
+		display: none;
+	}//mq
+}

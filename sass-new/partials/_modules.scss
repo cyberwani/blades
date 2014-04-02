@@ -1,0 +1,125 @@
+/* ============================================= */
+/*	Social Icons					   			 */
+/* ============================================= */
+
+.social-item {
+	display: inline;
+	@extend .txt;
+	font-weight: 400;
+	font-size: 12px;
+	margin-right: 14px;
+	> a {
+		color: $highlight;
+		font-size: 12px;
+	}
+
+	&:last-child {
+		margin-right:0px;
+	}
+
+	@media (min-width:768px) {
+		> a {
+			color: $highlight;
+			font-size: 15px;
+		}
+	}
+}
+
+.ss-icon {
+	color: #fff;
+}
+
+
+// Mail Chimp
+
+#mc_embed_signup {
+	background-color: none;
+
+	#mc-embedded-subscribe.button {
+		background-color: #be9b53;
+	}
+
+	form#mc-embedded-subscribe-form {
+		padding-left: 0px;
+	}
+}
+
+.mailing-list-mod {
+	margin: 0 auto;
+	padding: 50px 30px;
+	max-width: 1020px;
+	text-align: center;
+
+	@media (min-width: 600px) {
+		padding: 100px 40px;
+	}
+
+	@media (min-width: 1100px) {
+		text-align: left;
+		padding: 100px 0px;
+		@include ui-grid-2(40%, 60%);
+	}
+}
+
+.sign-up-mod {
+	max-width: 400px;
+	margin: auto;
+	@media (min-width: 1100px) {
+		max-width: 700px;
+	}
+}
+
+.holiday-submit-mod {
+	text-align: center;
+	@media (min-width: 1100px) {
+		text-align: left;
+	}
+}
+
+#mc_embed_signup form {
+	margin-left: 0px;
+}
+
+.mailing-list-copy {
+	p {
+		padding-top: 53px;
+	}
+}
+
+// Password Protected Pages
+
+
+.password-form {
+	max-width: 320px;
+	margin: 60px auto;
+	> label {
+		display: none;
+	}
+}
+
+.password-box,
+.password-btn {
+	height: 36px;
+}
+
+.password-box {
+	font-family: $proxima;
+	font-size: 18px;
+	padding: 7px;
+}
+
+.password-btn {
+	// Tito says:
+	// "I want to use this mixin but it's not
+	//  available and I don't wanna fuck with shit."
+	//@include input-default;
+	@extend %btn-large;
+
+	border: 0;
+	@include box-shadow(none);
+	@include border-radius(0);
+	-webkit-appearance: none;
+	&:focus {
+		outline: 0;
+	}
+}

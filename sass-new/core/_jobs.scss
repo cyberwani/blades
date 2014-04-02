@@ -1,0 +1,86 @@
+
+.jobs-sign {
+	margin: 20px auto 0;
+	display: block;
+	width: 80%;
+	max-width: 400px;
+
+	@media (min-width: 800px) {
+		margin-top: 40px;
+		max-width: 521px;
+	}
+}
+
+.jobs-pin {
+	z-index: 99;
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 26px;
+	top: 14px;
+	@media (min-width: 800px) {
+		top: 38px;
+	}
+
+	&:after {
+		@include content;
+		display: block;
+		background: transparent image-url('dev/covers/jobs-pin.png') no-repeat 50% 50%;
+		position: relative;
+		margin: auto;
+		height: 16px;
+		width: 26px;
+	}
+}
+
+.jobs-h1 {
+	margin-bottom: 20px;
+}
+
+.jobs-content {
+	.h3, .h4 {
+		margin: 40px 0 10px;
+	}
+}
+
+.job-mod {
+	margin: 0 auto;
+	padding: 20px 20px;
+	border-bottom: 1px solid #222;
+	max-width: 1100px;
+
+	&:last-child {
+		border: 0;
+	}
+
+	@media (min-width: 675px){
+		padding: 40px 90px;
+	}
+
+	@media (min-width: 950px){
+		padding: 40px 20px;
+		@include ui-grid-lr(30%, 70%, 10%);
+	}
+}
+
+.jobs-overview {
+	margin: 20px 0;
+
+	@media (min-width: 700px){
+		margin: 40px 0;
+	}
+}
+
+.jobs-overview-mod {
+	max-width: 1100px;
+	padding-top: 1px;
+
+	@media (min-width: 760px){
+		margin: 0 auto;
+	}
+
+	@media (min-width: 950px){
+		margin: 0 auto;
+		@include ui-grid-lr(30%, 70%, 10%);
+	}
+}

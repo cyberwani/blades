@@ -1,0 +1,82 @@
+
+/* ============================================= */
+/*	Import Upbase				   			 	 */
+/* ============================================= */
+
+@import "../components/Upbase/components/_base";
+
+/* ============================================= */
+/*	Import Partials						   		 */
+/* ============================================= */
+
+// Variables
+
+@import "partials/variables";
+
+// Universal
+
+@import "partials/universal";
+
+// Mixins
+
+@import "partials/mixins";
+
+// Animations
+
+@import "partials/animations";
+
+// Layout
+
+@import "partials/layout";
+
+// Modules
+
+@import "partials/modules";
+
+// Typography
+
+@import "partials/typography";
+
+// Buttons
+
+@import "partials/buttons";
+
+/* ============================================= */
+/*	Import Core Pages 							 */
+/* ============================================= */
+
+// Homepage
+
+@import "core/home";
+
+// Jobs
+
+@import "core/jobs";
+
+// Homepage
+
+@import "core/404";
+
+// About
+
+@import "core/about";
+
+// Blog
+
+@import "core/blog";
+
+// Portfolio
+
+@import "core/portfolio";
+
+// Nav
+
+@import "core/nav";
+
+// Footer
+
+@import "core/footer";
+
+// Print
+
+@import "core/print";

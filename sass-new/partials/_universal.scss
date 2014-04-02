@@ -1,0 +1,16 @@
+.resp-img {
+	max-width: 100%;
+}
+
+a 		{ 	text-decoration: none; color: inherit; }
+strong	{	font-weight: bold;	}
+em   	{	font-style: italic;	}
+
+body {
+	background-color: $bg-black;
+	color: $text;
+}
+
+.video-embed {
+	@include video;
+}
