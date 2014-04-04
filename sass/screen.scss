@@ -219,6 +219,10 @@ body {
 	margin: auto;
 }
 
+.portfolio-desc-h {
+	text-align: center;
+}
+
 .txt-defaults {
 	.attr {
 		font-size: 11px;
@@ -1434,15 +1438,23 @@ $theme_grid_bp : '760px';
 
 .portfolio-h-outer {
 	position: relative;
-	margin: 0 auto 80px;
-	padding: 8px;
+	margin: 0 -20px 80px;
+	padding: 5px;
 	text-align: center;
 	@include bg(black, .6);
 	color: #fff;
 	max-width: 525px;
+	@media (min-width: 400px) {
+		// reset negative margin
+		margin-left: auto;
+		margin-right: auto;
+		// effectively increases border size 
+		padding: 8px;
+	}
+
 	.billboard-on & {
-		margin-top: -12%; 		
-	}	
+		margin-top: -12%;
+	}
 }
 
 .portfolio-h-inner {
@@ -1458,6 +1470,10 @@ $theme_grid_bp : '760px';
 	position: relative;
 	padding-bottom: 12px;
 	margin-bottom: 21px;
+	// Matches portfolio-h1
+	@media (max-width: 499px) {
+		font-size: 12px;
+	}
 	&:after {
 		@include content;
 		height: 0;
@@ -1479,13 +1495,13 @@ $theme_grid_bp : '760px';
 }
 
 .portfolio-include {
-	margin-bottom:20px;
-	padding-top:20px;
+	// margin-bottom:20px;
+	// padding-top:20px;
 }
 
 .portfolio-h1 {
-	font-size: 36px;
-	margin-bottom:10px;
+	font-size: 30px;
+	// Matches portfolio-kicker
 	@media (min-width: 500px) {
 		font-size: 42px;
 	}
@@ -2542,6 +2558,7 @@ html.ie8 .blog-cron .media-block {
 //
 
 .npr-video-parent {
+	// exended at line 547 of bcom.scss
 	position: relative;
 }
 
@@ -2566,6 +2583,7 @@ html.ie8 .blog-cron .media-block {
 }
 
 .npr-img-video-mod {
+	// exended at line 555 of bcom.scss
 	width: 75%;
 	margin: 0 auto 50px;
 	border: 5px solid #e5e5e5;
@@ -2576,6 +2594,7 @@ html.ie8 .blog-cron .media-block {
 }
 
 .npr-video {
+	// exended at line 559 of bcom.scss
 	width: 100%;
 }
 
@@ -3333,7 +3352,8 @@ body.error404 {
 
 //Needed a button style, button mixins too complex. Uncommenting _buttons.scss from screen.
 
-a.btn-large {
+%btn-large {
+	font-family: $proxima;
 	background-color: $link;
 	color: #FFF;
 	padding: 10px;
@@ -3349,8 +3369,55 @@ a.btn-large {
 		margin: 0 auto;
 		display: block;
 		width: 130px;
+	}	
+}
+
+a.btn-large {
+	@extend %btn-large;
+}
+
+
+//
+// Password Protected Pages
+//
+
+.password-form {
+	max-width: 320px;
+	margin: 60px auto;
+	> label {
+		display: none;
 	}
 }
+
+.password-box,
+.password-btn {
+	height: 36px;
+}
+
+.password-box {
+	font-family: $proxima;
+	font-size: 18px;
+	padding: 7px;
+}
+
+.password-btn {
+	// Tito says: 
+	// "I want to use this mixin but it's not
+	//  available and I don't wanna fuck with shit."
+	//@include input-default;
+	@extend %btn-large;
+
+	border: 0;
+	@include box-shadow(none);
+	@include border-radius(0);
+	-webkit-appearance: none;
+	&:focus {
+		outline: 0;
+	}	
+}
+
+
+
 
 
 /* ============================================= */
