@@ -3348,7 +3348,8 @@ body.error404 {
 
 //Needed a button style, button mixins too complex. Uncommenting _buttons.scss from screen.
 
-a.btn-large {
+%btn-large {
+	font-family: $proxima;
 	background-color: $link;
 	color: #FFF;
 	padding: 10px;
@@ -3364,8 +3365,55 @@ a.btn-large {
 		margin: 0 auto;
 		display: block;
 		width: 130px;
+	}	
+}
+
+a.btn-large {
+	@extend %btn-large;
+}
+
+
+//
+// Password Protected Pages
+//
+
+.password-form {
+	max-width: 320px;
+	margin: 60px auto;
+	> label {
+		display: none;
 	}
 }
+
+.password-box,
+.password-btn {
+	height: 36px;
+}
+
+.password-box {
+	font-family: $proxima;
+	font-size: 18px;
+	padding: 7px;
+}
+
+.password-btn {
+	// Tito says: 
+	// "I want to use this mixin but it's not
+	//  available and I don't wanna fuck with shit."
+	//@include input-default;
+	@extend %btn-large;
+
+	border: 0;
+	@include box-shadow(none);
+	@include border-radius(0);
+	-webkit-appearance: none;
+	&:focus {
+		outline: 0;
+	}	
+}
+
+
+
 
 
 /* ============================================= */
