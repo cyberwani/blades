@@ -4,7 +4,7 @@
 </head>
     <body class="{{body_class}}" data-source="base.twig">
 
-        {% include "components/header.twig" %}
+        {% include "mods/header.twig" %}
 
         <section id="content" role="main">
             {% block content %}
@@ -12,7 +12,7 @@
             {% endblock %}
         </section>
 
-        {% include "components/footer.twig" %}
+        {% include "mods/footer.twig" %}
 
         {{ function('wp_footer') }}
         {% block scripts %}
