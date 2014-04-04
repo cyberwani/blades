@@ -1,6 +1,5 @@
-@import "../components/Upbase/components/base";
+@import "custom/custom-base";
 @import "site/partials/variables";
-@import "site/partials/universal";
 
 .page-id-4343 {
 	.ftr {
@@ -182,4 +181,12 @@
 
 .holiday-bg {
 	background: url(/wp-content/themes/blades/images/drink/star-bg.gif);
+}
+
+
+.holiday-submit-mod {
+	text-align: center;
+	@media (min-width: 1100px) {
+		text-align: left;
+	}
 }

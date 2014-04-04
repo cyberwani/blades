@@ -1,6 +1,6 @@
-.resp-img {
-	max-width: 100%;
-}
+// These are a few things that are going to be
+// true on almost every upstatement page, and
+// cant find a home anywhere else
 
 a 		{ 	text-decoration: none; color: inherit; }
 strong	{	font-weight: bold;	}
@@ -13,4 +13,8 @@ body {
 
 .video-embed {
 	@include video;
+}
+
+.resp-img {
+	max-width: 100%;
 }

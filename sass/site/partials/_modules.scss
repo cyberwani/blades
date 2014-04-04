@@ -29,8 +29,9 @@
 	color: #fff;
 }
 
-
-// Mail Chimp
+/* ============================================= */
+/*	Mail Chimp						   			 */
+/* ============================================= */
 
 #mc_embed_signup {
 	background-color: none;
@@ -69,13 +70,6 @@
 	}
 }
 
-.holiday-submit-mod {
-	text-align: center;
-	@media (min-width: 1100px) {
-		text-align: left;
-	}
-}
-
 #mc_embed_signup form {
 	margin-left: 0px;
 }
@@ -86,8 +80,9 @@
 	}
 }
 
-// Password Protected Pages
-
+/* ============================================= */
+/*	Password Protected Pages		   			 */
+/* ============================================= */
 
 .password-form {
 	max-width: 320px;
@@ -109,17 +104,6 @@
 }
 
 .password-btn {
-	// Tito says:
-	// "I want to use this mixin but it's not
-	//  available and I don't wanna fuck with shit."
-	//@include input-default;
+	@include input-default;
 	@extend %btn-large;
-
-	border: 0;
-	@include box-shadow(none);
-	@include border-radius(0);
-	-webkit-appearance: none;
-	&:focus {
-		outline: 0;
-	}
 }

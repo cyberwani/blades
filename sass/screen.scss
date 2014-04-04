@@ -17,10 +17,6 @@
 
 @import "site/partials/universal";
 
-// Mixins
-
-@import "site/partials/mixins";
-
 // Animations
 
 @import "site/partials/animations";
@@ -40,6 +36,10 @@
 // Buttons
 
 @import "site/partials/buttons";
+
+// Buttons
+
+@import "site/partials/sliders";
 
 /* ============================================= */
 /*	Import site Pages 							 */

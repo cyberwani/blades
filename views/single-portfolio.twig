@@ -41,7 +41,7 @@
 			</div>-->
 
 			<div class="portfolio-content-before">
-				{% include ["portfolio/"~post.slug~"-before.twig", "portfolio/"~post.slug~".twig"] ignore missing %}
+				{% include ["custom/"~post.slug~"-before.twig", "custom/"~post.slug~".twig"] ignore missing %}
 			</div>
 
 			<div class="portfolio-content">
@@ -81,14 +81,14 @@
 					{% endif %}
 					{% if layout.acf_fc_layout == 'include' %}
 						<div class="portfolio-include">
-							{% include 'portfolio/' ~ layout.file_name ignore missing %}
+							{% include 'custom/' ~ layout.file_name ignore missing %}
 						</div>
 					{% endif %}
 				{% endfor %}
 			</div> <!-- /portfolio-content-->
 
 			<div class="portfolio-content-after">
-				{% include ["portfolio/"~post.slug~"-after.twig"] ignore missing %}
+				{% include ["custom/"~post.slug~"-after.twig"] ignore missing %}
 			</div>
 		</section> <!-- /portfolio-layouts -->
 

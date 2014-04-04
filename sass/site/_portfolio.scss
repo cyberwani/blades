@@ -315,54 +315,6 @@
 	}
 }
 
-.hp-topper-intro {
-	background-color: transparent;
-	margin-top: 0px;
-	text-align: center;
-	padding-bottom: 5px;
-
-	@media (min-width: 760px) {
-		margin-top: -30px;
-	}//mq
-
-	@media (min-width: 900px) {
-		margin-top: -125px;
-	}//mq
-
-	.h1 {
-		margin-bottom: 15px;
-	}//h1
-
-	.portfolio-h-outer {
-		margin-bottom: 0px;
-		max-width: 800px;
-	}//portfolio-h-outer
-
-	.portfolio-h-inner {
-	}//portfolio-h-inner
-}//hp-topper-intro
-
-.hp-intro-txt {
-	max-width: 700px;
-	text-align: center;
-	margin: 0 auto;
-	font-family: $adelle;
-	font-weight: 100;
-	font-size:18px;
-	@media (min-width:700px){
-		font-size: 32px;
-	}
-	a {
-		color: #CCC;
-		border-bottom: 1px dotted #666;
-		font-style: italic;
-	}
-}
-
-.home-kicker {
-	@extend .portfolio-kicker;
-}
-
 .tiles-mod {
 	max-width: 470px;
 	margin: 0 auto;
@@ -522,52 +474,6 @@
 		padding-bottom: 60px;
 	}//mq
 }//btm-tile
-
-
-.hp-logo-pond {
-	border-top:1px solid #222;
-	padding:25px 20px 10px 20px;
-	border-bottom:1px solid #222;
-	background-color:#161616;
-}
-
-.hp-logo-pond-header {
-	padding-top:5px;
-	margin-bottom:28px;
-	text-align:center;
-	color:#666;
-}
-
-.logo-pond-mod {
-	margin: 0 auto;
-	text-align: center;
-	max-width: 920px;
-}
-
-.pond-item {
-	display: inline;
-	margin-right: 3%;
-	width: 100%;
-	@include opacity(.5);
-	@include trans;
-	cursor:pointer;
-	img {
-		max-width: 98px;
-		padding-bottom: 30px;
-
-		@media (min-width: 560px) {
-			max-width: 127px;
-		}//mq
-	}//img
-
-	&:last-child {
-		margin-right: 0px;
-	}//lc
-	&:hover {
-		@include opacity(1);
-	}
-}//pond-item
-
 
 
 /* ============================================= */

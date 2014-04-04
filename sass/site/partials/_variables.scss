@@ -1,8 +1,9 @@
-$blue: #1d78af;
-$link: #27b99e;
-$link-hover: darken($link, 8%);
-$highlight: #27b99e;  //upstate-mint
-$highlight-hover: darken($highlight, 8%);
+$green: #27b99e;  //upstate-mint
+$link: $green;
+$green-dark: darken($link, 8%);
+$link-hover: $green-dark;
+$highlight: $green;
+$highlight-hover: $green-dark;
 
 $trans-black: rgba(0,0,0,.85);
 

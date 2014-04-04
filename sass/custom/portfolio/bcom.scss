@@ -1,5 +1,4 @@
-@import "../components/Upbase/components/base";
-@import "site/partials/variables";
+@import "custom/custom-base";
 
 @include keyframes(ug-fade-in) {
   0% {
@@ -61,24 +60,24 @@ body {
 	vertical-align: middle;
 }
 
-.ups-btn {
-	@include input-default;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font: 600 13px $proxima;
-	background-color: #27B99E;
-	@include text-shadow(1px 1px 1px rgba(0,0,0,.1));
-	padding: 4px 14px 4px;
-	color: #fff;
-	border-radius: 12px;
-	@include trans;
-	&:hover {
-		background-color: shade(#27B99E, 7%);
-	}
-	&:active {
-		background-color: shade(#27B99E, 14%);
-	}
-}
+// .ups-btn {
+// 	@include input-default;
+// 	text-transform: uppercase;
+// 	letter-spacing: 1px;
+// 	font: 600 13px $proxima;
+// 	background-color: #27B99E;
+// 	@include text-shadow(1px 1px 1px rgba(0,0,0,.1));
+// 	padding: 4px 14px 4px;
+// 	color: #fff;
+// 	border-radius: 12px;
+// 	@include trans;
+// 	&:hover {
+// 		background-color: shade(#27B99E, 7%);
+// 	}
+// 	&:active {
+// 		background-color: shade(#27B99E, 14%);
+// 	}
+// }
 
 
 

@@ -1,4 +1,3 @@
-
 //
 // About page
 //
@@ -140,17 +139,10 @@ html.ie8 .about-person {
 		min-height: 1050px;
 		height: 1050px;
 		padding-bottom: 0px;
-
-		// &.john {
-		// 	background: url(images/dev/john-boilard.jpg) no-repeat center center;
-		// 	@include background-size(cover);
-		// }
-
 		background-repeat:no-repeat;
 		background-position:top center;
 		@include background-size(cover);
 		-webkit-background-size:cover !important;
-
 	} // bio-content media query
 }
 

@@ -1,4 +1,3 @@
-
 .jobs-sign {
 	margin: 20px auto 0;
 	display: block;
@@ -84,3 +83,22 @@
 		@include ui-grid-lr(30%, 70%, 10%);
 	}
 }
+
+// Jobs Animation
+
+
+.swing {
+	@include animation-name (swing);
+	@include transform-origin(top, center);
+}
+
+.animated {
+	@include animation-fill-mode(both);
+	@include animation-duration(3s);
+}
+
+.animated.hinge {
+	@include animation-duration(2s);
+}
+
+

@@ -27,5 +27,6 @@
 	if (post_password_required($post->ID)){
 		Timber::render('single-password.twig', $data);
 	} else {
-		Timber::render(array('portfolio/single-portfolio-'.$pi->slug.'.twig', 'single-portfolio.twig'), $data);
+		$templates = array('custom/single-portfolio-'.$pi->slug.'.twig', 'single-portfolio.twig');
+		Timber::render($templates, $data);
 	}
