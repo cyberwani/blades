@@ -6,6 +6,8 @@ a 		{ 	text-decoration: none; color: inherit; }
 strong	{	font-weight: bold;	}
 em   	{	font-style: italic;	}
 
+a:link { -webkit-tap-highlight-color: $green; }
+
 body {
 	background-color: $bg-black;
 	color: $text;
