@@ -8,6 +8,15 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "Upbase": "git@github.com:Upstatement/upbase.git#~0.1.4"
+    "Upbase": "git@github.com:Upstatement/upbase.git#~0.1.4",
+    "unveil": "~1.3.0",
+    "iosslider": "~1.3.12",
+    "jquery.localScroll": "~1.3.5",
+    "respond": "~1.4.2",
+    "xregexp": "~2.0.0",
+    "jquery.inview": "~1.0.0",
+    "swiper": "~2.5.5",
+    "modernizr": "~2.7.2",
+    "SyntaxHighlighter": "~3.0.83"
   }
 }

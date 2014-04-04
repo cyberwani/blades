@@ -35,7 +35,7 @@
 				echo '<meta name="description" content="'.(substr(remove_returns(strip_tags($post->post_content)), 0, 255)).'" />';
 			}
 		?>
-		
+
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 		<!--[if lt IE 9]><script src="/wp-content/themes/blades/js/libs/respond.src.js"></script><![endif]-->
@@ -48,16 +48,16 @@
 		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144x144.png">
 		<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png">
 
-		<meta name="application-name" content="Upstatement"/> 
-		<meta name="msapplication-TileColor" content="#0d0824"/> 
+		<meta name="application-name" content="Upstatement"/>
+		<meta name="msapplication-TileColor" content="#0d0824"/>
 		<meta name="msapplication-TileImage" content="/wp-content/themes/blades/images/upstatement-win-8-tile.png"/>
 
-		<!-- Symbolset Social Icons -->
+		<!-- Symbolset Social Icons
 		<link href="/wp-content/themes/blades/_css/ss-social.css" rel="stylesheet" />
 		<link href="/wp-content/themes/blades/_css/ss-standard.css" rel="stylesheet" />
 
 		<script src="/wp-content/themes/blades/js/ss-social.js"></script>
-		<script src="/wp-content/themes/blades/js/ss-standard.js"></script>
+		<script src="/wp-content/themes/blades/js/ss-standard.js"></script>-->
 
 		<meta name="avgthreatlabs-verification" content="b1b863e854ceddae55fed62b5bfa43983854dd35" />
 		<!-- Google Webfont Loader -->

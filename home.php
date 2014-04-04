@@ -19,4 +19,4 @@
 	$data['highlights'] = array_chunk(Timber::get_posts($highlights), 2);
 	$data['logo_pond'] = get_field('logo_pond', 'options');
 
-	Timber::render('home-new.twig', $data, 600);
+	Timber::render('home.twig', $data, 600);

@@ -1,22 +1,21 @@
 /*
-Syntax error: Undefined mixin 'trans'.
-        on line 60 of /Users/Nathan/Sites/inkwell-upstatement/wp-content/themes/blades/sass-new/project/special-pages/drinks.scss, in `trans'
-        from line 60 of /Users/Nathan/Sites/inkwell-upstatement/wp-content/themes/blades/sass-new/project/special-pages/drinks.scss
+Syntax error: File to import not found or unreadable: site/partials/variables.
+              Load paths:
+                /Users/Nathan/Sites/inkwell-upstatement/wp-content/themes/blades/sass-new
+                /Users/Nathan/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/frameworks/blueprint/stylesheets
+                /Users/Nathan/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/frameworks/compass/stylesheets
+                Compass::SpriteImporter
+        on line 2 of /Users/Nathan/Sites/inkwell-upstatement/wp-content/themes/blades/sass-new/project/special-pages/drinks.scss
+
+1: /Users/Nathan/Sites/inkwell-upstatement/wp-content/themes/blades/sass-new/project/special-pages/drinks.scss
 
 Backtrace:
-/Users/Nathan/Sites/inkwell-upstatement/wp-content/themes/blades/sass-new/project/special-pages/drinks.scss:60:in `trans'
-/Users/Nathan/Sites/inkwell-upstatement/wp-content/themes/blades/sass-new/project/special-pages/drinks.scss:60
-/Users/Nathan/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:253:in `visit_mixin'
-/Users/Nathan/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/Nathan/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Users/Nathan/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Users/Nathan/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/base.rb:53:in `map'
-/Users/Nathan/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/Nathan/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
-/Users/Nathan/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/Users/Nathan/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-/Users/Nathan/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Users/Nathan/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:320:in `visit_rule'
+/Users/Nathan/Sites/inkwell-upstatement/wp-content/themes/blades/sass-new/project/special-pages/drinks.scss:2
+/Users/Nathan/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/import_node.rb:67:in `rescue in import'
+/Users/Nathan/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/import_node.rb:45:in `import'
+/Users/Nathan/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/import_node.rb:28:in `imported_file'
+/Users/Nathan/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/import_node.rb:37:in `css_import?'
+/Users/Nathan/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:217:in `visit_import'
 /Users/Nathan/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/base.rb:37:in `visit'
 /Users/Nathan/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/perform.rb:100:in `visit'
 /Users/Nathan/.rvm/gems/ruby-2.1.1/gems/sass-3.2.18/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
@@ -60,4 +59,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined mixin 'trans'.\A         on line 60 of /Users/Nathan/Sites/inkwell-upstatement/wp-content/themes/blades/sass-new/project/special-pages/drinks.scss, in `trans'\A         from line 60 of /Users/Nathan/Sites/inkwell-upstatement/wp-content/themes/blades/sass-new/project/special-pages/drinks.scss"; }
+  content: "Syntax error: File to import not found or unreadable: site/partials/variables.\A               Load paths:\A                 /Users/Nathan/Sites/inkwell-upstatement/wp-content/themes/blades/sass-new\A                 /Users/Nathan/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/frameworks/blueprint/stylesheets\A                 /Users/Nathan/.rvm/gems/ruby-2.1.1/gems/compass-0.12.4/frameworks/compass/stylesheets\A                 Compass::SpriteImporter\A         on line 2 of /Users/Nathan/Sites/inkwell-upstatement/wp-content/themes/blades/sass-new/project/special-pages/drinks.scss\A \A 1: /Users/Nathan/Sites/inkwell-upstatement/wp-content/themes/blades/sass-new/project/special-pages/drinks.scss"; }
