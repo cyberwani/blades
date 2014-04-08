@@ -5,9 +5,10 @@
 	require_once(__DIR__.'/wp/acf-blog-options.php');
 	if (class_exists('Timber')){
 		require_once('wp/portfolio-entry.php');
+		require_once('wp/blades-site.php');
 	}
 	add_theme_support('menus');
-	add_theme_support( 'post-thumbnails' );
+	add_theme_support('post-thumbnails');
 
 	add_filter('timber_context', function($data){
 		$data['menu'] = new TimberMenu();
@@ -19,10 +20,6 @@
 		register_options_page('Look & Feel');
 		register_options_page('Promos');
 		register_options_page('Portfolio Entries');
-	}
-
-	function say_what($message = '', $suffix = ''){
-		echo 'say '.$message . ' and ' . $suffix;
 	}
 
 	function load_scripts(){
@@ -86,4 +83,8 @@
 		$page = max(0, $page);
 		$query = array('post_type' => 'post', 'posts_per_page' => 6, 'post__not_in' => $sticky, 'offset' => $page * 6);
 		Timber::load_template('archive-blog.php', $query);
+	});
+
+	add_action('init', function(){
+		BladesSite::register_post_types();
 	});
