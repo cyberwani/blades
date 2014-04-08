@@ -6,6 +6,13 @@ a 		{ 	text-decoration: none; color: inherit; }
 strong	{	font-weight: bold;	}
 em   	{	font-style: italic;	}
 
+
+// These selection declarations have to be separate.
+//   No text-shadow: twitter.com/miketaylr/status/12228805301
+//   Also: hot pink.
+::-moz-selection{ background: $green; }
+::selection { background: $green; }
+
 a:link { -webkit-tap-highlight-color: $green; }
 
 body {
