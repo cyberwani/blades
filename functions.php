@@ -17,9 +17,8 @@
 
 
 	if (function_exists('register_options_page')){
-		register_options_page('Look & Feel');
-		register_options_page('Promos');
-		register_options_page('Portfolio Entries');
+		register_options_page('Logo Pond');
+		register_options_page('Site Info');
 	}
 
 	function load_scripts(){
@@ -88,3 +87,7 @@
 	add_action('init', function(){
 		BladesSite::register_post_types();
 	});
+
+	if (class_exists('ChainsawDashboard')){
+		$dashboard = new ChainsawDashboard('wp-content/themes/blades/blades-dashboard.json');
+	}
