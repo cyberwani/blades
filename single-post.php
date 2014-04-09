@@ -16,7 +16,6 @@
 	} else {
 		$data['meta_desc'] = strip_tags($pi->get_preview(30, true, '', true));
 	}
-	$data['comment_form'] = InkwellComments::get_dsq_comments($pi->ID);
 	$data['sidebar'] = Timber::get_sidebar();
 
 	Timber::render('single.twig', $data);
