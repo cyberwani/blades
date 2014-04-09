@@ -27,7 +27,7 @@
 		'orderby' => 'count'
 	));
 	shuffle($data['tags']);
-	$data['tags'] = WPHelper::array_truncate($data['tags'], 10);
+	$data['tags'] = TimberHelper::array_truncate($data['tags'], 10);
 
 	$next_page = $page + 1;
 	if ($page == 0){
