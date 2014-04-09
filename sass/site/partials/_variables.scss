@@ -1,0 +1,21 @@
+$green: #27b99e;  //upstate-mint
+$link: $green;
+$green-dark: darken($link, 8%);
+$link-hover: $green-dark;
+$highlight: $green;
+$highlight-hover: $green-dark;
+
+$trans-black: rgba(0,0,0,.85);
+
+$bg-black: #111;
+$text: #CCC;
+
+$sans:Arial,Helvetica,Verdana,sans-serif;
+$serif:Georgia,Times,Times New Roman,serif;
+$mono:"Courier New",Courier,mono;
+
+$adelle: "adelle", Georgia, Times, "Times New Roman", serif;
+$proxima: "proxima-nova", Helvetica, Arial, sans-serif;
+
+$cdn: 'http://cloudfront.upstatement.com';
+$cdn_theme_path: 'http://cloudfront.upstatement.com/wp-content/themes/blades/';

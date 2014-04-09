@@ -1,0 +1,214 @@
+//
+// About page
+//
+
+.page-id-48 {
+	// Vertically center the message
+	.cover-overview {
+		padding-top: 45px;
+	}
+	// Vertically align slider buttons
+	@media (min-width: 800px) {
+		.slidenav .prev,
+		.slidenav .next {
+			bottom: 42px;
+		}
+	}
+}
+
+.about-intro {
+	padding-bottom: 40px;
+}
+
+.about-what {
+	margin-bottom: 60px;
+}
+
+.about-people {
+	.section-h {
+		margin-bottom: 50px;
+	}
+}
+
+.about-person-grid {
+	@media (min-width: 600px) and (max-width: 899px){
+		@include media-grid(2, 60px);
+	}
+
+	@media (min-width: 900px){
+		@include media-grid(3, 60px);
+	}
+}
+
+html.ie8 .about-person {
+	@media (min-width: 600px){
+		min-height: 250px;
+	}
+}
+
+.about-person {
+	margin-bottom: 60px;
+	.h3 {
+		font-size: 21px;
+		margin: 10px 0;
+	}
+	.txt {
+		@extend .txt-dark;
+		margin-bottom: 6px;
+	}
+
+	.icn-box {
+		float: left;
+		position: relative;
+		width: 70px;
+		height: 70px;
+		margin: 0px 10px 0 0;
+	}
+
+	.icn {
+		position: absolute;
+		top: 0;
+		@include box-shadow(0px 2px 0px #1d1d1d);
+		width: 70px; //1px bigger to cover the face
+		height: 70px;
+		background-color: #000;
+		border: 1px solid #000;
+		@include border-radius(75px);
+		@include trans;
+	}
+
+	.face {
+		position: absolute;
+		top: 0;
+		@include box-shadow(0px 2px 0px #1d1d1d);
+		width: 70px;
+		height: 70px;
+		@include border-radius(75px);
+		@include trans;
+		opacity: 0;
+	}
+
+	&:hover {
+		.icn  {	opacity: 0;	}
+		.face { opacity: 1; }
+	}
+}
+
+
+.about-person-title {
+	font-size: 14px;
+	font-family: $proxima;
+	margin-bottom: 20px;
+
+	span {
+		color: #666;
+	}
+}
+
+.about-person-name a {
+	@include trans;
+
+	&:hover {
+		color: #27b99e;
+		@include trans;
+	}//hover
+}
+
+.about-person-twtr {
+	font-size: 14px;
+	font-family: $proxima;
+	color: #ccc;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+//
+// Individual pages
+//
+
+.bio-content {
+	height: auto;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	padding-bottom: 70px;
+
+
+	@media (min-width:1050px) {
+		min-height: 1050px;
+		height: 1050px;
+		padding-bottom: 0px;
+		background-repeat:no-repeat;
+		background-position:top center;
+		@include background-size(cover);
+		-webkit-background-size:cover !important;
+	} // bio-content media query
+}
+
+.bio-wrap {
+	float: none;
+	background-color: none;
+	margin: 0px 25px;
+
+	@media (min-width:768px) {
+		margin: 0px 75px;
+	}
+
+	@media (min-width:1050px) {
+		float: right;
+		margin-top: 50px;
+		padding: 10px 40px 70px 40px;
+		margin-right: 20px;
+		min-width: 460px;
+		max-width: 600px;
+		background-color: rgba(255, 255, 255, 0.9);
+	}
+
+	@media (min-width: 1200px) {
+		margin-right: 20px;
+	}
+
+	.ss-icon {
+		color:inherit;
+	}
+}
+
+.bio-img {
+	display: block;
+	max-width: 1050px;
+	width: 100%;
+
+	@media (min-width:1050px) {
+		display: none;
+	}
+}
+
+.bio-name {
+	@extend .h1;
+	padding: 30px 0 0 0;
+	margin: 0 0 10px 0;
+	color: #000;
+	font-weight: 300;
+	font-size: 30px;
+
+	@media (min-width:1050px) {
+		font-size: 45px;
+	}
+}
+
+.bio-txt {
+	@extend .txt;
+	color: #333;
+	font-size: 17px;
+	font-weight: 400;
+	line-height: 155%;
+	> a {
+		color: $highlight;
+	}
+
+	@media (min-width:1050px) {
+		font-size: 19px;
+		margin-bottom: 22px;
+	}
+}

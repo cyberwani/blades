@@ -1,0 +1,42 @@
+%btn-large {
+	font-family: $proxima;
+	background-color: $link;
+	color: #FFF;
+	padding: 10px;
+	@include border-radius(8px);
+
+	&:hover {
+		background-color: darken($link, 10%);
+		color: #FFF;
+	}
+
+	&.center {
+		text-align: center;
+		margin: 0 auto;
+		display: block;
+		width: 130px;
+	}
+}
+
+a.btn-large {
+	@extend %btn-large;
+}
+
+.portfolio-btn-small {
+	@include input-default;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font: 600 13px $proxima;
+	background-color: #27B99E;
+	@include text-shadow(1px 1px 1px rgba(0,0,0,.1));
+	padding: 4px 14px 4px;
+	color: #fff;
+	border-radius: 12px;
+	@include trans;
+	&:hover {
+		background-color: shade(#27B99E, 7%);
+	}
+	&:active {
+		background-color: shade(#27B99E, 14%);
+	}
+}

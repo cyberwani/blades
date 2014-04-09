@@ -1,0 +1,512 @@
+// might not use this
+.blog-window {
+	height: 350px;
+	@include background-size(cover);
+}
+
+.blog-bg {
+	// background-size: cover;
+	background-repeat: repeat;
+}
+
+.blog-banner-image {
+	width:100%;
+	max-width:100%;
+	.postid-1209 & {
+		background-color:white;
+	}
+}
+
+
+/* ============================================= */
+/*	Blog archive					   			 */
+/* ============================================= */
+
+#archive-blog, .hp-blog-list {
+	.h1 {
+		color: #1d1d1d;
+	}
+
+	.archive-blog-h1 {
+		@extend .h1;
+		color: #666;
+		padding: 10px 0;
+	}
+
+	.h3 {
+		color: #CCC;
+	}
+
+	.txt, .txt-lg {
+		@extend .txt-dark;
+	}
+
+	.read-more {
+		@extend .txt;
+		color: #444;
+
+		&:hover {
+			color: $highlight-hover;
+		}
+	}
+}
+
+.blog-small {
+	.txt {
+		margin-bottom: 40px;
+	}
+}
+
+#archive-blog .blog-small,
+.hp-blog-list .blog-small  {
+	.h3:hover,
+	.read-more:hover {
+		color: #fff;
+	}
+}
+
+.article-hgroup {
+	margin-bottom: 50px;
+}
+
+.blog-author {
+	font: 600 14px/20px $proxima;
+	margin: 10px 0;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #444;
+	.article-hgroup & {
+		text-align: center;
+	}
+
+	span {
+		color: #666;
+		font-family: $serif;
+		font-style: italic;
+		text-transform: capitalize;
+		font-weight: normal;
+	}
+}
+
+.blog-featured-mod {
+	.read-more {
+		color: $highlight;
+	}
+
+	@media (min-width: 900px){
+		@include media-grid(2, 60px);
+	}
+}
+
+.featured-wrapper {
+	background-color: #fff;
+}
+
+.blog-featured {
+	margin-bottom: 60px;
+}
+
+.blog-featured-h {
+	@media (min-width: 500px) {
+		font-size: 38px;
+	}
+}
+
+.blog-feat-img {
+	display: block;
+	float: right;
+	width: 100px;
+	height: 100px;
+	margin: 10px 0 10px 20px;
+	overflow: hidden;
+	@include box-shadow(0px 0px 10px #CCC);
+	@include border-radius(100px);
+
+	@media (min-width: 500px){
+		float: right;
+		width: 140px;
+		height: 140px;
+		margin-top: -14px;
+	}
+
+	@media (min-width: 900px){
+		width: 170px;
+		height: 170px;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+.blog-cron {
+	padding-top: 20px;
+
+	@media (min-width: 600px) and (max-width: 959px){
+		@include media-grid(2, 60px);
+	}
+
+	@media (min-width: 960px){
+		@include media-grid(3, 60px);
+	}
+
+	.blog {
+		margin: 0 0 30px 0;
+	}
+}
+
+//Quick and shitty IE8 media-grid fix:
+html.ie8 .blog-cron .media-block {
+		@media (min-width: 600px) and (max-width: 959px){
+			height: 225px;
+		}
+		@media (min-width: 960px) {
+			height: 400px;
+		}
+}
+
+.blog-load-more {
+	display: block;
+	width: 80px;
+	height: 80px;
+	padding: 24px 20px 20px;
+	margin: 0 auto 0;
+	text-align: center;
+	@include border-radius(100px);
+	background-color: #222;
+	color: #fff;
+	font-family: $proxima;
+	@media (min-width: 600px) {
+		margin-top: -20px;
+	}
+	.arrow {
+		position: relative;
+		top: -2px;
+		@include svg(arrow-down);
+		display: block;
+		height: 25px;
+		width: 30px;
+		margin: auto;
+		@include trans;
+	}
+	&:hover .arrow {
+		top: 4px;
+	}
+	.more-txt {
+		text-transform: uppercase;
+		font-size: 11px;
+		letter-spacing: 1px;
+	}
+	.more-txt,
+	.arrow {
+		opacity: .65;
+	}
+}
+
+.archive-blog-ftr {
+	padding: 60px 20px 20px;
+
+	.xoxo {
+		.widget-container {
+			@extend .media-block;
+			margin-bottom: 20px;
+
+			.widget-title {
+				@extend .h4;
+			}
+
+			ul li {
+				@include inline-block;
+				// margin: 0 3px 3px 0;
+				a {
+					padding: 5px;
+					background-color: #000;
+					display: block;
+					color: #666;
+
+					&:hover {
+						color: $highlight;
+					}
+				}
+			}
+		}
+	}//.xoxo
+}
+
+
+#searchform {
+	background-color: #000;
+	border: 1px solid #1d1d1d;
+	@include border-radius(8px);
+	padding: 10px;
+	input {
+		margin-top: 10px;
+	}
+	input[type="text"] {
+		width: 100%;
+	}
+}
+
+
+/* ============================================= */
+/*	Blog detail 			 					 */
+/* ============================================= */
+
+.content-wrapper {
+	background-color: #FFF;
+	padding: 20px 0;
+
+	@media (min-width: 900px){
+		padding: 30px 0;
+		margin: 0 auto;
+
+		&.windowed {
+			margin-top: -200px;
+		}
+	}
+
+	.wrapper {
+		max-width: 780px;
+		margin: auto;
+	}
+}
+
+
+
+// Used to create better line breaks above certain sizes
+.br {
+	@media (min-width: 600px) {
+		display: block;
+	}
+}
+
+.read-more-mod {
+	background-color: #f7f7f7;
+	padding: 20px 20px 20px 20px;
+	@include pie-clearfix;
+	border-top: 1px solid #ddd;
+
+	@media (min-width: 760px) {
+		@include ui-grid-lr(25%, 75%, 0%);
+	}//mq
+}//read-more-mod
+
+.read-more-overline {
+	color: #333;
+	margin-bottom: 5px;
+	padding-right: 20px;
+	font-size: 13px;
+}
+
+.read-more-meta-mod {
+	margin-bottom: 20px;
+}
+
+.read-more-detail-mod {
+	@media (min-width: 760px) {
+		border-left: 1px solid #ddd;
+		padding-left: 20px;
+	}//mq
+}//read-more-detail-mod
+
+.read-more-tz {
+	font-size: 22px;
+	margin-bottom: 7px;
+
+	a {
+		color: $highlight;
+
+		&:hover {
+			color: $highlight-hover;
+		}//hover
+	}//a
+}//read-more-tz
+
+.read-more-source {
+	font-size: 15px;
+	font-style: italic;
+	word-wrap: break-word;
+}
+
+
+.video-topper-mod {
+	padding-top: 0px;
+}
+
+
+/* ============================================= */
+/*	Comments				   					 */
+/* ============================================= */
+
+.comments-mod {
+	max-width: 600px;
+	margin: 70px auto 0;
+}
+
+.comments {
+	color: #000;
+	// Hide pingbacks, they are annoying and unsightly! That's that shit we don't like!
+	.pingback {
+		display: none;
+	}
+}
+
+.blog-comment {
+	padding: 20px 0;
+}
+
+.comment-num {
+	height: 30px;
+	width: 30px;
+	font: 400 14px $adelle;
+	border: 1px solid rgb(204,204,204);
+	text-align: center;
+	padding: 4px 0;
+	margin: auto;
+	color: #666;
+	margin-bottom: 7px;
+	@include border-radius(100px);
+}
+
+.comment-author {
+	font: 600 16px/24px $adelle;
+	color: $highlight;
+	position:relative;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.comment-content {
+	max-width: 600px;
+	margin: auto;
+	p {
+		font: 400 16px/26px $proxima;
+		margin: 0 0 20px 0;
+	}
+	a {
+		color: $link;
+	}
+}
+
+.respond-h {
+	text-align: center;
+}
+
+.respond {
+	margin-bottom: 40px;
+	color: #000;
+
+	#reply-title {
+		display: none;
+	}
+
+	p {
+		padding: 10px 0;
+		@include pie-clearfix;
+	}
+
+	label {
+		display: inline-block;
+		margin-bottom: 6px;
+		font: 600 14px/18px $proxima;
+	}
+
+	input[type="text"], textarea {
+		width: 100%;
+		display: block;
+		padding: 10px;
+		border: 1px solid #CCC;
+	}
+
+	code {
+		color: #666;
+	}
+
+	.form-allowed-tags {
+		width: 75%;
+		float: left;
+		border: 0;
+
+		@media (max-width: 600px){
+			display: none;
+		}
+	}
+
+	.form-submit {
+		border: 0;
+	}
+
+	#submit {
+		@extend .btn-large;
+		display: block;
+		margin: auto;
+	}
+
+	// This refers to the grouping of extra fields
+	// in addition to the comment textarea
+	#respond {
+	}
+
+	.logged-in-as {
+		font-size: 11px;
+		text-align: center;
+		color: #666;
+		margin-top: -10px;
+		> a {
+			color: $highlight;
+		}
+	}
+}
+
+// Extra styles that beautify individual blog posts
+/* ! ============================================= */
+
+/* ! Legacy Blog Styles				   			   */
+
+/* ! ============================================= */
+
+.img-mod img,
+.blog-img-container-reg img,
+.blog-img-container img,
+.blog-img-container-m img {
+	width: 100%;
+}
+
+.img-mod,
+.blog-img-container,
+.blog-img-container-reg,
+.blog-img-container-m,
+.blog-img-container-s,
+.blog-img-container-xs,
+.blog-img-container-bi,
+.blog-img-container-bi-reg {
+	margin: 24px 0 16px;
+	display: block;
+	position: relative;
+	}
+
+.blog-img-container-bi,
+.blog-img-container-bi-reg {
+	@include ui-grid-2;
+	}
+
+@media (min-width: 600px) {
+	.blog-img-container-s,
+	.blog-img-container-xs {
+		float: right;
+		margin-left: 40px;
+	}
+}
+
+.blog-caption-left {
+	font-style: italic;
+}
+
+.archive-blog-ftr {
+	.wrapper {
+		@media (min-width:600px){
+			@include ui-grid-3(33%, 33%, 33%);
+		}
+	}
+}

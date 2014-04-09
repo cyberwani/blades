@@ -1,0 +1,12 @@
+@include keyframes(swing) {
+	20% { @include transform(rotate(10deg)); }
+	40% { @include transform(rotate(-10deg)); }
+	60% { @include transform(rotate(5deg)); }
+	80% { @include transform(rotate(-5deg)); }
+	100% { @include transform(rotate(0deg)); }
+}
+
+@include keyframes(spin) {
+  from { @include transform(rotate(0deg)); }
+  to { @include transform(rotate(360deg)); }
+}

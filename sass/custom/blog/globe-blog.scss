@@ -1,0 +1,125 @@
+@import "custom/custom-base";
+
+.granary-grid {
+
+	@media (min-width: 400px) {
+		width: 70%;
+		margin: auto;
+	}
+
+	@media (min-width: 600px) {
+		width: 30%;
+		float: right;
+		margin: 8px 0 40px 40px;
+	}
+
+	@media (min-width: 900px) {
+		width: 40%;
+		margin-right: -10%;
+	}
+
+	.ui-block-1,
+	.ui-block-2 {
+		margin-bottom: 5%;
+		}
+	.blog-caption {
+		clear: both;
+		}
+	}
+
+.globe-hp-grid {
+	.ui-block-1,
+	.ui-block-2 {
+		margin-bottom: 5%;
+		}
+	.globe-hp-img {
+		margin-bottom: 5px;
+		padding: 16px;
+		border: 1px solid #e5e5e5;
+		@include box-shadow(rgba(0, 0, 0,.15) 0px 2px 7px);
+		}
+
+	@media (min-width: 650px) {
+		@include ui-grid-2;
+	} // mediaquery
+
+	@media (min-width: 850px) {
+		width: 120%;
+		margin-left: -10%;
+	} // mediaquery
+
+	@media (min-width: 1000px) {
+		width: 130%;
+		margin-left: -15%;
+	} // mediaquery
+
+}
+
+
+//
+// "How To Approach a Responsive Design"
+//
+
+
+// HARD is an acronym for the name of this post.
+// hehehe
+.hard-devices {
+	margin-left: -130px;
+	margin-right: -130px;
+}
+
+.usual-suspects {
+	max-width: 550px;
+	margin: 20px auto;
+	> img {
+		width: 100%;
+	}
+}
+
+.master-pages {
+	margin-top: 0;
+	margin-bottom: 40px;
+	.caption {
+		margin-top: -14px;
+		text-align: center;
+	}
+
+	@media (min-width: 600px) {
+		> img {
+			margin-right: -60px;
+			margin-top: -25px;
+		}
+		.caption {
+			text-align: right;
+		}
+	} //mq
+} //master-pages
+
+
+.paper-focus {
+	margin: 13px auto 20px;
+	max-width: 350px;
+	> img {
+		width: 100%;
+	}
+	@media (min-width: 600px) {
+		margin-left: 40px;
+	}
+	@media (min-width: 900px) {
+		margin-right: -10%;
+	}
+}
+
+.harrower {
+	max-width: 200px;
+	> img {
+		width: 100%;
+	}
+}
+
+.ical-img-container {
+	.caption {
+		margin-top: -10px;
+		text-align: center;
+	}
+}

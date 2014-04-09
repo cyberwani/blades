@@ -41,7 +41,7 @@
 			</div>-->
 
 			<div class="portfolio-content-before">
-				{% include ["portfolio/"~post.slug~"-before.twig", "portfolio/"~post.slug~".twig"] ignore missing %}
+				{% include ["custom/"~post.slug~"-before.twig", "custom/"~post.slug~".twig"] ignore missing %}
 			</div>
 
 			<div class="portfolio-content">
@@ -49,7 +49,7 @@
 					{% if layout.images %}
 						<div class="portfolio-image-set image-count-{{layout.images|length}} {{layout.size|length ? layout.size}}">
 							{% for image in layout.images %}
-								<img class="lazy viz-resp {{layout.visibility|join(' ')}}" data-original="{{image.get_pathinfo.filename == image.get_pathinfo.filename|upper ? image.src : image.src|tojpg}}" data-src="{{image.get_pathinfo.filename == image.get_pathinfo.filename|upper ? image.src : image.src|tojpg}}" src="/wp-content/themes/blades/images/dev/placeholder.gif" alt="{{image.alt_text|raw}}" id="portfolio-img-{{image.ID}}"/>
+								<img class="lazy viz-resp {{layout.visibility|join(' ')}}" data-original="{{image.get_pathinfo.filename == image.get_pathinfo.filename|upper ? image.src : image.src|tojpg}}" data-src="{{image.get_pathinfo.filename == image.get_pathinfo.filename|upper ? image.src : image.src|tojpg}}" src="{{image.get_pathinfo.filename == image.get_pathinfo.filename|upper ? image.src : image.src|tojpg}}" alt="{{image.alt_text|raw}}" id="portfolio-img-{{image.ID}}"/>
 								<p>{{image.caption}}</p>
 							{% endfor %}
 						</div>
@@ -81,14 +81,14 @@
 					{% endif %}
 					{% if layout.acf_fc_layout == 'include' %}
 						<div class="portfolio-include">
-							{% include 'portfolio/' ~ layout.file_name ignore missing %}
+							{% include 'custom/' ~ layout.file_name ignore missing %}
 						</div>
 					{% endif %}
 				{% endfor %}
 			</div> <!-- /portfolio-content-->
 
 			<div class="portfolio-content-after">
-				{% include ["portfolio/"~post.slug~"-after.twig"] ignore missing %}
+				{% include ["custom/"~post.slug~"-after.twig"] ignore missing %}
 			</div>
 		</section> <!-- /portfolio-layouts -->
 
@@ -101,7 +101,7 @@
 	<section id="archive-tiles">
 		{% for tile in tiles %}
 			{% if tile.thumbnail.src %}
-				{% include 'tile.html' %}
+				{% include 'tile.twig' %}
 			{% endif %}
 		{% endfor %}
 	</section>

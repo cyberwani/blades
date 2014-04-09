@@ -1,0 +1,309 @@
+
+.txt-lg {
+	font: 300 17px/184% $proxima;
+	@media (min-width: 500px) {
+		font-size: 19px;
+	}
+	> p {
+		margin-bottom: 18px;
+	}
+}
+
+.txt {
+	font: 100 16px/150% $proxima;
+	margin: 0 0 20px 0;
+	color: #666;
+	> p {
+		margin-bottom: 18px;
+	}
+}
+
+.txt-sm {
+	font: 300 14px/150% $proxima;
+	color: #666;
+	> p {
+		margin-bottom: 18px;
+	}
+}
+
+.txt a, .txt-lg a{
+	color: $highlight;
+
+	&:hover {
+		color: $highlight-hover;
+	}
+}
+
+.txt-dark {
+	color: #666;
+	font-weight: 400;
+}
+
+.txt-center {
+	text-align: center;
+}
+
+.subline {
+	font: 100 23px/130% $adelle;
+	font-style: italic;
+	color: #888;
+	text-align: center;
+	margin: -10px 0px 20px 0px;
+
+	@media (min-width: 500px) {
+		font-size: 32px;
+	}//mq
+}
+
+.h1, .h2, .h3 {
+	font-family: $adelle;
+	font-weight: 100;
+}
+
+.h4 {
+	font-family: $proxima;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color: #fff;
+	margin-bottom: 20px;
+}
+
+.h1 {
+	font-size: 34px;
+	@media (min-width: 500px) {
+		font-size: 42px;
+	}
+}
+
+.h1-5 {
+	font-size:32px;
+	@media (min-width: 500px) {
+		font-size: 38px;
+	}
+}
+.h2 {
+	font-size: 30px;
+	margin-bottom: 20px;
+	@media (min-width: 500px) {
+		font-size: 36px;
+	}
+}
+.h3 {	font-size: 23px; margin-bottom: 10px;  }
+.h4 {	font-size: 14px;  }
+.h5 {	font-size: 16px;  }
+.h6 {	font-size: 12px;  }
+
+
+.tile-h4 {
+	margin: 10px 0 0 0;
+	color: #999;
+	font: 600 14px/17px $proxima;
+	@include trans;
+}
+
+.section-h {
+	@extend .h4;
+	margin: 50px auto 30px;
+	text-align: center;
+	.inset & {
+		margin-top: 20px;
+	}
+}
+
+.article-h1 {
+	@extend .h1;
+	padding: 30px 0 0 0;
+	margin: 0 0 20px 0;
+	color: #000;
+	text-align: center;
+	@media (min-width: 500px) {
+		font-size: 52px;
+	}
+}
+
+//grouped these together as they share a lot of text styles
+.article-txt {
+	color: #333;
+	margin-bottom: 20px;
+	padding-bottom: 30px;
+
+	p, ul, li, blockquote {
+		font: 300 17px/184% $proxima;
+		margin-bottom: 20px;
+		@media (min-width: 500px) {
+			font-size: 19px;
+		}
+	}
+
+	blockquote {
+		border-left: 4px solid $link;
+		padding: 10px 24px;
+		color: #666;
+		@media (min-width: 768px) {
+			margin-right: 30px;
+		}
+		p {
+			font-family: $adelle;
+			margin-bottom: 3px;
+		}
+	}
+
+	@extend .txt-defaults;
+}
+
+.article-txt-reverse {
+	@extend .article-txt;
+	color: #ccc;
+	p, ul, li, blockquote {
+		font-weight: 300;
+	}
+}
+
+.kicker {
+	font: 900 18px $proxima;
+	text-align: center;
+	position: relative;
+	padding-bottom: 12px;
+	margin: 0 auto 40px;
+	&:after {
+		@include content;
+		height: 0;
+		width: 200px;
+		margin: auto;
+		border-top: 1px solid #aaa;
+		@include absolute(n 0 0 0);
+	}
+}
+
+.dropcap {
+	font: 100 61px/104% $proxima;
+	display: block;
+	float: left;
+	margin-right: 8px;
+	margin-bottom: -6px;
+	@media (min-width: 500px) {
+		font-size: 72px;
+	}
+}
+
+.window-h1 {
+	font-family: $adelle;
+	font-weight: 100;
+	font-size: 32px;
+	padding:20px;
+	margin: 0px;
+	width: 50%;
+	background-color: rgba(0,0,0,.8);
+	color: #FFF;
+	text-align: left;
+	text-indent: none;
+}
+
+.cover-msg {
+	text-align: center;
+
+	.highlight {
+		color: #FFF;
+	}
+}
+
+/* ============================================= */
+/*	Text Defaults					   			 */
+/* ============================================= */
+
+
+.txt-defaults {
+	.attr {
+		font-size: 11px;
+		color: #999;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		margin-bottom: 0;
+	}
+
+	a {
+		color: $link;
+	}
+
+	ul {
+		list-style-type: disc;
+	}
+
+	ol {
+		list-style-type: decimal;
+	}
+
+	ul > li,
+	ol > li {
+		list-style-position: outside;
+		margin-left: 20px;
+		margin-bottom: 10px;
+	}
+
+	// spacing for heading elements
+	h2, h3, h4, h5, h6 {
+		margin: 65px 0 10px 0;
+	}
+
+	// Subheaders inside sections
+	// Follows .h2 style. Not sure why. (-tito)
+	.h3, h3 {
+		font: 100 30px $adelle;
+		margin-bottom: 16px;
+		@media (min-width: 500px) {
+			font-size: 36px;
+		}
+	}
+
+	// All other headers
+	h4, h5, h6 {
+		font: 600 18px/133% $proxima;
+	}
+
+	img {
+		display: block;
+		margin: auto;
+	}
+
+	// When images are inserted directly into post
+	// make sure they have some margin
+	> img {
+		margin: 20px 0;
+	}
+
+	//Use these to style images and stuff in blog posts
+	.img-border {
+		padding: 20px 0;
+		border-bottom: 1px dotted #CCC;
+		border-top: 1px dotted #CCC;
+	}
+
+	.caption {
+		font: 600 14px/16px $proxima;
+	}
+
+	.caption.right,
+	.alignright .caption {
+		text-align: right;
+	}
+
+	.alignnone {
+		width: 100%;
+		height: auto;
+		margin: 20px 0;
+
+		img {
+			margin: 20px 0;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.alignright {
+		@media (min-width: 600px) {
+			float: right;
+			margin: 0 0 20px 40px;
+		}
+	}
+}

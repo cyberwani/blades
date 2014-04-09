@@ -1,0 +1,970 @@
+@import "custom/custom-base";
+
+@include keyframes(ug-fade-in) {
+  0% {
+    left: 0%;
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: .5;
+  }
+  100%{
+    left: 12%;
+    opacity:1;
+  }
+}
+@include keyframes(ug-slide) {
+  0% {
+    margin-left: -100px;
+  }
+  100%{
+    margin-left: 0px;
+  }
+}
+
+$ug-break-1: 600px;
+$ug-break-2: 950px;
+
+$trans-time: .25s;
+
+$bg: #f4f6f1;
+
+// ## Project Styles
+// @import "mixins";
+
+
+// a 		{ 	text-decoration: none; color: inherit; }
+// strong	{	font-weight: bold;	}
+// em   	{	font-style: italic;	}
+// i 		{  	font-style: normal; }
+
+body {
+	background-color: #111;
+	-webkit-font-smoothing: antialiased;
+}
+
+.outer {
+	@include absolute(0 0 0 0);
+	width: 100%;
+	height: 100%;
+	display: table;
+}
+
+.inner {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+// .ups-btn {
+// 	@include input-default;
+// 	text-transform: uppercase;
+// 	letter-spacing: 1px;
+// 	font: 600 13px $proxima;
+// 	background-color: #27B99E;
+// 	@include text-shadow(1px 1px 1px rgba(0,0,0,.1));
+// 	padding: 4px 14px 4px;
+// 	color: #fff;
+// 	border-radius: 12px;
+// 	@include trans;
+// 	&:hover {
+// 		background-color: shade(#27B99E, 7%);
+// 	}
+// 	&:active {
+// 		background-color: shade(#27B99E, 14%);
+// 	}
+// }
+
+
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+
+// =================================
+// Feature Slider
+// =================================
+
+$feat-img-max: 800px;
+
+.bcom-feat-mod {
+	position: relative;
+}
+
+.bcom-feat-img-mod {
+	z-index: 0;
+	height: 220px;
+	max-width: $feat-img-max;
+	position: relative;
+	margin: 0 20px;
+	overflow: hidden;
+	background-color: #fff;
+	@include box-shadow(0 0 5px rgba(0,0,0,.1));
+	@include border-radius(6px 6px 0 0);
+
+	@include mq(500px) {
+		height: 320px;
+	}
+
+	@include mq(600px) {
+		height: 450px;
+	}
+
+	// Max width + margin
+	@include mq(841px) {
+		margin: auto;
+		height: 525px;
+	}
+}
+
+
+.video-ratio-mod {
+	width: 100%;
+	padding-bottom: 87.75%;
+	position: relative;
+}
+
+.swiper-img-mod,
+.swiper-caption-mod	{
+	@include trans;
+	.transition-active & {
+		opacity: 0 !important;
+	}
+}
+
+.bcom-feat-img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	@include absolute(0 0 0 0);
+}
+
+.bcom-feat-caption {
+	z-index: 1;
+	background-color: #222;
+	color: #fff;
+	padding: 16px 20px;
+	position: relative;
+	@include mq(400px) {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+}
+
+.bcom-feat-caption-inner {
+	max-width: $feat-img-max;
+	margin: 0 auto;
+	text-align: center;
+	@include mq(500px) {
+		text-align: left;
+	}
+}
+
+.bcom-feat-h,
+.bcom-feat-txt {
+	color: #fff;
+}
+
+.bcom-feat-h {
+	font: 600 18px $adelle;
+	margin-bottom: 6px;
+	@include mq(400px) {
+		font-size: 21px;
+	}
+}
+
+.bcom-feat-txt {
+	line-height: 160%;
+	@include mq(max, 400px) {
+		font-size: 15px;
+	}
+}
+
+//
+// Prev/Next Buttons
+//
+
+.bcom-feat-btns {
+	margin: -35px 0 20px;
+	@include mq(400px) {
+		margin-top: -45px;
+	}
+	@include mq(500px) {
+		margin: -2px 0 10px 20px;
+		float: right;
+	}
+}
+
+.bcom-feat-btn {
+	z-index: 10;
+	@include input-default;
+	display: inline-block;
+	@include size(40px);
+	padding: 10px;
+	text-align: center;
+	color: #fff;
+	@include border-radius(1px);
+	@include box-shadow(0px 0px 0 7px #222);
+	background-color: $highlight;
+	@include trans;
+	&:hover {
+		background-color: darken($highlight, 2.5%);
+	}
+
+	@include mq(500px) {
+		@include box-shadow(none);
+	}
+}
+
+.bcom-feat-next {
+	margin-left: 5px;
+}
+
+.bcom-feat-btn-arrow {
+	display: block;
+	text-indent: -9999em;
+	@include background-size(40px);
+}
+
+.bcom-feat-btn-arrow.next {
+	@include svg(arrow-right);
+}
+
+.bcom-feat-btn-arrow.prev {
+	@include svg(arrow-left);
+}
+
+
+// =================================
+// Swiper Styles
+// =================================
+
+$swiper-timing: cubic-bezier(0.645,0.045,0.355,1);
+
+.swiper-img-mod,
+.swiper-caption-mod {
+	margin-left: auto;
+	margin-right: auto;
+	position:relative;
+	overflow:hidden;
+	@include backface-visibility(hidden);
+	/* Fix of Webkit flickering */
+	z-index:1;
+	.swiper-slide {
+		width: 100%;
+		float: left;
+	}
+}
+
+.swiper-wrapper {
+	position:relative;
+	width:100%;
+	//@include transition-property(transform, left, top);
+	@include transition-duration(0s);
+	@include translate3d(0px,0,0);
+	@include transition-timing-function(ease-in);
+	@include pie-clearfix;
+}
+
+/* IE10 Windows Phone 8 Fixes */
+.swiper-wp8-horizontal {
+	-ms-touch-action: pan-y;
+}
+.swiper-wp8-vertical {
+	-ms-touch-action: pan-x;
+}
+
+
+
+// =================================
+// Nathan's Code
+// =================================
+
+.site-width {
+	max-width: 1050px;
+	padding: 0px 40px;
+	margin: 0 auto;
+}
+
+.bcom-stream-section {
+	overflow: hidden;
+	position: relative;
+	height: 600px;
+	margin-bottom: -55px;
+	&.noclick {
+		pointer-events: none;
+	}
+	@include mq(max, $ug-break-1) {
+		margin: 0 -20px;
+	}
+	@include mq($ug-break-1) {
+		// border-bottom: solid 1px #ccc;
+	}
+}
+
+.message-mod {
+	// margin-left: 50%;
+	@include trans;
+	color: rgb(51,51,51);
+	@include mq(max, $ug-break-1) {
+		position: absolute;
+		padding: 20px 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		min-height: 164px;
+		z-index: 1;
+		text-align: center;
+		background: #eef0f0;
+		margin: 0;
+		width: 100%;
+		border-top: solid 1px #ccc;
+	}
+	@include mq($ug-break-1){
+		.side-by-side & {
+			width: 40%;
+			margin-left: 60%;
+			margin-top: 14%;
+			float: left;
+			position: relative;
+		}
+	}
+}
+
+
+.stream-message {
+	opacity: 0;
+	pointer-events: none;
+	width: 100%;
+	margin-left: 0;
+	position: absolute;
+	@include trans($trans-time, opacity);
+	@include mq($ug-break-1) {
+		display: block;
+		position: absolute;
+	}
+	.side-by-side & {
+		@include mq($ug-break-1) {
+			@include animation(ug-slide .75s);
+		}
+	}
+}
+
+.stream-message-h {
+	padding: 0 15px;
+	font-size: 16px;
+
+	font: 600 16px $proxima;
+	margin-bottom: 7px;
+	@include mq($ug-break-1) {
+		padding: 0;
+	}
+	@include mq($ug-break-2) {
+		font-size: 20px;
+	}
+}
+
+.stream-message-p {
+	font: 400 15px/144% $proxima;
+	margin-bottom: 10px;
+	@include mq($ug-break-1) {
+		font: 300  16px/144% $proxima;
+	}
+	@include mq($ug-break-2) {
+		font-size: 20px;
+	}
+}
+
+
+.side-by-side,
+.hidden {
+	&.stream-sh-1 .stream-message-1,
+	&.stream-sh-2 .stream-message-2,
+	&.stream-sh-3 .stream-message-3,
+	&.stream-sh-4 .stream-message-4,
+	&.stream-sh-5 .stream-message-5,
+	&.stream-sh-6 .stream-message-6,
+	&.stream-sh-7 .stream-message-7 {
+		opacity: 1;
+		display: block;
+		pointer-events: auto;
+		position: static;
+		pointer-events: auto;
+		// @include trans;
+		// left: 25%;
+	}
+}
+.side-by-side {
+	&.focus .stream-img {
+		@include trans;
+		opacity: .5;
+	}
+	&.focus.stream-sh-1 .stream-img-1,
+	&.focus.stream-sh-3 .stream-img-3,
+	// &.focus.stream-sh-4 .stream-img-4,
+	&.focus.stream-sh-5 .stream-img-5,
+	&.focus.stream-sh-6 .stream-img-6,
+	&.focus.stream-sh-7 .stream-img-7  {
+		opacity: 1;
+	}
+	&.stream-sh-1 {
+		.stream-img-1,
+		.stream-img-3,
+		.stream-img-4,
+		.stream-img-5,
+		.stream-img-6,
+		.stream-img-7,
+		.stream-img-8 {
+			opacity: 1;
+		}
+	}
+}
+
+.ups-btn-4 {
+	.hidden & {
+		opacity: 0;
+		pointer-events: none;
+	}
+	@include mq(max, $ug-break-1) {
+		margin: 10px auto 0;
+	}
+
+	.noclick &{
+		pointer-events: none;
+	}
+}
+
+.device-content-mod {
+	margin: 0 auto;
+	width: 93%;
+	@include mq($ug-break-1) {
+		position: relative;
+		width: 50%;
+		margin: 0 25%;
+		@include trans(.5s);
+		.side-by-side & {
+			margin: 0 0 0 5%;
+		}
+	}
+}
+
+.ipad-browser-chrome {
+
+	display: block;
+	position: relative;
+	width: 100%;
+	padding-bottom: 180%;
+	@include mq(max, $ug-break-1) {
+		margin: 0 auto;
+		@include box-shadow(0 0 10px rgba(0,0,0,.15));
+		margin-top: 10px;
+		@include border-radius(3px);
+	}
+	@include mq($ug-break-1){
+		background-color: #000;
+		border-radius: 45px;
+		border: solid 2px #333;
+		&:before {
+			content: "\0020";
+			display: block;
+			margin: 9% auto 6%;
+			background-color: #222;
+			width: 4%;
+			padding-bottom: 4%;
+			border-radius: 50%;
+		}
+	}
+}
+
+.ipad-chrome {
+	width: 100%;
+}
+
+.ipad-screen-mod {
+	@include absolute(0 0 0 0);
+	overflow: hidden;
+	background-color: $bg;
+	@include mq(max, $ug-break-1) {
+		border-radius: 3px;
+	}
+	@include mq($ug-break-1) {
+		margin-top: 20%;
+		left: 4.25%;
+		right: 4.25%;
+		bottom: 12%;
+	}
+}
+
+.ipad-home-button {
+	display: none;
+	padding-bottom: 12%;
+	background: #1a1a1a;
+	bottom: 3.3%;
+	border-radius: 50%;
+	@include absolute-center(12% n);
+	@include box-shadow(0 0px 2.5px rgba(0, 0, 0, 0.2) inset);
+	&:after {
+		@include psuedo(30% n n 30%);
+		@include size(35%);
+		border-radius: 4px;
+		border: solid 1px #444;
+		// margin-left: -1px;
+		// margin-top: -1px;
+	}
+	@include mq($ug-break-1) {
+		display: block;
+	}
+}
+
+.stream-img-filter {
+	display: none;
+	z-index: 1;
+	@include user-select;
+	pointer-events: none;
+	float: left;
+	width: 100%;
+	@include absolute(0 0 n 0);
+	@include trans;
+	@include mq($ug-break-1) {
+		display: block
+	}
+}
+
+.stream-img-button,
+.stream-img-2,
+.stream-img {
+	width: 100%;
+	height: auto;
+	@include user-select;
+	pointer-events: none;
+	float: left;
+}
+
+
+.stream-img-2 {
+	.stream.hide-button & {
+	@include transition(width .5s cubic-bezier(0.490, 0.370, 0.445, 0.715) .25s, opacity .5s cubic-bezier(0.490, 0.370, 0.445, 0.715) 1s);
+		opacity: 1;
+		width: 100%;
+	}
+	.stream & {
+		width: 0;
+		opacity: 0;
+	}
+}
+
+.stream-img-button {
+	opacity: 1;
+	float: right;
+	width: 100%;
+	.hide-button & {
+		@include transition(opacity .25s cubic-bezier(0.490, 0.370, 0.445, 0.715) 0s, width .5s cubic-bezier(0.490, 0.370, 0.445, 0.715) .25s);
+		opacity: 0;
+		width: 0;
+	}
+}
+
+.stream-img-video {
+	.stream & {
+		height: 0;
+		opacity: 0;
+		width: 0;
+		@include trans(.5s);
+	}
+	.show-video.stream & {
+		width: 100%;
+		height: auto;
+		opacity: 1;
+	}
+}
+
+.stream-img-4 {
+	.show-video.stream & {
+		height: 0;
+		opacity: 0;
+	}
+}
+
+.img-credit {
+	display: none;
+	z-index: 9999;
+	color: white;
+	opacity: .5;
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+	// @include sans(em(12), 700);
+	@include mq($ug-break-1) {
+		display: block;
+	}
+}
+
+
+// video
+
+.bcom-video-parent {
+		position: relative;
+	@include mq(max, 600px) {
+		background-color: #eef0f0;
+	}
+}
+
+.bcom-laptop-img {
+	display: none;
+	@include mq(600px) {
+		display: block;
+	}
+}
+
+.bcom-laptop-video-mod {
+	position: relative;
+	padding-bottom: 62.4%;
+	margin-bottom: 50px;
+	@include mq(600px) {
+		padding: 0;
+		top: 18%;
+		position: absolute;
+		width: 58%;
+		left: 21%;
+		@include border-radius(2px);
+		padding-bottom: 36.3%;;
+	}
+}
+
+
+.bcom-img-video-mod {
+	width: 75%;
+	margin: 0 auto 50px;
+	border: 5px solid #e5e5e5;
+	@media (min-width: 600px) {
+		border-width: 10px;
+	}
+}
+
+.bcom-video {
+	@include mq(max, 600px) {
+		border-radius: 3px;
+		@include box-shadow(0 0 10px rgba(0,0,0,.3));
+		@include absolute(5% 5% 5% 5%);
+		width: 90%;
+		height: 90%;
+	}
+	width: 100%;
+	height: 100%;
+	@include absolute(0 0 0 0);
+}
+
+//  intro button
+
+a.bcom-proto-btn {
+	display: block;
+	margin: 40px auto 86px;
+	font-size: 13px;
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: .1em;
+	color: white;
+	background-color: #444;
+	text-align: center;
+	width: 237px;
+	border-radius: 18px;
+	padding: 2px 0 0px;
+	height: 36px;
+	@include trans;
+	&:hover {
+		color: white;
+		background-color: #27B99E;
+	}
+	&:active {
+		background-color: shade(#27B99E, 14%);
+	}
+}
+
+
+// Pull quote
+
+.pull-quote {
+	font: 300 20px $proxima;
+	color: rgb(51,51,51);
+	text-align: center;
+	@include mq(400px, 600px) {
+		font-size: 24px;
+	}
+	@include mq(600px, 800px) {
+		font-size: 32px;
+	}
+	@include mq(800px) {
+		font-size: 40px;
+	}
+}
+
+.pull-quote-author {
+	margin-top: 20px;
+	padding: 20px 0 5px;
+	color: rgb(51,51,51);
+	position: relative;
+	&:before {
+		@include content;
+		@include absolute-center (70px);
+		top: 0;
+		border-top: solid 1px rgb(51,51,51);
+	}
+}
+
+.pull-quote-title {
+	color: #999;
+}
+
+
+.pull-quote-title,
+.pull-quote-author {
+	font: 700 12px $proxima;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	text-align: center;
+	@include mq(600px) {
+		font-size: 14px;
+	}
+}
+
+.pull-quote-mod {
+	padding: 0px 20px;
+	margin-bottom: 50px;
+	max-width: 1000px;
+	margin: 0 auto 50px;
+	@include mq(400px) {
+		padding: 0px 40px;
+	}
+}
+
+// bcom card swiper
+
+.bcom-social-card-mod {
+	position: relative;
+	height: 150px;
+	margin-bottom: 50px;
+	overflow: hidden;
+	@include mq(700px) {
+		height: 300px;
+	}
+}
+
+
+.bcom-swiper-container,
+.bcom-swiper-slide {
+	width: auto;
+	height: 150px;
+	@include mq(700px) {
+		height: 300px;
+	}
+}
+
+.bcom-card-img {
+	height: 140px;
+	@include border-radius(3px);
+	@include box-shadow(0 0 4px rgba(0,0,0,.1));
+	border: solid 1px #ddd;
+	@include mq(700px) {
+		height: 280px;
+		@include border-radius(5px);
+		@include box-shadow(0 0 8px rgba(0,0,0,.1));
+	}
+}
+
+.bcom-swiper-slide {
+	float: left;
+	padding: 5px;
+	@include mq(700px) {
+		padding: 10px;
+	}
+}
+
+.bcom-card-btn {
+	z-index: 1;
+	@include input-default;
+	text-indent: -9999pc;
+	opacity: .7;
+	@include trans;
+	.bcom-social-card-mod:hover & {
+		opacity: 1;
+	}
+	&:after {
+		@include content;
+		display: block;
+		position: absolute;
+		@include absolute-center (n 36px);
+		@include size(20px 36px);
+		background-size: cover;
+		background-repeat: no-repeat;
+		@include mq(700px) {
+			@include absolute-center (n 54px);
+			@include size(30px 54px);
+		}
+	}
+}
+
+.bcom-card-btn-next {
+	@include absolute(0 0 0 n);
+	width: 20%;
+	&:after {
+		right: 20px;
+		background-image: url(../../../images/portfolio/bcom/bcom-arrow-next.png);
+	}
+}
+
+.bcom-card-btn-prev {
+	@include absolute(0 n 0 0);
+	width: 30%;
+	&:after {
+		left: 20px;
+		background-image: url(../../../images/portfolio/bcom/bcom-arrow-prev.png);
+	}
+}
+
+// bcom-logo-include
+
+.bcom-logo-include-mod {
+ 	text-align: center;
+	color: rgb(51,51,51);
+	font: 400 18px $proxima;
+	padding: 0 20px;
+	margin: auto;
+	@include mq(500px) {
+		@include media-grid(2, 50px);
+		padding: 0;
+	}
+}
+
+.bcom-logo {
+	background-color: red;
+	display: block;
+	margin: 0 auto 20px;
+}
+
+.bcom-logo-mod-inner {
+	@include mq(max, 500px) {
+		margin-bottom: 40px;
+	}
+}
+
+.bcom-logo-bcom {
+	@include size(144px 20px);
+	background: url(../../../images/portfolio/bcom/bcom-logo.svg) no-repeat;
+}
+.bcom-logo-globe {
+	@include size(187px 25px);
+	background: url(../../../images/portfolio/bcom/globe-logo.svg) no-repeat;
+	@include mq (500px) {
+		margin-top: -5px;
+	}
+}
+
+.bcom-logo-list {
+	border-top: 1px solid #ccc;
+}
+
+.bcom-logo-item {
+	font: 400 16px $proxima;
+	display: block;
+	padding: 14px 6px 16px;
+	border-bottom: 1px solid #ccc;
+}
+
+
+.bcom-logo-txt {
+	max-width: 300px;
+	margin: 0 auto;
+}
+
+// bcom user include
+.bcom-user-mod {
+	color: rgb(51,51,51);
+	padding: 0 20px;
+	max-width: 500px;
+	margin: 0 auto 50px;
+}
+
+.bcom-user-top-width {
+	max-width: 302px;
+	margin: 0 auto;
+}
+.bcom-user-top {
+	@include media-grid(2, 50px);
+	margin-bottom: 20px;
+}
+
+.bcom-user-list-h,
+.bcom-avatar-title {
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font: 700 14px $proxima;
+}
+
+.bcom-user-avatar{
+	display: block;
+	@include size(75px);
+	background: url(../../../images/portfolio/bcom/bcom-avatar.svg) no-repeat;
+	margin: 0 auto 10px;
+	border-radius: 50%;
+}
+
+.bcom-user-avatar-1 {
+	background-color: #777;
+}
+
+.bcom-user-avatar-2 {
+	background-color: #777;
+}
+
+.bcom-user-list-h {
+	margin-bottom: 15px;
+}
+
+.bcom-user-item {
+	max-width: 350px;
+	display: block;
+	margin: 0 auto 15px;
+	padding: 0 20px 15px;
+	font: 400 16px $proxima;
+	text-align: left;
+	border-bottom: solid 1px #ccc;
+ 	&:first-child {
+ 		border-top: solid 1px #ccc;
+ 		padding-top: 15px;
+ 	}
+ 	@include mq(500px) {
+ 		padding: 0 50px 15px;
+ 	}
+}
+
+.bcom-user-icon {
+	@include size(30px);
+	display: inline-block;
+	margin-right: 12px;
+	margin-bottom: -8px;
+	@include size(20px);
+	margin-bottom: -5px;
+}
+
+
+.bcom-user-icon-1 {
+	background: url(../../../images/portfolio/bcom/bcom-path.svg) no-repeat;
+}
+
+.bcom-user-icon-2 {
+	background: url(../../../images/portfolio/bcom/bcom-time.svg) no-repeat;
+}
+
+.bcom-user-icon-4 {
+	background: url(../../../images/portfolio/bcom/bcom-bounce.svg) no-repeat;
+}
+
+.bcom-user-icon-3 {
+	background: url(../../../images/portfolio/bcom/bcom-visit.svg) no-repeat;
+}
