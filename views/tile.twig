@@ -1,6 +1,6 @@
-<a class="media-block" id="tile-{{tile.post_name}}" href="{{tile.path}}">
+<a class="media-block" id="tile-{{tile.slug}}" href="{{tile.path}}">
 	<div class="tile">
-		<img class="tile-img lazy" src="{{tile.thumbnail.src|resize(250, 250)}}" alt="{{tile.title}}" />
-		<h3 class="tile-h3 a11y-only">{{tile.post_title}}</h3>
+		<img class="tile-img lazy" src="{{tile.thumbnail.src|resize(250, 250)}}" alt="{{tile.title|striptags}}" />
+		<h3 class="tile-h3 a11y-only">{{tile.title}}</h3>
 	</div>
 </a>
