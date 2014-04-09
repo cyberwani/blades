@@ -38,7 +38,7 @@
 		$data['next_button_url'] = '/blog/page/'.$next_page;
 	}
 	if ($api){
-		Timber::render('archive-blog-loop.twig', $data);
+		Timber::render('mods/archive-blog-loop.twig', $data);
 	} else {
 		Timber::render('archive-blog.twig', $data);
 	}
