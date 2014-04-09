@@ -10,8 +10,7 @@
 				$entry_manual[] = $e->ID;
 			}
 		}
-		$entry_manual = WPHelper::array_truncate($entry_manual, 3);
-
+		$entry_manual = TimberHelper::array_truncate($entry_manual, 3);
 
 		$fp = new TimberPost(3251);
 		$fp->squares = get_field('squares', $fp->ID);
@@ -36,26 +35,37 @@
 		$client_list = Timber::get_post('client-list');
 		$client_list = explode( "\n", $client_list->post_content);
 		$client_list = array_unique($client_list);
-		//array_uintersect($client_list, $portfolio_client_names);
 		foreach($client_list as &$client){
 			$client = trim($client);
 		}
 		$data['clients'] = array_merge($data['clients'], $client_list);
 		$clients = array();
+		$used_client_names = array();
 		foreach($data['clients'] as $client){
 			if (is_string($client)){
 				$client_name = $client;
 				$new_client = new stdClass();
 				$new_client->client_name = $client_name;
-				$clients[] = $new_client;
+				if (!in_array($client_name, $used_client_names)){
+					$used_client_names[] = $client_name;
+					$clients[] = $new_client;
+				}
 			} else if (!$client->client_name){
 				$client->client_name = $client->post_title;
-				$clients[] = $client;
+				$client_name = $client->client_name;
+				if (!in_array($client_name, $used_client_names)){
+					$used_client_names[] = $client_name;
+					$clients[] = $client;
+				}
 			} else {
-				$clients[] = $client;
+				$client_name = $client->client_name;
+				if (!in_array($client_name, $used_client_names)){
+					$used_client_names[] = $client_name;
+					$clients[] = $client;
+				}
 			}
 		}
 		$data['clients'] = $clients;
-		WPHelper::osort($data['clients'], 'client_name');
+		TimberHelper::osort($data['clients'], 'client_name');
 		Timber::render('archive-portfolio.twig', $data);
-	
+
