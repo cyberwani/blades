@@ -57,10 +57,16 @@
 /* ============================================= */
 
 // Used for content striping on black backgrounds
+// FIX: all of these insets need better names
 .inset {
 	background-color: #161616;
 	border-top: 1px solid #222;
 	border-bottom: 1px solid #222;
+	padding: 30px 0;
+}
+
+// when background color and borders arent needed
+.inset-dark {
 	padding: 30px 0;
 }
 
