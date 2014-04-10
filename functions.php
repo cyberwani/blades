@@ -17,7 +17,7 @@
 
 
 	if (function_exists('register_options_page')){
-		register_options_page('Logo Pond');
+		register_options_page('Homepage');
 		register_options_page('Site Info');
 	}
 
