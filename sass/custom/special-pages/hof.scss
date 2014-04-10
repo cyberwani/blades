@@ -1,0 +1,131 @@
+@import "custom/custom-base";
+@import "site/partials/variables";
+
+/* ============================================= */
+/*	Hall of Fame
+	Sorry I put it here     */
+/* ============================================= */
+
+.hof-cover {
+	@media (min-width: 768px){
+		padding: 200px 0 0 0;
+		background-image: url(/wp-content/themes/blades/images/hof/john-2.jpg);
+		background-attachment: fixed;
+		background-size: 100%;
+		background-size: cover;
+		height: 800px;
+	}
+}
+
+.hof-cover-text {
+	position: relative;
+	padding: 50px;
+	border: 5px solid #FFF;
+	max-width: 600px;
+	margin: 0 auto;
+	background-color: rgba(255,255,255,.4);
+	text-align: center;
+	color: #FFF;
+
+	&.dark {
+		border: 5px solid #000;
+		background-color: rgba(0,0,0,.2);
+		color: #000;
+	}
+}
+
+.hof-overline {
+	font-family: $proxima;
+	font-size: 14px;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+
+	&.center {
+		text-align: center;
+		margin: 0 0 40px 0;
+	}
+}
+
+.hof-h1 {
+	font-family: $adelle;
+	font-weight: 800;
+	font-size: 62px;
+	border-bottom: 1px solid #FFF;
+	color: #2d2d2d;
+	margin-bottom: 20px;
+}
+
+.hof-quote-hed {
+	font-family: $adelle;
+	font-weight: 400;
+	font-size: 32px;
+}
+
+.hof-quote-wrapper {
+	@include pie-clearfix;
+}
+
+.hof-quote-mod {
+	font-family: $adelle;
+	font-weight: 200;
+
+	@media(min-width: 768px){
+		font-size: 32px;
+		position: relative;
+		max-width: 600px;
+		border: 5px solid #EEE;
+		padding: 40px;
+		clear: both;
+
+		margin: 0 auto 60px auto;
+	}
+}
+
+.hof-quote-attr {
+	padding: 5px 0 0 0;
+	font-weight: 800;
+	font-size: 16px;
+	text-align: center;
+	height: 40px;
+	width: 150px;
+	position: absolute;
+	bottom: -23px;
+	left: 37%;
+	background-color: pink;
+	border: 5px solid #EEE;
+	background-color: #FFF;
+	margin: 0 auto;
+
+	&:hover {
+		color: #000;
+	}
+}
+
+.hof-icon {
+	position: absolute;
+	top: -40px;
+	left: 43%;
+	width: 75px;
+	height: 75px;
+	margin: 0 auto 0 auto;
+}
+
+
+
+.hof-imagebreak {
+	@media(min-width: 768px){
+		height: 800px;
+		padding: 200px 0 0 0;
+		background-size: cover;
+		background-attachment: fixed;
+
+
+		&.john-1 {
+			background-image: url(/wp-content/themes/blades/images/hof/cover.jpg);
+		}
+
+		&.john-npr {
+			background-image: url(/wp-content/themes/blades/images/hof/john-npr.jpg);
+		}
+	}
+}

@@ -1,0 +1,213 @@
+@import "custom/custom-base";
+@import "site/partials/variables";
+
+
+$timber: #009344;
+
+//
+//Fade Animation
+//
+
+@-webkit-keyframes fadeIn { from { opacity:0;} to { opacity:1;} }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+
+.fade-in {
+    opacity:0;  /* make things invisible upon start */
+    -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+
+    -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    animation-duration:1s;
+}
+
+//
+//Page Structure
+//
+
+
+.page-wrapper {
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+.page-body {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 30px;
+	background-color: #FFF;
+}
+
+
+//
+// Page top stuff
+//
+
+.page-topper {
+	background-color: $timber;
+	@include background-image(radial-gradient(#5EBA4B, $timber));
+	padding: 60px 0 0 0;
+	@include pie-clearfix;
+	text-align: center;
+
+	@media (min-width: 600px){
+		height: 400px;
+	}
+}
+
+.page-topper:after {
+	@media(min-width: 800px){
+		content: "\0020";
+		width: 100%;
+		height: 0;
+		padding-bottom: 5.5%;
+		// background: url(/wp-content/themes/blades/images/dev/covers/round-mask.png) 50% 0% no-repeat;
+		background-size: 140%;
+		bottom: -2px;
+	}
+}
+
+
+.logo {
+	text-indent: -10000px;
+	width: 100%;
+	height: 60px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 80%;
+
+	@media (min-width: 400px){
+		width: 400px;
+		height: 100px;
+		margin: 80px auto 30px auto;
+	}
+}
+
+.timber-logo {
+	background-image: url(/wp-content/themes/blades/images/timber/timber-logo.svg);
+}
+
+.social-tools {
+	float: left;
+}
+
+.page-nav {
+	margin: 0 auto;
+	padding: 0;
+
+	li {
+		@include inline-block;
+		margin: 0 10px 10px 0;
+
+		a {
+			@include border-radius(20px);
+			@include trans;
+			font-family: $proxima;
+			color: #FFF;
+			font-size: 16px;
+			display: block;
+			padding: 10px;
+
+			&:hover {
+				background-color: rgba(0,0,0,.25);
+			}
+
+			&.download {
+				padding: 10px 40px 10px 10px;
+				background-image: url(/wp-content/themes/blades/images/timber/download-arrow.svg);
+				background-position: center right;
+				background-repeat: no-repeat;
+			}
+		}
+	}
+}//page-nav
+
+
+//
+//Typography
+//
+
+.h2 {
+	font-family: $proxima;
+	font-weight: 100;
+	font-size: 24px;
+	margin: 0 0 20px 0;
+
+	@media(min-width: 600px){
+		font-size: 32px;
+		margin: 0 0 30px 0;
+	}
+}
+
+.tagline {
+	text-align: center;
+	margin: 40px 0 80px 0;
+}
+
+
+.txt-large {
+	font-size: 16px;
+	line-height: 22px;
+	margin: 0 0 20px 0;
+
+	a {
+		color: $timber;
+	}
+
+	@media(min-width: 600px){
+		font-size: 20px;
+		line-height: 28px;
+		margin: 0 0 30px 0;
+		font-family: $proxima;
+	}
+}
+
+//
+//Page Sections
+//
+
+
+.section-head {
+	font-family: $proxima;
+	font-weight: 800;
+	font-size: 24px;
+	margin: 50px 0;
+}
+
+
+.section {
+	border-bottom: 1px solid #EEE;
+	padding: 0 0 30px 0;
+
+	@media(min-width: 600px){
+		padding: 0 0 60px 0;
+	}
+}
+
+
+.center-txt {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+//
+//Code Snippets
+//
+
+.code-examples {
+	padding: 30px;
+	background-color: #EEE;
+}
+
+.side-by-side {
+	@media(min-width: 800px){
+		@include ui-grid-lr(50%, 50%, 2%);
+	}
+}
