@@ -6,6 +6,8 @@
 /*	Hall of Fame */
 /* ============================================= */
 
+body {-webkit-font-smoothing: antialiased;}
+
 .hof-cover {
 	@include background-size(cover);
 	background-image: url(/wp-content/themes/blades/images/hof/john-2.jpg);
@@ -17,6 +19,11 @@
 		background-size: cover;
 		background-position: top center;
 		height: 800px;
+	}
+	.wrapper {
+		@include mq(max, 768px) {
+			padding: 50px 30px;
+		}
 	}
 }
 
@@ -57,18 +64,30 @@
 }
 
 .hof-h1 {
+	font-size: 24px;
 	font-family: $adelle;
 	font-weight: 800;
-	font-size: 62px;
+	padding-bottom: 20px;
 	border-bottom: 1px solid #FFF;
 	color: #2d2d2d;
 	margin-bottom: 20px;
+	@include mq(600px) {
+		font-size: 62px;
+		padding-bottom: 0;
+	}
 }
 
 .hof-quote-hed {
 	font-family: $adelle;
 	font-weight: 400;
-	font-size: 32px;
+	font-size: 22px;
+	@include text-shadow(1px 1px 1px rgba(0,0,0,.3));
+	@include mq(768px) {
+		font-size: 32px;
+	}
+	.hof-cover-text:hover & {
+		@include text-shadow(0px 0px 0px rgba(0,0,0,.3));
+	}
 }
 
 .hof-quote-wrapper {
@@ -78,12 +97,20 @@
 .hof-quote-mod {
 	font-family: $adelle;
 	font-weight: 400;
+	font-size: 18px;
+	line-height: 26px;
 	max-width: 600px;
 	border-top: 5px solid #EEE;
 	padding: 20px 0 ;
 	clear: both;
 	font-size: 18px;
+	margin: 0 auto;
+	text-align: left;
 	text-align: center;
+
+	@include mq(max, 768px) {
+		color: #555;
+	}
 
 	@media(min-width: 768px){
 		@include trans;
@@ -105,11 +132,11 @@
 	padding: 8px;
 	font-weight: 800;
 	font-size: 16px;
-	text-align: center;
-	border: 5px solid #EEE;
 	background-color: #FFF;
 	margin: 20px auto;
 	line-height: 16px;
+	text-align: center;
+	border: 3px solid #EEE;
 
 	&.gus {
 		bottom: -32px;
@@ -120,6 +147,7 @@
 	}
 
 	@media (min-width: 768px){
+		border: 5px;
 		margin: 0 auto;
 		width: 295px;
 		position: absolute;
@@ -129,21 +157,15 @@
 }
 
 .hof-icon {
-	position: absolute;
+	@include absolute-center(75px);
 	top: -40px;
-	left: 43%;
-	width: 75px;
-	height: 75px;
-	margin: 0 auto 0 auto;
 }
 
 .hof-imagebreak {
-	@media(min-width: 768px){
-		height: 800px;
-		padding: 200px 0 0 0;
+		// height: 800px;
+		padding: 50px 0;
 		background-size: cover;
 		background-position: center center;
-		background-attachment: fixed;
 
 
 		&.john-1 {
@@ -157,5 +179,10 @@
 		&.john-3 {
 			background-image: url(/wp-content/themes/blades/images/hof/john-3.jpg);
 		}
+
+	@include mq(768px) {
+		background-attachment: fixed;
+		height: 800px;
+		padding: 200px 0 0 0;
 	}
 }
