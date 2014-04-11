@@ -7,12 +7,14 @@
 /* ============================================= */
 
 .hof-cover {
+	@include background-size(cover);
+	background-image: url(/wp-content/themes/blades/images/hof/john-2.jpg);
+	background-repeat: no-repeat;
+
 	@media (min-width: 768px){
 		padding: 200px 0 0 0;
-		background-image: url(/wp-content/themes/blades/images/hof/john-2.jpg);
 		background-attachment: fixed;
 		background-size: 100%;
-		@include background-size(cover);
 		height: 800px;
 	}
 }
@@ -26,11 +28,17 @@
 	background-color: rgba(255,255,255,.4);
 	text-align: center;
 	color: #FFF;
+	@include trans;
 
 	&.dark {
 		border: 5px solid #000;
 		background-color: rgba(0,0,0,.2);
 		color: #000;
+	}
+
+	&:hover {
+		background-color: rgba(255,255,255,.9);
+		color: #666;
 	}
 }
 
@@ -39,6 +47,7 @@
 	font-size: 14px;
 	letter-spacing: 5px;
 	text-transform: uppercase;
+	color: #CCC;
 
 	&.center {
 		text-align: center;
@@ -67,37 +76,54 @@
 
 .hof-quote-mod {
 	font-family: $adelle;
-	font-weight: 200;
+	font-weight: 400;
+	max-width: 600px;
+	border-top: 5px solid #EEE;
+	padding: 20px 0 ;
+	clear: both;
+	font-size: 18px;
+	text-align: center;
 
 	@media(min-width: 768px){
-		font-size: 32px;
-		position: relative;
-		max-width: 600px;
-		border: 5px solid #EEE;
-		padding: 40px;
-		clear: both;
+		@include trans;
 
+		&:hover {
+			color: #222;
+		}
+
+		font-size: 24px;
+		line-height: 34px;
+		position: relative;
+		padding: 60px;
+		border: 5px solid #EEE;
 		margin: 0 auto 60px auto;
 	}
 }
 
 .hof-quote-attr {
-	padding: 5px 0 0 0;
+	padding: 8px;
 	font-weight: 800;
 	font-size: 16px;
 	text-align: center;
-	height: 40px;
-	width: 150px;
-	position: absolute;
-	bottom: -23px;
-	left: 37%;
-	background-color: pink;
 	border: 5px solid #EEE;
 	background-color: #FFF;
-	margin: 0 auto;
+	margin: 20px auto;
+	line-height: 16px;
+
+	&.gus {
+		bottom: -32px;
+	}
 
 	&:hover {
 		color: #000;
+	}
+
+	@media (min-width: 768px){
+		margin: 0 auto;
+		width: 295px;
+		position: absolute;
+		bottom: -23px;
+		left: 25%;
 	}
 }
 
@@ -110,13 +136,11 @@
 	margin: 0 auto 0 auto;
 }
 
-
-
 .hof-imagebreak {
 	@media(min-width: 768px){
 		height: 800px;
 		padding: 200px 0 0 0;
-		@include background-size(cover);
+		background-size: 100%;
 		background-attachment: fixed;
 
 
@@ -126,6 +150,10 @@
 
 		&.john-npr {
 			background-image: url(/wp-content/themes/blades/images/hof/john-npr.jpg);
+		}
+
+		&.john-3 {
+			background-image: url(/wp-content/themes/blades/images/hof/john-3.jpg);
 		}
 	}
 }
