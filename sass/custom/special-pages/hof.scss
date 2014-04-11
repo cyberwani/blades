@@ -11,10 +11,11 @@
 	background-image: url(/wp-content/themes/blades/images/hof/john-2.jpg);
 	background-repeat: no-repeat;
 
-	@media (min-width: 768px){
+	@media (min-width: 768px) {
 		padding: 200px 0 0 0;
 		background-attachment: fixed;
-		background-size: 100%;
+		background-size: cover;
+		background-position: top center;
 		height: 800px;
 	}
 }
@@ -140,7 +141,8 @@
 	@media(min-width: 768px){
 		height: 800px;
 		padding: 200px 0 0 0;
-		background-size: 100%;
+		background-size: cover;
+		background-position: center center;
 		background-attachment: fixed;
 
 
