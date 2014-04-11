@@ -76,7 +76,7 @@
 		}
 
 		function register_post_type_highlights(){
-			register_post_type('highlights', array(
+			register_post_type('highlight', array(
 				'label' => 'Highlights',
 				'description' => '',
 				'public' => true,
