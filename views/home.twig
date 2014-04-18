@@ -1,17 +1,7 @@
 {% extends "base.twig" %}
 {% block content %}
 
-<a class="home-banner" style="display:block" href="/portfolio/">
-	<img class="home-banner-img" src="/wp-content/themes/blades/images/homepage/hp-hero-wood-bcom-celtics.jpg" alt="Upstatement Banner Image, showing screens from Boston.com, NPR, and Northwestern University">
-</a> <!-- /home-banner -->
-
-<div class="hp-topper-intro">
-	<div class="portfolio-h-outer">
-		<div class="portfolio-h-inner">
-			<h1 class="txt-lg hp-intro-txt">We specialize in crafting content-focused websites for clients like <a href="/portfolio/boston-com/">Boston.com</a>, <a href="upstatement.com/portfolio/random-house/" style="white-space:nowrap;">Random House</a>, <a href="/portfolio/about-npr/">NPR</a> and <a href="/portfolio/global-news/">Global News</a>.</h1>
-		</div><!-- /portfolio-h-inner -->
-	</div><!-- /portfolio-h-outer -->
-</div><!-- /hp-topper-intro -->
+{% include 'custom/home-stage-globe.twig' %}
 
 <section class="hp-themes home-inset">
 	<div class="wrapper">
