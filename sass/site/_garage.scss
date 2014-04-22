@@ -71,7 +71,6 @@ The G A R A G E
 
 .garage-promo {
 	width: 100%;
-	height: 300px;
 	padding: 10px;
 	margin-bottom: 40px;
 	background-color: #FFF;
@@ -82,8 +81,4 @@ The G A R A G E
 	@include media-grid(2, 40px);
 }
 
-.timber {
-	background-color: #009344;
-	height: 280px;
-}
 
