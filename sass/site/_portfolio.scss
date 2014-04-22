@@ -37,12 +37,12 @@
 .portfolio-promo-hgroup {
 	color: #1d1d1d;
 	text-align: center;
-	background-color: rgba(255,255,255,.9);
-	padding: 20px 20px 40px 20px;
-	@include absolute (n 0 0 0);
+	background-color: #FFF;
+	padding: 20px 20px 30px 20px;
+	border-bottom: 4px solid #FFF;
 	@include trans(.15s);
 	.portfolio-promo:hover & {
-		background-color: rgba(255,255,255,1);
+		border-bottom: 4px solid #CCC;
 	}
 } //portfolio-top-text
 
