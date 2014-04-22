@@ -1,0 +1,69 @@
+{% extends "base.twig" %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+
+
+
+			<!-- Garage Banner -->
+			<div class="garage-banner">
+				<div class="garage-logo-mod">
+					<h1 class="garage-logo">The Garage</h1>
+				</div>
+				<div class="garage-tagline-mod">
+					<h1 class="garage-tagline">Sometimes we make things that aren't for clients. Here are a couple of those things</h1>
+				</div>
+			</div> <!-- /garage-banner -->
+
+
+
+			<div class="garage-content">
+				<div class="site-width">
+
+
+
+		{# {% for billboard in billboards %}
+			{% if billboard == billboards[0] %} #}
+			<a class="portfolio-promo portfolio-promo-top" href="{{billboard.permalink}}">
+				<div class="portfolio-promo-img">
+					<img src="{{billboard.hero_tease.src|default(billboard.billboard.src)|resize(1200) }}" alt="Banner for {{billboard.title|striptags}}" />
+				</div> <!-- /portfolio-promo-img -->
+				<div class="portfolio-promo-hgroup">
+					{#{% if billboard.kicker %}
+						<h3 class="h4 portfolio-promo-kicker">{{billboard.kicker}}</h3>
+					{% endif %}#}
+					<h2 class="h1 portfolio-promo-h">{{ billboard.title }}</h2>
+					{# <p class="txt">{{ billboard.billboard_message }}</p> #}
+				</div>
+			</a> <!-- /portfolio-promo -->
+			<section id="archive-portfolio-promo" class="portfolio-promo-btm">
+			{#{% else %}#}
+			<div class="media-block">
+				<a class="portfolio-promo" href="{{billboard.permalink}}">
+					<div class="portfolio-promo-img"><img src="{{billboard.hero_tease.src|default(billboard.billboard.src) | resize(1200, 690)}}" alt="Banner for {{billboard.title|striptags}}" /></div>
+					<div class="portfolio-promo-hgroup">
+						{% if billboard.kicker %}
+						<h3 class="h4 portfolio-promo-kicker">{{billboard.kicker}}</h3>
+						{% endif %}
+						<h2 class="h2 portfolio-promo-h">{{ billboard.title }}</h2>
+						{# <p class="txt">{{ billboard.billboard_message }}</p> #}
+					</div>
+				</a> <!-- /portfolio-promo -->
+			</div> <!-- /media-block -->
+			{#{% endif %}
+		{% endfor %}#}
+	</section><!--archive-portfolio-featured -->
+
+
+
+
+				</div>
+			</div>
+
+</div> <!-- /content-wrapper -->
+
+{% endblock %}

@@ -10,3 +10,8 @@
   from { @include transform(rotate(0deg)); }
   to { @include transform(rotate(360deg)); }
 }
+
+@include keyframes(fadeIn) {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
