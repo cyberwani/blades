@@ -1,7 +1,4 @@
 <?php
-	global $has_children;
-	$has_children = array('page');
-
 	require_once(__DIR__.'/wp/acf-blog-options.php');
 	if (class_exists('Timber')){
 		require_once('wp/portfolio-entry.php');
@@ -25,46 +22,11 @@
 		wp_enqueue_script('jquery');
 	}
 
-	add_action('ups_cron_hour', 'categorize_tweets');
-
-	//categorize_tweets();
-
-	function categorize_tweets(){
-		global $wpdb;
-		$query = "SELECT post_title, ID FROM $wpdb->posts WHERE menu_order = '0' AND post_type = 'tweets'";
-		$results = $wpdb->get_results($query, OBJECT);
-		foreach($results as $tweet){
-			$letter = strtolower(substr($tweet->post_title, 0, 1));
-			$value = 'status';
-			if ($letter == '@'){
-				$value = 'reply';
-			} else if ($letter == 'r'){
-				$value = 'retweet';
-			}
-			$tweet->menu_order = 1;
-			wp_update_post($tweet);
-			update_post_meta($tweet->ID, 'tweet_type', $value);
-		}
-	}
-
 	add_action('wp_enqueue_scripts', 'load_scripts');
 
 	update_option('siteurl', 'http://'.$_SERVER['HTTP_HOST']);
 	update_option('home', 'http://'.$_SERVER['HTTP_HOST']);
-	if (class_exists('Jigsaw')){
 
-		Jigsaw::add_column('highlights', 'Thumb', function($pid){
-	    	$data = array();
-	    	$data['post'] = new TimberPost($pid);
-			Timber::render('admin/portfolio-square-preview.twig', $data);
-		}, -1000);
-
-		Jigsaw::add_column('portfolio', 'Preview', function($pid){
-	    	$data = array();
-	    	$data['post'] = new TimberPost($pid);
-			Timber::render('admin/portfolio-square-preview.twig', $data);
-		}, -1000);
-	}
 
 	Timber::add_route('blog', function($params){
 		$sticky = get_option('sticky_posts');
@@ -83,7 +45,10 @@
 		$query = array('post_type' => 'post', 'posts_per_page' => 6, 'post__not_in' => $sticky, 'offset' => $page * 6);
 		Timber::load_template('archive-blog.php', $query);
 	});
+	
 	BladesSite::register_post_types();
+	BladesSite::apply_admin_customizations();
+
 	add_action('init', function(){
 		BladesSite::register_post_types();
 	});
