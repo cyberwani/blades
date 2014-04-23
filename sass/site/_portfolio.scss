@@ -35,20 +35,21 @@
 }
 
 .portfolio-promo-hgroup {
-	color: #fff;
+	color: #1d1d1d;
 	text-align: center;
-	background-color: rgba(0,0,0,.7);
-	padding: 20px;
-	@include absolute (n 0 0 0);
-	@include trans(.15s, padding);
+	background-color: #FFF;
+	padding: 20px 20px 30px 20px;
+	border-bottom: 4px solid #FFF;
+	@include trans(.15s);
 	.portfolio-promo:hover & {
-		padding-bottom: 40px;
+		border-bottom: 4px solid #CCC;
 	}
 } //portfolio-top-text
 
 .portfolio-promo-h {
 	line-height: 100%;
 	margin-bottom: 0;
+	font-weight: 300;
 }
 
 .portfolio-promo-kicker {
@@ -88,8 +89,6 @@
 	margin-top: -20px;
 	height: 0;
 	padding-bottom: 45.5%;
-	//background: url(/wp-content/themes/blades/images/dev/covers/hero-table.jpg) 50% 50% no-repeat;
-	//background-size: 117%;
 	overflow: hidden;
 	@media (min-width: 900px) {
 		margin-top: -30px;

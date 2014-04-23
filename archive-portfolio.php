@@ -27,7 +27,7 @@
 
 		$data['tiles'] = Timber::get_posts(array('post_type' => 'portfolio', 'numberposts' => -1, 'post__not_in' => array(4639)));
 
-		$data['clients'] = Timber::get_posts('post_type=portfolio&numberposts=-1');
+		$data['clients'] = Timber::get_posts(array('post_type' => 'portfolio', 'numberposts' => -1, 'post__not_in' => array(4639)));
 		$portfolio_client_names = array();
 		foreach($data['clients'] as $client){
 			$portfolio_client_names[] = $client->client_name;
