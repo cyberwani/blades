@@ -2,7 +2,7 @@
 
 	class BladesSite extends TimberSite {
 
-		function register_post_types(){
+		public static function register_post_types(){
 			self::register_post_type_portfolio();
 			self::register_post_type_highlights();
 			self::register_post_type_promo();
@@ -140,6 +140,25 @@
 					'parent' => 'Parent Portfolio Item',
 				)
 			) );
+		}
+
+		public static function apply_admin_customizations(){
+			if (class_exists('Jigsaw')){
+				Jigsaw::add_column('highlights', 'Thumb', function($pid){
+			    	$data = array();
+			    	$data['post'] = new TimberPost($pid);
+					Timber::render('admin/portfolio-square-preview.twig', $data);
+				}, -1000);
+
+				Jigsaw::add_column('portfolio', 'Preview', function($pid){
+			    	$data = array();
+			    	$data['post'] = new TimberPost($pid);
+					Timber::render('admin/portfolio-square-preview.twig', $data);
+				}, -1000);
+				if (method_exists('Jigsaw', 'add_css')){
+					Jigsaw::add_css('/wp-content/themes/blades/css/admin.css');
+				}
+			}
 		}
 
 	}
