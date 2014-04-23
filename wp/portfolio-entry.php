@@ -7,7 +7,11 @@
 				if (isset($layout['image'])){
 					$images = $layout['image'];
 					foreach($images as &$image){
-						$image = new TimberImage($image['image']['id']);
+						$maybe_id = $image['image']['id'];
+						if (!$maybe_id){
+							$maybe_id = $image['image']['ID'];
+						}
+						$image = new TimberImage($maybe_id);
 					}
 					$layout['images'] = $images;
 				}
