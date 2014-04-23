@@ -18,6 +18,12 @@ The G A R A G E
 	}
 	background-color: #F7F7F7;
 
+	background-image: url("/wp-content/themes/blades/images/garage/garage-logo.svg");
+	background-repeat: no-repeat;
+	background-size: 50%;
+	background-position: center 30%;
+	background-attachment: fixed;
+
 	// Mask to create the circle effect
 	&:after {
 		@include content;
@@ -38,7 +44,7 @@ The G A R A G E
 
 
 .garage-logo-mod {
-	background-image: url("/wp-content/themes/blades/images/garage/garage-logo.svg");
+	// background-image: url("/wp-content/themes/blades/images/garage/garage-logo.svg");
 	background-repeat: no-repeat;
 
 	margin: 180px auto 0 auto;
@@ -46,7 +52,7 @@ The G A R A G E
 	width: 500px;
 	height: 80px;
 
-	@include animation(fadeIn 1s ease);
+	@include animation(shadow 1s ease);
 
 
 	h1 {
