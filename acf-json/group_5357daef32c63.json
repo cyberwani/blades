@@ -1,0 +1,24 @@
+{
+    "key": "group_5357daef32c63",
+    "title": "Highlight Kicker",
+    "fields": [
+
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "highlights"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+
+    ]
+}

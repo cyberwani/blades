@@ -1,0 +1,24 @@
+{
+    "key": "group_5357daef3576e",
+    "title": "Homepage Heros",
+    "fields": [
+
+    ],
+    "location": [
+        [
+            {
+                "param": "ef_user",
+                "operator": "==",
+                "value": "subscriber"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+
+    ]
+}

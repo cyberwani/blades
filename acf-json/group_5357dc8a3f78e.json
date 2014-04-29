@@ -1,0 +1,102 @@
+{
+    "key": "group_5357dc8a3f78e",
+    "title": "",
+    "fields": [
+
+    ],
+    "location": [
+
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+
+    ],
+    "0": {
+        "key": "field_535742493c06f",
+        "label": "Projects",
+        "name": "projects",
+        "prefix": "",
+        "type": "repeater",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "min": "",
+        "max": "",
+        "layout": "row",
+        "button_label": "Add Project",
+        "sub_fields": [
+            {
+                "key": "field_535742503c070",
+                "label": "Image",
+                "name": "image",
+                "prefix": "",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "library": "all"
+            },
+            {
+                "key": "field_535742783c072",
+                "label": "Kicker",
+                "name": "kicker",
+                "prefix": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "column_width": "",
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": "",
+                "formatting": "html",
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "key": "field_535742653c071",
+                "label": "Title",
+                "name": "title",
+                "prefix": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": "",
+                "formatting": "html",
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "key": "field_535742893c073",
+                "label": "Link",
+                "name": "link",
+                "prefix": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "default_value": "",
+                "placeholder": "http:\/\/",
+                "prepend": "",
+                "append": "",
+                "maxlength": "",
+                "formatting": "html",
+                "readonly": 0,
+                "disabled": 0
+            }
+        ]
+    }
+}

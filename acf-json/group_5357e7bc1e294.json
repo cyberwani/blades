@@ -1,0 +1,106 @@
+{
+    "key": "group_5357e7bc1e294",
+    "title": "Garage Projects",
+    "fields": [
+        {
+            "key": "field_5357ea5055321",
+            "label": "Projects",
+            "name": "projects",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "min": "",
+            "max": "",
+            "layout": "row",
+            "button_label": "Add Project",
+            "sub_fields": [
+                {
+                    "key": "field_5357ea6455322",
+                    "label": "Image",
+                    "name": "image",
+                    "prefix": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all"
+                },
+                {
+                    "key": "field_5357ea8c55324",
+                    "label": "Kicker",
+                    "name": "kicker",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "formatting": "html",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_5357ea7255323",
+                    "label": "Title",
+                    "name": "title",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "formatting": "html",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_5357ea9255325",
+                    "label": "Permalink",
+                    "name": "permalink",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "default_value": "",
+                    "placeholder": "http:\/\/",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "formatting": "html",
+                    "readonly": 0,
+                    "disabled": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "4023"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ]
+}
