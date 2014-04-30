@@ -21,9 +21,11 @@
 		$data['post']->css_file = $data['theme_dir'].'/css/'.$pi->post_type.'-'.$post->post_name.'.css';
 	}
 	$pi->projects = get_field('projects', $pi->ID);
-	foreach($pi->projects as &$project){
-		if (isset($project['image']) && $project['image']){
-			$project['image'] = new TimberImage($project['image']);
+	if (is_array($pi->projects)){
+		foreach($pi->projects as &$project){
+			if (isset($project['image']) && $project['image']){
+				$project['image'] = new TimberImage($project['image']);
+			}
 		}
 	}
 	Timber::render(['custom/page-'.$pi->post_name.'.twig', 'page-'.$pi->post_name.'.twig', 'page.twig'], $data);
