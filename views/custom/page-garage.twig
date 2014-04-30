@@ -15,7 +15,7 @@
 					<h1 class="garage-logo">The Garage</h1>
 				</div>
 				<div class="garage-tagline-mod">
-					<h1 class="garage-tagline">Sometimes we make things that aren't for clients. Here are a couple of those things</h1>
+					<h4 class="garage-tagline">Sometimes we make things that aren't for clients. Here are a couple of those things</h4>
 				</div>
 			</div> <!-- /garage-banner -->
 
@@ -26,31 +26,30 @@
 
 
 
-		{% for billboard in post.projects %}
-			{% if billboard == post.projects[0] %}
-			<a class="portfolio-promo portfolio-promo-top" href="{{billboard.permalink}}">
+		{% for project in post.projects %}
+			{% if project == post.projects[0] %}
+			<a class="portfolio-promo portfolio-promo-top" href="{{project.permalink}}">
 				<div class="portfolio-promo-img">
-					<img src="{{billboard.image.src|resize(1200) }}" alt="Banner for {{billboard.title|striptags}}" />
+					<img src="{{project.image.src|resize(1200) }}" alt="Banner for {{project.title|striptags}}" />
 				</div> <!-- /portfolio-promo-img -->
 				<div class="portfolio-promo-hgroup">
-					{% if billboard.kicker %}
-						<h3 class="h4 portfolio-promo-kicker">{{billboard.kicker}}</h3>
+					{% if project.kicker %}
+						<h3 class="h4 portfolio-promo-kicker">{{project.kicker}}</h3>
 					{% endif %}
-					<h2 class="h1 portfolio-promo-h">{{ billboard.title }}</h2>
-					{# <p class="txt">{{ billboard.billboard_message }}</p> #}
+					<h2 class="h1 portfolio-promo-h">{{ project.title }}</h2>
+					{# <p class="txt">{{ project.project_message }}</p> #}
 				</div>
 			</a> <!-- /portfolio-promo -->
 			<section id="archive-portfolio-promo" class="portfolio-promo-btm">
 			{% else %}
 			<div class="media-block">
-				<a class="portfolio-promo" href="{{billboard.permalink}}">
-					<div class="portfolio-promo-img"><img src="{{billboard.image.src|resize(1200, 690)}}" alt="Banner for {{billboard.title|striptags}}" /></div>
+				<a class="portfolio-promo" href="{{project.permalink}}">
+					<div class="portfolio-promo-img"><img src="{{project.image.src|resize(1200, 690)}}" alt="Banner for {{project.title|striptags}}" /></div>
 					<div class="portfolio-promo-hgroup">
-						{% if billboard.kicker %}
-							<h3 class="h4 portfolio-promo-kicker">{{billboard.kicker}}</h3>
+						{% if project.kicker %}
+							<h3 class="h4 portfolio-promo-kicker">{{project.kicker}}</h3>
 						{% endif %}
-						<h2 class="h2 portfolio-promo-h">{{ billboard.title }}</h2>
-						{# <p class="txt">{{ billboard.billboard_message }}</p> #}
+						<h2 class="h2 portfolio-promo-h">{{ project.title }}</h2>
 					</div>
 				</a> <!-- /portfolio-promo -->
 			</div> <!-- /media-block -->
