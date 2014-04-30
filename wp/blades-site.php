@@ -9,7 +9,7 @@
 			self::register_post_type_furniture();
 		}
 
-		function register_post_type_promo(){
+		public static function register_post_type_promo(){
 			register_post_type('promos', array(
 			'label' => 'Promos',
 			'description' => 'Homepage Promo',
@@ -42,7 +42,7 @@
 			));
 		}
 
-		function register_post_type_furniture(){
+		public static function register_post_type_furniture(){
 			register_post_type('furniture', array(
 				'label' => 'Furniture',
 				'description' => '',
@@ -75,7 +75,7 @@
 			) );
 		}
 
-		function register_post_type_highlights(){
+		public static function register_post_type_highlights(){
 			register_post_type('highlight', array(
 				'label' => 'Highlights',
 				'description' => '',
@@ -108,7 +108,7 @@
 			));
 		}
 
-		function register_post_type_portfolio(){
+		public static function register_post_type_portfolio(){
 			register_post_type('portfolio', array(
 				'label' => 'Portfolio ',
 				'description' => '',
