@@ -1,11 +1,25 @@
-@import "base";
+@import "custom/custom-base";
 @import "site/partials/variables";
+
 
 /**************************
 
 The G A R A G E
 
 **************************/
+@include keyframes(colorChange){
+	0% {
+		background-color: #2fbfd4;
+	}
+
+	50% {
+		background-color: #1e94a5;
+	}
+
+	100% {
+		background-color: #2fbfd4;
+	}
+}
 
 
 .garage-banner {
@@ -15,7 +29,11 @@ The G A R A G E
 	padding-bottom: 37.5%;
 	overflow: hidden;
 
-	background-color: #2db786;
+	background-color: #2fbfd4;
+
+	//weird bg color animation because why not
+	@include animation(colorChange 10s infinite);
+
 	background-image: url("/wp-content/themes/blades/images/garage/garage-badge.svg");
 	background-repeat: no-repeat;
 	background-size: 40%;
@@ -53,23 +71,6 @@ The G A R A G E
 
 	h1 {
 		text-indent: -10000px;
-	}
-}
-
-.garage-tagline-mod {
-	max-width: 500px;
-	margin: 30px auto;
-
-	.garage-tagline {
-		font-family: $proxima;
-		color: #FFF;
-		font-weight: 200;
-		font-size: 22px;
-		text-align: center;
-	}
-
-	@include mq(900px){
-		margin-top: 00px;
 	}
 }
 
