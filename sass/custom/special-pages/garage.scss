@@ -35,6 +35,11 @@ The G A R A G E
 	@include animation(colorChange 10s infinite);
 
 	background-image: url("/wp-content/themes/blades/images/garage/garage-badge.svg");
+
+	.no-svg & {
+		background-image: url("/wp-content/themes/blades/images/garage/garage-badge.png");
+	}
+
 	background-repeat: no-repeat;
 	background-size: 40%;
 	background-position: center 30%;
@@ -42,6 +47,10 @@ The G A R A G E
 	@include mq(700px) {
 		background-image: url("/wp-content/themes/blades/images/garage/garage-logo.svg");
 		background-size: 70%;
+
+		.no-svg & {
+			background-image: url("/wp-content/themes/blades/images/garage/garage-logo.png");
+		}
 	}
 
 	@include mq(900px) {
