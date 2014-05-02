@@ -27,7 +27,7 @@
 			{% if project == post.projects[0] %}
 			<a class="portfolio-promo portfolio-garage-promo-top" href="{{project.permalink}}">
 				<div class="portfolio-promo-img">
-					<img src="{{project.image.src|resize(1200) }}" alt="Banner for {{project.title|striptags}}" />
+					<img src="{{project.image.src|resize(1200, 450) }}" alt="Banner for {{project.title|striptags}}" />
 				</div> <!-- /portfolio-promo-img -->
 				<div class="portfolio-promo-hgroup">
 					{% if project.kicker %}
