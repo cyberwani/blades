@@ -7,17 +7,13 @@
 The G A R A G E
 
 **************************/
-@include keyframes(colorChange){
+@include keyframes(zoomOut){
 	0% {
-		background-color: #2fbfd4;
-	}
-
-	50% {
-		background-color: #1e94a5;
+		background-position: center -300%;
 	}
 
 	100% {
-		background-color: #2fbfd4;
+		background-position: center 30%;
 	}
 }
 
@@ -31,9 +27,6 @@ The G A R A G E
 
 	background-color: #2fbfd4;
 
-	//weird bg color animation because why not
-	@include animation(colorChange 10s infinite);
-
 	background-image: url("/wp-content/themes/blades/images/garage/garage-badge.svg");
 
 	.no-svg & {
@@ -45,6 +38,9 @@ The G A R A G E
 	background-position: center 30%;
 
 	@include mq(700px) {
+		//weird bg animation because why not
+		@include animation(zoomOut .5s);
+
 		background-image: url("/wp-content/themes/blades/images/garage/garage-logo.svg");
 		background-size: 70%;
 
