@@ -1,6 +1,37 @@
 @import "custom/custom-base";
 
 //
+// Animations
+//
+
+$animation-ease: cubic-bezier(0.490, 0.370, 0.445, 0.715);
+
+@mixin char-animation($x-start: 50%) {
+  0%	{ 
+  		opacity: .5;  
+	    @include transform(translate3d($x-start, 0, 0));
+  		}
+
+  50%  	{ 
+  		opacity: .5; 
+	    @include transform(translate3d($x-start, 0, 0));
+		}
+  100% 	{ 
+		opacity: 1; 
+	    @include transform(translate3d(0, 0, 0));
+		}
+}
+
+@include keyframes(slideLeft) {
+	@include char-animation;
+}
+
+@include keyframes(slideRight) {
+	@include char-animation(-50%);
+}
+
+
+//
 // Background Slider
 //
 
@@ -139,11 +170,19 @@ $mq-type-slider: 600px;
 .hlr-type-imgs {
 	position: relative;
 	background-color: #fff;
-	padding: 0 10px;
 	@include mq($mq-type-slider) {
-		padding: 0 20px;
 		cursor: col-resize;
 	}
+}
+
+.hlr-type-mask-mod {
+	@include absolute(0 n -25px 0);
+	width: 50%;
+	height: 100%;
+	padding-bottom: 25px;
+	border-right: 4px solid $highlight;
+	@include trans(.7s, width, $animation-ease);
+	@include box-sizing(content-box);
 }
 
 .hlr-type-mask {
@@ -154,9 +193,8 @@ $mq-type-slider: 600px;
 	}
 
 	@include mq($mq-type-slider) {
-		@include absolute(0 0 0 20px);
-		width: 50%;
-		border-right: 4px solid $highlight; 
+		height: 100%;
+		width: 100%;
 		&:first-child {
 			border-bottom: 0;
 		}
@@ -167,36 +205,42 @@ $mq-type-slider: 600px;
 	display: block;
 	width: 100%;
 	@include mq($mq-type-slider) {
-		width: 960px;
-	}
-}
-
-.hlr-type-label-oldseven {
-	@include absolute(n n -24px n);
-
-	@include mq($mq-type-slider) {
-		left: 53%;
-	}
-}
-
-.hlr-type-label-hoefler {
-	@include absolute(-24px n n n);
-	@include mq($mq-type-slider) {
-		right: 50%;
-		top: auto;
-		bottom: -24px;
+		width: 1024px;
 	}
 }
 
 .hlr-type-label {
  	font: 300 14px $proxima;
-	color: #000;
+	color: #999;
 	@include mq($mq-type-slider) {
 		font-weight: 800;
 		font-size: 16px;
+		position: absolute;
+		bottom: 0px;
 	}
 }
 
+.hlr-type-label-oldseven {
+	@include mq(max, $mq-type-slider) {
+		@include absolute(n n -24px n);
+	}
+
+	@include mq($mq-type-slider) {
+		right: -97px;
+	}
+}
+
+.hlr-type-label-hoefler {
+	color: #000;
+
+	@include mq(max, $mq-type-slider) {
+		@include absolute(-24px n n n);
+	}
+
+	@include mq($mq-type-slider) {
+		right: 21px;
+	}
+}
 
 
 
@@ -228,9 +272,20 @@ $mq-type-slider: 600px;
 	color: #000;
 }
 
+.hlr-char-hoefler,
+.hlr-char-oldseven {
+	@include animation-fill-mode(forwards);
+	@include animation-timing-function($animation-ease);
+	@include animation-duration(4s);
+}
 
+.hlr-char-hoefler {
+	@include animation-name(slideRight);
+}
 
-
+.hlr-char-oldseven {
+	@include animation-name(slideLeft);
+}
 
 
 
