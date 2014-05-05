@@ -1,0 +1,236 @@
+@import "custom/custom-base";
+
+//
+// Background Slider
+//
+
+.hlr-bg-slider {
+	margin-bottom: 60px;
+}
+
+.hlr-bg-imgs {
+	margin-bottom: 20px;
+}
+
+.hlr-bg-img {
+	max-width: 100%;
+}
+
+$mq-controls-height: 600px;
+$controls-height: 41px;
+$controls-height-small: 31px;
+
+$controls-btn-color: #ccc;
+$controls-color-hover: #999; 
+$controls-border: 2px solid #efefef;
+
+
+.hlr-bg-btn {
+	float: left;
+	display: block;
+	position: relative;
+
+	@include size($controls-height-small);
+	padding: 6px 5px;
+	border: $controls-border;
+	@include trans;
+	@include user-select;
+
+	@include mq($mq-controls-height) {
+		@include size($controls-height);
+		padding: 8px;
+	}
+
+	&:hover {
+		border-color: $controls-color-hover;
+		cursor: pointer;
+	}
+
+}
+
+.hlr-bg-btn-play,
+.hlr-bg-btn-pause {
+	// Universal Styles
+	position: relative;
+	@include trans(.2s, border-color);
+}
+
+// Play Button
+.hlr-bg-btn-play {
+	display: none;
+	@include triangle(right, 11px, $controls-btn-color, .7);
+	margin-left: 4px;
+	.hlr-bg-btn:hover & {
+		border-left-color: $controls-color-hover;
+	}
+
+	@include mq($mq-controls-height) {
+		@include triangle(right, 15px, $controls-btn-color, .7);
+	}
+
+	// Show only when player is paused	
+	.hlr-bg-paused & {
+		display: block;
+	}
+}
+
+// Pause Button
+.hlr-bg-btn-pause {
+	display: none;
+	margin: auto;
+	top: 1px;
+
+	@include size(10px 14px);
+	border-left: 4px solid $controls-btn-color;
+	border-right: 4px solid $controls-btn-color;
+
+	@include mq($mq-controls-height) {
+		@include size(14px 19px);
+		border-left-width: 5px;
+		border-right-width: 5px;		
+	}	
+
+	.hlr-bg-btn:hover & {
+		border-left-color: $controls-color-hover;
+		border-right-color: $controls-color-hover;
+	}	
+
+	// Show only when player is playing
+	.hlr-bg-playing	& {
+		display: block;
+	}
+}
+
+
+.hlr-bg-timeline {
+	position: relative;
+	display: block;
+	height: $controls-height-small;
+	margin-left: $controls-height-small + 15px;
+	border: $controls-border;
+	background: transparent url($theme-dir+'/images/portfolio/hlr/slash-bg.png') 50% 50% repeat-x;
+	@include mq($mq-controls-height) {
+		height: $controls-height;
+		margin-left: $controls-height + 20px;
+	}
+}
+
+.hlr-bg-scrubber {
+	display: block;
+	@include size($controls-height-small);
+	@include absolute(-2px n n -2px);
+	background-color: $highlight;
+	@include mq($mq-controls-height) {
+		@include size($controls-height);
+	}
+}
+
+
+//
+// Typography: Type Comparison
+//
+
+$mq-type-slider: 600px;
+
+.hlr-type-slider {
+	margin-bottom: 60px;
+}
+
+.hlr-type-imgs {
+	position: relative;
+	background-color: #fff;
+	padding: 0 10px;
+	@include mq($mq-type-slider) {
+		padding: 0 20px;
+		cursor: col-resize;
+	}
+}
+
+.hlr-type-mask {
+	overflow: hidden;
+	display: block;
+	&:first-child {
+		border-bottom: 1px solid #ccc;
+	}
+
+	@include mq($mq-type-slider) {
+		@include absolute(0 0 0 20px);
+		width: 50%;
+		border-right: 4px solid $highlight; 
+		&:first-child {
+			border-bottom: 0;
+		}
+	}
+}
+
+.hlr-type-img {
+	display: block;
+	width: 100%;
+	@include mq($mq-type-slider) {
+		width: 960px;
+	}
+}
+
+.hlr-type-label-oldseven {
+	@include absolute(n n -24px n);
+
+	@include mq($mq-type-slider) {
+		left: 53%;
+	}
+}
+
+.hlr-type-label-hoefler {
+	@include absolute(-24px n n n);
+	@include mq($mq-type-slider) {
+		right: 50%;
+		top: auto;
+		bottom: -24px;
+	}
+}
+
+.hlr-type-label {
+ 	font: 300 14px $proxima;
+	color: #000;
+	@include mq($mq-type-slider) {
+		font-weight: 800;
+		font-size: 16px;
+	}
+}
+
+
+
+
+
+
+//
+// Typography: The Letter K
+//
+
+.hlr-chars-mod {
+	max-width: 550px;
+	margin: 0 auto 60px;
+	text-align: center;
+	@include pie-clearfix;
+}
+
+.hlr-char {
+	float: left;
+	width: 50%;
+}
+
+.hlr-char-img {
+	padding: 20px;
+	max-width: 100%;
+}
+
+.hlr-char-name {
+	font: 800 16px $proxima;
+	color: #000;
+}
+
+
+
+
+
+
+
