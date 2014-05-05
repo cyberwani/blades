@@ -1,11 +1,21 @@
-@import "base";
+@import "custom/custom-base";
 @import "site/partials/variables";
+
 
 /**************************
 
 The G A R A G E
 
 **************************/
+@include keyframes(zoomOut){
+	0% {
+		background-position: center -300%;
+	}
+
+	100% {
+		background-position: center 30%;
+	}
+}
 
 
 .garage-banner {
@@ -15,15 +25,28 @@ The G A R A G E
 	padding-bottom: 37.5%;
 	overflow: hidden;
 
-	background-color: #2db786;
+	background-color: #2fbfd4;
+
 	background-image: url("/wp-content/themes/blades/images/garage/garage-badge.svg");
+
+	.no-svg & {
+		background-image: url("/wp-content/themes/blades/images/garage/garage-badge.png");
+	}
+
 	background-repeat: no-repeat;
 	background-size: 40%;
 	background-position: center 30%;
 
 	@include mq(700px) {
+		//weird bg animation because why not
+		@include animation(zoomOut .5s);
+
 		background-image: url("/wp-content/themes/blades/images/garage/garage-logo.svg");
 		background-size: 70%;
+
+		.no-svg & {
+			background-image: url("/wp-content/themes/blades/images/garage/garage-logo.png");
+		}
 	}
 
 	@include mq(900px) {
@@ -53,23 +76,6 @@ The G A R A G E
 
 	h1 {
 		text-indent: -10000px;
-	}
-}
-
-.garage-tagline-mod {
-	max-width: 500px;
-	margin: 30px auto;
-
-	.garage-tagline {
-		font-family: $proxima;
-		color: #FFF;
-		font-weight: 200;
-		font-size: 22px;
-		text-align: center;
-	}
-
-	@include mq(900px){
-		margin-top: 00px;
 	}
 }
 
