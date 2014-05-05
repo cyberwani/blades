@@ -1,7 +1,7 @@
 {% extends "base.twig" %}
 
 {% block head %}
-
+		<link rel="stylesheet" href="/{{theme_dir}}/css/custom/special-pages/garage.css">
 {% endblock %}
 
 {% block content %}
@@ -13,9 +13,6 @@
 			<div class="garage-banner">
 				<div class="garage-logo-mod">
 					<h1 class="garage-logo">The Garage</h1>
-				</div>
-				<div class="garage-tagline-mod">
-					<h4 class="garage-tagline">Sometimes we make things that aren't for clients. Here are a couple of those things</h4>
 				</div>
 			</div> <!-- /garage-banner -->
 
@@ -30,7 +27,7 @@
 			{% if project == post.projects[0] %}
 			<a class="portfolio-promo portfolio-garage-promo-top" href="{{project.permalink}}">
 				<div class="portfolio-promo-img">
-					<img src="{{project.image.src|resize(1200) }}" alt="Banner for {{project.title|striptags}}" />
+					<img src="{{project.image.src|resize(1200, 450) }}" alt="Banner for {{project.title|striptags}}" />
 				</div> <!-- /portfolio-promo-img -->
 				<div class="portfolio-promo-hgroup">
 					{% if project.kicker %}
