@@ -1,0 +1,65 @@
+{% extends "base.twig" %}
+
+{% block head %}
+		<link rel="stylesheet" href="/{{theme_dir}}/css/custom/special-pages/garage.css">
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+
+
+
+			<!-- Garage Banner -->
+			<div class="garage-banner">
+				<div class="garage-logo-mod">
+					<h1 class="garage-logo">The Garage</h1>
+				</div>
+			</div> <!-- /garage-banner -->
+
+
+
+			<div class="garage-content">
+				<div class="site-width">
+
+
+
+		{% for project in post.projects %}
+			{% if project == post.projects[0] %}
+			<a class="portfolio-promo portfolio-garage-promo-top" href="{{project.permalink}}">
+				<div class="portfolio-promo-img">
+					<img src="{{project.image.src|resize(1200, 450) }}" alt="Banner for {{project.title|striptags}}" />
+				</div> <!-- /portfolio-promo-img -->
+				<div class="portfolio-promo-hgroup">
+					{% if project.kicker %}
+						<h3 class="h4 portfolio-promo-kicker">{{project.kicker}}</h3>
+					{% endif %}
+					<h2 class="h1 portfolio-promo-h">{{ project.title }}</h2>
+					{# <p class="txt">{{ project.project_message }}</p> #}
+				</div>
+			</a> <!-- /portfolio-promo -->
+			<section id="archive-portfolio-promo" class="portfolio-promo-btm">
+			{% else %}
+			<div class="media-block">
+				<a class="portfolio-promo" href="{{project.permalink}}">
+					<div class="portfolio-promo-img"><img src="{{project.image.src|resize(1200, 690)}}" alt="Banner for {{project.title|striptags}}" /></div>
+					<div class="portfolio-promo-hgroup">
+						{% if project.kicker %}
+							<h3 class="h4 portfolio-promo-kicker">{{project.kicker}}</h3>
+						{% endif %}
+						<h2 class="h2 portfolio-promo-h">{{ project.title }}</h2>
+					</div>
+				</a> <!-- /portfolio-promo -->
+			</div> <!-- /media-block -->
+			{% endif %}
+		{% endfor %}
+	</section><!--archive-portfolio-featured -->
+
+
+
+
+				</div>
+			</div>
+
+</div> <!-- /content-wrapper -->
+
+{% endblock %}

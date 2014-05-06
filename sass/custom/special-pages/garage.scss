@@ -1,0 +1,106 @@
+@import "custom/custom-base";
+@import "site/partials/variables";
+
+
+/**************************
+
+The G A R A G E
+
+**************************/
+@include keyframes(zoomOut){
+	0% {
+		background-position: center -300%;
+	}
+
+	100% {
+		background-position: center 30%;
+	}
+}
+
+
+.garage-banner {
+	position: relative;
+	margin-top: -20px;
+	height: 0;
+	padding-bottom: 37.5%;
+	overflow: hidden;
+
+	background-color: #2fbfd4;
+
+	background-image: url("/wp-content/themes/blades/images/garage/garage-badge.svg");
+
+	.no-svg & {
+		background-image: url("/wp-content/themes/blades/images/garage/garage-badge.png");
+	}
+
+	background-repeat: no-repeat;
+	background-size: 40%;
+	background-position: center 30%;
+
+	@include mq(700px) {
+		//weird bg animation because why not
+		@include animation(zoomOut .5s);
+
+		background-image: url("/wp-content/themes/blades/images/garage/garage-logo.svg");
+		background-size: 70%;
+
+		.no-svg & {
+			background-image: url("/wp-content/themes/blades/images/garage/garage-logo.png");
+		}
+	}
+
+	@include mq(900px) {
+		margin-top: -30px;
+	}
+
+	@include mq(1100px) {
+		margin-top: -30px;
+		background-size: 60%;
+	}
+}
+
+.garage-banner-img {
+	@include absolute(0 0 n 0);
+	width: 117%;
+	margin-left: -8.5%;
+}
+
+
+.garage-logo-mod {
+	background-repeat: no-repeat;
+	margin: 180px auto 0 auto;
+	width: 500px;
+	height: 80px;
+
+	@include animation(shadow 1s ease);
+
+	h1 {
+		text-indent: -10000px;
+	}
+}
+
+.garage-content {
+	background-color: #FFF;
+}
+
+.garage-promo {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 40px;
+	background-color: #FFF;
+	@include box-shadow(0 0 20px #EEE);
+}
+
+.garage-promo-mod {
+	@include media-grid(2, 40px);
+}
+
+.portfolio-garage-promo-top {
+	@include mq(900px){
+		margin-top: -80px;
+		padding: 20px;
+		background-color: rgba(255,255,255,.25);
+	}
+}
+
+

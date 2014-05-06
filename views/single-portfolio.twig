@@ -54,7 +54,7 @@
 							{% endfor %}
 						</div>
 					{% elseif layout.description or layout.subhead %}
-						<div class="site-width">
+						<div class="site-width {{layout.subhead ? 'layout-subhead-'~layout.subhead|sanitize}}">
 							<div class="portfolio-desc txt-width">
 								{% if layout.subhead %}
 									<h2 class="h2 portfolio-desc-h">{{layout.subhead}}</h2>
@@ -67,7 +67,7 @@
 							</div>
 						</div> <!-- /site-width -->
 					{% elseif layout.overline %}
-						<div class="flex-width">
+						<div class="flex-width layout-overline-{{layout.overline|sanitize}}">
 							<div class="portfolio-overline-mod">
 								<h4 class="portfolio-overline">{{layout.overline}}</h4>
 							</div><!-- /portfolio-overeline-mod -->
@@ -80,7 +80,7 @@
 						{% endif %}
 					{% endif %}
 					{% if layout.acf_fc_layout == 'include' %}
-						<div class="portfolio-include">
+						<div class="portfolio-include include-file-{{layout.file_name|sanitize}}">
 							{% include 'custom/' ~ layout.file_name ignore missing %}
 						</div>
 					{% endif %}
@@ -97,7 +97,7 @@
 	</article>
 </div> <!-- /content-wrapper -->
 
-<div class="wrapper">
+<div class="wrapper porfolio-tile-wrapper">
 	<section id="archive-tiles">
 		{% for tile in tiles %}
 			{% if tile.thumbnail.src %}

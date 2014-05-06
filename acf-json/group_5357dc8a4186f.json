@@ -1,0 +1,25 @@
+{
+    "key": "group_5357dc8a4186f",
+    "title": "",
+    "fields": [
+
+    ],
+    "location": [
+
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+
+    ],
+    "0": [
+        {
+            "param": "page",
+            "operator": "==",
+            "value": "4070"
+        }
+    ]
+}

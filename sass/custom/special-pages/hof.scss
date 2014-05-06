@@ -1,19 +1,29 @@
 @import "custom/custom-base";
 @import "site/partials/variables";
 
+
 /* ============================================= */
-/*	Hall of Fame
-	Sorry I put it here     */
+/*	Hall of Fame */
 /* ============================================= */
 
+body {-webkit-font-smoothing: antialiased;}
+
 .hof-cover {
-	@media (min-width: 768px){
+	@include background-size(cover);
+	background-image: url(/wp-content/themes/blades/images/hof/john-2.jpg);
+	background-repeat: no-repeat;
+
+	@media (min-width: 768px) {
 		padding: 200px 0 0 0;
-		background-image: url(/wp-content/themes/blades/images/hof/john-2.jpg);
 		background-attachment: fixed;
-		background-size: 100%;
 		background-size: cover;
+		background-position: top center;
 		height: 800px;
+	}
+	.wrapper {
+		@include mq(max, 768px) {
+			padding: 50px 30px;
+		}
 	}
 }
 
@@ -26,11 +36,17 @@
 	background-color: rgba(255,255,255,.4);
 	text-align: center;
 	color: #FFF;
+	@include trans;
 
 	&.dark {
 		border: 5px solid #000;
 		background-color: rgba(0,0,0,.2);
 		color: #000;
+	}
+
+	&:hover {
+		background-color: rgba(255,255,255,.9);
+		color: #666;
 	}
 }
 
@@ -39,6 +55,7 @@
 	font-size: 14px;
 	letter-spacing: 5px;
 	text-transform: uppercase;
+	color: #CCC;
 
 	&.center {
 		text-align: center;
@@ -47,18 +64,30 @@
 }
 
 .hof-h1 {
+	font-size: 24px;
 	font-family: $adelle;
 	font-weight: 800;
-	font-size: 62px;
+	padding-bottom: 20px;
 	border-bottom: 1px solid #FFF;
 	color: #2d2d2d;
 	margin-bottom: 20px;
+	@include mq(600px) {
+		font-size: 62px;
+		padding-bottom: 0;
+	}
 }
 
 .hof-quote-hed {
 	font-family: $adelle;
 	font-weight: 400;
-	font-size: 32px;
+	font-size: 22px;
+	@include text-shadow(1px 1px 1px rgba(0,0,0,.3));
+	@include mq(768px) {
+		font-size: 32px;
+	}
+	.hof-cover-text:hover & {
+		@include text-shadow(0px 0px 0px rgba(0,0,0,.3));
+	}
 }
 
 .hof-quote-wrapper {
@@ -67,57 +96,76 @@
 
 .hof-quote-mod {
 	font-family: $adelle;
-	font-weight: 200;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 26px;
+	max-width: 600px;
+	border-top: 5px solid #EEE;
+	padding: 20px 0 ;
+	clear: both;
+	font-size: 18px;
+	margin: 0 auto;
+	text-align: left;
+	text-align: center;
+
+	@include mq(max, 768px) {
+		color: #555;
+	}
 
 	@media(min-width: 768px){
-		font-size: 32px;
-		position: relative;
-		max-width: 600px;
-		border: 5px solid #EEE;
-		padding: 40px;
-		clear: both;
+		@include trans;
 
+		&:hover {
+			color: #222;
+		}
+
+		font-size: 24px;
+		line-height: 34px;
+		position: relative;
+		padding: 60px;
+		border: 5px solid #EEE;
 		margin: 0 auto 60px auto;
 	}
 }
 
 .hof-quote-attr {
-	padding: 5px 0 0 0;
+	padding: 8px;
 	font-weight: 800;
 	font-size: 16px;
-	text-align: center;
-	height: 40px;
-	width: 150px;
-	position: absolute;
-	bottom: -23px;
-	left: 37%;
-	background-color: pink;
-	border: 5px solid #EEE;
 	background-color: #FFF;
-	margin: 0 auto;
+	margin: 20px auto;
+	line-height: 16px;
+	text-align: center;
+	border: 3px solid #EEE;
+
+	&.gus {
+		bottom: -32px;
+	}
 
 	&:hover {
 		color: #000;
 	}
+
+	@media (min-width: 768px){
+		border: 5px solid #EEE;
+		margin: 0 auto;
+		width: 295px;
+		position: absolute;
+		bottom: -23px;
+		left: 25%;
+	}
 }
 
 .hof-icon {
-	position: absolute;
+	@include absolute-center(75px);
 	top: -40px;
-	left: 43%;
-	width: 75px;
-	height: 75px;
-	margin: 0 auto 0 auto;
 }
 
-
-
 .hof-imagebreak {
-	@media(min-width: 768px){
-		height: 800px;
-		padding: 200px 0 0 0;
+		// height: 800px;
+		padding: 50px 0;
 		background-size: cover;
-		background-attachment: fixed;
+		background-position: center center;
 
 
 		&.john-1 {
@@ -127,5 +175,14 @@
 		&.john-npr {
 			background-image: url(/wp-content/themes/blades/images/hof/john-npr.jpg);
 		}
+
+		&.john-3 {
+			background-image: url(/wp-content/themes/blades/images/hof/john-3.jpg);
+		}
+
+	@include mq(768px) {
+		background-attachment: fixed;
+		height: 800px;
+		padding: 200px 0 0 0;
 	}
 }
