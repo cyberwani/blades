@@ -1,5 +1,9 @@
 {% extends 'base.twig' %}
+{% block page_title %}
+	<title>Timber: WordPress + Twig - Upstatement</title>
+{% endblock %}
 {% block head %}
+	<link rel="stylesheet" href="/{{theme_dir}}/css/custom/special-pages/timber.css">
 	<link rel="stylesheet" href="/{{theme_dir}}/css/custom/labs/labs.css">
 
 	<link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css">
@@ -14,16 +18,18 @@
 <div class="page-topper">
 	<div class="page-wrapper">
 
-	<a href="https://github.com/you"><img style="position: absolute; top: 72px; right: 0; border: 0;" src="https://github-camo.global.ssl.fastly.net/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+	<a href="https://github.com/jarednova/timber" class="github-sash">
+		<img src="https://github-camo.global.ssl.fastly.net/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png">
+	</a>
 
 
 	<div class="logo timber-logo fade-in">Timber for Wordpress.</div>
 
 
 	<ul class="page-nav">
-		<li><a href="#">Documentation</a></li>
-		<li><a href="#">Screencasts</a></li>
-		<li><a class="download" href="#">Download</a></li>
+		<li><a href="https://github.com/jarednova/timber/wiki">Documentation</a></li>
+		<li><a href="https://github.com/jarednova/timber/wiki/Video-Tutorials">Screencasts</a></li>
+		<li><a class="download" href="http://wordpress.org/plugins/timber-library/">Download</a></li>
 	</ul>
 
 	</div><!-- page-wrapper -->
@@ -32,7 +38,22 @@
 	<div class="page-body">
 		<div class="center-txt">
 		<div class="section">
-			<h2 class="h2 tagline">Because wordpress is awesome,<br/> but TheLoop isn't.</h2>
+			<h2 class="h2 tagline">Presenting a faster, easier and more powerful way to build WordPress themes. Because WordPress is awesome,<br/> but the loop isn't.</h2>
+
+		</div>
+
+		<section>
+			<h3>Overview</h3>
+			<p></p>
+
+		</section>
+		<section>
+			<h3>Who is this for?</h3>
+		</section>
+
+			<p class="txt-large">
+				A faster and easier way to build WordPress themes
+			</p>
 
 			<p class="txt-large">We had a problem at Upstatement. We make a lot of large websites that need to be maintainable by teams. We loved WordPress and our clients ask for it by name. But working with TheLoop and theme files is messy and annoying. Enter Timber. We made Timber so we can write WordPress themes with beautiful, simple markup + code. </p>
 
