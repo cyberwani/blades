@@ -18,6 +18,8 @@
     "swiper": "~2.5.5",
     "modernizr": "~2.7.2",
     "SyntaxHighlighter": "~3.0.83",
-    "jqueryui": "~1.10.4"
+    "jqueryui": "~1.10.4",
+    "hammerjs": "~1.1.2",
+    "jquery-hammerjs": "~1.1.2"
   }
 }

@@ -7,17 +7,17 @@
 $animation-ease: cubic-bezier(0.490, 0.370, 0.445, 0.715);
 
 @mixin char-animation($x-start: 50%) {
-  0%	{ 
-  		opacity: .5;  
+  0%	{
+  		opacity: .5;
 	    @include transform(translate3d($x-start, 0, 0));
   		}
 
-  50%  	{ 
-  		opacity: .5; 
+  10%  	{
+  		opacity: .5;
 	    @include transform(translate3d($x-start, 0, 0));
 		}
-  100% 	{ 
-		opacity: 1; 
+  100% 	{
+		opacity: 1;
 	    @include transform(translate3d(0, 0, 0));
 		}
 }
@@ -52,7 +52,7 @@ $controls-height: 41px;
 $controls-height-small: 31px;
 
 $controls-btn-color: #ccc;
-$controls-color-hover: #999; 
+$controls-color-hover: #999;
 $controls-border: 2px solid #efefef;
 
 
@@ -99,7 +99,7 @@ $controls-border: 2px solid #efefef;
 		@include triangle(right, 15px, $controls-btn-color, .7);
 	}
 
-	// Show only when player is paused	
+	// Show only when player is paused
 	.hlr-bg-paused & {
 		display: block;
 	}
@@ -118,13 +118,13 @@ $controls-border: 2px solid #efefef;
 	@include mq($mq-controls-height) {
 		@include size(14px 19px);
 		border-left-width: 5px;
-		border-right-width: 5px;		
-	}	
+		border-right-width: 5px;
+	}
 
 	.hlr-bg-btn:hover & {
 		border-left-color: $controls-color-hover;
 		border-right-color: $controls-color-hover;
-	}	
+	}
 
 	// Show only when player is playing
 	.hlr-bg-playing	& {
@@ -181,8 +181,13 @@ $mq-type-slider: 600px;
 	height: 100%;
 	padding-bottom: 25px;
 	border-right: 4px solid $highlight;
-	@include trans(.7s, width, $animation-ease);
 	@include box-sizing(content-box);
+}
+
+.hlr-type-imgs:not(:hover) {
+	.hlr-type-mask-mod {
+		@include trans(.5s, width, $animation-ease);
+	}
 }
 
 .hlr-type-mask {
@@ -276,7 +281,17 @@ $mq-type-slider: 600px;
 .hlr-char-oldseven {
 	@include animation-fill-mode(forwards);
 	@include animation-timing-function($animation-ease);
-	@include animation-duration(4s);
+	@include animation-duration(2s);
+}
+
+#hlr-char-hoefler.start-pos{
+	opacity: .5;
+	    @include transform(translate3d(-50%, 0, 0));
+}
+
+#hlr-char-oldseven.start-pos{
+	opacity: .5;
+    @include transform(translate3d(50%, 0, 0));
 }
 
 .hlr-char-hoefler {
