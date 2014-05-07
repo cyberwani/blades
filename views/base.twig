@@ -1,28 +1,4 @@
-<!doctype html>
-<!--[if lt IE 7]><html class="no-js ie ie6 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]><html class="no-js ie ie7 lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]><html class="no-js ie ie8 lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--><html class="no-js" {{language_attributes}}> <!--<![endif]-->
-    <head>
-        {% block page_title %}
-            <title>{{wp_title|striptags}}</title>
-        {% endblock %}
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta charset="UTF-8" />
-        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-        <!--[if lt IE 9]>
-            <script type="text/javascript" src="{{theme.path}}/components/js/html5-shiv.min.js"></script>
-            <script type="text/javascript" src="{{theme.path}}/components/respond/src/respond.js"></script>
-        <![endif]-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="{{meta_desc|default('Upstatement is a small, cross-disciplinary firm that solves problems through design, code, and rapid prototyping.')}}" />
-        <link rel="stylesheet" href="/wp-content/themes/blades/css/screen.css" />
-        <link rel="stylesheet" href="/wp-content/themes/blades/css/custom/blog/sh-upstatement.css" />
-        <link rel="pingback" href="/xmlrpc.php" />
-        {% include "mods/typekit.twig" %}
-        {% include "mods/google-analytics.twig" %}
-        {{function('wp_head')}}
-        <script src="{{theme.path}}/components/modernizr/modernizr.js"></script>
+{% include 'mods/html-header.twig' %}
 {% block head %}
 {% endblock %}
 </head>

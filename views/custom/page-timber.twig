@@ -1,7 +1,5 @@
 {% extends 'base.twig' %}
-{% block page_title %}
-	<title>Timber: WordPress + Twig - Upstatement</title>
-{% endblock %}
+{% set wp_title = 'Timber: WordPress + Twig - Upstatement' %}
 {% block head %}
 	<link rel="stylesheet" href="/{{theme_dir}}/css/custom/special-pages/timber.css">
 	<link rel="stylesheet" href="/{{theme_dir}}/css/custom/labs/labs.css">
@@ -38,23 +36,23 @@
 	<div class="page-body">
 		<div class="center-txt">
 		<div class="section">
-			<h2 class="h2 tagline">Presenting a faster, easier and more powerful way to build WordPress themes. Because WordPress is awesome,<br/> but the loop isn't.</h2>
-
+			<h2 class="h2 tagline">Presenting a faster, easier and more powerful way to build themes. Because <strong>WordPress</strong> is awesome,<br/> but the loop isn't.</h2>
+			<pre>
+			{{dump(post)}}
+			</pre>
 		</div>
 
-		<section>
-			<h3>Overview</h3>
-			<p></p>
-
+		<section class="section">
+			<h3 class="section-head">Overview</h3>
+			<p class="txt-large">Timber helps you create fully-customized WordPress themes faster with more sustainable code. With Timber, you write your HTML using the Twig Template Engine separate from your PHP files.</p>
+			<p class="txt-large">This cleans-up your theme code so your php file can focus on supplying being the data and logic, while your twig file can focus 100% on the display and HTML.</p>
 		</section>
-		<section>
-			<h3>Who is this for?</h3>
+		<section class="section">
+			<h3 class="section-head">Who is this for?</h3>
+			<p class="txt-large">Timber is for both WordPress pros and rookies. People new to WordPress will like how it reduces the WordPress-specific knowledge required to theme a website. While pros can take advantage of object-oriented patterns that adheare to DRY and MVC principles.</p>
 		</section>
 
-			<p class="txt-large">
-				A faster and easier way to build WordPress themes
-			</p>
-
+		<div class="section">
 			<p class="txt-large">We had a problem at Upstatement. We make a lot of large websites that need to be maintainable by teams. We loved WordPress and our clients ask for it by name. But working with TheLoop and theme files is messy and annoying. Enter Timber. We made Timber so we can write WordPress themes with beautiful, simple markup + code. </p>
 
 			<p class="txt-large">Timber is a free open-source project for everyone who uses WordPress. The best payment is to Tweet and star the project on GitHub so others can find it and contribute.</p>
