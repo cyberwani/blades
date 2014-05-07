@@ -169,8 +169,14 @@
 	};
 
 	var typeChangeSize = function(event){
+		var offset = event.offsetX;
+		console.log(offset);
+		if(offset >= $type_container.width())
+			offset = $type_container.width();
+		else if (event.offsetX <= 0)
+			offset = 0;
 		$type_mask.css({
-			'width': event.offsetX
+			'width': offset
 		});
 	};
 
