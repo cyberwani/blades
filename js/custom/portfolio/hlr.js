@@ -9,15 +9,18 @@
 
 (function($) {
 
-	//Background Slide Show
+	//Things to EDIT
 
-	//CONTROL SPEED
+	//SET SPEED of Background Slide Show
 	var amount_to_move = 1,
 		animation_delay = 30; //Change this one first
 
+	//SET IMAGES of Background Slide Show
 	var NUM_IMAGES = 30,
-		img_paths = [],
-		resp_imgs = [
+		img_paths = [];
+
+	//SET IMAGES of Type slider
+	var	resp_imgs = [
 			{
 				width: 600,
 				tag: '-small.jpg'
@@ -28,36 +31,21 @@
 			}
 		];
 
+	//Background Slide Show
+
 	var	$bg_scrubber = $('.hlr-bg-scrubber'),
 		$bg_img_holder = $('.hlr-bg-img'),
 		$bg_timeline = $('.hlr-bg-timeline'),
 		$bg_slider = $('.hlr-bg-slider'),
-		$bg_button = $('.hlr-bg-btn'),
-		$type_mask = $('.hlr-type-mask-mod'),
-		$type_container = $('#hlr-type-container');
+		$bg_button = $('.hlr-bg-btn');
 
 	var total_width,
 		animation_id;
 
 
 	//helper functions
-	var onResizeFn = function() {
-		total_width = $bg_timeline.width() - $bg_scrubber.width();
 
-		window_width = window.innerWidth;
-		for(var i in resp_imgs) {
-			resp_obj = resp_imgs[i];
-			if(window_width < resp_obj.width) {
-				$.each($type_container.find('img'),function(index, img) {
-					$img = $(img);
-					var img_src = $img.data('img-src');
-					$img.attr('src', img_src + resp_obj.tag);
-				});
-				break;
-			}
-		}
-	};
-
+	//Change if hardcode img paths
 	var setUpImgPaths = function() {
 		var img_dir = $bg_img_holder.data('bg-path');
 		for(var i = 1; i <= NUM_IMAGES; i++) {
@@ -108,7 +96,8 @@
 			$bg_slider.addClass('hlr-bg-paused');
 	};
 
-	var pressBGButton = function() {
+	var pressBGButton = function(event) {
+		event.preventDefault();
 		if ($bg_slider.hasClass('hlr-bg-paused')) {
 			hlr_playBGs();
 		} else {
@@ -124,21 +113,6 @@
 		containment: '.hlr-bg-timeline'
 	});
 
-	//event bindings
-	$(window).ready(function() {
-		console.log('ready');
-		onResizeFn();
-	})
-
-	$(window).load(function() {
-		onResizeFn();
-		setUpImgPaths();
-		preloadImages(img_paths);
-		console.log('finished preloading');
-	});
-
-	$(window).resize(onResizeFn);
-
 	$bg_img_holder.bind('inview', function(event, isInView, visiblePartX, visiblePartY) {
 		if(visiblePartY === 'both')
 			hlr_playBGs();
@@ -146,12 +120,17 @@
 			hlr_pauseBGs();
 	});
 
+	// Type Character
+
 	$('.hlr-chars-mod').bind('inview', function(event, isInView, visiblePartX, visiblePartY) {
 		if(visiblePartY === 'both') {
-			$('#hlr-char-oldseven').addClass('hlr-char-oldseven');
-			$('#hlr-char-oldseven').removeClass('start-pos');
-			$('#hlr-char-hoefler').addClass('hlr-char-hoefler');
-			$('#hlor-char-hoefler').removeClass('start-pos');
+			var $old_seven = $('#hlr-char-oldseven'),
+				$hoefler = $('#hlr-char-hoefler');
+
+			$old_seven.addClass('hlr-char-oldseven');
+			$old_seven.removeClass('start-pos');
+			$hoefler.addClass('hlr-char-hoefler');
+			$hoefler.removeClass('start-pos');
 		}
 	});
 
@@ -160,17 +139,17 @@
 
 	//Type Slider
 
+	//helper functions
 
-
-	var typeResetSize = function(event) {
+	var _typeResetSize = function(event) {
+		event.preventDefault();
 		$type_mask.css({
 			'width': '50%'
 		});
 	};
 
-	var typeChangeSize = function(event){
-		var offset = event.offsetX;
-		console.log(offset);
+	var _typeChangeSize = function(offset) {
+		//console.log(offset);
 		if(offset >= $type_container.width())
 			offset = $type_container.width();
 		else if (event.offsetX <= 0)
@@ -178,25 +157,62 @@
 		$type_mask.css({
 			'width': offset
 		});
-	};
+	}
+	//bind to input events
 
-	var typeChangeSizeForTouch = function(event) {
-		var offset = event.originalEvent.touches[0].pageX - $type_container.offset().left;
-		if(offset <= $type_container.width() && offset >= 0) {
-			$type_mask.css({
-				'width': offset
-			});
-		}
-	};
+	var $type_mask = $('.hlr-type-mask-mod'),
+		$type_container = $('#hlr-type-container');
 
-	$type_container.bind('mouseleave', typeResetSize);
+	$type_container.bind('mouseleave', _typeResetSize);
 
-	$type_container.bind('mousemove', typeChangeSize);
+	$type_container.bind('mousemove', function(event) {
+		//console.log(event);
+		event.preventDefault();
+		_typeChangeSize(event.offsetX);
+	});
 
 	if(Modernizr.touch) {
 		var type_container_node = document.getElementById('hlr-type-container');
-		$type_container.on('touchmove touchstart', typeChangeSizeForTouch);
-		$type_container.on('touchend', typeResetSize);
+		$type_container.on('touchmove touchstart', function(event) {
+			event.preventDefault();
+			var offset = event.originalEvent.touches[0].pageX - $type_container.offset().left;
+			_typeChangeSize(offset);
+		});
+		$type_container.on('touchend', _typeResetSize);
 	}
+
+	//Window Bindings
+
+	var onResizeFn = function() {
+		total_width = $bg_timeline.width() - $bg_scrubber.width();
+
+		window_width = window.innerWidth;
+		for(var i in resp_imgs) {
+			resp_obj = resp_imgs[i];
+			if(window_width < resp_obj.width) {
+				$.each($type_container.find('img'),function(index, img) {
+					$img = $(img);
+					var img_src = $img.data('img-src');
+					$img.attr('src', img_src + resp_obj.tag);
+				});
+				break;
+			}
+		}
+	};
+
+	$(window).ready(function() {
+		//console.log('ready');
+		onResizeFn();
+	})
+
+	$(window).load(function() {
+		//onResizeFn();
+		setUpImgPaths();
+		preloadImages(img_paths);
+		//console.log('finished preloading');
+	});
+
+	$(window).resize(onResizeFn);
+
 
 })(jQuery);
