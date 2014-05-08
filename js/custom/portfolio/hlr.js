@@ -242,7 +242,8 @@
 			});
 		},
 		getOffset: function(event) {
-			if($(event.target).is(this._container + ',' + this._container + ' img')) {
+			console.log(event.target);
+			if($(event.target).is(this._container + ',' + this._container + ' img, ' + this._container + ' ' + this._mask)) {
 				//event.stopImmediatePropagation();
 				if(event.type === 'mousemove') {
 					return event.offsetX;//$(event.target).offsetTop;
