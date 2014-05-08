@@ -181,13 +181,8 @@ $mq-type-slider: 600px;
 	height: 100%;
 	padding-bottom: 25px;
 	border-right: 4px solid $highlight;
+	overflow: visible !important;
 	@include box-sizing(content-box);
-}
-
-.hlr-type-imgs:not(:hover) {
-	.hlr-type-mask-mod {
-		@include trans(.5s, width, $animation-ease);
-	}
 }
 
 .hlr-type-mask {
