@@ -1,9 +1,17 @@
 <section class="logo-pond-mod">
 	<div class="logo-pond">
 		{% for item in logo_pond %}
-			<a class="pond-item" href="{{TimberPost(item.link).permalink}}">
+			{% if item.link %}
+				<a class="pond-item" href="{{TimberPost(item.link).permalink}}">
+			{% else %}
+				<span class="pond-item" href="{{TimberPost(item.link).permalink}}">
+			{% endif %}
 				<img class="stuff" src="{{TimberImage(item.logo).src}}" alt="{{item.link.post_title|default('Client logo')|e}}" />
-			</a>
+			{% if item.link %}
+				</a>
+			{% else %}
+				</span>
+			{% endif %}
 		{% endfor %}
 	</div> <!-- /logo-pond -->
 </section> <!-- /logo-pond -->
