@@ -10,7 +10,7 @@
                 },
                 {
                     "label" :   "Homepage Logo Pond",
-                    "url"   :   "/wp-admin/admin.php?page=acf-options-logo-pond"
+                    "url"   :   "/wp-admin/admin.php?page=acf-options-homepage"
                 }
             ]
         },
