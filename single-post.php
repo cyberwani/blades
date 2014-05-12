@@ -18,6 +18,9 @@
 	}
 	$data['sidebar'] = Timber::get_sidebar();
 
-	Timber::render('single.twig', $data);
+	if (post_password_required($post->ID)){
+		Timber::render('single-password.twig', $data);
+	} else {
+		Timber::render('single.twig', $data);
+	}
 
-	
