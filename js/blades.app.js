@@ -10,7 +10,16 @@ var upSite;
 		this.initAPI();
 		this.initClassFixing();
 		this.initSyntaxHighlighting();
+		this.initQuickShare();
 	}
+
+	UpSite.prototype.initQuickShare = function(){
+		console.log('initQuickShare');
+		if (typeof yourFunctionName == 'function') {
+			console.log('Run quickShare');
+  			quickShare();
+		}
+	};
 
 	UpSite.prototype.initSyntaxHighlighting = function(){
 		if (typeof SyntaxHighlighter != 'undefined') {

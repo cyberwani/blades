@@ -17,6 +17,7 @@
     "jquery.inview": "~1.0.0",
     "swiper": "~2.5.5",
     "modernizr": "~2.7.2",
-    "SyntaxHighlighter": "~3.0.83"
+    "SyntaxHighlighter": "~3.0.83",
+    "QuickShare" : "*"
   }
 }
