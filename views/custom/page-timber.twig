@@ -134,12 +134,12 @@
 		<section class="section">
 			<h3 class="section-head">Showcase</h3>
 			<div class="showcase-mod">
-				{% for showcase_item in 1..12 %}
+				{% for showcase_item in post.get_field('showcase') %}
 				<article class="showcase-item media-block">
-					<a class="showcase-img-mod" href="http://harvardlawreview.org" target="_blank">
-						<img src="{{'http://jarednova.github.io/timber/img/showcase/hlr.jpg'|resize(600, 420)}}" alt="Harvard Law Review" />
+					<a class="showcase-img-mod" href="{{showcase_item.url}}" target="_blank">
+						<img src="{{TimberImage(showcase_item.image).src|resize(600, 420)}}" alt="{{showcase_item.title|striptags}}" />
 					</a>
-					<h5 class="head-label"><a href="http://harvardlawreview.org" target="_blank">Harvard Law Review</a></h5>
+					<h5 class="head-label"><a href="{{showcase_item.url}}" target="_blank">{{showcase_item.title}}</a></h5>
 				</article>
 				{% endfor %}
 			</div>
