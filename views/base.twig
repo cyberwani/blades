@@ -15,8 +15,13 @@
         {% include "mods/footer.twig" %}
 
         {{ function('wp_footer') }}
+        <script src="{{theme.path}}/components/jquery.scrollTo/jquery.scrollTo.js"></script>
+        <script src="{{theme.path}}/components/jquery.localScroll/jquery.localScroll.js"></script>
+        <script src="{{theme.path}}/components/unveil/jquery.unveil.js"></script>
+        <script src="{{theme.path}}/js/plugins.js"></script>
         {% block scripts %}
 
         {% endblock %}
+        <script src="{{theme.path}}/js/blades.app.js"></script>
     </body>
 </html>

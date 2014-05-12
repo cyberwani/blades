@@ -1,6 +1,6 @@
 var upSite;
 
-;(function($) {
+;(function($, quickShare) {
 
 	function UpSite() {
 		if(typeof jQuery().iosSlider === 'function') {
@@ -15,7 +15,7 @@ var upSite;
 
 	UpSite.prototype.initQuickShare = function(){
 		console.log('initQuickShare');
-		if (typeof yourFunctionName == 'function') {
+		if (typeof quickShare == 'function') {
 			console.log('Run quickShare');
   			quickShare();
 		}
@@ -158,4 +158,4 @@ var upSite;
 
 	upSite = new UpSite();
 
-})(jQuery);
+})(jQuery, quickShare);
