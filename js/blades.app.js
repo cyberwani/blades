@@ -1,6 +1,6 @@
 var upSite;
 
-;(function($, quickShare) {
+;(function($) {
 
 	function UpSite() {
 		if(typeof jQuery().iosSlider === 'function') {
@@ -158,4 +158,4 @@ var upSite;
 
 	upSite = new UpSite();
 
-})(jQuery, quickShare);
+})(jQuery);

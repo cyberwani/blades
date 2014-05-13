@@ -12,7 +12,6 @@ $timber: #009344;
 	position:relative;
 	@media (min-width: 600px){
 		padding: 60px 0 0 0;
-		height: 250px;
 	}
 }
 
@@ -38,4 +37,9 @@ $timber: #009344;
 		height: 120px;
 		margin: 0px auto 30px auto;
 	}
+}
+
+code.hljs {
+	padding:0.5em 1.5em 1.75em;
+	border:1px solid #CCC;
 }

@@ -45,7 +45,7 @@
 		$query = array('post_type' => 'post', 'posts_per_page' => 6, 'post__not_in' => $sticky, 'offset' => $page * 6);
 		Timber::load_template('archive-blog.php', $query);
 	});
-	
+
 	BladesSite::register_post_types();
 	BladesSite::apply_admin_customizations();
 

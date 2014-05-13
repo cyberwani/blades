@@ -21,6 +21,10 @@ body {
 	color: $text;
 }
 
+pre {
+	padding:0px;
+}
+
 .video-embed {
 	@include video;
 }

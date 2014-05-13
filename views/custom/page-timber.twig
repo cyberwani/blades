@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href="{{site.theme.link}}/css/custom/labs/labs.css">
 
 	<link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css">
-
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
 
 {% endblock %}
@@ -16,7 +16,9 @@
 	<div class="page-wrapper">
 
 		<nav class="social-media">
-			<a class="qs-link" data-qs-service="twitter">Twitter</a>
+			<a class="qs-link" data-qs-service="twitter"><i class="qs-icon"></i>Twitter</a>
+			<a class="qs-link" data-qs-service="facebook"><i class="qs-icon"></i>Facebook</a>
+			<a class="qs-link" data-qs-service="github"><i class="qs-icon"></i>GitHub</a>
 		</nav>
 
 		<a href="https://github.com/jarednova/timber" class="github-sash">
@@ -134,13 +136,21 @@
 		<section class="section">
 			<h3 class="section-head">Showcase</h3>
 			<div class="showcase-mod">
-				{% for showcase_item in post.get_field('showcase') %}
+				{# for showcase_item in post.get_field('showcase') %}
 				<article class="showcase-item media-block">
 					<a class="showcase-img-mod" href="{{showcase_item.url}}" target="_blank">
 						<img src="{{TimberImage(showcase_item.image).src|resize(600, 420)}}" alt="{{showcase_item.title|striptags}}" />
 					</a>
 					<h5 class="head-label"><a href="{{showcase_item.url}}" target="_blank">{{showcase_item.title}}</a></h5>
 				</article>
+				{% endfor #}
+				{% for showcase_item in 1..24 %}
+					<article class="showcase-item media-block">
+					<a class="showcase-img-mod" href="http://harvardlawreview.org" target="_blank">
+						<img src="http://localhost/wp-content/uploads/2014/05/abc-nova-600x420-c-default.jpg" alt="Harvard Law Review" />
+					</a>
+					<h5 class="head-label"><a href="http://harvardlawreview.org" target="_blank">Harvard Law Review</a></h5>
+					</article>
 				{% endfor %}
 			</div>
 		</section>
