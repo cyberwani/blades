@@ -1,7 +1,6 @@
 {% extends 'base.twig' %}
 {% set wp_title = 'Timber: WordPress + Twig - Upstatement' %}
 {% block head %}
-	<link rel="stylesheet" href="{{site.theme.link}}/css/custom/special-pages/timber.css">
 	<link rel="stylesheet" href="{{site.theme.link}}/css/custom/labs/labs.css">
 
 	<link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css">
@@ -16,9 +15,9 @@
 	<div class="page-wrapper">
 
 		<nav class="social-media">
-			<a class="qs-link" data-qs-service="twitter"><i class="qs-icon"></i>Twitter</a>
-			<a class="qs-link" data-qs-service="facebook"><i class="qs-icon"></i>Facebook</a>
-			<a class="qs-link" data-qs-service="github"><i class="qs-icon"></i>GitHub</a>
+			<a class="qs-link" data-qs-service="twitter"><i class="qs-icon"></i><i class="qs-label">Twitter</i></a>
+			<a class="qs-link" data-qs-service="facebook-share"><i class="qs-icon"></i><i class="qs-label">Facebook</i></a>
+			<a class="qs-link" data-qs-service="github"><i class="qs-icon"></i><i class="qs-label">GitHub</i></a>
 		</nav>
 
 		<a href="https://github.com/jarednova/timber" class="github-sash">
@@ -62,6 +61,9 @@
 
 			<div class="code-example side-by-side">
 				<div class="ui-block-1">
+					<div class="code-tag top">
+						<span class="muted">single</span>.php
+					</div>
 					<pre>
 						<code class="php">
 						$context = Timber::get_context();
@@ -70,11 +72,11 @@
 						Timber::render('single.twig', $context);
 						</code>
 					</pre>
-					<div class="code-tag bottom">
-						<span class="muted">single</span>.php
-					</div>
 				</div>
 				<div class="ui-block-2">
+					<div class="code-tag top">
+						<span class="muted">single</span>.twig
+					</div>
 					<pre>
 						<code class="twig">
 							{{ '{% extends "base.twig" %}
@@ -84,9 +86,6 @@
 							{% endblock %}' }}
 						</code>
 					</pre>
-					<div class="code-tag bottom">
-						<span class="muted">single</span>.twig
-					</div>
 				</div>
 			</div>
 		</section>
@@ -144,12 +143,12 @@
 					<h5 class="head-label"><a href="{{showcase_item.url}}" target="_blank">{{showcase_item.title}}</a></h5>
 				</article>
 				{% endfor #}
-				{% for showcase_item in 1..24 %}
+				{% for showcase_item in 1..18 %}
 					<article class="showcase-item media-block">
-					<a class="showcase-img-mod" href="http://harvardlawreview.org" target="_blank">
-						<img src="http://localhost/wp-content/uploads/2014/05/abc-nova-600x420-c-default.jpg" alt="Harvard Law Review" />
-					</a>
-					<h5 class="head-label"><a href="http://harvardlawreview.org" target="_blank">Harvard Law Review</a></h5>
+						<a class="showcase-img-mod" href="http://harvardlawreview.org" target="_blank">
+							<img src="http://localhost/wp-content/uploads/2014/05/abc-nova-600x420-c-default.jpg" alt="Harvard Law Review" class="showcase-img"/>
+						</a>
+						<h5 class="head-label"><a href="http://harvardlawreview.org" target="_blank">Harvard Law Review</a></h5>
 					</article>
 				{% endfor %}
 			</div>
