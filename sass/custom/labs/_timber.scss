@@ -104,6 +104,7 @@ code.hljs {
 
 .showcase-img {
 	max-width: 100%;
+	border:1px solid lighten($gray, 10);
 }
 
 .head-label {
@@ -112,4 +113,26 @@ code.hljs {
 
 .showcase-section.section {
 	border-bottom: 0px;
+}
+
+.download-big-button-mod {
+	text-align:center;
+	margin-bottom:50px;
+}
+
+.download-big {
+	@include inline-block;
+	padding: 30px 90px 30px 30px;
+	background-image: url(/wp-content/themes/blades/images/timber/download-arrow.svg);
+	background-position: center right;
+	background-repeat: no-repeat;
+	background-color:$timber;
+	font-size: 20px;
+	font-family: "proxima-nova",Helvetica,Arial,sans-serif;
+	color: #FFF;
+	@include border-radius(60px);
+	@include trans;
+	&:hover {
+		background-color:darken($timber, 5);
+	}
 }

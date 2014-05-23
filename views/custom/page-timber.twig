@@ -17,7 +17,7 @@
 		<nav class="social-media">
 			<a class="qs-link" data-qs-service="twitter"><i class="qs-icon"></i><i class="qs-label">Twitter</i></a>
 			<a class="qs-link" data-qs-service="facebook-share"><i class="qs-icon"></i><i class="qs-label">Facebook</i></a>
-			<a class="qs-link" data-qs-service="github"><i class="qs-icon"></i><i class="qs-label">GitHub</i></a>
+			<a class="qs-link" data-qs-service="github" href="http://github.com/jarednova/timber"><i class="qs-icon fa fa-github-alt"></i><i class="qs-label">GitHub</i></a>
 		</nav>
 
 		<a href="https://github.com/jarednova/timber" class="github-sash">
@@ -92,13 +92,13 @@
 
 		<section>
 			<h3 class="section-head">What does it look like?</h3>
-			<p class="txt-large">Timber doesn't change the visual appearance of your theme. Installing Timber is like installing jQuery -- it just gives you new tools to build and style it as you like.</p>
+			<p class="txt-large">Timber doesn't change the visual appearance of your theme. Installing Timber is like installing jQuery &mdash; it just gives you new tools to build and style it as you like.</p>
 		</section>
 
 
 		<div class="section">
 			<h3 class="section-head">Object Oriented Posts, Terms, Users and More</h3>
-			<p class="txt-large">Speak to the common WordPress objects in a way that makes sense. Have you ever tried to get the thumbnail of a post? Don't lie to me, of course you have! It probably looked something like this:</p>
+			<p class="txt-large">Speak to the common WordPress objects in a way that makes sense. Have you ever tried to get the thumbnail of a post?</p>
 
 			<div class="code-mod">
 				<div class="code-tag top">
@@ -113,48 +113,67 @@
 			<p class="txt-large">Yuk! Maybe you can remember all those functions, but I sure can't. If you're a pro WordPress dev you probably have a mess of shortcut functions to help you with a common task. But here's the rub YOUR shortcuts are going different than everyone else's.</p>
 			<div class="code-mod">
 				<div class="code-tag top">
-					but with Timber
+					The Timber way
 				</div>
 				<pre><code class="twig">
 					{# single.twig #}
-					&lt;img src="{{post.thumbnail.src}}" alt="Thumbnail for {{post.title}}" /&gt;
+					&lt;img src="{{'{{post.thumbnail.src}}'}}" alt="Thumbnail for {{post.title}}" /&gt;
 				</code></pre>
 			</div>
 		</div><!-- section -->
 
-		<div class="section">
+		{#<div class="section">
 			<h3 class="section-head">Express/Node-style Routing</h3>
 			<p class="txt-large">When I first used routes in Node.js I fell in love. But when I tried to do the same, WordPress broke my heart.</p>
-		</div><!-- section -->
+		</div><!-- section -->#}
 
 		<div class="section">
 			<h3 class="section-head">It's a library, not a Framework</h3>
-			<p class="txt-large">The tools I've come to rely on are the tools that evolve into your workflow. I didn't know I wanted to use jQuery or SASS until I started using them. Bit-by-bit they replaced the 'old' ways of doing things until I couldn't imagine life without them. Timber lets you start with just a bit. Say you want to just include an HTML snippet with a variable from your database:</p>
+			<p class="txt-large">Timber works with your existing themes to unlock new power. You don't have to throw out everything you already have working.</p>
+			<p class="txt-large">The best tools evolve into your workflow: I didn't know I wanted to use jQuery or SASS until I started using them. Bit-by-bit they replaced the 'old' ways of doing things until I couldn't imagine life without them. Timber lets you start with just a bit. Say you want to just include an HTML snippet with a variable from your database:</p>
+
+			<div class="code-mod">
+				<div class="code-tag top">
+					home.php
+				</div>
+				<pre><code class="php">
+					$data['welcome_message'] = get_option('welcome_message');
+					Timber::render('welcome.twig', $data);
+				</code></pre>
+			</div>
+
+			<div class="code-mod">
+				<div class="code-tag top">
+					Inside your twig file:</span>
+				</div>
+				<pre><code class="twig">
+					{{'
+					{# welcome.twig #}
+					&lt;p class="intro"&gt;{{welcome_message}}&lt;/p&gt;
+					'}}
+				</code></pre>
+			</div>
 		</div><!-- section -->
 
 		<section class="section showcase-section">
 			<h3 class="section-head">Showcase</h3>
 			<div class="showcase-mod">
-				{# for showcase_item in post.get_field('showcase') %}
-				<article class="showcase-item media-block">
-					<a class="showcase-img-mod" href="{{showcase_item.url}}" target="_blank">
-						<img src="{{TimberImage(showcase_item.image).src|resize(600, 420)}}" alt="{{showcase_item.title|striptags}}" />
-					</a>
-					<h5 class="head-label"><a href="{{showcase_item.url}}" target="_blank">{{showcase_item.title}}</a></h5>
-				</article>
-				{% endfor #}
-				{% for showcase_item in 1..18 %}
+				{% for showcase_item in post.get_field('showcase') %}
 					<article class="showcase-item media-block">
-						<a class="showcase-img-mod" href="http://harvardlawreview.org" target="_blank">
-							<img src="http://localhost/wp-content/uploads/2014/05/abc-nova-600x420-c-default.jpg" alt="Harvard Law Review" class="showcase-img"/>
+						<a class="showcase-img-mod" href="{{showcase_item.url}}" target="_blank">
+							<img src="{{TimberImage(showcase_item.image).src|resize(600, 420)}}" alt="{{showcase_item.title|striptags}}" class="showcase-img"/>
 						</a>
-						<h5 class="head-label"><a href="http://harvardlawreview.org" target="_blank">Harvard Law Review</a></h5>
+						<h5 class="head-label"><a href="{{showcase_item.url}}" target="_blank">{{showcase_item.title}}</a></h5>
 					</article>
 				{% endfor %}
 			</div>
 		</section>
 
-
+		<section>
+			<div class="download-big-button-mod">
+				<a class="download-big" href="http://wordpress.org/plugins/timber-library/">Download</a>
+			</div>
+		</section>
 
 		</div><!-- center-txt -->
 
