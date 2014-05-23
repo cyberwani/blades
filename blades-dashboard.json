@@ -6,7 +6,7 @@
             "links"     :   [
                 {
                     "label" :   "Manage 'highlights'",
-                    "url"   :   "/wp-admin/admin.php?page=acf-options-look-feel#acf-highlights"
+                    "url"   :   "/wp-admin/admin.php?page=acf-options-homepage#acf-highlights"
                 },
                 {
                     "label" :   "Homepage Logo Pond",

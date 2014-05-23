@@ -28,5 +28,4 @@ Template Name: Person
 	}
 	$data['post']->image = new TimberImage($pi->image);
 	$data['post']->image_mobile = new TimberImage($pi->image_mobile);
-	Timber::render(['page-person-'.$pi->post_name.'.twig', 'page-person.twig'], $data);
-	
+	Timber::render(array('page-person-'.$pi->post_name.'.twig', 'page-person.twig'), $data);

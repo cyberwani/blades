@@ -8,4 +8,4 @@
 	$data['wp_title'] = 'Jobs at Upstatement - Design, Development, Web Design careers';
 	$data['overview'] = get_field('jobs_overview', $pi->ID);
 	$data['overview'] = $data['overview'][0];
-	Timber::render(['page-'.$pi->post_name.'.twig', 'page.twig'], $data);
+	Timber::render(array('page-'.$pi->post_name.'.twig', 'page.twig'), $data);

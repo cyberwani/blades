@@ -28,4 +28,4 @@
 			}
 		}
 	}
-	Timber::render(['custom/page-'.$pi->post_name.'.twig', 'page-'.$pi->post_name.'.twig', 'page.twig'], $data);
+	Timber::render(array('custom/page-'.$pi->post_name.'.twig', 'page-'.$pi->post_name.'.twig', 'page.twig'), $data);
