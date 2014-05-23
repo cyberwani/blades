@@ -45,10 +45,11 @@ $timber: #009344;
 	border-radius: 19px;
 	@include size(34px);
 	display: inline-block;
-	background-color: rgba(0,0,0,0);
+	background-color: #ffffff;
 	@include trans;
+	margin: 0 7px;
 	&:hover {
-		background-color: rgba(0,0,0,.25);
+		// background-color: #97D28B;
 	}
 }
 
@@ -57,9 +58,16 @@ $timber: #009344;
 	border-radius: 14px;
 	padding-top: 7px;
 	font-size: 16px;
-	background-color: #fff;
-	color: $timber;
+	background-color: #bbb;
+	color: #fff;
 	@include trans;
+	&:hover {
+		background-color: $timber;
+	}
+}
+
+.social-media {
+	margin: 32px 0 -37px;
 }
 
 
