@@ -120,6 +120,15 @@ code.hljs {
 	margin-bottom:50px;
 }
 
+.endtag {
+	padding-top:20px;
+	text-align:center;
+	line-height:34px;
+	a {
+		color:$timber;
+	}
+}
+
 .download-big {
 	@include inline-block;
 	padding: 30px 90px 30px 30px;
