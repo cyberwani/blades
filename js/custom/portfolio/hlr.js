@@ -13,8 +13,8 @@
 
 	//SET SPEED of Background Slide Show
 	var AMOUNT_TO_MOVE = 1,
-		ANIMATION_DELAY = 30,
-		NUM_IMAGES = 30;
+		ANIMATION_DELAY = 0,
+		NUM_IMAGES = 48;
 
 	//SET IMAGES of Type slider
 	var	resp_imgs = [
@@ -23,7 +23,7 @@
 				tag: '-small.jpg'
 			},
 			{
-				width: 9999,
+				width: 99999,
 				tag: '.jpg'
 			}
 		];
@@ -290,6 +290,13 @@
 		});
 	};
 
+	var _setTypeScrubberSize = function() {
+		var typeWidth = window.innerWidth * .95,
+			type = $('.hlr-type-img, .hlr-type-imgs');
+		
+		type.css("width", typeWidth);
+	}
+
 	// Type Character
 
 	$('.hlr-chars-mod').bind('inview', function(event, isInView, visiblePartX, visiblePartY) {
@@ -312,6 +319,7 @@
 	$(window).ready(function() {
 		var img_paths = _setUpImgPaths();
 		_findResponsiveImage();
+		_setTypeScrubberSize();
 		ts = new TypeScrubber();
 		bs = new BackgroundSlideshow(img_paths);
 		console.log('ready');
@@ -323,6 +331,7 @@
 	});
 
 	$(window).resize(_findResponsiveImage);
+	$(window).resize(_setTypeScrubberSize);
 
 
 })(jQuery);

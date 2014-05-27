@@ -37,10 +37,21 @@ $animation-ease: cubic-bezier(0.490, 0.370, 0.445, 0.715);
 
 .hlr-bg-slider {
 	margin-bottom: 60px;
+	&.site-width {
+		padding: 0;
+	}
 }
 
 .hlr-bg-imgs {
-	margin-bottom: 20px;
+	margin: 0 -20% 20px;
+	@include mq(450px) {
+		margin-left: -12%;
+		margin-right: -12%;
+	}
+	@include mq(850px) {
+		margin-left: 0;
+		margin-right: 0;
+	}
 }
 
 .hlr-bg-img {
@@ -55,6 +66,9 @@ $controls-btn-color: #ccc;
 $controls-color-hover: #999;
 $controls-border: 2px solid #efefef;
 
+.hlr-bg-controls {
+	margin: 0 30px;
+}
 
 .hlr-bg-btn {
 	float: left;
@@ -151,6 +165,13 @@ $controls-border: 2px solid #efefef;
 	@include size($controls-height-small);
 	@include absolute(-2px n n -2px);
 	background-color: $highlight;
+	@include trans(.15s, background-color);
+
+	&:hover {
+		cursor: pointer;
+		background-color: $highlight-hover;
+	}
+
 	@include mq($mq-controls-height) {
 		@include size($controls-height);
 	}
@@ -164,15 +185,14 @@ $controls-border: 2px solid #efefef;
 $mq-type-slider: 600px;
 
 .hlr-type-slider {
+	background-color: #fff;
 	margin-bottom: 60px;
 }
 
 .hlr-type-imgs {
+	margin: auto;
 	position: relative;
-	background-color: #fff;
-	@include mq($mq-type-slider) {
-		cursor: col-resize;
-	}
+	cursor: col-resize;
 }
 
 .hlr-type-mask-mod {
@@ -188,17 +208,8 @@ $mq-type-slider: 600px;
 .hlr-type-mask {
 	overflow: hidden;
 	display: block;
-	&:first-child {
-		border-bottom: 1px solid #ccc;
-	}
-
-	@include mq($mq-type-slider) {
-		height: 100%;
-		width: 100%;
-		&:first-child {
-			border-bottom: 0;
-		}
-	}
+	height: 100%;
+	width: 100%;
 }
 
 .hlr-type-img {
@@ -210,36 +221,23 @@ $mq-type-slider: 600px;
 }
 
 .hlr-type-label {
- 	font: 300 14px $proxima;
+ 	font: 800 14px $proxima;
 	color: #999;
+	position: absolute;
+	bottom: 0px;
+
 	@include mq($mq-type-slider) {
-		font-weight: 800;
 		font-size: 16px;
-		position: absolute;
-		bottom: 0px;
 	}
 }
 
 .hlr-type-label-oldseven {
-	@include mq(max, $mq-type-slider) {
-		@include absolute(n n -24px n);
-	}
-
-	@include mq($mq-type-slider) {
-		right: -97px;
-	}
+	right: -97px;
 }
 
 .hlr-type-label-hoefler {
 	color: #000;
-
-	@include mq(max, $mq-type-slider) {
-		@include absolute(-24px n n n);
-	}
-
-	@include mq($mq-type-slider) {
-		right: 21px;
-	}
+	right: 21px;
 }
 
 
