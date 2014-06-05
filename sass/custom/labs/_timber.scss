@@ -45,6 +45,10 @@ $timber: #009344;
 	}
 }
 
+.timber-banner {
+	overflow: hidden;
+}
+
 .qs-label {
 	display: none;
 }
@@ -75,9 +79,28 @@ $timber: #009344;
 	}
 }
 
+
+
+.page-timber{
+	.page-body {
+		@media (min-width: 1000px){
+			background-color: darken(desaturate($timber, 80), 10);
+		}
+	}
+	.center-txt {
+		@media (min-width: 1000px){
+			border:1px solid rgba($timber, .3);
+		}
+	}
+	.tagline {
+		margin-top:0px;
+	}
+}
+
 .social-media {
 	margin: 32px 0 -37px;
 }
+
 
 
 // Code

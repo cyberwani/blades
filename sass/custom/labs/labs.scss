@@ -212,8 +212,14 @@ $timber: #009344;
 
 
 .center-txt {
-	max-width: 800px;
+	max-width: 1000px;
 	margin: 0 auto;
+	@media (min-width: 1000px){
+		padding:50px;
+		position: relative;
+		margin-top:-50px;
+		background-color: white;
+	}
 }
 
 //
@@ -230,3 +236,5 @@ $timber: #009344;
 		@include ui-grid-lr(50%, 50%, 2%);
 	}
 }
+
+

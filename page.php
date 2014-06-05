@@ -16,6 +16,7 @@
 	$data = Timber::get_context();
 	$pi = new TimberPost();
 	$data['post'] = $pi;
+	$data['body_class'] .= ' page-'.$pi->post_name;
 	$template_file = 'page.twig';
 	if (file_exists($_SERVER['DOCUMENT_ROOT'].$data['theme_dir'].'/css/'.$pi->post_type.'-'.$post->post_name.'.css')){
 		$data['post']->css_file = $data['theme_dir'].'/css/'.$pi->post_type.'-'.$post->post_name.'.css';
