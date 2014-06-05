@@ -32,11 +32,37 @@ $timber: #009344;
 //
 //Page Structure
 //
+
+.hdr {
+	@media(min-width:500px){
+		position: relative;
+		z-index: 50;
+	}
+}
 .github-sash {
 	position: absolute;
-	top: 0px;
-	right: 0;
 	border: 0;
+	top:0px;
+	right:0px;
+	padding:10px 20px;
+	text-align: center;
+	text-transform: uppercase;
+	color: rgba(white, .9);
+	letter-spacing: 1px;
+	text-decoration: none;
+	white-space: nowrap;
+
+	font-family:$proxima;
+	position: absolute;
+	display: block;
+	@media (min-width: 500px){
+		padding: 1em;
+		right: -62px;
+		top:50px;
+		width: 20em;
+		@include rotate(45deg);
+	}
+
 }
 
 .page-wrapper {

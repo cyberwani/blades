@@ -18,6 +18,15 @@ $timber: #009344;
 	background-image: url('/wp-content/themes/blades/images/timber/timber-logo.svg');
 }
 
+.github-sash {
+	background-color: darken($timber, 10);
+	@include trans;
+	&:hover {
+		color:rgba(white, 1);
+		background-color: darken($timber, 15);
+	}
+}
+
 .logo {
 	text-indent: -10000px;
 	width: 100%;
