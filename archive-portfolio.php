@@ -18,7 +18,7 @@
 		foreach($fp->squares as $square){
 			$bb = new TimberPost($square);
 			$bb->billboard = new TimberImage($bb->billboard);
-			if ($bb->hero_tease){
+			if (isset($bb->hero_tease)){
 				$bb->hero_tease = new TimberImage($bb->hero_tease);
 			}
 			$billboards[] = $bb;
